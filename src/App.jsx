@@ -1,13 +1,11 @@
 import "./App.css";
-import About from "./Components/About";
-import Button from "./Components/Button";
+import Home from "./Pages/Home";
 
 function App() {
-  return (
-    <>
-      <About/>
-    </>
-  );
+  return
+   <>
+  <Home/>
+  </>;
 }
 
 export default App;
