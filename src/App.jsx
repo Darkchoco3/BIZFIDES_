@@ -1,16 +1,13 @@
-
-import './App.css'
-import Button from './Components/Button'
+import "./App.css";
+import About from "./Components/About";
+import Button from "./Components/Button";
 
 function App() {
-
-  
   return (
     <>
-    <Button btnText={"hello"}/>
-      
-       </>
-  )
+      <About/>
+    </>
+  );
 }
 
-export default App
+export default App;
