@@ -7,20 +7,20 @@ const About = () => {
     <div className="container bg-yellow-300 h-auto lg:min-h-[45rem] w-full flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-12 lg:gap-0 px-6 md:px-12 lg:px-24 py-8 lg:py-0 font-inter">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
         <div className="w-full max-w-[20rem] sm:max-w-[27rem] relative h-[20rem] sm:h-[29rem]">
-          <div className="h-full w-2/3 bg-[#E6F6F6] absolute rounded-full left-0"></div>
-          <div className="h-full w-2/3 bg-neutral-grey-300 absolute rounded-full right-0 border-4 border-primary">
+          <div className="h-full w-2/3 bg-[#E6F6F6] absolute rounded-[40%] left-0"></div>
+          <div className="h-full w-2/3 bg-neutral-grey-300 absolute rounded-[40%] right-0 border-4 border-primary">
             <img
               src={about}
               alt="about"
-              className="h-full w-full object-cover rounded-full"
+              className="h-full w-full object-cover rounded-[40%]"
             />
-            <span className="absolute bg-primary opacity-60 h-full w-full top-0 rounded-full"></span>
+            <span className="absolute bg-primary opacity-60 h-full w-full top-0 rounded-[40%]"></span>
           </div>
-          <div className="h-full w-2/3 border-secondary border-8 absolute rounded-full left-16">
+          <div className="h-full w-2/3 border-secondary border-8 absolute rounded-[40%] left-16">
             <img
               src={about}
               alt="about"
-              className="h-full w-full object-cover rounded-full"
+              className="h-full w-full object-cover rounded-[40%]"
             />
           </div>
         </div>
