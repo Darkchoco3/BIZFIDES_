@@ -16,9 +16,8 @@ const Button = ({
   }`;
 
   const variants = {
-    primary: `bg-primary text-white hover:bg-blue-600 focus:ring-primary`,
+    primary: `bg-primary text-white hover:bg-[hsla(237, 62%, 16%, 1)] focus:ring-primary`,
     secondary: `bg-secondary text-white hover:bg-primary focus:ring-secondary`,
-    accent: `bg-teal-500 text-white hover:bg-teal-600 focus:ring-teal-300`,
     outline: `border-2 border-primary text-primary hover:bg-primary hover:text-white focus:ring-primary`,
   };
 
