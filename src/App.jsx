@@ -1,16 +1,11 @@
-
-import './App.css'
-import Button from './Components/Button'
+import "./App.css";
+import Home from "./Pages/Home";
 
 function App() {
-
-  
-  return (
-    <>
-    <Button btnText={"hello"}/>
-      
-       </>
-  )
+  return
+   <>
+  <Home/>
+  </>;
 }
 
-export default App
+export default App;
