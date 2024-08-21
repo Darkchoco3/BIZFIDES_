@@ -3,6 +3,7 @@ import About from '../Components/About'
 import Service from '../Components/Service'
 import Ambassadors from '../Components/Ambassadors'
 import Testimonial from '../Components/Testimonial'
+import Footer from '../Layouts/Footer'
 
 const Home = () => {
   return (
@@ -13,7 +14,7 @@ const Home = () => {
       <Testimonial />
 
 
-  
+  <Footer/>
     </div>
   )
 }
