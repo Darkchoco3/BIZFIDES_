@@ -22,7 +22,7 @@ const Quote = ({ text }) => {
 
 const Testimonials = () => {
   return (
-    <div className="bg-primary text-white py-8 sm:py-12">
+    <div className="relative bg-primary text-white py-8 sm:py-12">
       <h1 className="text-center font-bold text-lg sm:text-xl">OUR Testimonials</h1>
       <h2 className="text-center text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">
         Hear From Our Satisfied Clients

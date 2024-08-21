@@ -23,7 +23,7 @@ const Navbar = () => {
           </div>
           <div
             className={`duration-500 md:static absolute bg-white md:min-h-fit min-h-[45vh] left-0 ${
-              menuOpen ? 'top-[9%]' : 'top-[-100%]'
+              menuOpen ? 'top-[12%]' : 'top-[-100%]'
             } md:w-auto w-full flex items-center px-5 z-50`}
           >
             <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 font-bold text-neutral-grey-300 py-2">
