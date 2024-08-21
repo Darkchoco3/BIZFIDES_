@@ -9,7 +9,7 @@ import CircularAnimae from './CircularAnimae'
 
 const Hero = () => {
   return (
-    <div className='relative flex flex-col-reverse md:flex-row justify-between m md:max-h-[90vh] bg-primary '>
+    <div className='relative flex flex-col-reverse md:flex-row justify-between m md:min-h-[544px] bg-primary pt-[7rem]'>
        <div className="space-y-8 md:w-[25rem] lg:w-[31.5rem] md:ml-8 lg:ml-20 text-white flex flex-col justify-center items-center md:items-start p-4 md:p-0">
         <h3 className=' font-medium text-[1.5rem] md:text-2xl lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
         <h1 className='font-bold text-2xl lg:text-6xl text-center md:text-start'>Build Your Online Presence Today.</h1>
@@ -34,7 +34,7 @@ const Hero = () => {
         {/* <CircularAnimae/> */}
 
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
 
-      <header className="bg-white lg:container ">
-        <nav className=" flex justify-between items-center w-[92%] mx-auto h-24 md:h-[7rem]">
+      <header className="bg-white lg:container fixed z-50 w-full">
+        <nav className=" flex justify-between items-center w-[92%] mx-auto  md:h-[7rem] ">
           <div>
             <img
               className="w-[84px] cursor-pointer"
@@ -48,8 +48,7 @@ const Navbar = () => {
                 </a>
               </li>
               
-            </ul>
-            
+            </ul>   
           </div>
           <div className="flex items-center gap-6 h-9">
             <button className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-primary-dark font-medium text-sm">
