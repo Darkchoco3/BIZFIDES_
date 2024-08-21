@@ -5,6 +5,7 @@ import RecentWorks from '../Components/RecentWorks'
 import Service from '../Components/Service'
 import Ambassadors from '../Components/Ambassadors'
 import Testimonial from '../Components/Testimonial'
+import Sub from '../Components/Sub'
 
 const Home = () => {
   return (
