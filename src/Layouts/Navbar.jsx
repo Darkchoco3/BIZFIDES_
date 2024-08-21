@@ -11,7 +11,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="font-[inter] bg-gradient-to-t from-[#fbc2eb] to-[#a6c1ee] h-screen">
+    
       <header className="bg-white lg:container">
         <nav className=" flex justify-between items-center w-[92%] mx-auto h-20 md:h-[7rem]">
           <div>
@@ -64,7 +64,7 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
-    </div>
+   
   );
 };
 

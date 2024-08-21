@@ -19,6 +19,7 @@ export default {
       'neutral-black': 'hsla(0, 0%, 17%, 1)',
       'white':'hsla(0, 0%, 100%, 1)',
       'primary-dark':'hsla(234, 66%, 15%, 1)',
+      'transparents': 'hsla(0, 0%, 0%, 0)'
     },
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
