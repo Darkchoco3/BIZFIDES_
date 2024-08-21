@@ -11,9 +11,9 @@ const Navbar = () => {
   };
 
   return (
-    
-      <header className="bg-white lg:container">
-        <nav className=" flex justify-between items-center w-[92%] mx-auto h-20 md:h-[7rem]">
+
+      <header className="bg-white lg:container ">
+        <nav className=" flex justify-between items-center w-[92%] mx-auto h-24 md:h-[7rem]">
           <div>
             <img
               className="w-[84px] cursor-pointer"
@@ -23,8 +23,8 @@ const Navbar = () => {
           </div>
           <div
             className={`duration-500 md:static absolute bg-white md:min-h-fit min-h-[45vh] left-0 ${
-              menuOpen ? 'top-[11%]' : 'top-[-100%]'
-            } md:w-auto w-full flex items-center px-5`}
+              menuOpen ? 'top-[9%]' : 'top-[-100%]'
+            } md:w-auto w-full flex items-center px-5 z-50`}
           >
             <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 font-bold text-neutral-grey-300 py-2">
               <li>

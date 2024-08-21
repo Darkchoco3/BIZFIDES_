@@ -1,70 +1,32 @@
 import React from 'react'
-// import Heptagon from '../'
+import Polygon1 from '../assets/Polygon 1.png'
+import Polygon2 from '../assets/Polygon 2.png'
+import People from '../assets/male and female hero.svg'
+import Animation from '../assets/Animatiion.svg'
 import CircularAnimae from './CircularAnimae'
 
 
 const Hero = () => {
   return (
-    <div className='flex justify-between h-[80vh] bg-primary py-24'>
-       <div className="space-y-8 w-[35rem] ml-20 text-white">
-        <h3 className=' font-medium text-[1.75rem]'>Small Business. Big Impact.</h3>
-        <q className='font-bold text-6xl'>Build Your Online Presence Today.</q>
-        <button className='py-3.5 px-16 bg-secondary rounded-[10px] font-medium text-center hover:bg-primary-dark'>Get Started</button>
+    <div className='flex flex-col-reverse md:flex-row justify-between md:max-h-[90vh] bg-primary '>
+       <div className="space-y-8 w-[31.5rem] md:w-[25rem] lg:w-[31.5rem] min-h-[60vh] md:h-auto md:ml-8 lg:ml-20 text-white flex flex-col justify-center items-center md:items-start">
+        <h3 className=' font-medium text-[1.75rem] md:text-2xl lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
+        <h1 className='font-bold text-3xl lg:text-6xl text-center md:text-start'>Build Your Online Presence Today.</h1>
+        <button className='w-60 py-3.5 px-16 bg-secondary rounded-[10px] font-medium text-center hover:bg-primary-dark'>Get Started</button>
        </div>
-       <div className="">
-       {/* <div class="relative w-64 h-64">
-  <div class="absolute inset-0 bg-[#131A4A] custom-heptagon"></div>
-</div> */}
-{/* <div class="relative w-64 h-64 mx-auto"> */}
-  {/* <!-- Heptagon 1/4 --> */}
-  {/* <div class="absolute w-full h-full bg-primary-dark clip-heptagon transform rotate-0 "></div> */}
-  
-  {/* <!-- Heptagon 2/4 --> */}
-  {/* <div class="absolute w-full h-full bg-primary-dark clip-heptagon transform rotate-90"></div> */}
-  
-  {/* <!-- Heptagon 3/4 --> */}
-  {/* <div class="absolute w-full h-full bg-primary-dark clip-heptagon transform rotate-180"></div> */}
-  
-  {/* <!-- Heptagon 4/4 --> */}
-  {/* <div class="absolute w-full h-full bg-primary-dark clip-heptagon transform rotate-270"></div> */}
-{/* </div> */}
-{/* <div class="relative w-64 h-64 mx-auto"> */}
-  {/* <!-- Heptagon Part 1 --> */}
-  {/* <div className="absolute w-full h-full clip-heptagon bg-primary-dark" style={{clipPath: 'polygon(50% 0%, 90% 20%, 75% 100%, 50% 100%, 50% 50%)'}}></div> */}
-
-  {/* <!-- Heptagon Part 2 --> */}
-  {/* <div className="absolute w-full h-full clip-heptagon bg-primary-dark" style={{clipPath:'polygon(50% 0%, 50% 50%, 25% 100%, 10% 20%, 50% 0%)' }}></div> */}
-
-  {/* <!-- Heptagon Part 3 --> */}
-  {/* <div className="absolute w-full h-full clip-heptagon bg-primary-dark" style={{clipPath: 'polygon(50% 50%, 25% 100%, 50% 100%, 50% 50%, 50% 100%)'}}></div> */}
-
-  {/* <!-- Heptagon Part 4 --> */}
-  {/* <div className="absolute w-full h-full clip-heptagon bg-primary-dark" style={{clipPath: 'polygon(50% 50%, 50% 100%, 75% 100%, 90% 20%, 50% 50%)'}}></div> */}
-{/* </div> */}
-{/* <div className="relative w-64 h-64 mx-auto"> */}
-      {/* Full Heptagon Shape */}
-      {/* <div
-        className="absolute inset-0"
-        style={{
-          clipPath: 'polygon(50% 0%, 85% 15%, 100% 50%, 85% 85%, 50% 100%, 15% 85%, 0% 50%, 15% 15%)',
-    //     }} */}
-    
-        {/* Top-Left Quadrant */}
-        {/* <div className="absolute inset-0 bg-secondary" style={{ clipPath: 'polygon(50% 50%, 0% 50%, 0% 0%, 50% 0%)' }}></div> */}
-
-        {/* Top-Right Quadrant */}
-        {/* <div className="absolute inset-0 bg-primary-light" style={{ clipPath: 'polygon(50% 50%, 50% 0%, 100% 0%, 100% 50%)' }}></div> */}
-
-        {/* Bottom-Left Quadrant */}
-        {/* <div className="absolute inset-0 bg-primary-dark" style={{ clipPath: 'polygon(50% 50%, 0% 50%, 0% 100%, 50% 100%)' }}></div> */}
-
-        {/* Bottom-Right Quadrant */}
-        {/* <div className="absolute inset-0 bg-neutral-grey-300" style={{ clipPath: 'polygon(50% 50%, 50% 100%, 100% 100%, 100% 50%)' }}></div>
-      </div> */}
-    {/* </div> */}
-
-    <div className="hexagon transform -rotate-90"></div>
-       </div>
+        <div className="relative min-h-[72vh] md:h-auto ">
+            <img src={Polygon2} className="w-full h-full" alt="" />
+            <div className="absolute z-10 top-[5.3rem] md:top-9 lg:top-11">
+            <img src={Polygon1} className="h-full" alt="" />
+        </div>
+        <div className="absolute z-10 top-[3.5rem] -left-8 hidden md:block">
+        <img src={Animation} className="h-[20rem] lg:h-full" alt="" />
+        </div>
+        <div className='absolute z-10 top-[9.5rem] md:top-[15.3rem] lg:top-[17rem] -left-1 md:-left-16 lg:-left-32'>
+            <img src={People} className="h-[24rem] md:h-[12rem] lg:h-full" alt="" />
+        </div>
+        </div>
+        
         {/* <CircularAnimae/> */}
 
     </div>
