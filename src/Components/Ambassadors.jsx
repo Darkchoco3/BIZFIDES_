@@ -15,7 +15,7 @@ const Ambassadors = () => {
   ];
 
   return (
-    <div className="">
+    <div className="pt-12">
       <div className="flex flex-wrap justify-center gap-8">
         {sponsor.map((a, i) => (
           <img
