@@ -1,9 +1,9 @@
 import React from "react";
-import { FaGreaterThan } from "react-icons/fa";
-import web from "../assets/web dev.svg"
-import seo from "../assets/seo.svg"
-import social from "../assets/social media.svg"
-import mobile from "../assets/mobile app.svg"
+import { IoIosArrowForward } from "react-icons/io";
+import web from "../assets/web dev.svg";
+import seo from "../assets/seo.svg";
+import social from "../assets/social media.svg";
+import mobile from "../assets/mobile app.svg";
 
 const Service = () => {
   const services = [
@@ -35,7 +35,7 @@ const Service = () => {
 
   return (
     <div className="min-h-[756px] w-full flex justify-center py-12 px-4 md:px-8 lg:px-16">
-      <div className="border-t border-[#F8F8F8] w-full max-w-[90%] flex flex-col">
+      <div className="border-t border-[#F8F8F8] w-full max-w-[95%] flex flex-col">
         <div className="text-center py-8 md:py-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
@@ -50,14 +50,18 @@ const Service = () => {
             More Service
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 justify-center">
           {services.map((service, i) => (
             <div
-              className="w-full sm:w-[277px] min-h-[480px] shadow rounded-full p-6 flex flex-col justify-between items-center"
+              className="w-full sm:w-[277px] min-h-[480px] shadow-md rounded-full p-6 flex flex-col justify-between items-center"
               key={i}
             >
               <div className="min-h-[150px] min-w-[150px] sm:min-h-[200px] sm:min-w-[200px] rounded-full">
-                <img src={service.Image} alt="services" className="h-full w-full object-cover rounded-full" />
+                <img
+                  src={service.Image}
+                  alt="services"
+                  className="h-full w-full object-cover rounded-full"
+                />
               </div>
               <div className="text-center mt-4">
                 <h3 className="text-lg md:text-xl font-semibold">
@@ -67,8 +71,8 @@ const Service = () => {
                   {service.content}
                 </p>
               </div>
-              <button className="font-bold rounded-full p-3 text-white bg-primary mt-4">
-                <FaGreaterThan />
+              <button className="font-extrabold rounded-full p-3 text-white bg-primary mt-4 hover:bg-primary-dark">
+                <IoIosArrowForward />
               </button>
             </div>
           ))}
@@ -76,6 +80,5 @@ const Service = () => {
       </div>
     </div>
   );
-  
 };
 export default Service;
