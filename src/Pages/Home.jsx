@@ -13,8 +13,6 @@ const Home = () => {
       <About/>
       <Service/>
       <Testimonial />
-
-
 <Subscribe/>
   <Footer/>
     </div>
