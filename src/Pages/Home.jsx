@@ -8,7 +8,7 @@ import Ambassadors from '../Components/Ambassadors'
 import Testimonial from '../Components/Testimonial'
 import Footer from '../Layouts/Footer'
 import Subscribe from '../Components/Subscribe'
-g
+
 
 const Home = () => {
   return (
