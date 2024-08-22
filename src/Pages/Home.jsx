@@ -12,7 +12,7 @@ import Sub from '../Components/Sub'
 
 const Home = () => {
   return (
-    <div className=''>
+    <div>
       <Hero/>
       <Ambassadors/>  
       <About/>
