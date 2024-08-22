@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
 
-    <header className="bg-white lg:container fixed top-0 left-0 right-0 w-full z-50">
+    <header className="font-inter bg-white lg:container fixed top-0 left-0 right-0 w-full z-50">
     <nav className="flex justify-between items-center w-[92%] mx-auto h-24 md:h-[7rem]">
       <div>
         <img

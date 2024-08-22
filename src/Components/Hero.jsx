@@ -9,7 +9,7 @@ import CircularAnimae from './CircularAnimae'
 
 const Hero = () => {
   return (
-    <div className='lg:container relative flex flex-col-reverse md:flex-row justify-between md:min-h-[544px] bg-primary pt-[6.6rem] md:pt-[7rem]'>
+    <div className='font-inter lg:container relative flex flex-col-reverse md:flex-row justify-between md:min-h-[544px] bg-primary pt-[6.6rem] md:pt-[7rem]'>
        <div className=" space-y-8  md:w-[25rem] lg:w-1/2 text-white flex flex-col justify-center items-center md:items-start px-4 md:pl-10 lg:pl-12 h-[25rem] md:h-auto">
         <h3 className=' font-medium text-xl  lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
         <h1 className='font-bold text-2xl lg:text-6xl text-center md:text-start'>Build Your Online Presence Today.</h1>
