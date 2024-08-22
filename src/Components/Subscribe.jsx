@@ -13,7 +13,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex justify-center items-center min-h-[40rem] bg-gray-100">
     <div className="flex flex-col md:flex-row bg-white rounded shadow-md overflow-hidden w-11/12 md:w-2/3">
       <div className="w-full md:w-1/2 p-4 flex justify-center items-center">
         <img src={mail} alt="Newsletter" className="w-full h-auto object-cover" />
@@ -45,7 +45,7 @@ const Subscribe = () => {
         </div>
         <button
           type="submit"
-          className="w-full bg-primary    
+          className="w-full bg-primary text-white
    bg-blue-700"
           >
             Subscribe
