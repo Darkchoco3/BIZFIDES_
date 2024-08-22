@@ -16,7 +16,7 @@ const Hero = () => {
         <button className='w-60 py-3.5 px-16 bg-secondary rounded-[10px] font-medium text-center hover:bg-primary-dark'>Get Started</button>
         
        </div>
-        <div className="relative h-[26.5rem] md:h-auto md:w-[50%] lg:w-auto md:-right-7">
+        <div className="relative h-[26.5rem] md:h-auto md:w-[50%] lg:w-auto lg:-right-7">
             <div className="">
             <img src={Polygon2} className="h-full w-full" alt="" />
             </div>
