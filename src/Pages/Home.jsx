@@ -17,12 +17,7 @@ const Home = () => {
       <Service/>
       <RecentWorks/>
       <Testimonials/>
-
       <OurTeam/>   
-      
-
-
-  
     </div>
   )
 }
