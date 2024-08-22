@@ -4,6 +4,7 @@ import Service from '../Components/Service'
 import Ambassadors from '../Components/Ambassadors'
 import Testimonial from '../Components/Testimonial'
 import Footer from '../Layouts/Footer'
+import Subscribe from '../Components/Subscribe'
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Testimonial />
 
 
+<Subscribe/>
   <Footer/>
     </div>
   )
