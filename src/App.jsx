@@ -1,12 +1,17 @@
 import "./App.css";
+import Navbar from "./Layouts/Navbar";
 import Home from "./Pages/Home";
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
-  );
+    <div className="">
+    <Navbar/>
+      <Home/>
+       </div>
+  )
+  
+   
+ 
 }
 
 export default App;
