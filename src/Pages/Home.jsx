@@ -8,7 +8,7 @@ import Ambassadors from '../Components/Ambassadors'
 import Testimonials from '../Components/Testimonial'
 import Footer from '../Layouts/Footer'
 import Subscribe from '../Components/Subscribe'
-
+import Sub from '../Components/Sub'
 
 const Home = () => {
   return (
@@ -17,6 +17,7 @@ const Home = () => {
       <Ambassadors/>  
       <About/>
       <Service/>
+      <Sub/>
       <RecentWorks/>
       <Testimonials/>
       <OurTeam/> 
