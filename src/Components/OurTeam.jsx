@@ -55,6 +55,8 @@ const OurTeam = () => {
           </div>
 
           <div className="hidden lg:flex gap-8">
+
+             {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}
             <a
               href="/signup"
               className="font-inter bg-primary text-white text-center text-xl hover:bg-primary-dark focus:ring transition ease-in-out rounded-[.625rem] py-[.813rem] px-[2.188rem]"
@@ -71,6 +73,8 @@ const OurTeam = () => {
         </div>
 
         <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14">
+
+          {/* Mapping through the array */}
           {teamMembers.map((member) => (
             <div
               key={member.id}
@@ -98,6 +102,8 @@ const OurTeam = () => {
           ))}
         </div>
         <div className="grid lg:hidden">
+
+           {/* Anchor tags will be changed to react-router dom Link when we set up App.jsx */}
           <a
             href="/signup"
             className="font-inter bg-primary text-white text-center text-xl hover:bg-primary-dark focus:ring transition ease-in-out rounded-[.625rem] py-[0.813rem] px-[2.188rem]"

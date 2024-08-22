@@ -67,6 +67,8 @@ const RecentWorks = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          {/* Mapping through the array */}
           {ourWorks.map((work) => (
             <RecentsCard
               key={work.id}
@@ -82,6 +84,8 @@ const RecentWorks = () => {
         </div>
 
         <div className="grid lg:flex place-content-center justify-center items-center">
+
+          {/* Anchor tags will be changed to react-router dom Link tags when we set up App.jsx */}
           <a
             href="./portfolio"
             className="bg-primary font-inter hover:bg-primary-dark focus:ring transition ease-in-out duration-150 text-white py-[.813rem] px-[4.063rem] text-center rounded-[.625rem]"
