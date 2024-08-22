@@ -18,10 +18,27 @@ export default {
       'neutral-grey-300': 'hsla(0, 0%, 42%, 1)',
       'neutral-black': 'hsla(0, 0%, 17%, 1)',
       'white':'hsla(0, 0%, 100%, 1)',
+      'primary-dark':'hsla(234, 66%, 15%, 1)',
+      'transparents': 'hsla(0, 0%, 0%, 0)'
     },
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],
       inter: ['Inter', 'sans-serif'],
+    },
+    animation: {
+      'spin-slow': 'spin 20s linear infinite',
+      'slide-left': 'slideLeft 4s ease-in-out infinite',
+      'slide-right': 'slideRight 4s ease-in-out infinite',
+    },
+    keyframes: {
+      slideLeft: {
+        '0%, 100%': { transform: 'translateX(0)' },
+        '50%': { transform: 'translateX(-15px)' },
+      },
+      slideRight: {
+        '0%, 100%': { transform: 'translateX(0)' },
+        '50%': { transform: 'translateX(15px)' },
+      },
     },
     extend: {},
   },
