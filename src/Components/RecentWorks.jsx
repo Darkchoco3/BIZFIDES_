@@ -81,7 +81,7 @@ const RecentWorks = () => {
           ))}
         </div>
 
-        <div className=" grid lg:flex place-content-center justify-center items-center">
+        <div className="grid lg:flex place-content-center justify-center items-center">
           <a
             href="./portfolio"
             className="bg-primary font-inter hover:bg-primary-dark focus:ring transition ease-in-out duration-150 text-white py-[.813rem] px-[4.063rem] text-center rounded-[.625rem]"
