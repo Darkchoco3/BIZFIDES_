@@ -9,26 +9,28 @@ import CircularAnimae from './CircularAnimae'
 
 const Hero = () => {
   return (
-    <div className='relative flex flex-col-reverse md:flex-row justify-between m md:min-h-[544px] bg-primary pt-[7rem]'>
-       <div className="space-y-8 md:w-[25rem] lg:w-[31.5rem] md:ml-8 lg:ml-20 text-white flex flex-col justify-center items-center md:items-start p-4 md:p-0">
-        <h3 className=' font-medium text-[1.5rem] md:text-2xl lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
+    <div className='relative flex flex-col-reverse md:flex-row justify-between md:min-h-[544px] bg-primary pt-[6.6rem] md:pt-[7rem]'>
+       <div className=" space-y-8  md:w-[25rem] lg:w-1/2 text-white flex flex-col justify-center items-center md:items-start px-4 md:pl-10 lg:pl-20 h-[25rem] md:h-auto">
+        <h3 className=' font-medium text-xl  lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
         <h1 className='font-bold text-2xl lg:text-6xl text-center md:text-start'>Build Your Online Presence Today.</h1>
         <button className='w-60 py-3.5 px-16 bg-secondary rounded-[10px] font-medium text-center hover:bg-primary-dark'>Get Started</button>
         
        </div>
-        <div className="relative h-[60vh] md:h-auto ">
-            <img src={Polygon2} className="h-full w-full object-cover" alt="" />
-            <div className="absolute z-10 top-[4.8rem] md:top-9 lg:top-11 -right-2">
+        <div className="relative h-[26.5rem] md:h-auto md:w-[50%] lg:w-auto">
+            <div className="">
+            <img src={Polygon2} className="h-full w-full" alt="" />
+            </div>
+            <div className="absolute z-10 top-[4.5rem] md:top-[4.3rem] lg:top-[3.4rem] md:-right-1">
             <img src={Polygon1} className="h-full w-full" alt="" />
         </div>
-        <div className="absolute z-10 top-[3.5rem] -left-8 hidden md:block">
+        <div className="absolute z-10 md:top-[4.5rem] lg:top-[4rem] -left-6 hidden md:block">
         <img src={Animation} className="h-[20rem] lg:h-full" alt="" />
         </div>
-        <div className='absolute z-10 top-[3.6rem] md:top-[15.3rem] lg:top-[17rem] -left-1 md:-left-16 lg:-left-32'>
-            <img src={People} className="h-[24rem] md:h-[12rem] lg:h-full" alt="" />
+        <div className='absolute z-10 top-[4.5rem] md:top-[14.7rem] lg:top-[17.5rem] -left-1 md:-left-24 lg:-left-28'>
+            <img src={People} className="h-[22rem] md:h-[12.5rem] lg:h-full" alt="" />
         </div>
         </div>
-        <div className='absolute top-[28.7rem] left-20 hidden md:block'>
+        <div className='absolute md:top-[29.3rem] lg:top-[36.3rem] md:left-12 lg:left-20'>
         <img src={Rectangle} className="" alt="" />
         </div>
         {/* <CircularAnimae/> */}

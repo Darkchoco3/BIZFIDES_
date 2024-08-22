@@ -5,6 +5,7 @@ import Service from '../Components/Service'
 import Ambassadors from '../Components/Ambassadors'
 import Testimonials from '../Components/Testimonial'
 
+
 const Home = () => {
   return (
     <div>
@@ -12,7 +13,7 @@ const Home = () => {
       <Ambassadors/>  
       <About/>
       <Service/>
-      {/* <Testimonials/> */}
+      <Testimonials/>
     </div>
   )
 }
