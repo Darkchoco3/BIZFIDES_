@@ -39,7 +39,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container w-[92%]">
         <div className="lg:flex lg:justify-between lg:items-center">
           <div className="grid gap-1 md:gap-3 lg:gap-4 my-4">
             <h5 className="text-xl font-inter text-primary font-semibold text-center lg:text-start">
