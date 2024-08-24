@@ -1,5 +1,4 @@
 import React from "react";
-import fitZoneApp from "../assets/toy store.svg";
 
 const RecentsCard = ({
   image,
@@ -12,7 +11,7 @@ const RecentsCard = ({
 }) => {
   return (
     <>
-      <div className="w-full min-h-[24.375rem] shadow rounded-[6.25rem] p-4 flex flex-col lg:flex-row gap-2 items-center">
+      <div className="w-full min-h-[22rem] shadow rounded-[6.25rem] p-4 flex flex-col lg:flex-row gap-2 items-center">
         <div className="flex-1">
 
            {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}

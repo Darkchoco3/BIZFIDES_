@@ -19,8 +19,8 @@ const Home = () => {
       <Service/>
       <Sub/>
       <RecentWorks/>
-      <Testimonials/>
       <OurTeam/> 
+      <Testimonials/>
       <Subscribe/>
       <Footer/>  
       
