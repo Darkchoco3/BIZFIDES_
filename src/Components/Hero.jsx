@@ -12,10 +12,10 @@ const Hero = () => {
   return (
     <div className='bg-primary md:min-h-[544px] pt-[6.6rem] md:pt-[7rem]'>
        <div className="lg:container max-w-[77.5rem] relative flex flex-col lg:flex-row justify-between">
-       <div className=" space-y-8  md:w-[25rem] lg:w-1/2 text-white flex flex-col justify-center items-center md:items-start h-[25rem] md:h-auto">
-        <h3 className=' font-medium text-xl  lg:text-[1.75rem]'>Small Business. Big Impact.</h3>
-        <h1 className='font-bold text-2xl lg:text-6xl text-center md:text-start'>Build Your Online Presence Today.</h1>
-        <button className='w-60 py-3.5 px-16 bg-secondary rounded-[10px] font-medium text-center hover:bg-primary-dark'>Get Started</button>
+       <div className=" space-y-8  md:w-[25rem] lg:w-1/2  flex flex-col justify-center items-center md:items-start h-[25rem] md:h-auto">
+        <h3 className=' font-medium font-roboto text-xl lg:text-[1.75rem] text-white'>Small Business. Big Impact.</h3>
+        <h1 className='font-bold font-roboto text-2xl lg:text-6xl text-center md:text-start text-primary-light'>Build Your Online Presence Today.</h1>
+        <button className='font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 text-xl'>Get Started</button>
        
        </div>
         <div className="relative h-[26.5rem] md:h-auto md:w-[50%] lg:w-auto lg:-right-7">
