@@ -34,7 +34,7 @@ const Quote = ({ text }) => {
 
 const Testimonials = () => {
   return (
-    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16">
+    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 max-w-[77.5rem] ">
       <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl">OUR Testimonials</h1>
       <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
         Hear From Our Satisfied Clients
