@@ -37,10 +37,3 @@ const Ambassadors = () => {
 
 export default Ambassadors;
 
-const DottedPattern = () => {
-  return (
-    <>
-      <div className="border-t-[3px] border-dotted border-black w-20"></div>
-    </>
-  );
-};
