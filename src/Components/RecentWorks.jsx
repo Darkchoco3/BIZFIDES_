@@ -56,7 +56,7 @@ const RecentWorks = () => {
 
   return (
     <>
-      <div className="container py-8 grid gap-8 lg:gap-12 w-[92%]">
+      <div className="container grid gap-8 lg:gap-12 max-w-[77.5rem]">
         <div className="text-center">
           <h5 className="text-xl md:text-xl text-primary font-inter font-semibold">
             OUR WORK
