@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
 
-    <header className="font-inter bg-white lg:container fixed top-0 left-0 right-0 w-full z-50">
-    <nav className="flex justify-between items-center w-[92%] mx-auto h-24 md:h-[7rem]">
+    <header className="font-inter bg-white lg:container w-[77.5rem]  fixed top-0 left-0 right-0 z-50">
+    <nav className="flex justify-between items-center mx-auto h-24 md:h-[7rem]">
       <div>
         <img
           className="w-[84px] cursor-pointer"
