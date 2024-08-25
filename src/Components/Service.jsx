@@ -38,7 +38,7 @@ const Service = () => {
     <div className="container mx-auto"> 
     <div className="min-h-[756px] w-full flex justify-center px-4 md:px-8 lg:px-16 ">
       <div className="border-t border-[#F8F8F8] w-full max-w-[95%] flex flex-col">
-        <div className="text-center py-8 md:py-12">
+        <div className="text-center py- md:py-0 md:pb-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
