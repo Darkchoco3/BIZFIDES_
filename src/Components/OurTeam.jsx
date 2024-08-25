@@ -87,12 +87,12 @@ const OurTeam = () => {
           ))}
         </div>
 
-        <div className="grid md:inline-block md:items-center md:justify-center lg:hidden">
+        <div className="grid md:flex md:items-center md:justify-center lg:hidden">
 
           {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}
           <a
             href="/signup"
-            className="font-inter bg-primary text-white text-center text-xl hover:bg-primary-dark focus:ring transition ease-in-out rounded-[.625rem] py-[0.813rem] px-[2.188rem]"
+            className="font-inter bg-primary text-white text-center text-xl hover:bg-primary-dark focus:ring transition ease-in-out rounded-[.625rem] py-[0.813rem] px-[2.188rem] md:px-14"
           >
             Start With Us
           </a>
