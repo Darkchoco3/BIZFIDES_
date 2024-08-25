@@ -26,7 +26,7 @@ const Ambassadors = () => {
           />
         ))}
       </div>
-      <div className="">
+      {/* <div className="">
         <div className="hidden lg:flex flex-col gap-[2px] items-end -rotate-[4deg] px-24 scale-100">
           <DottedPattern />
           <DottedPattern />
@@ -43,7 +43,7 @@ const Ambassadors = () => {
           <DottedPattern />
           <DottedPattern />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

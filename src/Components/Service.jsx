@@ -34,9 +34,9 @@ const Service = () => {
   ];
 
   return (
-    <div className="min-h-[756px] max-w-[77.5rem] lg:container flex justify-center">
-      <div className="border-t border-[#F8F8F8]  flex flex-col">
-        <div className="text-center py-8 md:py-12">
+    <div className="min-h-[756px] max-w-[77.5rem] lg:container  flex justify-center">
+      <div className="border-t border-[#F8F8F8]  flex flex-col ">
+        <div className="text-center py-8 lg:py-0 md:pb-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
@@ -50,7 +50,7 @@ const Service = () => {
             More Service
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 justify-center">
           {services.map((service, i) => (
             <div
               className="w-full sm:w-[277px] min-h-[480px] shadow-md rounded-full p-6 flex flex-col justify-between items-center"
