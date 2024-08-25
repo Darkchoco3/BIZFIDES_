@@ -54,7 +54,7 @@ const RecentWorks = () => {
 
   return (
     <>
-      <div className="container max-w-[77.5rem] grid gap-8 lg:gap-12 ">
+      <div className="container grid gap-8 lg:gap-12 max-w-[77.5rem]">
         <div className="text-center">
           <h5 className="text-xl md:text-xl text-primary font-inter font-semibold">
             OUR WORK
