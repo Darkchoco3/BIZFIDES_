@@ -1,11 +1,12 @@
 import React from 'react'
-import image1 from '../assets/dot rectngle.svg'
+import image1 from '../assets/Group 2008.svg'
 
 
 const Sub = () => {
   return (
    
-    <div className="bg-primary p-2  ">
+    <div className="bg-primary  ">
+    <div className="max-w-[77.5rem] container">
     <div className="text-white text-center p-6">
         <h2 className="text-lg font-medium p-4  ">Build Process</h2>
         <h1 className="text-2xl font-bold">How it Works</h1>
@@ -54,9 +55,10 @@ const Sub = () => {
     </div>
   
 </div>
-<div className="flex  items-center p-4 flex-shrink-0 ">
-    <img src={image1} alt="" className='filter invert h-auto'/>
+<div className="flex  items-center flex-shrink-0 ">
+    <img src={image1} alt="" className=' h-auto'/>
 </div>
+    </div>
 
 
 
