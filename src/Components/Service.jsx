@@ -48,7 +48,7 @@ const Service = () => {
           <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
             Unlocking business potential with our key services:
           </p>
-          <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg">
+          <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full">
             More Service
           </button>
         </div>
@@ -85,6 +85,9 @@ const Service = () => {
     <div className="lg:flex justify-end hidden">
           <img src={dot} alt="" />
     </div>
+    <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full">
+            More Service
+          </button>
     </div>
 
   );
