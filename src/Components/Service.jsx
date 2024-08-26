@@ -34,9 +34,9 @@ const Service = () => {
   ];
 
   return (
-    <div className="min-h-[756px] max-w-[77.5rem] lg:container  flex justify-center">
+    <div className="min-h-[756px] max-w-[77.5rem] container  flex justify-center">
       <div className="border-t border-[#F8F8F8]  flex flex-col ">
-        <div className="text-center py-8 lg:py-0 md:pb-12">
+        <div className="text-center py-8 lg:pb-8 md:pb-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
