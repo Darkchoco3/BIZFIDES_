@@ -65,7 +65,7 @@ const Testimonials = () => {
 
   return (
     <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 px-4">
-      <div className="max-w-[77.5rem] lg:container">
+      <div className="max-w-[77.5rem] container">
       <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl">OUR Testimonials</h1>
       <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
         Hear From Our Satisfied Clients

@@ -6,7 +6,7 @@ const Sub = () => {
   return (
    
     <div className="bg-primary  ">
-    <div className="max-w-[77.5rem] lg:container">
+    <div className="max-w-[77.5rem] container">
     <div className="text-white text-center p-6">
         <h2 className="text-lg font-medium p-4  ">Build Process</h2>
         <h1 className="text-2xl font-bold">How it Works</h1>

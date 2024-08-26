@@ -4,7 +4,7 @@ import about from "../assets/aboutimage1.jpeg";
 
 const About = () => {
   return (
-    <div className="max-w-[77.5rem] lg:container border-t border-[#F8F8F8] h-auto lg:min-h-[45rem] flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-12 lg:gap-0 px-6 md:px-12 lg:px-24  font-inter">
+    <div className="max-w-[77.5rem] container border-t border-[#F8F8F8] h-auto lg:min-h-[45rem] flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-12 lg:gap-0 px-6 md:px-12 lg:px-24  font-inter">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
         <div className="w-full max-w-[20rem] sm:max-w-[27rem] relative h-[20rem] sm:h-[29rem]">
           <div className="h-full w-2/3 bg-[#E6F6F6] absolute rounded-[45%] left-0"></div>
