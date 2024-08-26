@@ -4,6 +4,7 @@ import amb2 from "../assets/my business.svg";
 import amb3 from "../assets/riseup.svg";
 import amb4 from "../assets/glycon.svg";
 import amb5 from "../assets/sponsor1.svg";
+import dot from '../assets/Group 2008.png'
 
 const Ambassadors = () => {
   const sponsor = [
@@ -11,49 +12,28 @@ const Ambassadors = () => {
     { img: amb4 },
     { img: amb3 },
     { img: amb1 },
-    { img: amb2 },
+    { img: amb5 },
+    { img: amb3 },
   ];
 
   return (
-    <div className="pt-12 max-w-[77.5rem] container">
-      <div className="flex flex-wrap justify-center gap-8">
+    <div className="pt-12 container mx-auto ">
+      <div className="flex  justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
         {sponsor.map((a, i) => (
           <img
             src={a.img}
             key={i}
-            className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
+            className="min-w-[2rem] md:min-w-[4rem] lg:min-w-[9rem]"
             alt={`Sponsor ${i + 1}`}
           />
         ))}
       </div>
-      {/* <div className="">
-        <div className="hidden lg:flex flex-col gap-[2px] items-end -rotate-[4deg] px-24 scale-100">
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-        </div>
-        <div className="hidden lg:flex flex-col gap-[2px] w-full items-end -rotate-2 px-8">
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-          <DottedPattern />
-        </div>
-      </div> */}
+      <div className="lg:flex justify-end hidden ">
+       <img src={dot} alt="" />
+      </div>
     </div>
   );
 };
 
 export default Ambassadors;
 
-const DottedPattern = () => {
-  return (
-    <>
-      <div className="border-t-[3px] border-dotted border-black w-20"></div>
-    </>
-  );
-};

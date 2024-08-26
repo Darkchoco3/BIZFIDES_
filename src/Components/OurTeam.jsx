@@ -49,7 +49,7 @@ const OurTeam = () => {
             <h3 className="text-2xl md:text-[2.5rem] font-roboto text-primary-dark font-bold text-center lg:text-start">
               Meet Our Professional Team
             </h3>
-            <p className="text-base font-inter text-neutral-grey-300 text-center lg:text-start leading-snug md:text-xl lg:text-base lg:max-w-[48ch]">
+            <p className="text-base font-inter text-neutral-grey-300 text-center lg:text-start leading-snug md:text-xl lg:text-base lg:max-w-[45ch] pb-9">
               Empowering businesses with innovative solutions, our recent works
               include
             </p>
