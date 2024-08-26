@@ -4,6 +4,7 @@ import web from "../assets/web dev.svg";
 import seo from "../assets/seo.svg";
 import social from "../assets/social media.svg";
 import mobile from "../assets/mobile app.svg";
+import dot from '../assets/Group 2010.png'
 
 const Service = () => {
   const services = [
@@ -34,9 +35,10 @@ const Service = () => {
   ];
 
   return (
-    <div className="min-h-[756px] max-w-[77.5rem] container  flex justify-center">
-      <div className="border-t border-[#F8F8F8]  flex flex-col ">
-        <div className="text-center py-8 lg:py-0 md:pb-12">
+    <div className="container mx-auto"> 
+    <div className="min-h-[756px] w-full flex justify-center px-4 md:px-8 lg:px-16 ">
+      <div className="border-t border-[#F8F8F8] w-full max-w-[95%] flex flex-col">
+        <div className="text-center py- md:py-0 md:pb-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
@@ -53,8 +55,9 @@ const Service = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 justify-center">
           {services.map((service, i) => (
             <div
-              className="w-full sm:w-[277px] min-h-[480px] shadow-md rounded-full p-6 flex flex-col justify-between items-center"
-              key={i}
+              className="w-full sm:w-[277px] min-h-[480px] shadow-xl rounded-full py-4 px-2 flex flex-col justify-between items-center"
+             style={{  boxShadow: `0px 0px 12px 8px rgba(0, 0, 0, 0.02)`
+             }} key={i}
             >
               <div className="min-h-[150px] min-w-[150px] sm:min-h-[200px] sm:min-w-[200px] rounded-full">
                 <img
@@ -64,7 +67,7 @@ const Service = () => {
                 />
               </div>
               <div className="text-center mt-4">
-                <h3 className="text-lg md:text-xl font-semibold">
+                <h3 className="text-lg md:text-xl font-semibold font-inter">
                   {service.title}
                 </h3>
                 <p className="text-sm text-neutral-grey-300 mt-2">
@@ -79,6 +82,11 @@ const Service = () => {
         </div>
       </div>
     </div>
+    <div className="lg:flex justify-end hidden">
+          <img src={dot} alt="" />
+    </div>
+    </div>
+
   );
 };
 export default Service;
