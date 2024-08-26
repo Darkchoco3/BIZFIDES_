@@ -35,10 +35,10 @@ const Service = () => {
   ];
 
   return (
-    <div className="container mx-auto"> 
-    <div className="min-h-[756px] w-full flex justify-center px-4 md:px-8 lg:px-16 ">
-      <div className="border-t border-[#F8F8F8] w-full max-w-[95%] flex flex-col">
-        <div className="text-center py- md:py-0 md:pb-12">
+    <div className="container mx-auto pt-[50px]"> 
+    <div className="w-full flex justify-center px-4 md:px-8 lg:px-0 ">
+      <div className="border-t border-[#F8F8F8] w-full max-w-[77.5rem] flex flex-col pb-[50px]">
+        <div className="text-center pb-6 lg:pb-0">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
@@ -52,12 +52,11 @@ const Service = () => {
             More Service
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[3.125rem] justify-center">
           {services.map((service, i) => (
             <div
-              className="w-full sm:w-[277px] min-h-[480px] shadow-xl rounded-full py-4 px-2 flex flex-col justify-between items-center"
-             style={{  boxShadow: `0px 0px 12px 8px rgba(0, 0, 0, 0.02)`
-             }} key={i}
+              className="w-full sm:w-[277px] min-h-[480px] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] rounded-full py-4 px-2 flex flex-col justify-between items-center border border-neutral-grey-100"
+             key={i}
             >
               <div className="min-h-[150px] min-w-[150px] sm:min-h-[200px] sm:min-w-[200px] rounded-full">
                 <img

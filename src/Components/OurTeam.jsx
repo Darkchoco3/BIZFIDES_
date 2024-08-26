@@ -40,16 +40,16 @@ const OurTeam = () => {
 
   return (
     <>
-      <div className="container max-w-[77.5rem]">
-        <div className="lg:flex lg:justify-between lg:items-center">
-          <div className="grid gap-1 md:gap-3 lg:gap-4 my-4">
+      <div className="container max-w-[77.5rem] py-[3.125rem]">
+        <div className="lg:flex lg:justify-between lg:items-center pb-[3.375rem] ">
+          <div className="grid gap-1 md:gap-3 lg:gap-4">
             <h5 className="text-xl font-inter text-primary font-semibold text-center lg:text-start">
               OUR TEAM
             </h5>
             <h3 className="text-2xl md:text-[2.5rem] font-roboto text-primary-dark font-bold text-center lg:text-start">
               Meet Our Professional Team
             </h3>
-            <p className="text-base font-inter text-neutral-grey-300 text-center lg:text-start leading-snug md:text-xl lg:text-base lg:max-w-[45ch] pb-9">
+            <p className="text-base font-inter text-neutral-grey-300 text-center lg:text-start leading-snug md:text-xl lg:text-base lg:max-w-[45ch]">
               Empowering businesses with innovative solutions, our recent works
               include
             </p>
@@ -73,7 +73,7 @@ const OurTeam = () => {
           </div>
         </div>
 
-        <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:gap-16">
 
           {/* Mapping through the array */}
           {teamMembers.map((member) => (
