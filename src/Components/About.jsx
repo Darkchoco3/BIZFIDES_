@@ -5,7 +5,7 @@ import about from "../assets/AboutGroup.png";
 
 const About = () => {
   return (
-    <div className="container mx-auto border-t max-w-[1240px] border-[#F8F8F8] h-auto lg:min-h-[45rem] w-full flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-[109px] px-6 md:px-12 lg:px-auto py-4 lg:py-0 font-inter">
+    <div className="container mx-auto border-t max-w-[1240px] border-[#F8F8F8] h-auto  w-full flex flex-col lg:flex-row items-center gap-8 md:gap-12 lg:gap-[109px] px-6 md:px-12 lg:px-auto py-4 lg:py-[50px] font-inter">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
         <div className="w-full max-h-[284px] max-w-[284px] lg:max-h-[628px] lg:max-w-[630px]">
           <img src={about} />

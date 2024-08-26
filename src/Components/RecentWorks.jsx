@@ -1,7 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import RecentsCard from "./RecentsCard";
-import Button from "../Components/Button";
+import RecentsCard from "./Cards/RecentsCard.jsx";
 import toystoreimage from "../assets/toy store.svg";
 import webstoreimage from "../assets/fashion store.svg";
 import gadgetstoreimage from "../assets/gadget store.svg";
@@ -56,7 +54,7 @@ const RecentWorks = () => {
 
   return (
     <>
-      <div className="container grid gap-8 lg:gap-12 max-w-[77.5rem]">
+      <div className="container max-w-[77.5rem] grid gap-8 lg:gap-12 ">
         <div className="text-center">
           <h5 className="text-xl md:text-xl text-primary font-inter font-semibold">
             OUR WORK
@@ -66,8 +64,7 @@ const RecentWorks = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Mapping through the array */}
           {ourWorks.map((work) => (
             <RecentsCard
@@ -86,12 +83,30 @@ const RecentWorks = () => {
         <div className="grid lg:flex place-content-center justify-center items-center">
 
           {/* Anchor tags will be changed to react-router dom Link tags when we set up App.jsx */}
-          <a
-            href="./portfolio"
-            className="bg-primary font-inter hover:bg-primary-dark focus:ring transition ease-in-out duration-150 text-white py-[.813rem] px-[4.063rem] text-center rounded-[.625rem]"
-          >
-            View More Works
-          </a>
+          <div className="group text-primary focus:ring transition ease-in-out duration-150">
+            <a
+              href="./portfolio"
+              className="font-inter text-base md:text-xl lg:text-base text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary"
+            >
+              View More Works
+              <span className="flex items-center">
+                <svg
+                  className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </>

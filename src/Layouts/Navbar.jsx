@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
 
-    <header className="bg-white  fixed top-0 left-0 right-0  z-50">
-    <nav className="flex justify-between items-center mx-auto h-24 md:h-[7rem] lg:container max-w-[77.5rem]">
+    <header className="bg-white  fixed top-0 left-0 right-0  z-50 font-inter">
+    <nav className="flex justify-between items-center h-24 md:h-[7rem] lg:container max-w-[77.5rem] px-4">
       <a>
         <img
           className="w-[84px] cursor-pointer"
@@ -24,9 +24,9 @@ const Navbar = () => {
       <div
         className={`duration-500 md:static absolute bg-white top-0 left-0 w-full ${
           menuOpen ? 'block top-[100%]' : 'hidden top-[12%]' 
-        } md:flex md:items-center md:w-auto md:min-h-fit min-h-[40vh] flex-col md:flex-row`}
+        } md:flex md:items-center md:w-auto min-h-fit flex-col md:flex-row`}
       >
-        <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8 font-bold text-neutral-grey-300 py-2 pl-4">
+        <ul className="flex md:flex-row flex-col md:items-center lg:gap-[4vw] gap-8 md:gap-5 font-bold text-neutral-grey-300 py-2 pl-4 md:pl-0">
           <li>
             <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
               About Us
@@ -47,7 +47,7 @@ const Navbar = () => {
               Support
             </a>
           </li>
-          <div className="md:hidden flex gap-5">
+          <div className="md:hidden flex gap-5 mb-8">
           <button className=" bg-primary text-white px-12 md:px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm">
           Sign Up
         </button>

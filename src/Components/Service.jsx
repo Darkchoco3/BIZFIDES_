@@ -38,7 +38,7 @@ const Service = () => {
     <div className="container mx-auto"> 
     <div className="min-h-[756px] w-full flex justify-center px-4 md:px-8 lg:px-16 ">
       <div className="border-t border-[#F8F8F8] w-full max-w-[95%] flex flex-col">
-        <div className="text-center py-8 md:py-12">
+        <div className="text-center py- md:py-0 md:pb-12">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
           </h4>
@@ -48,11 +48,11 @@ const Service = () => {
           <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
             Unlocking business potential with our key services:
           </p>
-          <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg">
+          <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full">
             More Service
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 justify-center">
           {services.map((service, i) => (
             <div
               className="w-full sm:w-[277px] min-h-[480px] shadow-xl rounded-full py-4 px-2 flex flex-col justify-between items-center"
@@ -85,6 +85,9 @@ const Service = () => {
     <div className="lg:flex justify-end hidden">
           <img src={dot} alt="" />
     </div>
+    <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full">
+            More Service
+          </button>
     </div>
 
   );
