@@ -34,6 +34,7 @@ const TeamsCard = ({
                 </p>
               </div>
             </div>
+            
     </>
   )
 }

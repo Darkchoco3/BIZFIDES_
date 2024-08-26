@@ -64,7 +64,7 @@ const RecentWorks = () => {
           </h3>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Mapping through the array */}
           {ourWorks.map((work) => (
             <RecentsCard
@@ -86,7 +86,7 @@ const RecentWorks = () => {
           <div className="group text-primary focus:ring transition ease-in-out duration-150">
             <a
               href="./portfolio"
-              className="font-inter text-[.7rem] md:text-sm lg:text-base text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary"
+              className="font-inter text-base md:text-xl lg:text-base text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary"
             >
               View More Works
               <span className="flex items-center">
