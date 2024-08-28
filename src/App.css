@@ -1,4 +1,4 @@
-@keyframes rotate {
+/* @keyframes rotate {
     0% {
       transform: rotate(0deg);
     }
@@ -13,6 +13,5 @@
   
   .label {
     width: 100px; /* Adjust based on label size */
-    height: 30px; /* Adjust based on label size */
-  }
+    /* height: 30px; Adjust based on label size */
   

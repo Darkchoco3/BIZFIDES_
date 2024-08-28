@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
         
         {/* Content Div */}
-        <div className="relative max-w-[77.5rem] container w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center z-20">
+        <div className="relative max-w-[77.5rem] container flex flex-col lg:flex-row justify-center lg:justify-between items-center z-20">
           <div className="space-y-8 lg:w-1/2 flex flex-col justify-center items-center lg:items-start h-[25rem] lg:h-auto">
             <h3 className='font-medium font-roboto text-xl md:text-2xl lg:text-[1.75rem] text-white'>
               Small Business. Big Impact.
