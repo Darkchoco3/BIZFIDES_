@@ -47,6 +47,11 @@ const Navbar = () => {
               Support
             </a>
           </li>
+          <li>
+            <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
+              Contact Us
+            </a>
+          </li>
           <div className="lg:hidden flex gap-5 mb-8">
           <button className=" bg-primary text-white px-12 md:px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm">
           Sign Up
