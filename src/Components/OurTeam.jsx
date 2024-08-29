@@ -87,7 +87,7 @@ const OurTeam = () => {
           ))}
         </div>
 
-        <div className="grid md:flex md:items-center md:justify-center lg:hidden md:pt-10">
+        <div className="grid md:flex md:items-center md:justify-center lg:hidden pt-8 md:pt-10">
 
           {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}
           <a
