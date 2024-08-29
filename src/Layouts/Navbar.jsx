@@ -26,7 +26,7 @@ const Navbar = () => {
           menuOpen ? 'block top-[100%]' : 'hidden top-[12%]' 
         } lg:flex lg:items-center lg:w-auto min-h-fit flex-col lg:flex-row`}
       >
-        <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8 xl:gap-5 font-bold text-neutral-grey-300 py-2 pl-4 lg:pl-0">
+        <ul className="flex lg:flex-row flex-col lg:items-center lg:gap-[4vw] gap-8 xl:gap-10 font-bold text-neutral-grey-300 py-2 pl-4 lg:pl-0">
           <li>
             <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
               About Us
@@ -38,13 +38,8 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
+            <a className="hover:border-b hover:text-primary border-b-primary py-2 " href="#">
               Portfolio
-            </a>
-          </li>
-          <li>
-            <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
-              Support
             </a>
           </li>
           <li>
