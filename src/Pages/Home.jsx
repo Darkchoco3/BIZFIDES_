@@ -12,7 +12,8 @@ import Sub from '../Components/Sub'
 
 const Home = () => {
   return (
-    <div className=''>
+    
+      <div className="grid gap-[3.125rem]">
       <div className="">
       <Hero/>
       <Ambassadors/> 
@@ -20,8 +21,8 @@ const Home = () => {
       <About/>
       <Service/>
       </div>
-        </div> 
-      <div className="grid gap-[3.125rem]">
+      </div>
+      
       <Sub/>
       <RecentWorks/>
       <OurTeam/>
@@ -35,7 +36,7 @@ const Home = () => {
       
 
 
-    </div>
+   
   )
 }
 

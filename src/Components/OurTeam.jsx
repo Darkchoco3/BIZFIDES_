@@ -18,7 +18,7 @@ const OurTeam = () => {
     {
       id: 2,
       name: "Okeke Chioma",
-      role: "UI/UX Product Designer",
+      role: "Product Designer",
       image: teammemberTwo,
       number: "02",
     },
@@ -41,7 +41,7 @@ const OurTeam = () => {
   return (
     <>
       <div className="container w-11/12 py-[3.125rem]">
-        <div className="lg:flex lg:justify-between lg:items-center pb-[3.375rem] ">
+        <div className="lg:flex lg:justify-between lg:items-center pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4">
             <h5 className="text-xl font-inter text-primary font-semibold text-center lg:text-start">
               OUR TEAM
@@ -73,7 +73,7 @@ const OurTeam = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:gap-16 md:w-11/12 lg:w-full xl:w-full">
 
           {/* Mapping through the array */}
           {teamMembers.map((member) => (
@@ -87,7 +87,7 @@ const OurTeam = () => {
           ))}
         </div>
 
-        <div className="grid md:flex md:items-center md:justify-center lg:hidden">
+        <div className="grid md:flex md:items-center md:justify-center lg:hidden pt-8 md:pt-10">
 
           {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}
           <a
