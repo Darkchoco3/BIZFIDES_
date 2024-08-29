@@ -17,7 +17,7 @@ const Ambassadors = () => {
   ];
 
   return (
-    <div className="pt-[0.8125rem] container mx-auto ">
+    <div className="pt-[0.8125rem] container w-11/12 ">
       <div className="flex  justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
         {sponsor.map((a, i) => (
           <img

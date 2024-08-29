@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
 
     <header className="bg-white  fixed top-0 left-0 right-0  z-50 font-inter">
-    <nav className="flex justify-between items-center h-24 md:h-[7rem] lg:container max-w-[77.5rem] px-4">
+    <nav className="flex justify-between items-center h-24 md:h-[7rem] lg:container w-11/12 px-4">
       <a>
         <img
           className="w-[84px] cursor-pointer"

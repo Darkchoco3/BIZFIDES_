@@ -40,7 +40,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <div className="container max-w-[77.5rem] py-[3.125rem]">
+      <div className="container w-11/12 py-[3.125rem]">
         <div className="lg:flex lg:justify-between lg:items-center pb-[3.375rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4">
             <h5 className="text-xl font-inter text-primary font-semibold text-center lg:text-start">

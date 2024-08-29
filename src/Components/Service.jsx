@@ -35,9 +35,9 @@ const Service = () => {
   ];
 
   return (
-    <div className="container mx-auto pt-[50px]"> 
+    <div className="container pt-[50px] w-11/12 "> 
     <div className="w-full flex justify-center px-4 md:px-8 lg:px-0 ">
-      <div className="border-t border-[#F8F8F8] w-full max-w-[77.5rem] flex flex-col pb-[50px]">
+      <div className="border-t border-[#F8F8F8] flex flex-col pb-[50px]">
         <div className="text-center pb-6 lg:pb-0">
           <h4 className="text-lg md:text-xl font-semibold text-primary">
             OUR SERVICES
