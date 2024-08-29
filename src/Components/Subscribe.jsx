@@ -12,7 +12,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="">
+    <div className="container w-11/12">
     <div className="flex flex-col lg:flex-row  flex-1  justify-center gap-[5.375rem] py-10">
       {/* <div className="w-full md:w-1/2 p-4 flex justify-center items-center"> */}
         <img src={mail} alt="Newsletter" className=" h-auto object-cover hidden lg:block" />
