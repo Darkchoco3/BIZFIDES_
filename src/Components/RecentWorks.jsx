@@ -46,9 +46,9 @@ const RecentWorks = () => {
       title: "Mobile App",
       type: "Food Store",
       name: "Fortune Food",
-      features: "Restaurant listings, menu ordering, real-time tracking",
+      features: "Restaurant listings, menu ordering",
       outcome:
-        "4.5-star rating on the app store,20,000 downloads in the first month",
+        "4.5-star rating in the app store,20,000 downloads in the first month",
     },
   ];
 
