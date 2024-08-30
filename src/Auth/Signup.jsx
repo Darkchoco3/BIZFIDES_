@@ -1,9 +1,183 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { FcGoogle } from "react-icons/fc";
+import { Link, useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const SignUp = () => {
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
+
+  // Initialize useForm hook
+  const {
+    register, 
+    handleSubmit,
+    watch,
+    formState: { errors }, 
+  } = useForm();
+
+  // Dummy signup function
+  const signup = async (data) => {
+    console.log("Submitting form data:", data);
+    // Simulate an API call
+    return new Promise((resolve) => setTimeout(() => resolve({ error: false }), 1000));
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+      const response = await signup(data);
+      if (!response.error) {
+        // Success handling
+        // toast.success("Registration successful");
+        setTimeout(() => {
+          navigate("/home");
+        }, 5000);
+      } else {
+        // Error handling
+        // toast.error("Registration failed");
+      }
+    } catch (err) {
+      // toast.error(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
+  };
+
   return (
-    <div>Signup</div>
-  )
-}
+    <div className="min-h-screen container flex items-center justify-center">
+      <div className="bg-white rounded-lg w-full flex h-full">
+        <div className="lg:w-1/2 p-2 lg:p-12 lg:px-24 flex flex-col">
+          <h2 className="text-[28px] font-semibold text-primary lg:max-w-[484px]">
+          Grow Your Business’s Audience and Influence—<span className='text-secondary '>Create Your Account Today!</span></h2>
+          
+          {/* Form start */}
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-6">
+            <div className="flex space-x-4">
+              <div className="flex-1">
+                <label htmlFor="firstName" className="block text-lg font-medium text-gray-700">First Name</label>
+                <input
+                  type="text"
+                  {...register("firstName", { required: 'First name is required' })}
+                  className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  placeholder='Enter Name'
+                />
+                {errors.firstName && <p className="text-primary-red text-sm">{errors.firstName.message}</p>}
+              </div>
+              <div className="flex-1">
+                <label htmlFor="lastName" className="block text-lg font-medium text-gray-700 ">Last Name</label>
+                <input
+                  type="text"
+                  {...register("lastName", { required: 'Last name is required' })}
+                  className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  placeholder='Enter Name'
+                />
+                {errors.lastName && <p className="text-primary-red text-sm">{errors.lastName.message}</p>}
+              </div>
+            </div>
 
-export default Signup
+            <div>
+            <label htmlFor="phone" className="block text-lg font-medium text-gray-700">Phone</label>
+            <input
+              type="tel"
+              {...register("phone", { required: 'Phone number is required' })}
+              placeholder='Enter your phone number'
+              className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            />
+            {errors.phone && <p className="text-primary-red text-sm">{errors.phone.message}</p>}
+          </div>
+
+
+            <div>
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700">Email</label>
+              <input
+                type="email"
+                {...register("email", { required: 'Email is required' })}
+                placeholder='Enter your Email'
+                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              />
+              {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
+            </div>
+            
+            <div>
+              <label htmlFor="password" className="block text-lg font-medium text-gray-700">Password</label>
+              <input
+                type="password"
+                {...register("password", { required: 'Password is required' })}
+                placeholder='Enter your password'
+                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              />
+              {errors.password && <p className="text-primary-red text-sm">{errors.password.message}</p>}
+            </div>
+
+            <div>
+              <label htmlFor="confirmPassword" className="block text-lg font-medium text-gray-700">Confirm Password</label>
+              <input
+                type="password"
+                {...register("confirmPassword", {
+                  required: 'Please confirm your password',
+                  validate: (value) => value === watch('password') || 'Passwords do not match'
+                })}
+                placeholder='Confirm your password'
+                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              />
+              {errors.confirmPassword && <p className="text-primary-red text-sm">{errors.confirmPassword.message}</p>}
+            </div>
+
+            <div className="flex items-center">
+              <input
+                type="checkbox"
+                {...register("termsAccepted", { required: 'You must accept the terms and conditions' })}
+                className={`h-4 w-4 ${errors.termsAccepted ? 'border-red' : 'border-neutral-grey-200'} text-green-400 rounded focus:ring-green-500`}
+              />
+              <label htmlFor="termsAccepted" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
+                I agree to Bizfides <a href="#" className="text-secondary hover:text-primary-dark">Terms of Service</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy.</a>By signing up, you agree to the <a href="#" className="text-secondary hover:text-primary-dark">Bizfides Agreement</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy Policy</a>
+              </label>
+            </div>
+            {errors.termsAccepted && <p className="text-primary-red text-sm">{errors.termsAccepted.message}</p>}
+
+            <div>
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-2xl shadow-sm text-lg font-medium text-white bg-primary hover:bg-green-800"
+                disabled={loading}
+              >
+                {loading ? 'Creating an account...' : ' Sign Up' }
+              </button>
+            </div>
+          </form>
+          {/* Form end */}
+
+          <div className="text-center">
+            <p className='flex items-center gap-2 py-4'>
+              <span className='border-t border-slate-300 w-1/2' />
+              <span className="text-lg">or</span>
+              <span className='border-t border-slate-300 w-1/2' />
+            </p>
+            <button
+              className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-2xl shadow-sm text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
+              onClick={handleGoogleLogin}
+            >
+              <FcGoogle />
+              Continue with Google
+            </button>
+          </div>
+          <p className="mt-6 text-center text-lg text-gray-500">
+            Already have an account? <Link to="/" className="text-secondary hover:text-green-800">Sign in</Link>
+          </p>
+        </div>
+        <div className="login hidden lg:flex lg:w-1/2 bg-cover rounded-lg relative">
+          <div className='absolute bg-black bg-opacity-30 h-full w-full'>
+            <div className='flex items-center gap-2 p-8'>
+              <h1 className='logo'>BH</h1>
+              <p className='logo-text text-white'>BetaHouse</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;
