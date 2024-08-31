@@ -5,7 +5,7 @@ import Rectangle from '../assets/Group 2008.png';
 const ExternalHero = ({heading,paragraph,image,altText}) => {
   return (
     <>
-      <div className="bg-primary relative">
+      <section className="bg-primary relative">
         <div className="container w-11/12 flex flex-col md:flex-row items-center gap-[4.438rem]">
           <div className="font-montserrat  text-white flex-1">
             <h1 className="text-[3.75rem] font-bold">{heading}</h1>
@@ -19,7 +19,7 @@ const ExternalHero = ({heading,paragraph,image,altText}) => {
         <div className='absolute bottom-0 left-3 md:left-4 lg:left-12'>
           <img src={Rectangle} className=" object-cover" alt="Rectangle Decoration" />
         </div>
-      </div>
+      </section>
     </>
   );
 };
