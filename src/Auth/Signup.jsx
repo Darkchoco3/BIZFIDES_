@@ -52,7 +52,7 @@ const SignUp = () => {
   return (
     <>
       <div className="bg-white w-full  h-full flex max-h-[1159px]">
-        <div className="lg:w-1/2 p-2 lg:p-12 lg:px-20 flex flex-col justify-center">
+        <div className="lg:w-1/2 p-4 lg:p-12 lg:px-20 flex flex-col justify-center">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[484px]">
             Grow Your Business’s Audience and Influence—<span className='text-secondary'>Create Your Account Today!</span>
           </h2>
