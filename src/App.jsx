@@ -1,17 +1,22 @@
 import "./App.css";
 import Portfolio from "./Components/Portfolio";
+import Login from "./Auth/Login";
 import Navbar from "./Layouts/Navbar";
 import Home from "./Pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="">
-    <Navbar/>
-      {/* <Home/> */}
-      <Portfolio/>
-       </div>
-  )
-
+      <Navbar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
