@@ -1,17 +1,12 @@
-/* @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
+@keyframes spinX {
+  0% {
+    transform: rotateX(0deg);
   }
-  
-  .rotate {
-    animation: rotate 10s linear infinite;
+  100% {
+    transform: rotateX(360deg);
   }
-  
-  .label {
-    width: 100px; /* Adjust based on label size */
-    /* height: 30px; Adjust based on label size */
-  
+}
+
+.spin {
+  animation: spinX 1s ease-in-out forwards;
+}
