@@ -22,30 +22,30 @@ const RecentsCard = ({
             />
           </a>
         <div className="text-center lg:text-start flex-1 lg:py-[2.469rem]">
-          <p className="text-lg md:text-lg lg:text-2xl text-neutral-black font-inter">
+          <p className="text-lg md:text-lg lg:text-2xl xl:text-2xl 2xl:text-3xl text-neutral-black font-inter">
             {title}
           </p>
           <div className="grid gap-2">
-            <p className=" text-lg md:text-xl lg:text-2xl text-neutral-black font-inter font-bold">
+            <p className=" text-lg md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl  text-neutral-black font-inter font-bold">
               {type}
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm font-inter font-bold pt-1">
+            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter font-bold pt-1">
               {name}
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm font-inter max-w-[25ch]">
+            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch]">
               Features-
               <span className="text-neutral-grey-300">{features}</span>
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm font-inter max-w-[25ch] mb-8">
+            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch] mb-8">
               Outcome-
               <span className="text-neutral-grey-300">{outcome}</span>
             </p>
           </div>
 
           <a href="./portfolio" className="grid place-items-center lg:place-content-start">
-          <div className="group text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] w-36 ">
+          <div className="group text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] min-w-36">
             <span
-              className="font-inter text-sm text-center flex items-center gap-[.688rem] group-hover:text-secondary"
+              className="font-inter text-sm 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-secondary"
             >
               View Project
               <span className="flex items-center">
