@@ -7,9 +7,9 @@ const ExternalHero = ({heading,paragraph,image,altText}) => {
     <>
       <div className="bg-primary relative pt-28">
         <div className="container w-11/12 flex flex-col md:flex-row items-center gap-[4.438rem]">
-          <div className="font-montserrat  text-white flex-1 p-16 md:p-0">
+          <div className="font-montserrat  text-white flex-1 py-16 md:p-0">
             <h1 className="text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.75rem] 2xl:text-[6rem] font-bold text-center md:text-start pb-4 lg:pb-0">Portfolio</h1>
-            <p className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center md:text-start lg:max-w-[30ch] font-medium leading-tight">
+            <p className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center md:text-start lg:max-w-[30ch] font-medium md:leading-tight">
               Discover how we’ve helped small businesses like yours grow from
               concept to reality
             </p>
