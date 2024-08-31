@@ -1,5 +1,4 @@
 import React from "react";
-import HeroImage from "../assets/PortfolioHeroImage.svg";
 import Rectangle from '../assets/Group 2008.svg';
 
 const ExternalHero = ({heading,paragraph,image,altText}) => {
