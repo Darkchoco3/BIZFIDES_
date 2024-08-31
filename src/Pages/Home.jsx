@@ -9,7 +9,6 @@ import Testimonials from '../Components/Testimonial'
 import Footer from '../Layouts/Footer'
 import Subscribe from '../Components/Subscribe'
 import Sub from '../Components/Sub'
-import ExternalHero from '../Components/ExternalHero'
 
 const Home = () => {
   return (
@@ -25,7 +24,6 @@ const Home = () => {
       </div>
       
       <Sub/>
-      <ExternalHero/>
       <RecentWorks/>
       <OurTeam/>
       <Testimonials/>
