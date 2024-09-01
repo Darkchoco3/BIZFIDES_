@@ -40,7 +40,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <div className="container w-11/12 py-[3.125rem]">
+      <section className="container w-11/12 py-[3.125rem]">
         <div className="pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4 place-content-center">
             <h5 className="text-xl font-inter text-primary font-semibold text-center">
@@ -97,7 +97,7 @@ const OurTeam = () => {
             Start With Us
           </a>
         </div> */}
-      </div>
+      </section>
     </>
   );
 };
