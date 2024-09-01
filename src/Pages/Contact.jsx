@@ -1,0 +1,129 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import contact from "../assets/contact big.svg";
+import phone from "../assets/call-calling.svg";
+import sms from "../assets/sms.svg";
+import website from "../assets/web.svg";
+import location from "../assets/location bblu.svg";
+
+const Contact = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm();
+
+    const onSubmit = (data) => {
+        console.log(data);
+    
+    };
+
+    return (
+        <>
+            <div className="bg-primary flex flex-row justify-end items-center">
+                <div className="relative flex items-center">
+                    <img 
+                        src={contact} 
+                        alt="Contact" 
+                        className="w-[604px] h-[541px] mr-0" 
+                        style={{ left: '736px' }} 
+                    />
+                    <h1 className="absolute left-0 right-0 m-auto text-5xl font-bold text-white font-montserrat">
+                        Contact Us
+                    </h1>
+                </div>
+            </div>
+            <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white shadow-lg rounded-lg mt-8">
+                <div className="md:w-1/2 space-y-4 text-gray-700">
+                    <h2 className="text-2xl font-bold text-gray-900">Get In Touch</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa gravida felis amet.</p>
+                    <div className="flex items-center space-x-2">
+                        <img src={phone} alt="Phone" className="w-6 h-6" />
+                        <span>123456789</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <img src={sms} alt="Email" className="w-6 h-6" />
+                        <span>abcd@gmail.com</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <img src={website} alt="Website" className="w-6 h-6" />
+                        <span>www.bizfides.com</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                        <img src={location} alt="Location" className="w-6 h-6" />
+                        <span>17 Avenue, SJK street, Lagos.</span>
+                    </div>
+                </div>
+                <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2 mt-8 md:mt-0 space-y-4">
+                    <div className="flex flex-col">
+                        <label htmlFor="name" className="text-sm font-semibold text-gray-700">
+                            Name<span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            id="name"
+                            {...register('name', { required: 'Name is required' })}
+                            placeholder="Your Name"
+                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        />
+                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label htmlFor="email" className="text-sm font-semibold text-gray-700">
+                            Email<span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            id="email"
+                            {...register('email', {
+                                required: 'Email is required',
+                                pattern: {
+                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                    message: 'Invalid email address',
+                                },
+                            })}
+                            placeholder="Your Email"
+                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        />
+                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label htmlFor="subject" className="text-sm font-semibold text-gray-700">
+                            Subject<span className="text-red-500">*</span>
+                        </label>
+                        <input
+                            id="subject"
+                            {...register('subject', { required: 'Subject is required' })}
+                            placeholder="Your Subject"
+                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        />
+                        {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>}
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label htmlFor="message" className="text-sm font-semibold text-gray-700">
+                            Message<span className="text-red-500">*</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            {...register('message', { required: 'Message is required' })}
+                            placeholder="Your Message"
+                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                            rows="4"
+                        />
+                        {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full py-2 px-4 bg-primary text-white font-inter rounded-lg font-medium hover:bg-primary focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    >
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </>
+    );
+};
+
+export default Contact;
