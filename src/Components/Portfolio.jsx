@@ -79,16 +79,50 @@ const Portfolio = () => {
     });
   };
 
+  const [itemsPerPage, setItemsPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
+
+  useEffect(() => {
+    // Media queries to determine items per page
+    const smallScreen = window.matchMedia("(max-width: 767px)");
+    const mediumScreen = window.matchMedia("(min-width: 768px) and (max-width: 1199px)");
+    const largeScreen = window.matchMedia("(min-width: 1200px)");
+
+    const updateItemsPerPage = () => {
+      if (smallScreen.matches) {
+        setItemsPerPage(3);
+      } else if (mediumScreen.matches) {
+        setItemsPerPage(4);
+      } else if (largeScreen.matches) {
+        setItemsPerPage(6);
+      }
+    };
+
+    // Initial check
+    updateItemsPerPage();
+
+    // Listen to screen size changes
+    smallScreen.addListener(updateItemsPerPage);
+    mediumScreen.addListener(updateItemsPerPage);
+    largeScreen.addListener(updateItemsPerPage);
+
+    // Cleanup listeners on unmount
+    return () => {
+      smallScreen.removeListener(updateItemsPerPage);
+      mediumScreen.removeListener(updateItemsPerPage);
+      largeScreen.removeListener(updateItemsPerPage);
+    };
+  }, []);
 
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = ourWorks.slice(indexOfFirstItem, indexOfLastItem);;
-  
+  const currentItems = ourWorks.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Portfolio Page rendering
   return (
     <>
       <div className="grid gap-10 lg:gap-20">
+        {/* Hero Section */}
         <ExternalHero
           heading={"Portfolio"}
           paragraph={
@@ -98,6 +132,7 @@ const Portfolio = () => {
           altText={"Portfolio Image"}
         />
 
+        {/* Our Statistics section */}
         <section className="container w-11/12">
           <div className="bg-primary rounded-2xl" ref={statsRef}>
             <div className="p-[2rem] flex flex-col md:flex-row text-center justify-between">
@@ -166,10 +201,13 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Our Recent Works section*/}
         <section className="container w-11/12">
-          <div className="">
-            <h3 className="text-center">Our Recent Works</h3>
-            <p className="text-center">
+          <div className="grid gap-[2rem]">
+            <h3 className="text-center text-primary-dark font-roboto md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
+              Our Recent Works
+            </h3>
+            <p className="text-center text-neutral-grey-300 font-inter md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[80ch] pb-[4.063rem]">
               Welcome to Bizfides, where we take pride in our impressive
               performance metrics. With a relentless commitment to innovation
               and customer satisfaction, our user base has grown exponentially,
@@ -178,47 +216,49 @@ const Portfolio = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[5rem]">
-          {currentItems.map((work, index) => (
-              <RecentsCard  key={work.id}
-              image={work.image}
-              altText={work.altText}
-              title={work.title}
-              type={work.type}
-              name={work.name}
-              features={work.features}
-              outcome={work.outcome} />
-            
-          ))}
+            {currentItems.map((work, index) => (
+              <RecentsCard
+                key={work.id}
+                image={work.image}
+                altText={work.altText}
+                title={work.title}
+                type={work.type}
+                name={work.name}
+                features={work.features}
+                outcome={work.outcome}
+              />
+            ))}
           </div>
           <Pagination
-          itemsPerPage={itemsPerPage} 
-          totalItems={ourWorks.length} 
-          paginate={(pageNumber) => setCurrentPage(pageNumber)} 
-          currentPage={currentPage}
+            itemsPerPage={itemsPerPage}
+            totalItems={ourWorks.length}
+            paginate={(pageNumber) => setCurrentPage(pageNumber)}
+            currentPage={currentPage}
           />
         </section>
 
+        {/* Our Services section*/}
         <section className="bg-primary-light">
-          <div className=" container w-11/12 flex flex-col md:flex-row gap-[11.375rem]">
+          <div className=" container w-11/12 flex flex-col md:flex-row md:gap-[3rem] lg:gap-[7rem] xl:gap-[11.375rem]">
             <img
               src={servicesImage}
               alt="Our services image"
-              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-2/4 flex-1 h-auto"
+              className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-2/4 flex-1 h-auto hidden md:block"
             />
-            <div className="flex-1 md:py-[5.813rem] flex flex-col gap-[2rem]">
-              <h3 className="text-primary-dark font-roboto font-bold lg:text-3xl xl:text-[2rem] 2xl:text-[3rem] leading-none">
+            <div className="flex-1 py-[5rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start">
+              <h3 className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2rem] 2xl:text-[3rem] leading-none">
                 Need the Right Expertise?
               </h3>
-              <p className="text-primary-medium lg:text-base 2xl:text-2xl font-inter lg:max-w-[40ch]">
+              <p className="text-primary-medium text-sm lg:text-base 2xl:text-2xl font-inter lg:max-w-[40ch]">
                 Discover how our tailored solutions and services can address
                 your unique business needs and help you achieve your goals.
               </p>
 
               <a
                 href="./services"
-                className="grid place-items-center lg:place-content-start"
+                className="grid place-items-center md:place-content-start"
               >
-                <div className="group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] min-w-36">
+                <div className="group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
                   <span className="font-inter text-sm lg:text-base 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
                     Our Services
                     <span className="flex items-center">
@@ -244,14 +284,17 @@ const Portfolio = () => {
           </div>
         </section>
 
+        {/* Testimonials section */}
         <section>
           <Testimonials />
         </section>
 
+        {/* Subscribe to our Newsletter section*/}
         <section>
           <Subscribe />
         </section>
 
+        {/* Footer section*/}
         <section>
           <Footer />
         </section>
