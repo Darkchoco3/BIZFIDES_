@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import ExternalHero from "./ExternalHero";
+import ExternalHero from "../Components/ExternalHero.jsx";
 import heroImage from "../assets/PortfolioHeroImage.svg";
 import servicesImage from "../assets/PortfolioLaptop.svg";
 import styles from "../Styles/Portfolio.module.css";
-import Testimonials from "./Testimonial";
+import Testimonials from "../Components/Testimonial.jsx";
 import Subscribe from "../Components/Subscribe.jsx";
 import Footer from "../Layouts/Footer.jsx";
-import RecentsCard from "./Cards/RecentsCard";
+import RecentsCard from "../Components/Cards/RecentsCard.jsx";
 import { ourWorks } from "../DB/Recentworks.jsx";
-import Pagination from "./Pagination.jsx";
+import Pagination from "../Components/Pagination.jsx";
 
 const Portfolio = () => {
   const [stats, setStats] = useState({
@@ -152,7 +152,7 @@ const Portfolio = () => {
 
               <div className="hidden lg:block w-px bg-white my-1"></div>
 
-              <div className="text-white grid gap-1 flex-1 xl:px-8 py-4 md:py-0">
+              <div className="text-white grid gap-1 md:gap-0 flex-1 xl:px-8 py-4 md:py-0">
                 <p
                   className={`text-white text-[1.5rem] xl:text-[2.5rem] font-roboto font-bold ${
                     animate.projects ? styles.spin : ""

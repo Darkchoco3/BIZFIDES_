@@ -1,5 +1,5 @@
 import "./App.css";
-import Portfolio from "./Components/Portfolio";
+import Portfolio from "./Pages/Portfolio";
 import Login from "./Auth/Login";
 import Navbar from "./Layouts/Navbar";
 import Home from "./Pages/Home";
