@@ -13,7 +13,7 @@ const ExternalHero = ({heading,paragraph,image,altText}) => {
             </p>
           </div>
 
-          <img src={image} alt={altText} className="hidden md:block w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-2/4 flex-1" />
+          <img src={image} alt={altText} className="hidden lg:block w-full sm:w-3/4 md:w-1/2 lg:w-1/3 xl:w-2/4 flex-1" />
         </div>
         <div className='absolute bottom-0 left-3 md:left-4 lg:left-12'>
           <img src={Rectangle} className=" object-cover" alt="Rectangle Decoration" />
