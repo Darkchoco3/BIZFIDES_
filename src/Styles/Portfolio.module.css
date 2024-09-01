@@ -1,0 +1,12 @@
+@keyframes spinX {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.spin {
+  animation: spinX 1s ease-in-out forwards;
+}
