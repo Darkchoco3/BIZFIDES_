@@ -54,7 +54,7 @@ const RecentWorks = () => {
 
   return (
     <>
-      <div className="container w-11/12 grid gap-8 lg:gap-12 py-[3.125rem]">
+      <section className="container w-11/12 grid gap-8 lg:gap-12 py-[3.125rem]">
         <div className="text-center">
           <h5 className="text-xl md:text-xl text-primary font-inter font-semibold">
             OUR WORK
@@ -108,7 +108,7 @@ const RecentWorks = () => {
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };
