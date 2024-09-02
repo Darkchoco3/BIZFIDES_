@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import Footer from "./Layouts/Footer";
+import Services from "./Pages/Services";
 import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
 
 const LayoutWithNavandFooter = () => (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path='/contact' element={<Contact/>}/>
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/services" element={<Services />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Signup />} />
