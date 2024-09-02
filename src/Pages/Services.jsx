@@ -46,7 +46,7 @@ const Services = () => {
 
       <Testimonials />
       <Subscribe />
-      <Footer />
+      
     </div>
   );
 };
