@@ -161,7 +161,7 @@ const SignUp = () => {
             </button>
           </div>
           <p className="mt-6 text-center text-lg text-gray-500">
-            Already have an account? <Link to="/" className="text-secondary hover:text-green-800">Sign in</Link>
+            Already have an account? <Link to="/login" className="text-secondary hover:text-green-800">Sign in</Link>
           </p>
         </div>
         <div className='hidden lg:block lg:w-1/2 bg-cover  h-[1159px] max-h-[1159px]'>
