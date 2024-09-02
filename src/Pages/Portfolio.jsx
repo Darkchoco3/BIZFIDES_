@@ -145,7 +145,7 @@ const Portfolio = () => {
                   {stats.users}
                   <span className="text-secondary">K+</span>
                 </p>
-                <p className="text-sm xl:text-xl font-inter font-medium">
+                <p className="text-sm xl:text-xl 2xl:text-2xl font-inter font-medium">
                   Monthly active users
                 </p>
               </div>
@@ -161,14 +161,14 @@ const Portfolio = () => {
                   {stats.projects}
                   <span className="text-secondary">K+</span>
                 </p>
-                <p className="text-sm xl:text-xl font-inter font-medium">
+                <p className="text-sm xl:text-xl 2xl:text-2xl font-inter font-medium">
                   Successful Projects
                 </p>
               </div>
 
               <div className="hidden lg:block w-px bg-white my-1"></div>
 
-              <div className="text-white flex-1 lg:px-[2rem]">
+              <div className="text-white flex-1 xl:px-[2rem]">
                 <p
                   className={`text-white text-[1.5rem] xl:text-[2.5rem] font-roboto font-bold ${
                     animate.satisfaction ? styles.spin : ""
@@ -177,14 +177,14 @@ const Portfolio = () => {
                   {stats.satisfaction}
                   <span className="text-secondary">%</span>
                 </p>
-                <p className="text-sm xl:text-xl font-inter font-medium">
+                <p className="text-sm xl:text-xl 2xl:text-2xl font-inter font-medium">
                   Customer satisfaction
                 </p>
               </div>
 
               <div className="hidden lg:block w-px bg-white my-1"></div>
 
-              <div className="text-white flex-1 pt-4 md:pt-0 px-8">
+              <div className="text-white flex-1 pt-4 md:pt-0 xl:px-8">
                 <p
                   className={`text-[1.5rem] xl:text-[2.5rem] font-roboto font-bold ${
                     animate.revenue ? styles.spin : ""
@@ -193,7 +193,7 @@ const Portfolio = () => {
                   {stats.revenue}
                   <span className="text-secondary ">M</span>
                 </p>
-                <p className="text-sm xl:text-xl font-inter font-medium">
+                <p className="text-sm xl:text-xl 2xl:text-2xl font-inter font-medium">
                   Client revenue
                 </p>
               </div>
