@@ -293,11 +293,6 @@ const Portfolio = () => {
         <section>
           <Subscribe />
         </section>
-
-        {/* Footer section*/}
-        <section>
-          <Footer />
-        </section>
       </div>
     </>
   );
