@@ -5,8 +5,8 @@ import Signup from "./Auth/Signup";
 import Navbar from "./Layouts/Navbar";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
-import Footer from "./Layouts/Footer";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Error from "./Pages/Error";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -30,6 +30,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Signup />} />
+          <Route path="/*" element={<Error/>} />
         </Routes>
       </BrowserRouter>
     </div>

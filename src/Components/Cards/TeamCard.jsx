@@ -22,7 +22,7 @@ const TeamsCard = ({
               <img src={image} alt={name} className="z-20 pb-6 lg:pb-5 xl:pb-6" />
 
               {/* Background Shape (Semicircle) */}
-              <div className="absolute rounded-b-[12.5rem] min-w-[17rem] min-h-[11.75rem] bg-secondary -bottom-0 z-10"></div>
+              <div className="absolute rounded-b-[12.5rem] min-w-[17.5rem] min-h-[11.75rem] bg-secondary -bottom-0 z-10"></div>
 
               {/* Name and Role Box */}
               <div className="absolute bottom-10 lg:bottom-8 xl:bottom-10 rounded-b-[12.5rem] min-h-[6.563rem] min-w-[13.125rem] text-center bg-white pt-6 z-30">
