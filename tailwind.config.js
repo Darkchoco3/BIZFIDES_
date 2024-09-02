@@ -7,7 +7,6 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
     },
     colors: {
       'primary': 'hsla(237, 63%, 27%, 1)',
