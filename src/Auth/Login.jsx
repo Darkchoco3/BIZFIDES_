@@ -116,7 +116,7 @@ const Login = () => {
             </button>
           </div>
           <p className="mt-6 text-center text-lg text-gray-500">
-            New User? <Link to="/" className="text-secondary hover:text-green-800">Sign up</Link>
+            New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
         <div className='hidden lg:flex lg:w-1/2 h-[805px]'>

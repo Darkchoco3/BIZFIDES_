@@ -62,7 +62,7 @@ const Navbar = () => {
         <Link className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
         </Link>
-        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='login'>
+        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
         </Link>
         <div onClick={onToggleMenu} className="text-3xl cursor-pointer lg:hidden">
