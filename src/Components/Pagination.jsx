@@ -12,13 +12,13 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
     const pages = [];
 
     if (totalPages <= 4) {
-      pageNumbers.forEach(number => {
+      pageNumbers.forEach((number) => {
         pages.push(
           <li key={number}>
             <button
               onClick={() => paginate(number)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === number ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl  ' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === number ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
             >
               {number}
             </button>
@@ -32,7 +32,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
           <button
             onClick={() => paginate(1)}
             className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-              ${currentPage === 1 ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+              ${currentPage === 1 ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
           >
             1
           </button>
@@ -58,7 +58,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
             <button
               onClick={() => paginate(i)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === i ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === i ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
             >
               {i}
             </button>
@@ -80,8 +80,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
         <li key={totalPages}>
           <button
             onClick={() => paginate(totalPages)}
-            className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-medium font-inter text-sm lg:text-base 2xl:text-lg 
-              ${currentPage === totalPages ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+            className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-medium font-inter text-sm lg:text-base 2xl:text-lg
+              ${currentPage === totalPages ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
           >
             {totalPages}
           </button>
@@ -95,7 +95,29 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
   return (
     <nav className="flex justify-center pt-10">
       <ul className="inline-flex space-x-2">
+        {/* Left Arrow */}
+        <li>
+          <button
+            onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+            className="py-2.5 px-[1.2rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-blue-600 text-white"
+            disabled={currentPage === 1}
+          >
+            &lt;
+          </button>
+        </li>
+
         {renderPageNumbers()}
+
+        {/* Right Arrow */}
+        <li>
+          <button
+            onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+            className="py-2.5 px-[1.2rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-blue-600 text-white"
+            disabled={currentPage === totalPages}
+          >
+            &gt;
+          </button>
+        </li>
       </ul>
     </nav>
   );
