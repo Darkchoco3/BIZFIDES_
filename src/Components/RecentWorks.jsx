@@ -46,15 +46,15 @@ const RecentWorks = () => {
       title: "Mobile App",
       type: "Food Store",
       name: "Fortune Food",
-      features: "Restaurant listings, menu ordering, real-time tracking",
+      features: "Restaurant listings, menu ordering",
       outcome:
-        "4.5-star rating on the app store,20,000 downloads in the first month",
+        "4.5-star rating in the app store,20,000 downloads in the first month",
     },
   ];
 
   return (
     <>
-      <div className="container w-11/12 grid gap-8 lg:gap-12 py-[3.125rem]">
+      <section className="container w-11/12 grid gap-8 lg:gap-12 py-[3.125rem]">
         <div className="text-center">
           <h5 className="text-xl md:text-xl text-primary font-inter font-semibold">
             OUR WORK
@@ -86,7 +86,7 @@ const RecentWorks = () => {
           <div className="group text-primary focus:ring transition ease-in-out duration-150">
             <a
               href="./portfolio"
-              className="font-inter text-base md:text-xl lg:text-base text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary"
+              className="font-inter text-base md:text-xl lg:text-base xl:text-base 2xl:text-2xl text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary"
             >
               View More Works
               <span className="flex items-center">
@@ -108,7 +108,7 @@ const RecentWorks = () => {
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

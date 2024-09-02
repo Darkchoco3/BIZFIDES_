@@ -12,8 +12,8 @@ const Hero = () => {
     <div className='bg-primary pt-[6rem] md:pt-28 lg:pt-[7rem] relative'>
       <div className="relative flex justify-between items-center min-h-[384px] md:min-h-[484px] lg:min-h-[544px]">
         {/* Polygon Div */}
-        <div className="absolute top-0 right-0 h-[24rem] md:h-[30rem] lg:h-auto md:w-[50%] lg:w-auto">
-          <img src={Polygon1} className="hidden md:block h-full w-full" alt="Polygon Decoration" />
+        <div className="absolute top-0 right-0 h-[25rem] md:h-[30.25rem] lg:h-auto w-[70%] md:w-[50%] lg:w-auto">
+          <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" />
         </div>
         
         {/* Content Div */}
@@ -41,7 +41,7 @@ const Hero = () => {
         </div>
 
         {/* Rectangle Decoration */}
-        <div className='absolute bottom-0 left-3 md:left-4 lg:left-12'>
+        <div className='absolute bottom-0 left-3 md:left-4 lg:left-[83px] '>
           <img src={Rectangle} className="h-full w-full" alt="Rectangle Decoration" />
         </div>
       </div>

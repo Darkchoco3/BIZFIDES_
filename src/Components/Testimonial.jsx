@@ -15,7 +15,7 @@ const testimonialsData = [
 const Quote = ({ text, name, title, company }) => {
   return (
     <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
-      <div className="relative h-44 w-[340px] md:w-[340px] lg:w-[360px] rounded-lg bg-white shadow-lg flex flex-col items-center justify-center px-8 ">
+      <div className="relative h-48 w-[340px] md:w-[300px] lg:w-[340px] rounded-lg bg-white shadow-lg flex flex-col items-center justify-center px-8 ">
         {/* Triangle at the bottom (Chat bubble tail) */}
         <div className="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 translate-y-1/2 w-0 h-[38px] border-l-[18px] border-r-[18px] border-t-[32px] border-l-transparents border-r-transparents border-t-white"></div>
 
@@ -26,7 +26,7 @@ const Quote = ({ text, name, title, company }) => {
         <FaQuoteRight className="absolute bottom-4 right-4 text-primary h-6 w-6" />
 
         {/* Quote Text */}
-        <p className="text-center text-sm text-neutral-grey-300 mt-5">
+        <p className="text-center text-base text-neutral-grey-300 mt-5">
           {text}
         </p>
       </div>
@@ -64,8 +64,8 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 px-4">
-      <div className="max-w-[77.5rem] container">
+    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 ">
+      <div className="container w-11/12">
       <h1 className="text-center font-bold text-lg sm:text-xl lg:text-2xl">OUR Testimonials</h1>
       <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
         Hear From Our Satisfied Clients

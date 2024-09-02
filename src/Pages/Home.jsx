@@ -13,11 +13,11 @@ import Sub from '../Components/Sub'
 const Home = () => {
   return (
     
-      <div className="grid gap-[3.125rem]">
+      <div className="grid gap-[2rem] lg:gap-[3.125rem]">
       <div className="">
       <Hero/>
       <Ambassadors/> 
-      <div className="grid gap-[3.125rem]">
+      <div className="grid gap-[2rem] lg:gap-[3.125rem]">
       <About/>
       <Service/>
       </div>
@@ -28,7 +28,6 @@ const Home = () => {
       <OurTeam/>
       <Testimonials/>
       <Subscribe/>
-      <Footer/>  
         </div> 
       
       
