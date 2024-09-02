@@ -6,7 +6,8 @@ import Navbar from "./Layouts/Navbar";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Error from "./Pages/Error";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Layouts/Footer";
+import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
