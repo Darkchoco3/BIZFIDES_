@@ -51,8 +51,8 @@ const Login = () => {
 
   return (
     <main className=''>
-      <div className="bg-white w-full h-full flex ">
-        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center">
+      <div className="bg-white w-full h-full flex">
+        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
           Welcome Back To Bizfides
            </h2>
@@ -116,11 +116,11 @@ const Login = () => {
             </button>
           </div>
           <p className="mt-6 text-center text-lg text-gray-500">
-            New User? <Link to="/" className="text-secondary hover:text-green-800">Sign up</Link>
+            New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
         <div className='hidden lg:flex lg:w-1/2 h-[805px]'>
-        <img src={image} alt="" className='h-full w-full object-cover' />
+        <img src={image} alt="" className='h-full w-full object-fit' />
         </div>
       </div>
     </main>

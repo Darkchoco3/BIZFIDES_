@@ -52,7 +52,7 @@ const SignUp = () => {
   return (
     <>
       <div className="bg-white w-full  h-full flex max-h-[1159px]">
-        <div className="lg:w-1/2 p-4 lg:p-12 lg:px-20 flex flex-col justify-center">
+        <div className="lg:w-1/2 p-4 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[484px]">
             Grow Your Business’s Audience and Influence—<span className='text-secondary'>Create Your Account Today!</span>
           </h2>
@@ -161,10 +161,10 @@ const SignUp = () => {
             </button>
           </div>
           <p className="mt-6 text-center text-lg text-gray-500">
-            Already have an account? <Link to="/" className="text-secondary hover:text-green-800">Sign in</Link>
+            Already have an account? <Link to="/login" className="text-secondary hover:text-green-800">Sign in</Link>
           </p>
         </div>
-        <div className='hidden lg:block lg:w-1/2 bg-cover  h-[1159px] max-h-[1159px]'>
+        <div className='hidden lg:flex lg:w-1/2 h-[1159px] max-h-[1159px]'>
         <img src={image} alt="" className='w-full h-full object-cover' />
         </div>
       </div>
