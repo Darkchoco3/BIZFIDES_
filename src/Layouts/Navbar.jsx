@@ -39,12 +39,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="hover:border-b hover:text-primary border-b-primary py-2 " to=''>
+            <Link className="hover:border-b hover:text-primary border-b-primary py-2 " to='/portfolio'>
               Portfolio
             </Link>
           </li>
           <li>
-            <Link className="hover:border-b hover:text-primary border-b-primary py-2" to=''>
+            <Link className="hover:border-b hover:text-primary border-b-primary py-2" to='/contact'>
               Contact Us
             </Link>
           </li>
@@ -52,6 +52,7 @@ const Navbar = () => {
           <button className=" bg-primary text-white px-12 md:px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm">
           Sign Up
         </button>
+        
         <button className="text-primary px-12 md:px-8 py-2.5 hover:text-secondary font-medium text-sm">
           Log In
         </button>
@@ -59,7 +60,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex items-center gap-6 h-9">
-        <button className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm">
+        <button className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" >
           Sign Up
         </button>
         <button className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm">

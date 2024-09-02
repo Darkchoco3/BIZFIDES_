@@ -5,6 +5,8 @@ import phone from "../assets/call-calling.svg";
 import sms from "../assets/sms.svg";
 import website from "../assets/web.svg";
 import location from "../assets/location bblu.svg";
+import ExternalHero from '../Components/ExternalHero';
+import Footer from '../Layouts/Footer';
 
 const Contact = () => {
     const {
@@ -20,40 +22,44 @@ const Contact = () => {
 
     return (
         <>
-            <div className="bg-primary flex flex-row justify-end items-center">
-                <div className="relative flex items-center">
-                    <img 
-                        src={contact} 
-                        alt="Contact" 
-                        className="w-[604px] h-[541px] mr-0" 
-                        style={{ left: '736px' }} 
-                    />
-                    <h1 className="absolute left-0 right-0 m-auto text-5xl font-bold text-white font-montserrat">
-                        Contact Us
-                    </h1>
-                </div>
-            </div>
-            <div className="flex flex-col md:flex-row items-center justify-between p-8 bg-white shadow-lg rounded-lg mt-8">
-                <div className="md:w-1/2 space-y-4 text-gray-700">
-                    <h2 className="text-2xl font-bold text-gray-900">Get In Touch</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa gravida felis amet.</p>
-                    <div className="flex items-center space-x-2">
-                        <img src={phone} alt="Phone" className="w-6 h-6" />
-                        <span>123456789</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <img src={sms} alt="Email" className="w-6 h-6" />
-                        <span>abcd@gmail.com</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <img src={website} alt="Website" className="w-6 h-6" />
-                        <span>www.bizfides.com</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                        <img src={location} alt="Location" className="w-6 h-6" />
-                        <span>17 Avenue, SJK street, Lagos.</span>
-                    </div>
-                </div>
+        <ExternalHero
+        heading={"Contact Us"}
+        paragraph={
+            "We'd love to hear from you - contact us today!"
+        }
+        image={contact}
+        altText={"contact us image"}
+        />
+            <div className=" container w-11/12 flex flex-col md:flex-row items-center justify-between p-8 bg-white  rounded-lg mt-8">
+            <div className="md:w-1/2 space-y-4 text-gray-700">
+    <h2 className="text-[2.5rem] font-roboto font-bold text-primary">
+        Get In <span className="text-secondary font-roboto font-bold">Touch</span>
+    </h2>
+    <p>Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa gravida felis amet.</p>
+    <div className="flex items-center  gap-[4.375rem]">
+        <div className="flex items-center space-x-2">
+            <img src={phone} alt="Phone" className="w-6 h-6" />
+            <span>123456789</span>
+        </div>
+        <div className="flex items-center space-x-2">
+            <img src={sms} alt="Email" className="w-6 h-6" />
+            <span>abcd@gmail.com</span>
+        </div>
+    </div>
+    <div className="flex items-center  gap-[4.375rem]">
+        <div className="flex items-center space-x-2">
+            <img src={website} alt="Website" className="w-6 h-6" />
+            <span>www.bizfides.com</span>
+        </div>
+        <div className="flex items-center space-x-2">
+            <img src={location} alt="Location" className="w-6 h-6" />
+            <span>17 Avenue, SJK street, Lagos.</span>
+        </div>
+    </div>
+</div>
+
+
+
                 <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2 mt-8 md:mt-0 space-y-4">
                     <div className="flex flex-col">
                         <label htmlFor="name" className="text-sm font-semibold text-gray-700">
@@ -121,7 +127,9 @@ const Contact = () => {
                         Submit
                     </button>
                 </form>
+                
             </div>
+            <Footer/>
         </>
     );
 };
