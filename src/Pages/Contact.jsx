@@ -129,7 +129,7 @@ const Contact = () => {
                 </form>
                 
             </div>
-            <Footer/>
+            {/* <Footer/> */}
         </>
     );
 };
