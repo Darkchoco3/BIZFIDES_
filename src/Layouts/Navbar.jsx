@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import Logo from '../assets/Bizfides logo.svg'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="hover:border-b hover:text-primary border-b-primary py-2" href="#">
+            <a className="hover:border-b hover:text-primary border-b-primary py-2" href="/servicePage">
               Services
             </a>
           </li>
