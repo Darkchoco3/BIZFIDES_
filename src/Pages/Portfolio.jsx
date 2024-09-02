@@ -3,7 +3,7 @@ import ExternalHero from "../Components/ExternalHero.jsx";
 import heroImage from "../assets/PortfolioHeroImage.svg";
 import servicesImage from "../assets/PortfolioLaptop.svg";
 import styles from "../Styles/Portfolio.module.css";
-import Testimonials from "../Components/Testimonial.jsx";
+import Testimonials from "../Components/Testimonial";
 import Subscribe from "../Components/Subscribe.jsx";
 import Footer from "../Layouts/Footer.jsx";
 import RecentsCard from "../Components/Cards/RecentsCard.jsx";
