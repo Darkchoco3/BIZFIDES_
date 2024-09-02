@@ -34,7 +34,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link className="hover:border-b hover:text-primary border-b-primary py-2" to=''>
+            <Link className="hover:border-b hover:text-primary border-b-primary py-2" to='/services'>
               Services
             </Link>
           </li>
