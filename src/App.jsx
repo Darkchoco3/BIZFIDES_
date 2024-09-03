@@ -9,6 +9,7 @@ import Error from "./Pages/Error";
 import Footer from "./Layouts/Footer";
 import Services from "./Pages/Services";
 import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
+import NotFoundPage from "./Components/NotFoundPage";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -33,7 +34,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Signup />} />
-          <Route path="/*" element={<Error/>} />
+          <Route path="/*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
     </div>

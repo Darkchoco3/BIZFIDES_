@@ -44,4 +44,5 @@ export const sponsor = [
     { img: amb3 },
     { img: amb5 },
     { img: amb4 },
+    { img: amb3 },
   ];

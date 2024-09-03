@@ -3,7 +3,8 @@ import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg'
-import image from '../assets/Frame 1171277974.png'
+import image from '../assets/auth.jpeg'
+import logo from '../assets/Bizfides logo.svg'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ const Login = () => {
 
   return (
     <main className=''>
-      <div className="bg-white w-full h-screen flex flex-row-reverse">
+      <div className="bg-white w-full h-screen flex ">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
           Welcome Back To Bizfides
@@ -119,8 +120,9 @@ const Login = () => {
             New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
-       <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover bg-top relative" style={{ backgroundImage: `url(${image})` }}>
-       <Link to='/' className="absolute w-[90px] h-[43px] right-[105px] top-[120px]">
+       <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
+       <Link to='/' className="absolute right-[120px] top-[70px]">
+       <img src={logo} alt="" />
        </Link>
           </div>
       </div>

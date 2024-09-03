@@ -6,7 +6,7 @@ const Ambassadors = () => {
   return (
     <div className="pt-[0.8125rem] container w-11/12">
       <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
-        <div className="flex animate-scroll-alternate">
+        <div className="flex animate-scroll-marquee">
           {sponsor.map((a, i) => (
             <img
               src={a.img}

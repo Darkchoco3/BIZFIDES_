@@ -22,7 +22,7 @@ const About = () => {
         <span className="text-primary">Bizfides</span> was established with a mission to empower every business to build a strong and impactful online presence. We believe that visibility and influence in the digital space are key to success.Let us partner with you to reach your business goals.
       </p>
       <Link to='/about'>
-        <Button className="px-8 sm:px-14 hover:bg-primary-dark">Know More</Button>
+        <Button className="px-8 sm:px-14 hover:bg-secondary">Know More</Button>
       </Link>
       </div>
     </div>

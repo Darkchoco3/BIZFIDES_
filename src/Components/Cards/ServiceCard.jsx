@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { Link } from 'react-router-dom';
 
 const ServiceCard = ({service,i}) => {
   return (
@@ -20,11 +19,9 @@ const ServiceCard = ({service,i}) => {
         </h3>
         <p className="text-sm text-neutral-grey-300 mt-2">{service.content}</p>
       </div>
-      <Link to='services'> 
-      <button className="font-extrabold rounded-full p-3 text-white bg-primary mt-4 hover:bg-primary-dark">
+      <button className="font-extrabold rounded-full p-3 text-white bg-primary mt-4 hover:bg-primary-dark opacity-0">
         <IoIosArrowForward />
       </button>
-      </Link>
     </div>
   );
 };

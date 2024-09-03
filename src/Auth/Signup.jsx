@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg'
-import image from '../assets/Frame 1171277854.svg'
-
+import image from '../assets/auth.jpeg'
+import logo from '../assets/Bizfides logo.svg'
 const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -172,9 +172,10 @@ const SignUp = () => {
     </div>
 
     {/* Right Side - Image Background */}
-    <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover bg-top relative" style={{ backgroundImage: `url(${image})` }}>
-    <Link to='/' className="absolute w-[90px] h-[43px] right-[105px] top-[120px]">
-    </Link>
+    <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage: `url(${image})` }}>
+    <Link to='/' className="absolute right-[120px] top-[70px]">
+       <img src={logo} alt="" />
+       </Link>
     </div>
   </div>
 </>

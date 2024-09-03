@@ -63,27 +63,25 @@
     }
     
 
-    @keyframes scroll-alternate {
+    @keyframes scroll-marquee {
       0% {
-        transform: translateX(0);
-      }25%{
-        transform: translateX(-10%); 
+        transform: translateX(50%); /* Start from right outside the container */
       }
       50% {
-        transform: translateX(0%); 
-      }75%{
-        transform: translateX(10%); 
+        transform: translateX(-50%); /* Move to the left side outside the container */
       }
       100% {
-        transform: translateX(0);
+        transform: translateX(50%); /* Back to the starting position */
       }
     }
     
-    .animate-scroll-alternate {
+    .animate-scroll-marquee {
       display: flex;
       gap: 25px;
-      animation: scroll-alternate 20s ease-in-out infinite;
+      animation: scroll-marquee 25s linear infinite; /* Linear for continuous effect */
+      white-space: nowrap; /* Prevent line breaks */
     }
+    
     
     .overflow-hidden {
       overflow: hidden;
