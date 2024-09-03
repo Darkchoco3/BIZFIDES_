@@ -10,7 +10,7 @@ const MissionVisson = () => {
         <p className="text-xl font-inter text-neutral-grey-300">At Bizfides, we empower businesses to thrive online through elevated digital presence and meaningful engagement. We craft innovative strategies for brand visibility, customer connections, and measurable results. Our commitment is to deliver excellence and drive sustained success.</p>
         </div>
       </div>
-      <div className="flex max-w-[1240px] lg:max-h-[485px] items-center lg:gap-[50px] xl:gap-[150px] flex-col gap-8 md:gap-12 text-center px-2 lg:flex-row lg:text-start">
+      <div className="flex max-w-[1240px] lg:max-h-[485px] items-center lg:gap-[50px] xl:gap-[150px] flex-col gap-8 md:gap-12 text-center px-2 lg:flex-row-reverse lg:text-start">
         <img src={vision} alt="vision"/>
         <div className='flex flex-col gap-2 lg:gap-[20px]'>
         <h2 className="font-bold font-roboto text-[40px] text-neutral-black">Vision</h2>
