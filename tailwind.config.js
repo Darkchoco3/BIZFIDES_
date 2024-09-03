@@ -8,30 +8,28 @@ export default {
     container: {
       center: true,
     },
-    colors: {
-      'primary': 'hsla(237, 63%, 27%, 1)',
-      'secondary': 'hsla(180, 100%, 32%, 1)',
-      'primary-light': 'hsla(233, 24%, 93%, 1)',
-      'primary-dark': 'hsla(237, 62%, 21%, 1)',
-      'neutral-grey-100': 'hsla(0, 0%, 97%, 1)',
-      'neutral-grey-300': 'hsla(0, 0%, 42%, 1)',
-      'neutral-black': 'hsla(0, 0%, 17%, 1)',
-      'white':'hsla(0, 0%, 100%, 1)',
-      'primary-dark':'hsla(234, 66%, 15%, 1)',
-      'primary-medium': 'hsla(220, 39%, 25%, 1)',
-      'primary-accent':'hsla(236, 23%, 77%, 1)',
-      'transparents': 'hsla(0, 0%, 0%, 0)',
-      'neutral-grey-200':' hsla(0, 0%, 90%, 1)',
-      'primary-red': 'hsla(352, 82%, 38%, 1)'
-    },
-    fontFamily: {
-      roboto: ['Roboto', 'sans-serif'],
-      inter: ['Inter', 'sans-serif'],
-      montserrat:['Montserrat', 'sans-serif'],
-    },
-    
-  
     extend: {
+      colors: {
+        'primary': 'hsla(237, 63%, 27%, 1)',
+        'secondary': 'hsla(180, 100%, 32%, 1)',
+        'primary-light': 'hsla(233, 24%, 93%, 1)',
+        'primary-dark': 'hsla(237, 62%, 21%, 1)',
+        'neutral-grey-100': 'hsla(0, 0%, 97%, 1)',
+        'neutral-grey-300': 'hsla(0, 0%, 42%, 1)',
+        'neutral-black': 'hsla(0, 0%, 17%, 1)',
+        'white': 'hsla(0, 0%, 100%, 1)',
+        'primary-dark': 'hsla(234, 66%, 15%, 1)',
+        'primary-medium': 'hsla(220, 39%, 25%, 1)',
+        'primary-accent': 'hsla(236, 23%, 77%, 1)',
+        'transparents': 'hsla(0, 0%, 0%, 0)',
+        'neutral-grey-200': 'hsla(0, 0%, 90%, 1)',
+        'primary-red': 'hsla(352, 82%, 38%, 1)'
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
       keyframes: {
         orbit: {
           '0%': { transform: 'rotate(0deg) translateX(125px) rotate(0deg)' },
@@ -43,6 +41,11 @@ export default {
         'orbit-2': 'orbit 10s linear infinite reverse',
         'orbit-3': 'orbit 10s linear infinite',
         'orbit-4': 'orbit 10s linear infinite reverse',
+      },
+      transitionProperty: {
+        // Add custom properties if needed
+        'transform': 'transform',
+        'opacity': 'opacity',
       },
     },
   },

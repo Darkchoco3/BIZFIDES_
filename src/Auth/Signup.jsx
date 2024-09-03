@@ -5,16 +5,22 @@ import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg'
 import image from '../assets/auth.jpeg'
 import logo from '../assets/Bizfides logo.svg'
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // Initialize useForm hook
   const {
     register, 
     handleSubmit,
     watch,
-    formState: { errors }, 
+    formState: { errors },
+    reset 
   } = useForm();
 
   // Dummy signup function
@@ -29,10 +35,11 @@ const SignUp = () => {
       setLoading(true);
       const response = await signup(data);
       if (!response.error) {
+        reset()
         // Success handling
         // toast.success("Registration successful");
         setTimeout(() => {
-          navigate("/home");
+          navigate("/login");
         }, 5000);
       } else {
         // Error handling
@@ -107,32 +114,68 @@ const SignUp = () => {
           />
           {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
         </div>
+        <div>
+              <label
+                htmlFor="password"
+                className="block text-lg font-medium text-gray-700 "
+              >
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                  })}
+                  placeholder="Enter your password"
+                  className="relative mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                />
+                <div
+                  className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                </div>
+              </div>
+            {errors.password && (
+              <p className="text-primary-red text-sm">
+                {errors.password.message}
+              </p>
+            )}
+            </div>
 
         <div>
-          <label htmlFor="password" className="block text-lg font-medium text-gray-700">Password</label>
-          <input
-            type="password"
-            {...register("password", { required: 'Password is required' })}
-            placeholder='Enter your password'
-            className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-          />
-          {errors.password && <p className="text-primary-red text-sm">{errors.password.message}</p>}
-        </div>
+              <label
+                htmlFor="confirmPassword"
+                className="block text-lg font-medium"
+              >
+                Confirm Password
+              </label>
 
-        <div>
-          <label htmlFor="confirmPassword" className="block text-lg font-medium text-gray-700">Confirm Password</label>
-          <input
-            type="password"
-            {...register("confirmPassword", {
-              required: 'Please confirm your password',
-              validate: (value) => value === watch('password') || 'Passwords do not match'
-            })}
-            placeholder='Confirm your password'
-            className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-          />
-          {errors.confirmPassword && <p className="text-primary-red text-sm">{errors.confirmPassword.message}</p>}
-        </div>
-
+              <div className="relative">
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                {...register("confirmPassword", {
+                  required: "Please confirm your password",
+                  validate: (value) =>
+                    value === watch("password") || "Passwords do not match",
+                })}
+                placeholder="Confirm your password"
+                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              />
+              <div
+                className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              >
+                {showConfirmPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
+              </div>
+              </div>
+              {errors.confirmPassword && (
+                <p className="text-primary-red text-sm">
+                  {errors.confirmPassword.message}
+                </p>
+              )}
+          </div>
         <div className="flex items-center">
           <input
             type="checkbox"

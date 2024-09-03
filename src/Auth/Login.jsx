@@ -5,10 +5,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg'
 import image from '../assets/auth.jpeg'
 import logo from '../assets/Bizfides logo.svg'
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   // Initialize useForm hook
   const {
@@ -72,14 +74,33 @@ const Login = () => {
             </div>
   
             <div>
-              <label htmlFor="password" className="block text-lg font-medium text-gray-700">Password</label>
-              <input
-                type="password"
-                {...register("password", { required: 'Password is required' })}
-                placeholder='Enter your password'
-                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              />
-              {errors.password && <p className="text-primary-red text-sm">{errors.password.message}</p>}
+              <label
+                htmlFor="password"
+                className="block text-lg font-medium text-gray-700 "
+              >
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                  })}
+                  placeholder="Enter your password"
+                  className="relative mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                />
+                <div
+                  className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                </div>
+              </div>
+            {errors.password && (
+              <p className="text-primary-red text-sm">
+                {errors.password.message}
+              </p>
+            )}
             </div>
   
             <div className='flex justify-between items-center'> 
@@ -93,7 +114,7 @@ const Login = () => {
                   Remember Me
                 </label>
               </div>
-              <p className="text-primary-red text-sm">Forget password</p>
+              <Link to='/forgot-password' className="text-primary-red text-sm">Forgot password</Link>
              </div>
 
             <div>
