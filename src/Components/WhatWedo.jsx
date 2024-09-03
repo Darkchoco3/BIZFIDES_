@@ -3,7 +3,7 @@ import { whatwedo } from "../DB/data";
 const WhatWedo = () => {
   return (
     <div className="container mx-auto min-h-[1214px] w-full px-4 font-inter flex flex-col items-center gap-[54px]">
-      <div className="w-[990px] flex flex-col gap-[10px]">
+      <div className="lg:w-[990px] flex flex-col gap-[10px]">
         <h3 className="text-base xl:text-lg text-primary text-center font-medium">
           GUARANTED SUCCESS
         </h3>
@@ -18,7 +18,7 @@ const WhatWedo = () => {
           fostering meaningful customer engagement
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[4.063rem] justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[1.5rem] lg:gap-[4.063rem] justify-center">
         {whatwedo.map((what, i) => (
           <WhatWedoCard what={what} key={i} />
         ))}
