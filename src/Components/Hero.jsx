@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="relative lg:w-1/2 flex justify-end">
             <div className="relative z-10  hidden lg:block -top-3">
               <img src={Animation} className="h-full w-full" alt="Animation" />
-              <div className='hidden absolute lg:block z-10 lg:top-[11.4rem] xl:top-[12.3rem] -left-20'>
+              <div className='hidden absolute lg:block z-10 lg:top-[11.4rem] xl:top-[12.1rem] -left-20'>
                 <img src={People} className="w-full h-full" alt="People" />
               </div>
             </div>
@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
 
         {/* Rectangle Decoration */}
-        <div className='absolute bottom-0 left-3 md:left-4 lg:left-[83px] '>
+        <div className='absolute bottom-0 left-4 md:left-4 lg:left-[3rem] xl:left-[53px] '>
           <img src={Rectangle} className="h-full w-full" alt="Rectangle Decoration" />
         </div>
       </div>
