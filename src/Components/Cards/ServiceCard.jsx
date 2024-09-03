@@ -3,7 +3,7 @@ import { IoIosArrowForward } from "react-icons/io";
 const ServiceCard = ({service,i}) => {
   return (
     <div
-      className="w-full sm:w-[277px] min-h-[480px] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] rounded-full py-4 px-2 flex flex-col justify-between items-center border border-neutral-grey-100"
+      className="w-full sm:max-w-[277px] min-h-[480px] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] rounded-full py-6 px-3 flex flex-col justify-between items-center border border-neutral-grey-100 "
       key={i}
     >
       <div className="min-h-[150px] min-w-[150px] sm:min-h-[200px] sm:min-w-[200px] rounded-full">
