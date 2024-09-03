@@ -17,8 +17,7 @@
   
     input[type="checkbox"] {
       appearance: none;
-      width: 2rem; /* Adjust width as needed */
-      height: 1.4rem; /* Adjust height as needed */
+      padding: 10px;
       background-color: white;
       border: 1px solid hsla(0, 0%, 90%, 1);
       border-radius: 5px;
@@ -51,5 +50,15 @@
     /* Hover effect for better UX */
     input[type="checkbox"]:hover {
       border-color: hsla(237, 63%, 40%, 1); /* Darker border on hover */
+    }
+    
+
+    .custom-scrollbar {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none; /* Safari and Chrome */
     }
     

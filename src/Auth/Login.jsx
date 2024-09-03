@@ -51,7 +51,7 @@ const Login = () => {
 
   return (
     <main className=''>
-      <div className="bg-white w-full h-full flex">
+      <div className="bg-white w-full h-screen flex">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
           Welcome Back To Bizfides
@@ -96,7 +96,7 @@ const Login = () => {
              </div>
 
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-2xl shadow-sm text-lg font-medium text-white bg-primary hover:bg-green-800"
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : 'Sign In'}
@@ -108,7 +108,7 @@ const Login = () => {
           <div className="w-full flex justify-center flex-col mt-4">
             <img src={line} className='py-2' alt="divider" />
             <button
-              className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-2xl shadow-sm text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
+              className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
               onClick={handleGoogleLogin}
             >
               <FcGoogle />
@@ -119,9 +119,10 @@ const Login = () => {
             New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
-        <div className='hidden lg:flex lg:w-1/2 h-[805px]'>
-        <img src={image} alt="" className='h-full w-full object-fit' />
-        </div>
+       <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover bg-top relative" style={{ backgroundImage: `url(${image})` }}>
+       <Link to='/' className="absolute w-[90px] h-[43px] right-[105px] top-[120px]">
+       </Link>
+          </div>
       </div>
     </main>
   );  
