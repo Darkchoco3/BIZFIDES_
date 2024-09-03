@@ -21,9 +21,9 @@ const Service = () => {
           <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
             Unlocking business potential with our key services:
           </p>
-          <button className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full">
+          <Link to='services' className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full">
             More Service
-          </button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[3.125rem] justify-center">
           {services.map((service, i) => (
@@ -35,7 +35,7 @@ const Service = () => {
     <div className="lg:flex justify-end hidden">
           <img src={dot} alt="" />
     </div>
-    <Link className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full">
+    <Link to='/services' className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full">
             More Service
           </Link>
     </div>
