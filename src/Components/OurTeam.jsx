@@ -40,7 +40,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <div className="container w-11/12 py-[3.125rem]">
+      <section className="container w-11/12 py-0 lg:py-[3.125rem]">
         <div className="pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4 place-content-center">
             <h5 className="text-xl font-inter text-primary font-semibold text-center">
@@ -73,7 +73,7 @@ const OurTeam = () => {
           </div> */}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-14 lg:gap-16 md:w-11/12 lg:w-full xl:w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-14 lg:gap-16 md:w-11/12 lg:w-full xl:w-full">
 
           {/* Mapping through the array */}
           {teamMembers.map((member) => (
@@ -97,7 +97,7 @@ const OurTeam = () => {
             Start With Us
           </a>
         </div> */}
-      </div>
+      </section>
     </>
   );
 };

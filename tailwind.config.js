@@ -7,7 +7,6 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: '2rem',
     },
     colors: {
       'primary': 'hsla(237, 63%, 27%, 1)',
@@ -23,6 +22,7 @@ export default {
       'primary-accent':'hsla(236, 23%, 77%, 1)',
       'transparents': 'hsla(0, 0%, 0%, 0)',
       'neutral-grey-200':' hsla(0, 0%, 90%, 1)',
+      'primary-red': 'hsla(352, 82%, 38%, 1)'
     },
     fontFamily: {
       roboto: ['Roboto', 'sans-serif'],

@@ -15,7 +15,7 @@ const testimonialsData = [
 const Quote = ({ text, name, title, company }) => {
   return (
     <div className="flex flex-col items-center gap-2 w-full sm:w-auto">
-      <div className="relative h-48 w-[340px] md:w-[300px] lg:w-[340px] rounded-lg bg-white shadow-lg flex flex-col items-center justify-center px-8 ">
+      <div className="relative h-48 w-[20rem] md:w-[21rem] lg:w-[28rem] rounded-lg bg-white shadow-lg flex flex-col items-center justify-center px-8 ">
         {/* Triangle at the bottom (Chat bubble tail) */}
         <div className="absolute bottom-[-14px] left-1/2 transform -translate-x-1/2 translate-y-1/2 w-0 h-[38px] border-l-[18px] border-r-[18px] border-t-[32px] border-l-transparents border-r-transparents border-t-white"></div>
 
@@ -56,7 +56,7 @@ const Testimonials = () => {
   };
 
   const getVisibleTestimonials = () => {
-    const slidesToShow = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+    const slidesToShow = window.innerWidth >= 1440 ? 3 : window.innerWidth >= 1024 ? 2 : window.innerWidth > 375 ? 1 :2;
     const startIndex = currentIndex;
     return testimonialsData.slice(startIndex, startIndex + slidesToShow).concat(
       testimonialsData.slice(0, Math.max(0, startIndex + slidesToShow - testimonialsData.length))
