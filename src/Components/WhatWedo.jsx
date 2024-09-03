@@ -18,7 +18,7 @@ const WhatWedo = () => {
           fostering meaningful customer engagement
         </p>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-[1.5rem] lg:gap-[4.063rem] justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-[1.5rem] lg:gap-[4.063rem] justify-center">
         {whatwedo.map((what, i) => (
           <WhatWedoCard what={what} key={i} />
         ))}
