@@ -21,8 +21,7 @@
   
     input[type="checkbox"] {
       appearance: none;
-      width: 2rem; /* Adjust width as needed */
-      height: 1.4rem; /* Adjust height as needed */
+      padding: 10px;
       background-color: white;
       border: 1px solid hsla(0, 0%, 90%, 1);
       border-radius: 5px;
@@ -71,5 +70,40 @@
       border-right: none;
       padding-right: 0;
       }
+    }
+    
+
+    .custom-scrollbar {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      display: none; 
+    }
+    
+
+    @keyframes scroll-marquee {
+      0% {
+        transform: translateX(50%); /* Start from right outside the container */
+      }
+      50% {
+        transform: translateX(-50%); /* Move to the left side outside the container */
+      }
+      100% {
+        transform: translateX(50%); /* Back to the starting position */
+      }
+    }
+    
+    .animate-scroll-marquee {
+      display: flex;
+      gap: 25px;
+      animation: scroll-marquee 25s linear infinite; /* Linear for continuous effect */
+      white-space: nowrap; /* Prevent line breaks */
+    }
+    
+    
+    .overflow-hidden {
+      overflow: hidden;
     }
     
