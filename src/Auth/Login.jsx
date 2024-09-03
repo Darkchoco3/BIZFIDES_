@@ -51,7 +51,7 @@ const Login = () => {
 
   return (
     <main className=''>
-      <div className="bg-white w-full h-screen flex">
+      <div className="bg-white w-full h-screen flex flex-row-reverse">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
           Welcome Back To Bizfides

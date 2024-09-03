@@ -59,6 +59,33 @@
     }
     
     .custom-scrollbar::-webkit-scrollbar {
-      display: none; /* Safari and Chrome */
+      display: none; 
+    }
+    
+
+    @keyframes scroll-alternate {
+      0% {
+        transform: translateX(0);
+      }25%{
+        transform: translateX(-10%); 
+      }
+      50% {
+        transform: translateX(0%); 
+      }75%{
+        transform: translateX(10%); 
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    
+    .animate-scroll-alternate {
+      display: flex;
+      gap: 25px;
+      animation: scroll-alternate 20s ease-in-out infinite;
+    }
+    
+    .overflow-hidden {
+      overflow: hidden;
     }
     
