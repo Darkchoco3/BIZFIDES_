@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
 import NotFoundPage from "./Components/NotFoundPage";
 import ForgetPassword from "./Auth/ForgetPassword";
 import ResetPassword from "./Auth/ResetPassword";
+import About from "./Pages/About";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -33,6 +34,7 @@ function App() {
           <Route path='/contact' element={<Contact/>}/>
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Signup />} />
