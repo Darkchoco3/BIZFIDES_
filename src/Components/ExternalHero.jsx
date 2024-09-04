@@ -8,7 +8,7 @@ const ExternalHero = ({heading,paragraph,image,altText}) => {
         <div className="container w-11/12 flex flex-col lg:flex-row items-center gap-[4.438rem]">
           <div className="font-montserrat text-white flex-1 py-14 md:py-16 lg:p-0">
             <h1 className="text-[2rem] md:text-[2.5rem] lg:text-[3rem] xl:text-[3.75rem] 2xl:text-[6rem] font-bold text-center lg:text-start pb-4">{heading}</h1>
-            <p className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight">
+            <p className="text-sm md:text-2xl lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start md:max-w-[40ch] lg:max-w-[30ch] font-medium lg:leading-tight">
             {paragraph}
             </p>
           </div>
