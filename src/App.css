@@ -1,4 +1,4 @@
-/* @keyframes rotate {
+@keyframes rotate {
     0% {
       transform: rotate(0deg);
     }
@@ -8,11 +8,15 @@
   }
   
   .rotate {
-    animation: rotate 10s linear infinite;
+    animation: rotate 20s linear infinite;
   }
   
   .label {
     width: 100px; /* Adjust based on label size */
+    height: 30px; 
+  }
+
+  
     /* height: 30px; Adjust based on label size */
   
     input[type="checkbox"] {
@@ -50,6 +54,22 @@
     /* Hover effect for better UX */
     input[type="checkbox"]:hover {
       border-color: hsla(237, 63%, 40%, 1); /* Darker border on hover */
+    }
+
+    .active-link {
+      border-right: 3px solid hsla(237, 63%, 40%, 1); 
+      padding-right: 1rem;
+      border-bottom: none; 
+      padding-bottom: 0;
+    }
+
+    @media (min-width: 1024px){
+      .active-link{
+        border-bottom: 1px solid hsla(237, 63%, 40%, 1); 
+      padding-bottom: 1rem;
+      border-right: none;
+      padding-right: 0;
+      }
     }
     
 

@@ -5,10 +5,11 @@ import Hero from '../Components/Hero.jsx'
 import OurTeam from '../Components/OurTeam.jsx'
 import Ambassadors from '../Components/Ambassadors'
 import Testimonials from '../Components/Testimonial'
+import RecentWorks from '../Components/RecentWorks'
 import Footer from '../Layouts/Footer'
-import RecentWorks from '../Components/RecentWorks.jsx'
+// import RecentWorks from '../Components/RecentWorks.jsx'
 import Subscribe from '../Components/Subscribe'
-import Sub from '../Components/Sub'
+import Sub from '../Components/BuildProcess.jsx'
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
       <Sub/>
       <RecentWorks/>
       <OurTeam/>
-      {/* <Testimonials/> */}
+      <Testimonials/>
       <Subscribe/>
         </div> 
 
