@@ -94,7 +94,9 @@ const SignUp = () => {
     {/* Left Side - Form */}
     <div className="lg:w-1/2 p-4 lg:p-12 lg:px-20 flex flex-col justify-center  h-full overflow-y-auto">
     <div className="overflow-y-auto container mx-auto custom-scrollbar">
+    <Link to='/'>
     <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
+    </Link>
     <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[474px] font-inter w-[90%] lg:w-[100%]">
     Grow Your Business’s Audience and Influence—<span className='text-primary lg:text-secondary'>Create Your Account Today!</span>
       </h2>

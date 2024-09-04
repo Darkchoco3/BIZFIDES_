@@ -57,7 +57,9 @@ const ForgetPassword = () => {
     <main className="">
       <div className="bg-white w-full h-screen flex">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-start lg:justify-center container mx-auto">
+        <Link to='/'>
         <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
+        </Link>
         <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
           Forgot password?
           </h2>
