@@ -22,6 +22,7 @@ const Navbar = () => {
           alt="Logo"
         />
       </Link>
+      
       <div
         className={`duration-500 lg:static absolute bg-white top-0 left-0 w-full ${
           menuOpen ? 'block top-[100%]' : 'hidden top-[12%]' 
