@@ -26,7 +26,7 @@ const Home = () => {
       <Sub/>
       <RecentWorks/>
       <OurTeam/>
-      {/* <Testimonials/> */}
+      <Testimonials/>
       <Subscribe/>
         </div> 
 
