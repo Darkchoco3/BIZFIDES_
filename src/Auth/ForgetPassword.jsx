@@ -55,26 +55,27 @@ const ForgetPassword = () => {
   return (
     <main className="">
       <div className="bg-white w-full h-screen flex">
-        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-          <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
-            Forgot password?
+        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-start lg:justify-center container mx-auto">
+        <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
+        <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
+          Forgot password?
           </h2>
-          <p className="font-medium text-[20px] text-neutral-black">No worries, we’ll send you reset instructions.</p>
+          <p className="font-medium text-[12px] md:text-sm lg:text-[20px] text-neutral-black py-4">No worries, we’ll send you reset instructions.</p>
           
           {/* Form start */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter">
             <div>
-              <label htmlFor="email" className="block text-lg font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
               <input
                 type="email"
                 {...register("email", { required: 'Email is required' })}
                 placeholder="Enter your Email"
-                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark"
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : 'Reset Password'}
@@ -83,7 +84,7 @@ const ForgetPassword = () => {
           </form>
           {/* Form end */}
   
-          <p className="mt-6 text-center font-medium text-xl">
+          <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
             <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
           </p>
         </div>
