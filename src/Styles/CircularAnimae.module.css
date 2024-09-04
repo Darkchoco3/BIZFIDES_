@@ -1,0 +1,39 @@
+@keyframes frame178 {
+    0% { transform: rotate(0deg); opacity: 1; }
+    100% { transform: rotate(-90deg); opacity: 1; }
+  }
+  
+   /* @keyframes frame179 {
+    0% { transform: rotate(90deg); opacity: 1; }
+    100% { transform: rotate(180deg); opacity: 1; }
+  }
+   */
+  /* @keyframes variant4 {
+    0% { transform: rotate(180deg); opacity: 1; }
+    100% { transform: rotate(270deg); opacity: 1; }
+  } */
+/*   
+  @keyframes variant5 {
+    0% { transform: rotate(270deg); opacity: 1; }
+    100% { transform: rotate(360deg); opacity: 1; }
+  }
+  
+  @keyframes frame177 {
+    0% { transform: rotate(360deg); opacity: 1; }
+    100% { transform: rotate(0deg); opacity: 1; }
+  }   */
+
+  /* @keyframes rotateContainer {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(-90deg); } 
+  }
+
+  .animatedContainer {
+    animation: rotateContainer 10s linear infinite; 
+  } */
+  
+  .animatedLabels {
+    animation: frame178 5s linear infinite, frame179 5s linear 5s infinite, variant4 5s linear 10s, variant5 5s linear 15s, frame177 5s linear 20s;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+  }
+  /* , variant5 1ms 3ms, frame177 1ms 4ms; */

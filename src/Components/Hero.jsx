@@ -7,6 +7,7 @@ import { Link} from 'react-router-dom';
 import CircularAnimae from './CircularAnimae'; 
 import CircularDiagram from './CircularAnimae'; 
 
+
 const Hero = () => {
   return (
     <div className='bg-primary pt-[5rem] md:pt-24 lg:pt-[7rem] relative'>
@@ -49,7 +50,7 @@ const Hero = () => {
       </div>
 
       {/* Uncomment this if you want to use CircularDiagram */}
-      {/* <CircularDiagram /> */}
+      <CircularDiagram />
     </div>
   );
 };
