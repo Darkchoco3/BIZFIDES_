@@ -25,7 +25,7 @@ const Hero = () => {
             <h1 className='font-bold font-roboto text-4xl md:text-5xl xl:text-6xl text-center lg:text-start text-primary-light'>
               Build Your Online Presence Today.
             </h1>
-            <button className='font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl'>
+            <button className='font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out'>
               <Link to='/register'>
               Get Started
               </Link>
@@ -44,7 +44,7 @@ const Hero = () => {
 
         {/* Rectangle Decoration */}
         <div className='absolute bottom-0 left-4 md:left-4 lg:left-[3rem] xl:left-[53px] '>
-          <img src={Rectangle} className="h-full w-full" alt="Rectangle Decoration" />
+          <img src={Rectangle} className="h-full w-full animate-pulse" alt="Rectangle Decoration" />
         </div>
       </div>
 
