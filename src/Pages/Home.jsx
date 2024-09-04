@@ -8,7 +8,7 @@ import Testimonials from '../Components/Testimonial'
 import Footer from '../Layouts/Footer'
 import RecentWorks from '../Components/RecentWorks.jsx'
 import Subscribe from '../Components/Subscribe'
-import Sub from '../Components/Sub'
+import Sub from '../Components/BuildProcess.jsx'
 
 const Home = () => {
   return (
