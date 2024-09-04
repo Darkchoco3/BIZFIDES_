@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import about from "../assets/AboutGroup.png";
-
+import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -18,17 +18,12 @@ const About = () => {
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
           No 1. Business Expert
         </h2>
-        <p className="text-xs sm:text-sm text-[#6B6B6B] w-[100%] lg:w-[100%]">
-          <span className="text-primary">Bizfides</span> was founded on the
-          belief that every business deserves a strong online presence. Our team
-          of experts is dedicated to helping you succeed in the digital
-          landscape. It was founded on the belief that every business deserves a
-          strong online presence. Our team of experts is dedicated to helping
-          you succeed in the digital landscape. It was founded on the belief
-          that every business deserves a strong online presence. Our team of
-          experts is dedicated to helping you succeed in the digital landscape.
-        </p>
-        <Button className="px-8 sm:px-14 ">Know More</Button>
+      <p className="text-xs sm:text-sm text-[#6B6B6B] w-full lg:w-full">
+        <span className="text-primary">Bizfides</span> was established with a mission to empower every business to build a strong and impactful online presence. We believe that visibility and influence in the digital space are key to success.Let us partner with you to reach your business goals.
+      </p>
+      <Link to='/about'>
+        <Button className="px-8 sm:px-14 hover:bg-secondary">Know More</Button>
+      </Link>
       </div>
     </div>
   );

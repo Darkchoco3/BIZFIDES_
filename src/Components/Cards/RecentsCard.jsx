@@ -32,7 +32,7 @@ const RecentsCard = ({
             <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter font-bold pt-1">
               {name}
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch]">
+            <p className="text-secondary text-base 2xl:text-2xl font-inter max-w-[25ch]">
               Features-
               <span className="text-neutral-grey-300">{features}</span>
             </p>
@@ -43,7 +43,7 @@ const RecentsCard = ({
           </div>
 
           <a href="./portfolio" className="grid place-items-center lg:place-content-start">
-          <div className="group text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+          <div className="group text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36 hover:scale-110">
             <span
               className="font-inter text-sm 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-secondary"
             >
