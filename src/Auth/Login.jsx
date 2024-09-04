@@ -53,22 +53,23 @@ const Login = () => {
   };
 
   return (
-    <main className=''>
+    <main className='py-5 lg:py-0'>
       <div className="bg-white w-full h-screen flex ">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-          <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
-          Welcome Back To Bizfides
+        <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
+          <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
+          Welcome Back To <br className='lg:hidden'/>Bizfides
            </h2>
-           <p className='font-medium text-[28px] text-secondary'>Sign in to continue.</p>
+           <p className='font-medium text-[12px] md:text-sm lg:text-[28px] py-2 lg:py-4 text-primary lg:text-secondary'>Sign in to continue.</p>
           {/* Form start */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-4 lg:mt-6 font-inter">
             <div>
-              <label htmlFor="email" className="block text-lg font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
               <input
                 type="email"
                 {...register("email", { required: 'Email is required' })}
                 placeholder='Enter your Email'
-                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
@@ -76,7 +77,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-lg font-medium text-gray-700 "
+                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700 "
               >
                 Password
               </label>
@@ -87,7 +88,7 @@ const Login = () => {
                     required: "Password is required",
                   })}
                   placeholder="Enter your password"
-                  className="relative mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -118,7 +119,7 @@ const Login = () => {
              </div>
 
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark"
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : 'Sign In'}
@@ -130,14 +131,14 @@ const Login = () => {
           <div className="w-full flex justify-center flex-col mt-4">
             <img src={line} className='py-2' alt="divider" />
             <button
-              className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
+              className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
               onClick={handleGoogleLogin}
             >
               <FcGoogle />
               Continue with Google
             </button>
           </div>
-          <p className="mt-6 text-center text-lg text-gray-500">
+          <p className="mt-6 text-center text-sm md:text-base lg:text-lg text-gray-500">
             New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
