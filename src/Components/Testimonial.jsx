@@ -73,7 +73,7 @@ const Testimonials = () => {
         <h3 className="text-center text-2xl lg:text-[2.5rem] font-bold font-roboto pt-8">
           Hear From Our Satisfied Clients
         </h3>
-        <p className="text-center text-base lg:text-lg mb-6 sm:mb-12 lg:mb-16 max-w-[45ch] pt-3">
+        <p className="text-center text-[1rem] lg:text-lg mb-6 sm:mb-12 lg:mb-16 max-w-[45ch] pt-3">
           Authentic feedback, tangible impact. Discover why we're the trusted choice.
         </p>
       </div> 

@@ -7,7 +7,7 @@ import Testimonials from "../Components/Testimonial";
 import Subscribe from "../Components/Subscribe.jsx";
 import RecentsCard from "../Components/Cards/RecentsCard.jsx";
 import { ourWorks } from "../DB/data.js";
-import Pagination from "../Components/Pagination.jsx";
+import Pagination from "../Components/Pagination.jsx"; 
 
 const Portfolio = () => {
   const [stats, setStats] = useState({

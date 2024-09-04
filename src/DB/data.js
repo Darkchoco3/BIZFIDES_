@@ -93,7 +93,7 @@ export const whatwedo =[
 
 
 // Recent Works
-    export const ourWorks = [
+export const ourWorks = [
       {
         id: 1,
         image: shoestoreimage,
