@@ -2,47 +2,44 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
-import line from '../assets/Frame 115.svg'
-import image from '../assets/auth.jpeg'
-import logo from '../assets/Bizfides logo.svg'
+import line from '../assets/Frame 115.svg';
+import image from '../assets/auth.jpeg';
+import logo from '../assets/Bizfides logo.svg';
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { useAuth } from '../Contexts/Auth';
+import { ImNotification } from "react-icons/im";
+import LoadingButtonText from '../Components/utils/Loading';
 
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [message, setMessage] = useState(''); // State to hold success or error message
 
   // Initialize useForm hook
   const {
     register, 
     handleSubmit,
-    watch,
     formState: { errors }, 
+    reset
   } = useForm();
 
-  // Dummy signup function
-  const signup = async (data) => {
-    console.log("Submitting form data:", data);
-    // Simulate an API call
-    return new Promise((resolve) => setTimeout(() => resolve({ error: false }), 1000));
-  };
+  const { login } = useAuth();
 
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await signup(data);
+      const response = await login(data);
       if (!response.error) {
-        // Success handling
-        // toast.success("Registration successful");
+        reset()
         setTimeout(() => {
-          navigate("/home");
-        }, 5000);
+          navigate("/");
+        }, 3000);
       } else {
-        // Error handling
-        // toast.error("Registration failed");
+        setMessage('Login failed. Please check your credentials.');
       }
     } catch (err) {
-      // toast.error(err.message);
+      setMessage(`An error occurred: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -54,13 +51,14 @@ const Login = () => {
 
   return (
     <main className='py-5 lg:py-0'>
-      <div className="bg-white w-full h-screen flex ">
+      <div className="bg-white w-full h-screen flex">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-        <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
+          <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
           <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
-          Welcome Back To <br className='lg:hidden'/>Bizfides
-           </h2>
-           <p className='font-medium text-[12px] md:text-sm lg:text-[28px] py-2 lg:py-4 text-primary lg:text-secondary'>Sign in to continue.</p>
+            Welcome Back To <br className='lg:hidden'/>Bizfides
+          </h2>
+          <p className='font-medium text-[12px] md:text-sm lg:text-[28px] py-2 lg:py-4 text-primary lg:text-secondary'>Sign in to continue.</p>
+          
           {/* Form start */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-4 lg:mt-6 font-inter">
             <div>
@@ -73,11 +71,11 @@ const Login = () => {
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
-  
+
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700 "
+                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700"
               >
                 Password
               </label>
@@ -97,13 +95,13 @@ const Login = () => {
                   {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
                 </div>
               </div>
-            {errors.password && (
-              <p className="text-primary-red text-sm">
-                {errors.password.message}
-              </p>
-            )}
+              {errors.password && (
+                <p className="text-primary-red text-sm">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
-  
+
             <div className='flex justify-between items-center'> 
               <div className="flex items-center">
                 <input
@@ -116,18 +114,24 @@ const Login = () => {
                 </label>
               </div>
               <Link to='/forgot-password' className="text-primary-red text-sm">Forgot password</Link>
-             </div>
+            </div>
 
             <div>
               <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
-                {loading ? 'Loading...' : 'Sign In'}
+                {loading ?   <LoadingButtonText color="text-white" text="Signing In..." /> : 'Sign In'}
               </button>
             </div>
           </form>
           {/* Form end */}
-  
+          {/* Success or Error message */}
+          {message && (
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
+              <ImNotification/>{message}
+            </div>
+          )}
+
           <div className="w-full flex justify-center flex-col mt-4">
             <img src={line} className='py-2' alt="divider" />
             <button
@@ -142,11 +146,11 @@ const Login = () => {
             New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
         </div>
-       <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
-       <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
-       <img src={logo} alt="" />
-       </Link>
-      </div>
+        <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
+          <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
+            <img src={logo} alt="Bizfides Logo" />
+          </Link>
+        </div>
       </div>
     </main>
   );  

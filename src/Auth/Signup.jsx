@@ -6,13 +6,20 @@ import line from '../assets/Frame 115.svg'
 import image from '../assets/auth.jpeg'
 import logo from '../assets/Bizfides logo.svg'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
+import { useAuth } from '../Contexts/Auth';
+import LoadingButtonText from '../Components/utils/Loading';
+import { ImNotification } from "react-icons/im";
 
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(''); 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('+234');
+  const { signup } = useAuth()
+
 
   // Initialize useForm hook
   const {
@@ -23,11 +30,20 @@ const SignUp = () => {
     reset 
   } = useForm();
 
-  // Dummy signup function
-  const signup = async (data) => {
-    console.log("Submitting form data:", data);
-    // Simulate an API call
-    return new Promise((resolve) => setTimeout(() => resolve({ error: false }), 1000));
+  const handlePhoneChange = (e) => {
+    let input = e.target.value;
+
+    // Remove the leading 0 if present
+    if (input.startsWith('+2340')) {
+      input = '+234' + input.slice(5);
+    } else if (input.startsWith('0')) {
+      input = '+234' + input.slice(1);
+    }
+
+    // Ensure only 10 digits are entered after +234
+    if (input.length <= 14) {
+      setPhoneNumber(input);
+    }
   };
 
   const onSubmit = async (data) => {
@@ -43,10 +59,10 @@ const SignUp = () => {
         }, 5000);
       } else {
         // Error handling
-        // toast.error("Registration failed");
+        setMessage('Registration failed. Please check your credentials.');
       }
     } catch (err) {
-      // toast.error(err.message);
+      setMessage(`An error occurred: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -70,7 +86,7 @@ const SignUp = () => {
       </h2>
 
       {/* Form start */}
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter ">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter px-1">
       <p className='font-medium text-[12px] md:text-sm lg:text-lg text-secondary'>Lets get started by filling out the information below</p>
         <div className="flex space-x-4">
           <div className="flex-1">
@@ -96,21 +112,34 @@ const SignUp = () => {
         </div>
 
         <div>
-          <label htmlFor="phone" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Phone</label>
-          <input
-            type="tel"
-            {...register("phone", { required: 'Phone number is required' })}
-            placeholder='Phone'
-            className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-          />
-          {errors.phone && <p className="text-primary-red text-sm">{errors.phone.message}</p>}
-        </div>
+        <label htmlFor="phone" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">
+          Phone
+        </label>
+        <input
+          type="tel"
+          value={phoneNumber}
+          {...register("phoneNumber", {
+            required: 'Phone number is required',
+            validate: value => value.length === 14 || 'Invalid phone number'
+          })}
+          placeholder='Phone'
+          onChange={handlePhoneChange}
+          className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+        />
+        {errors.phoneNumber && <p className="text-primary-red text-sm">{errors.phoneNumber.message}</p>}
+      </div>
 
         <div>
           <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
           <input
-            type="email"
-            {...register("email", { required: 'Email is required' })}
+            type="text"
+            {...register("email", {
+              required: 'Email is required',
+              pattern: {
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                message: 'Invalid email address'
+              }
+            })}
             placeholder='Enter your Email'
             className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
           />
@@ -194,12 +223,16 @@ const SignUp = () => {
           <button type="submit" className="w-full  flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
             disabled={loading}
           >
-            {loading ? 'Creating an account...' : 'Sign Up'}
+             {loading ?   <LoadingButtonText color="text-white" text="Creating an account..." /> : 'Sign Up'}
           </button>
         </div>
       </form>
       {/* Form end */}
-
+      {message && (
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
+              <ImNotification/>{message}
+            </div>
+          )}
       <div className="w-full flex justify-center flex-col mt-4">
         <img src={line} className='py-2' alt="divider" />
         <button
@@ -218,9 +251,9 @@ const SignUp = () => {
 
     {/* Right Side - Image Background */}
     <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage: `url(${image})` }}>
-    <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
+    <Link to='/' className="absolute right-[120px] top-[70px]">
        <img src={logo} alt="" />
-    </Link>
+       </Link>
     </div>
   </div>
 </>

@@ -4,12 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import image from '../assets/auth.jpeg';
 import logo from '../assets/Bizfides logo.svg';
 import Modal from '../Components/utils/Modal';
+import { ImNotification } from "react-icons/im";
+import LoadingButtonText from '../Components/utils/Loading';
+import axios from 'axios';
 
 const ForgetPassword = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState(''); 
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -17,6 +20,7 @@ const ForgetPassword = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    reset()
   };
 
   // Initialize useForm hook
@@ -24,29 +28,27 @@ const ForgetPassword = () => {
     register, 
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
   // Dummy forgot password function
-  const forgotPassword = async (data) => {
-    console.log("Submitting form data:", data);
-    // Simulate an API call
-    return new Promise((resolve) => setTimeout(() => resolve({ error: false }), 1000));
-  };
+
 
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await forgotPassword(data);
-      if (!response.error) {
+      const response = await axios.post('/auth/forgot-password',  data );
+      if (response.data.success === 'true') {
         openModal()
-        // Success handling
-        // toast.success("Password reset instructions sent");
       } else {
         // Error handling
         // toast.error("Failed to send reset instructions");
+        setMessage(`An error occurred: ${response.data.message}`);
       }
     } catch (err) {
-      // toast.error(err.message);
+      console.log(err.response.data.message);
+      
+      setMessage(`An error occurred: ${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
@@ -78,12 +80,16 @@ const ForgetPassword = () => {
               <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
-                {loading ? 'Loading...' : 'Reset Password'}
+                {loading ? <LoadingButtonText color="text-white" text="Loading..." /> : 'Reset Password'}
               </button>
             </div>
           </form>
           {/* Form end */}
-  
+          {message && (
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
+              <ImNotification/>{message}
+            </div>
+          )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
             <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
           </p>
