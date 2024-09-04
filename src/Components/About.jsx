@@ -1,29 +1,28 @@
 import React from "react";
-import Button from "./Button";
-import about from "../assets/AboutGroup.png";
 import { Link } from 'react-router-dom';
+import about from "../assets/AboutGroup.png";
 
 const About = () => {
   return (
-    <div className="container border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[109px] px-6 md:px-12 lg:px-auto py-4 lg:py-[50px] font-inter">
-      <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
-        <div className="w-full max-h-[284px] max-w-[284px] lg:max-h-[628px] lg:max-w-[630px]">
-          <img src={about} />
+    <div className="container border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-[109px]  py-4 lg:py-[50px] font-inter">
+      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div className="hidden md:block md:w-[80%]  lg:w-full">
+          <img src={about} className="max-h-full w-auto" />
         </div>
       </div>
-      <div className="about-content w-full lg:w-1/2 max-w-[497px] space-y-4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start text-center lg:text-left">
+      <div className="about-content w-full lg:w-1/2 max-w-[497px] space-y-4 flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
         <h3 className="text-lg sm:text-xl font-semibold text-primary">
           ABOUT US
         </h3>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
           No 1. Business Expert
         </h2>
-      <p className="text-xs sm:text-sm text-[#6B6B6B] w-full lg:w-full">
-        <span className="text-primary">Bizfides</span> was established with a mission to empower every business to build a strong and impactful online presence. We believe that visibility and influence in the digital space are key to success.Let us partner with you to reach your business goals.
-      </p>
-      <Link to='/about'>
-        <Button className="px-8 sm:px-14 hover:bg-secondary">Know More</Button>
-      </Link>
+        <p className="text-xs sm:text-sm text-[#6B6B6B] w-full lg:w-full">
+          <span className="text-primary">Bizfides</span> was established with a mission to empower every business to build a strong and impactful online presence. We believe that visibility and influence in the digital space are key to success. Let us partner with you to reach your business goals.
+        </p>
+        <Link to='/about' className="w-full lg:w-auto px-[4.063rem] py-[.813rem] bg-primary hover:bg-secondary text-white rounded-[.625rem] text-sm">
+          Know More
+        </Link>
       </div>
     </div>
   );

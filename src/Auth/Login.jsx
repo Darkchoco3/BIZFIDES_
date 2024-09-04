@@ -118,7 +118,7 @@ const Login = () => {
              </div>
 
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark"
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-secondary transition-colors duration-300"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : 'Sign In'}
@@ -142,10 +142,10 @@ const Login = () => {
           </p>
         </div>
        <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
-       <Link to='/' className="absolute right-[120px] top-[70px]">
+       <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
        <img src={logo} alt="" />
        </Link>
-          </div>
+      </div>
       </div>
     </main>
   );  

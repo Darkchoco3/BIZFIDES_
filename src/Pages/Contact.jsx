@@ -65,8 +65,8 @@ const Contact = () => {
                 </div>
             </div>
 
-            <div className="flex items-center space-x-2">
-                <img src={location} alt="Location" className="w-6 h-6" />
+            <div className="flex  space-x-2">
+                <img src={location} alt="Location" className="w-4 h-4" />
                 <div className="flex flex-col">
                     <span className="font-bold">Address</span>
                     <span>17 Avenue, SJK street, Lagos.</span>

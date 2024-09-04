@@ -8,7 +8,7 @@ const Service = () => {
 
 
   return (
-    <div className="container pt-[25px] lgpt-[50px] w-11/12 "> 
+    <div className="container pt-[25px] lg:pt-[50px] w-11/12 "> 
     <div className="w-full flex justify-center px-4 md:px-8 lg:px-0 ">
       <div className="border-t border-[#F8F8F8] flex flex-col pb-[50px]">
         <div className="text-center pb-6 lg:pb-0">
@@ -21,7 +21,7 @@ const Service = () => {
           <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
             Unlocking business potential with our key services:
           </p>
-          <Link to='services' className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full">
+          <Link to='services' className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg hidden lg:block text-center w-full hover:text-secondary hover:scale-110">
             More Service
           </Link>
         </div>
@@ -35,8 +35,8 @@ const Service = () => {
     <div className="lg:flex justify-end hidden">
           <img src={dot} alt="" />
     </div>
-    <Link to='/services' className="mt-4 px-8 md:px-10 py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full">
-            More Service
+    <Link to='/services' className="lg:mt-4 px-8 md:px-10 lg:py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full hover:text-secondary hover:scale-110">
+            More Services
           </Link>
     </div>
 
