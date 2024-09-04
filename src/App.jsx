@@ -14,7 +14,7 @@ const LayoutWithNavandFooter = () => (
   <div className="">
           <Navbar />
           <Outlet />
-          <Footer />  
+          {/* <Footer />   */}
 
   </div>
 )

@@ -32,7 +32,7 @@ const RecentsCard = ({
             <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter font-bold pt-1">
               {name}
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch]">
+            <p className="text-secondary text-base 2xl:text-2xl font-inter max-w-[25ch]">
               Features-
               <span className="text-neutral-grey-300">{features}</span>
             </p>
