@@ -7,6 +7,7 @@ import image from '../assets/auth.jpeg'
 import logo from '../assets/Bizfides logo.svg'
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
+
 const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);

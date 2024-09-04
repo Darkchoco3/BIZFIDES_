@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoClose, IoMenu } from "react-icons/io5";
 import Logo from '../assets/Bizfides logo.svg'
 import { Link, useLocation  } from 'react-router-dom';
+import Notify from '../assets/notification-bing.svg';
+import Arrow from '../assets/arrow-up.svg'
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -84,11 +86,21 @@ const Navbar = () => {
         </Link>
         <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
+        </Link> 
+      </div>
+      {/* <div className="flex gap-6">
+        <div className="flex bg-neutral-grey-200 py-1 px-2.5 rounded-full gap-1">
+          <div className='py-1 px-3 font-inter font-semibold text-xl bg-primary text-white rounded-full'><p>V</p></div>
+          <img src={Arrow} alt="" />
+        </div>
+        <span className='bg-neutral-grey-200 flex items-center py-1 px-3 rounded-full'><img src={Notify} alt="" /></span>
+        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
+          Log Out
         </Link>
-        <div onClick={onToggleMenu} className="text-4xl cursor-pointer lg:hidden text-primary">
+      </div> */}
+      <div onClick={onToggleMenu} className="text-4xl cursor-pointer lg:hidden text-primary">
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
-      </div>
     </nav>
   </header>
   
