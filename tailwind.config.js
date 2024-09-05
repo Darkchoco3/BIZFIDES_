@@ -24,8 +24,8 @@ export default {
         'transparents': 'hsla(0, 0%, 0%, 0)',
         'neutral-grey-200': 'hsla(0, 0%, 90%, 1)',
         'primary-red': 'hsla(352, 82%, 38%, 1)',
-         'error-red': 'hsla(0, 100%, 50%, 1)'
-
+         'error-red': 'hsla(0, 100%, 50%, 1)',
+        'secondary-light': 'hsla(180, 47%, 93%, 1)'
       },
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'],

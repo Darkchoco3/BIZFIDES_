@@ -10,7 +10,7 @@ import image from '../assets/AboutImg.svg'
 
 const About = () => {
   return (
-    <div className="grid gap-[54px]" >
+    <div className="grid gap-[54px] " >
         <ExternalHero
         heading='ABOUT US'
         paragraph='Building Bridges to Your Online Success Empowering Small Businesses to Stand Out'

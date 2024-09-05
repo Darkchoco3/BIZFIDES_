@@ -13,6 +13,7 @@ import Footer from "../Layouts/Footer.jsx";
 import About from "../Components/About.jsx";
 import Button from "../Components/Button.jsx";
 import myImage from "../assets/Group 1.svg";
+import LazyLoad from "react-lazy-load";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
@@ -90,7 +91,6 @@ const Services = () => {
         </div>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
           {services.map((service, index) => (
-        
             <ServiceDetails
               key={index}
               title={service.title}
@@ -105,7 +105,9 @@ const Services = () => {
         <div className="container  border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[109px] px-6 md:px-12 lg:px-auto py-4 lg:py-[50px] font-inter">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
             <div className="w-full max-h-[284px] max-w-[284px] lg:max-h-[628px] lg:max-w-[630px]">
-              <img src={myImage} alt="" />
+              {/* <lazyLoader> */}
+                <img src={myImage} alt="" loading="lazy"/>
+              {/* </lazyLoader> */}
             </div>
           </div>
           <div className="about-content w-full lg:w-1/2 max-w-[497px] space-y-4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start text-center lg:text-left">

@@ -2,7 +2,7 @@ import mission from '../assets/Mission.svg'
 import vision from '../assets/Vission.svg'
 const MissionVisson = () => {
   return (
-    <div className="min-h-[1230px] bg-neutral-grey-100 flex flex-col items-center justify-center gap-[60px] container mx-auto py-10">
+    <div className="min-h-[1230px] bg-neutral-grey-100 flex flex-col items-center justify-center gap-[60px] container mx-auto w-11/12 py-10">
       <div className="flex max-w-[1240px] lg:max-h-[485px] items-center lg:gap-[50px] xl:gap-[150px] flex-col gap-8 md:gap-12 text-center px-2 lg:flex-row lg:text-start">
         <img src={mission} alt="mission"/>
         <div className='flex flex-col gap-2 lg:gap-[20px] '>
