@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
@@ -88,7 +87,7 @@ const SignUp = () => {
 
   
 //   Your account has been successfully created!"
-// "Please check your email to verify your account."
+// "Please check your email to verify your account."
 
   return (
 <>
@@ -272,7 +271,7 @@ const SignUp = () => {
           <div className='w-full text-center py-8 font-roboto '>
             <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Welcome to Bizfides!</h2>
             <p className='text-xl text-neutral-grey-300'>Your account has been successfully created!</p>
-            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
+            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
             <div className='flex justify-center gap-12'>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
             <Link to='/login' onClick={closeModal} className='p-2 px-6 rounded-[10px] text-primary mt-8'>Login</Link>
