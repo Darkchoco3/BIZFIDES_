@@ -70,24 +70,24 @@ const SignUp = () => {
 
       {/* Form start */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter ">
-        <div className="flex space-x-4">
+        <div className="flex flex-col xl:flex-row xl:space-x-4">
           <div className="flex-1">
             <label htmlFor="firstName" className="block text-lg font-medium text-gray-700">First Name</label>
             <input
               type="text"
               {...register("firstName", { required: 'First name is required' })}
               className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              placeholder='Enter Name'
+              placeholder='Enter First Name'
             />
             {errors.firstName && <p className="text-primary-red text-sm">{errors.firstName.message}</p>}
           </div>
           <div className="flex-1">
-            <label htmlFor="lastName" className="block text-lg font-medium text-gray-700">Last Name</label>
+            <label htmlFor="lastName" className="block text-lg font-medium text-gray-700 pt-3 mt-1">Last Name</label>
             <input
               type="text"
               {...register("lastName", { required: 'Last name is required' })}
               className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              placeholder='Enter Name'
+              placeholder='Enter Last Name'
             />
             {errors.lastName && <p className="text-primary-red text-sm">{errors.lastName.message}</p>}
           </div>
@@ -98,7 +98,7 @@ const SignUp = () => {
           <input
             type="tel"
             {...register("phone", { required: 'Phone number is required' })}
-            placeholder='Phone'
+            placeholder='Phone Number'
             className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
           />
           {errors.phone && <p className="text-primary-red text-sm">{errors.phone.message}</p>}
@@ -189,7 +189,7 @@ const SignUp = () => {
         {errors.termsAccepted && <p className="text-primary-red text-sm">{errors.termsAccepted.message}</p>}
 
         <div>
-          <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+          <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-secondary transition-colors duration-300"
             disabled={loading}
           >
             {loading ? 'Creating an account...' : 'Sign Up'}
@@ -216,9 +216,9 @@ const SignUp = () => {
 
     {/* Right Side - Image Background */}
     <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage: `url(${image})` }}>
-    <Link to='/' className="absolute right-[120px] top-[70px]">
+    <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
        <img src={logo} alt="" />
-       </Link>
+    </Link>
     </div>
   </div>
 </>

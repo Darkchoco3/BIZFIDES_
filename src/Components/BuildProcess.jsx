@@ -80,7 +80,7 @@ const BuildProcess = () => {
             </div>
           
           </div>
-          <div className="mt-16 md:mt-4">
+          <div className="mt-16 md:mt-4 animate-pulse">
           <img src={image1} alt="" className="" />
         </div>
         </div>

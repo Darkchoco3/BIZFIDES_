@@ -59,7 +59,7 @@ const ForgetPassword = () => {
           <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
             Forgot password?
           </h2>
-          <p className="font-medium text-[20px] text-neutral-black">No worries, we’ll send you reset instructions.</p>
+          <p className="font-medium text-base lg:text-[1.05rem] xl:text-[1.25rem] max-w-[40ch] lg:text text-neutral-black">No worries, we’ll send you reset instructions.</p>
           
           {/* Form start */}
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter">
@@ -74,7 +74,7 @@ const ForgetPassword = () => {
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-primary-dark"
+              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-secondary transition-colors duration-300"
                 disabled={loading}
               >
                 {loading ? 'Loading...' : 'Reset Password'}
@@ -84,7 +84,7 @@ const ForgetPassword = () => {
           {/* Form end */}
   
           <p className="mt-6 text-center font-medium text-xl">
-            <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
+            <Link to="/" className="text-primary hover:text-secondary"><span className='pr-4'>&lt;</span>Back to home</Link>
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
