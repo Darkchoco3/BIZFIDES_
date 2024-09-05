@@ -160,7 +160,7 @@ const Testimonials = () => {
     <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 ">
       <div className="container w-11/12">
         <div className="grid place-items-center">
-          <h5 className="text-center font-semibold text-xl fon-inter lg:text-2xl">
+          <h5 className="text-center font-semibold text-xl font-inter lg:text-2xl">
             OUR TESTIMONIALS
           </h5>
           <h3 className="text-center text-2xl lg:text-[2.5rem] font-bold font-roboto pt-8">
