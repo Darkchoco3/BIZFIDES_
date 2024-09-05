@@ -13,11 +13,11 @@ import NotFoundPage from "./Components/NotFoundPage";
 import ForgetPassword from "./Auth/ForgetPassword";
 import ResetPassword from "./Auth/ResetPassword";
 import About from "./Pages/About";
-import { ScrollToTop } from "./Components/ScrollToTop";
 import PublicRoute from "./Contexts/PublicRoutes";
 import PrivateRoute from "./Contexts/PrivateRoutes";
 import Dashboard from "./Components/Dashboard";
 import VerifyEmail from "./Components/VerifyEmail";
+import { ScrollToTop } from "./Components/ScrollToTop";
 
 const LayoutWithNavandFooter = () => (
   <div className="">

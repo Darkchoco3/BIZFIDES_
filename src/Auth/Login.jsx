@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg';
@@ -19,7 +19,7 @@ const Login = () => {
 
   // Initialize useForm hook
   const {
-    register,
+    register, 
     handleSubmit,
     formState: { errors }, 
     reset
@@ -72,11 +72,7 @@ const Login = () => {
                 placeholder='Enter your Email'
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               />
-              {errors.email && (
-                <p className="text-primary-red text-sm">
-                  {errors.email.message}
-                </p>
-              )}
+              {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
 
             <div>
@@ -116,10 +112,7 @@ const Login = () => {
                   {...register("RememberMe")}
                   className={`h-4 w-4`}
                 />
-                <label
-                  htmlFor="RememberMe"
-                  className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300"
-                >
+                <label htmlFor="RememberMe" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
                   Remember Me
                 </label>
               </div>
@@ -143,7 +136,7 @@ const Login = () => {
           )}
 
           <div className="w-full flex justify-center flex-col mt-4">
-            <img src={line} className="py-2" alt="divider" />
+            <img src={line} className='py-2' alt="divider" />
             <button
               className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
               onClick={handleGoogleLogin}
@@ -157,25 +150,15 @@ const Login = () => {
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
-        <Link to="/" className="absolute right-[5.875rem] top-[2.8rem]">
-            {/* <LazyLoad> */}
-              <img src={logo} alt="" loading="lazy"/>
+          <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
+           {/* <LazyLoad> */}
+           <img src={logo} alt="" loading="lazy"/>
             {/* </LazyLoad> */}
           </Link>
-          <p className="mt-6 text-center text-lg text-gray-500">
-            New User?{" "}
-            <Link
-              to="/register"
-              className="text-secondary hover:text-green-800"
-            >
-              Sign up
-            </Link>
-          </p>
         </div>
-        
       </div>
     </main>
-  );
+  );  
 };
 
 export default Login;
