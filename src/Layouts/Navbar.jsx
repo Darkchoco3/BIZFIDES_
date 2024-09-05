@@ -49,7 +49,7 @@ const Navbar = () => {
  > 
 
           <li className=''>
-            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/about') ? 'active-link' : ''}`} to='' onClick={closeMenu}>
+            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/about') ? 'active-link' : ''}`} to='/about' onClick={closeMenu}>
               About Us
             </Link>
           </li>
