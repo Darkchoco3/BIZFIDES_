@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
+const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}) => {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -12,13 +12,13 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
     const pages = [];
 
     if (totalPages <= 4) {
-      pageNumbers.forEach(number => {
+      pageNumbers.forEach((number) => {
         pages.push(
           <li key={number}>
             <button
               onClick={() => paginate(number)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === number ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl  ' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === number ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
             >
               {number}
             </button>
@@ -32,7 +32,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
           <button
             onClick={() => paginate(1)}
             className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-              ${currentPage === 1 ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+              ${currentPage === 1 ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
           >
             1
           </button>
@@ -58,7 +58,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
             <button
               onClick={() => paginate(i)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === i ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === i ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
             >
               {i}
             </button>
@@ -80,8 +80,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
         <li key={totalPages}>
           <button
             onClick={() => paginate(totalPages)}
-            className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-medium font-inter text-sm lg:text-base 2xl:text-lg 
-              ${currentPage === totalPages ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl ' : 'text-black hover:bg-primary-light'}`}
+            className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-medium font-inter text-sm lg:text-base 2xl:text-lg
+              ${currentPage === totalPages ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
           >
             {totalPages}
           </button>
@@ -93,9 +93,56 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage }) => {
   };
 
   return (
-    <nav className="flex justify-center pt-10">
-      <ul className="inline-flex space-x-2">
+    <nav className="container w-11/12 flex justify-center pt-10">
+      <ul className="inline-flex space-x-2 items-center">
+        {/* Left Arrow */}
+        <li>
+          <button
+            onClick={() => currentPage > 1 && paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+            className={`${disabled ? 'bg-primary-medium' :''}py-2 px-[.5rem] rounded-full font-semibold font-inter text-xs md:text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary`}>
+            <svg
+                  className="w-4 h-4 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+          </button>
+        </li>
+
         {renderPageNumbers()}
+
+        {/* Right Arrow */}
+        <li>
+          <button
+            onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
+            className="py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary"
+            disabled={currentPage === totalPages}
+          >
+            <svg
+                  className="w-4 h-4 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+          </button>
+        </li>
       </ul>
     </nav>
   );

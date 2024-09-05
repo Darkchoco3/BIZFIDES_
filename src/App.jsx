@@ -9,6 +9,15 @@ import Error from "./Pages/Error";
 import Footer from "./Layouts/Footer";
 import Services from "./Pages/Services";
 import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
+import NotFoundPage from "./Components/NotFoundPage";
+import ForgetPassword from "./Auth/ForgetPassword";
+import ResetPassword from "./Auth/ResetPassword";
+import About from "./Pages/About";
+import { ScrollToTop } from "./Components/ScrollToTop";
+import PublicRoute from "./Contexts/PublicRoutes";
+import PrivateRoute from "./Contexts/PrivateRoutes";
+import Dashboard from "./Components/Dashboard";
+import VerifyEmail from "./Components/VerifyEmail";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -22,18 +31,32 @@ function App() {
   return (
     <div className="">
       
+      
       {/* <Navbar /> */}
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route element={<LayoutWithNavandFooter/>}>
           <Route path="/" element={<Home />} />
           <Route path='/contact' element={<Contact/>}/>
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/profile" element={<Dashboard />} />
           </Route>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Signup />} />
-          <Route path="/*" element={<Error/>} />
+          </Route>
+
+          <Route element={<PublicRoute />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Signup />} />
+            <Route path="/forgot-password" element={<ForgetPassword />} />
+            <Route path="/reset" element={<ResetPassword />} />
+            <Route path="/verify-email/:token" element={<VerifyEmail />} />
+          </Route>
+
+
+          <Route path="/*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
