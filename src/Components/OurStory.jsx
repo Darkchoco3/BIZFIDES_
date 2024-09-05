@@ -2,7 +2,7 @@ import image from '../assets/OurStory.svg'
 
 const OurStory = () => {
   return (
-    <div className="container mx-auto lg:min-h-[883px] flex flex-col justify-center items-center px-4 py-10 gap-8 md:gap-10 lg:gap-[54px]">
+    <div className="container mx-auto w-11/12 lg:min-h-[883px] flex flex-col justify-center items-center px-4 py-10 gap-8 md:gap-10 lg:gap-[54px]">
       <div className="lg:w-[990px] flex flex-col gap-[10px] font-inter">
         <h3 className="text-base xl:text-lg text-primary text-center font-medium">
         OUR STORY
