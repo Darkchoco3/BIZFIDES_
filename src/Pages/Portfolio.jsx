@@ -6,8 +6,8 @@ import styles from "../Styles/Portfolio.module.css";
 import Testimonials from "../Components/Testimonial";
 import Subscribe from "../Components/Subscribe.jsx";
 import RecentsCard from "../Components/Cards/RecentsCard.jsx";
-import { ourWorks } from "../DB/Recentworks.jsx";
-import Pagination from "../Components/Pagination.jsx";
+import { ourWorks } from "../DB/data.js";
+import Pagination from "../Components/Pagination.jsx"; 
 import LazyLoad from "react-lazy-load";
 
 const Portfolio = () => {
