@@ -5,6 +5,8 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import Modal from "../Components/utils/Modal";
+import LazyLoad from "react-lazy-load";
+
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -126,7 +128,7 @@ const ResetPassword = () => {
                       value === watch("password") || "Passwords do not match",
                   })}
                   placeholder="Confirm your password"
-                  className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -166,7 +168,9 @@ const ResetPassword = () => {
           style={{ backgroundImage: `url(${image})` }}
         >
           <Link to="/" className="absolute right-[120px] top-[70px]">
-            <img src={logo} alt="Bizfides logo" />
+            {/* <LazyLoad> */}
+              <img src={logo} alt="Bizfides logo" loading="lazy"/>
+            {/* </LazyLoad> */}
           </Link>
         </div>
       </div>
