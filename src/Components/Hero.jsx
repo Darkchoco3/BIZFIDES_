@@ -11,7 +11,7 @@ import LazyLoad from 'react-lazy-load';
 
 const Hero = () => {
   return (
-    <div className='bg-primary pt-[5rem] md:pt-24 lg:pt-[6.5rem] relative'>
+    <div className='bg-primary pt-[4rem] md:pt-24 lg:pt-[6.5rem] relative'>
       <div className="relative flex justify-between items-center min-h-[21.5rem] md:min-h-[28.625rem] lg:min-h-[30rem] xl:min-h-[33.75rem] ">
         {/* Polygon Div */}
         <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-auto">
