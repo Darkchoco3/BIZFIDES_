@@ -13,6 +13,7 @@ import NotFoundPage from "./Components/NotFoundPage";
 import ForgetPassword from "./Auth/ForgetPassword";
 import ResetPassword from "./Auth/ResetPassword";
 import About from "./Pages/About";
+import { ScrollToTop } from "./Components/ScrollToTop";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -26,8 +27,10 @@ function App() {
   return (
     <div className="">
       
+      
       {/* <Navbar /> */}
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route element={<LayoutWithNavandFooter/>}>
           <Route path="/" element={<Home />} />
