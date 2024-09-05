@@ -12,6 +12,7 @@ import { ImNotification } from "react-icons/im";
 import Modal from '../Components/utils/Modal';
 
 
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
