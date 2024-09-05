@@ -5,7 +5,9 @@ import Animation from '../assets/Animatiion.svg';
 import Rectangle from '../assets/Group 2008.svg';
 import { Link} from 'react-router-dom';
 import CircularAnimae from './CircularAnimae'; 
-import CircularDiagram from './CircularAnimae'; 
+import CircularDiagram from './CircularAnimae';
+import LazyLoad from 'react-lazy-load';
+
 
 const Hero = () => {
   return (
@@ -13,8 +15,12 @@ const Hero = () => {
       <div className="relative flex justify-between items-center min-h-[384px] md:min-h-[484px] lg:min-h-[476px] xl:min-h-[490px]">
         {/* Polygon Div */}
         <div className="absolute top-0 right-0 h-[25rem] md:h-[30.25rem] lg:h-auto w-[70%] md:w-[50%] lg:w-[60%] xl:w-[50%]">
-          <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" />
+        {/* <LazyLoad> */}
+          <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" loading='lazy'/>
+          {/* </LazyLoad> */}
         </div>
+        
+        
         
         {/* Content Div */}
         <div className="relative w-11/12 container flex flex-col lg:flex-row justify-center lg:justify-between items-center z-20">

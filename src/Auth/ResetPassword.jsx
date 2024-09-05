@@ -5,6 +5,8 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import Modal from "../Components/utils/Modal";
+import LazyLoad from "react-lazy-load";
+
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ const ResetPassword = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    reset()
+    reset();
   };
 
   // Initialize useForm hook
@@ -95,11 +97,11 @@ const ResetPassword = () => {
                   {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
                 </div>
               </div>
-            {errors.password && (
-              <p className="text-primary-red text-sm">
-                {errors.password.message}
-              </p>
-            )}
+              {errors.password && (
+                <p className="text-primary-red text-sm">
+                  {errors.password.message}
+                </p>
+              )}
             </div>
 
             <div>
@@ -111,22 +113,22 @@ const ResetPassword = () => {
               </label>
 
               <div className="relative">
-              <input
-                type={showConfirmPassword ? "text" : "password"}
-                {...register("confirmPassword", {
-                  required: "Please confirm your password",
-                  validate: (value) =>
-                    value === watch("password") || "Passwords do not match",
-                })}
-                placeholder="Confirm your password"
-                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              />
-              <div
-                className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-              >
-                {showConfirmPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
-              </div>
+                <input
+                  type={showConfirmPassword ? "text" : "password"}
+                  {...register("confirmPassword", {
+                    required: "Please confirm your password",
+                    validate: (value) =>
+                      value === watch("password") || "Passwords do not match",
+                  })}
+                  placeholder="Confirm your password"
+                  className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                />
+                <div
+                  className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                >
+                  {showConfirmPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
+                </div>
               </div>
               {errors.confirmPassword && (
                 <p className="text-primary-red text-sm">
@@ -157,7 +159,9 @@ const ResetPassword = () => {
           style={{ backgroundImage: `url(${image})` }}
         >
           <Link to="/" className="absolute right-[120px] top-[70px]">
-            <img src={logo} alt="Bizfides logo" />
+            {/* <LazyLoad> */}
+              <img src={logo} alt="Bizfides logo" loading="lazy"/>
+            {/* </LazyLoad> */}
           </Link>
         </div>
       </div>
@@ -169,12 +173,10 @@ const ResetPassword = () => {
         closeOnClickOutside={false}
       >
         <div className="w-full text-center py-8 font-roboto">
-          <h2 className="text-primary font-semibold text-[32px]">
-          Awesome !
-         </h2>
+          <h2 className="text-primary font-semibold text-[32px]">Awesome !</h2>
           <p className="text-xl text-neutral-grey-300">
-          You have successfully reset your Password
-           </p>
+            You have successfully reset your Password
+          </p>
           <button
             onClick={closeModal}
             className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
