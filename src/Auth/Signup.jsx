@@ -14,7 +14,7 @@ import Modal from '../Components/utils/Modal';
 
 
 const SignUp = () => {
-  const navigate = useNavigate();
+  const navigate  = useNavigate();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(''); 
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -1,19 +1,29 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { IoClose, IoMenu } from "react-icons/io5";
 import Logo from '../assets/Bizfides logo.svg'
-import { Link, useLocation  } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Notify from '../assets/notification-bing.svg';
 import Arrow from '../assets/arrow-up.svg'
+import { useAuth } from '../Contexts/Auth';
+
 
 const Navbar = () => {
+  const navigate  = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+  const { auth, logout} = useAuth()
 
   const onToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleLogout = () => {
+    logout();
+    console.log(auth); // This will help you check if auth is reset after logout
+    navigate("/login");
+  };
+  
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setMenuOpen(false);
@@ -80,6 +90,19 @@ const Navbar = () => {
           </div>
        
       </ul>
+      {
+        auth.user != null ? <div className="flex gap-6">
+        <div className="flex bg-neutral-grey-200 py-1 px-2.5 rounded-full gap-1">
+          <div className='py-1 px-3 font-inter font-semibold text-xl bg-primary text-white rounded-full'>
+            <p>{auth?.user?.firstName?.charAt(0).toUpperCase()}</p>
+          </div>
+          <img src={Arrow} alt="" />
+        </div>
+        <span className='bg-neutral-grey-200 flex items-center py-1 px-3 rounded-full'><img src={Notify} alt="" /></span>
+        <button onClick={handleLogout} className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm cursor-pointer" >
+          Log Out
+        </button>
+      </div> : 
       <div className="flex items-center gap-6 h-9">
         <Link className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
@@ -88,16 +111,7 @@ const Navbar = () => {
           Log In
         </Link> 
       </div>
-      {/* <div className="flex gap-6">
-        <div className="flex bg-neutral-grey-200 py-1 px-2.5 rounded-full gap-1">
-          <div className='py-1 px-3 font-inter font-semibold text-xl bg-primary text-white rounded-full'><p>V</p></div>
-          <img src={Arrow} alt="" />
-        </div>
-        <span className='bg-neutral-grey-200 flex items-center py-1 px-3 rounded-full'><img src={Notify} alt="" /></span>
-        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
-          Log Out
-        </Link>
-      </div> */}
+      }
       <div onClick={onToggleMenu} className="text-4xl cursor-pointer lg:hidden text-primary">
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
