@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from 'react-router-dom';
 import line from '../assets/Frame 115.svg';
@@ -19,28 +19,13 @@ const Login = () => {
 
   // Initialize useForm hook
   const {
-    register,
+    register, 
     handleSubmit,
-<<<<<<< HEAD
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  // Dummy signup function
-  const signup = async (data) => {
-    console.log("Submitting form data:", data);
-    // Simulate an API call
-    return new Promise((resolve) =>
-      setTimeout(() => resolve({ error: false }), 1000)
-    );
-  };
-=======
     formState: { errors }, 
     reset
   } = useForm();
 
   const { login } = useAuth();
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
 
   const onSubmit = async (data) => {
     try {
@@ -66,34 +51,6 @@ const Login = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <main className="">
-      <div className="bg-white w-full h-screen flex ">
-        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-          <h2 className="text-[28px] font-semibold text-primary lg:max-w-[390px]">
-            Welcome Back To Bizfides
-          </h2>
-          <p className="font-medium text-[28px] text-secondary">
-            Sign in to continue.
-          </p>
-          {/* Form start */}
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="space-y-5 mt-6 font-inter"
-          >
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-lg font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                {...register("email", { required: "Email is required" })}
-                placeholder="Enter your Email"
-                className="mt-1 block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-=======
     <main className='py-5 lg:py-0'>
       <div className="bg-white w-full h-screen flex">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
@@ -114,13 +71,8 @@ const Login = () => {
                 {...register("email", { required: 'Email is required' })}
                 placeholder='Enter your Email'
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
               />
-              {errors.email && (
-                <p className="text-primary-red text-sm">
-                  {errors.email.message}
-                </p>
-              )}
+              {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
 
             <div>
@@ -153,38 +105,17 @@ const Login = () => {
               )}
             </div>
 
-<<<<<<< HEAD
-            <div className="flex justify-between items-center">
-=======
             <div className='flex justify-between items-center'> 
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
               <div className="flex items-center">
                 <input
                   type="checkbox"
                   {...register("RememberMe")}
                   className={`h-4 w-4`}
                 />
-                <label
-                  htmlFor="RememberMe"
-                  className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300"
-                >
+                <label htmlFor="RememberMe" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
                   Remember Me
                 </label>
               </div>
-<<<<<<< HEAD
-              <Link to="/forgot-password" className="text-primary-red text-sm">
-                Forgot password
-              </Link>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-lg font-medium text-white bg-primary hover:bg-secondary transition-colors duration-300"
-                disabled={loading}
-              >
-                {loading ? "Loading..." : "Sign In"}
-=======
               <Link to='/forgot-password' className="text-primary-red text-sm">Forgot password</Link>
             </div>
 
@@ -193,23 +124,19 @@ const Login = () => {
                 disabled={loading}
               >
                 {loading ?   <LoadingButtonText color="text-white" text="Signing In..." /> : 'Sign In'}
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
               </button>
             </div>
           </form>
           {/* Form end */}
-<<<<<<< HEAD
-=======
           {/* Success or Error message */}
           {message && (
             <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
               <ImNotification/>{message}
             </div>
           )}
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
 
           <div className="w-full flex justify-center flex-col mt-4">
-            <img src={line} className="py-2" alt="divider" />
+            <img src={line} className='py-2' alt="divider" />
             <button
               className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
               onClick={handleGoogleLogin}
@@ -218,26 +145,6 @@ const Login = () => {
               Continue with Google
             </button>
           </div>
-<<<<<<< HEAD
-          <p className="mt-6 text-center text-lg text-gray-500">
-            New User?{" "}
-            <Link
-              to="/register"
-              className="text-secondary hover:text-green-800"
-            >
-              Sign up
-            </Link>
-          </p>
-        </div>
-        <div
-          className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative"
-          style={{ backgroundImage: `url(${image})` }}
-        >
-          <Link to="/" className="absolute right-[5.875rem] top-[2.8rem]">
-            {/* <LazyLoad> */}
-              <img src={logo} alt="" loading="lazy"/>
-            {/* </LazyLoad> */}
-=======
           <p className="mt-6 text-center text-sm md:text-base lg:text-lg text-gray-500">
             New User? <Link to="/register" className="text-secondary hover:text-green-800">Sign up</Link>
           </p>
@@ -245,12 +152,11 @@ const Login = () => {
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
           <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
             <img src={logo} alt="Bizfides Logo" />
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
           </Link>
         </div>
       </div>
     </main>
-  );
+  );  
 };
 
 export default Login;

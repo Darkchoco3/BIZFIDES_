@@ -14,15 +14,8 @@ const Hero = () => {
     <div className='bg-primary pt-[5rem] md:pt-24 lg:pt-[7rem] relative'>
       <div className="relative flex justify-between items-center min-h-[21.5rem] md:min-h-[28.625rem] lg:min-h-[30rem] xl:min-h-[33.75rem] ">
         {/* Polygon Div */}
-<<<<<<< HEAD
-        <div className="absolute top-0 right-0 h-[25rem] md:h-[30.25rem] lg:h-auto w-[70%] md:w-[50%] lg:w-[60%] xl:w-[50%]">
-        {/* <LazyLoad> */}
-          <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" loading='lazy'/>
-          {/* </LazyLoad> */}
-=======
         <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-auto">
           <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" />
->>>>>>> 00f0513f111dbbfb5f09bf659e9753c1529f73c1
         </div>
         
         
