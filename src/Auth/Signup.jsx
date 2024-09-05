@@ -13,7 +13,7 @@ import Modal from '../Components/utils/Modal';
 import LazyLoad from "react-lazy-load";
 
 const SignUp = () => {
-  const navigate = useNavigate();
+  const navigate  = useNavigate();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(''); 
   const [isModalOpen, setIsModalOpen] = useState(false);

@@ -58,8 +58,8 @@ const AuthProvider = ({ children }) => {
       const { data } = await axios.post('/auth/signup', formData);
 
       if (!data.error) {
-        setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
-        Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
+        // setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
+        // Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
       } else {
         console.log(data.error);
       }
