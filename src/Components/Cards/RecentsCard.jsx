@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from 'react-lazy-load';
 
 const RecentsCard = ({
   image,
@@ -12,15 +13,16 @@ const RecentsCard = ({
   return (
     <>
       <div className="w-full min-h-[22rem] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[3.5rem] xl:rounded-[6.25rem] p-8 lg:p-0 lg:px-5 flex flex-col lg:grid lg:grid-cols-2 gap-[1.813rem] items-center"> 
-        
-          {/* Anchor tags will be changed to react-router-dom Link when we set up App.jsx */}
-          <a href="">
-            <img
+        {/* <LazyLoad threshold={0.95}> */}
+        <img
               src={image}
               alt={altText}
               className="h-auto rounded-[3.5rem] xl:rounded-[6.25rem] "
+              loading="lazy"
             />
-          </a>
+        {/* </LazyLoad> */}
+           
+          
         <div className="text-center lg:text-start flex-1 lg:py-[2.469rem]">
           <p className="text-lg md:text-lg lg:text-2xl xl:text-2xl 2xl:text-3xl text-neutral-black font-inter">
             {title}
@@ -32,11 +34,11 @@ const RecentsCard = ({
             <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter font-bold pt-1">
               {name}
             </p>
-            <p className="text-secondary text-base 2xl:text-2xl font-inter max-w-[25ch]">
+            <p className="text-secondary text-base 2xl:text-2xl font-inter max-w-[25ch] text-balance">
               Features-
               <span className="text-neutral-grey-300">{features}</span>
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch] mb-8">
+            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch] mb-8 text-balance">
               Outcome-
               <span className="text-neutral-grey-300">{outcome}</span>
             </p>
