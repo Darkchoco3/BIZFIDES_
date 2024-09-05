@@ -19,7 +19,7 @@ const Subscribe = () => {
       </div>
       <form onSubmit={handleSubmit} className="lg:p-[3.125rem] rounded-3xl lg:border lg:border-neutral-grey-200  flex-1 ">
         <div className=" mb-[2rem]">
-          <h1 className="text-[1.414rem] lg:text-[1.6rem] xl:text-4xl  font-bold text-primary font-roboto">Subscribe To Our Newsletter</h1>
+          <h1 className="text-[1.414rem] lg:text-[1.6rem] xl:text-4xl md:text-2xl  font-bold text-primary font-roboto">Subscribe To Our Newsletter</h1>
           <p className="mb-4 font-inter font-normal text-xs lg:text-base leading-[1.21rem] text-neutral-grey-300 max-w-[40ch]">Get exclusive insights, expert tips, and industry news delivered straight to your inbox</p>
           
         </div>

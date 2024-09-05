@@ -37,18 +37,18 @@ const Contact = () => {
     </h2>
     <p>Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa gravida felis amet.</p>
 
-    <div className="flex flex-col space-y-4">
-        <div className="flex items-center justify-between gap-8">
-            <div className="flex items-center space-x-2">
-                <img src={phone} alt="Phone" className="w-6 h-6" />
+    <div className="flex flex-col justify-between space-y-4">
+        <div className="flex items-center justify-between">
+            <div className="flex items-center ">
+                <img src={phone} alt="Phone" className=" h-6" />
                 <div className="flex flex-col">
                     <span className="font-bold">Phone Number</span>
                     <span>123456789</span>
                 </div>
             </div>
 
-            <div className="flex items-center space-x-2">
-                <img src={sms} alt="Email" className="w-6 h-6" />
+            <div className="flex items-center justify-between  space-y-4">
+                <img src={sms} alt="Email" className=" h-6" />
                 <div className="flex flex-col">
                     <span className="font-bold">Email Address</span>
                     <span>abcd@gmail.com</span>
@@ -57,16 +57,16 @@ const Contact = () => {
         </div>
 
         <div className="flex items-center justify-between gap-8">
-            <div className="flex items-center space-x-2">
-                <img src={website} alt="Website" className="w-6 h-6" />
+            <div className="flex items-center ">
+                <img src={website} alt="Website" className=" h-6" />
                 <div className="flex flex-col">
                     <span className="font-bold">Websites</span>
                     <span>www.bizfides.com</span>
                 </div>
             </div>
 
-            <div className="flex  space-x-2">
-                <img src={location} alt="Location" className="w-4 h-4" />
+            <div className="flex  ">
+                <img src={location} alt="Location" className=" h-6" />
                 <div className="flex flex-col">
                     <span className="font-bold">Address</span>
                     <span>17 Avenue, SJK street, Lagos.</span>
