@@ -6,7 +6,6 @@ import sms from "../assets/sms.svg";
 import website from "../assets/web.svg";
 import location from "../assets/location bblu.svg";
 import ExternalHero from '../Components/ExternalHero';
-import Footer from '../Layouts/Footer';
 
 const Contact = () => {
     const {
@@ -148,7 +147,7 @@ const Contact = () => {
                 </form>
                 
             </div>
-            {/* <Footer/> */}
+        
         </>
     );
 };
