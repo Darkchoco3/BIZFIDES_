@@ -13,7 +13,7 @@ const Ambassadors = () => {
            <InfiniteMovingCards
             items={sponsor}
             direction='right'
-            speed='slow'
+            speed='fast'
            />
         </div>
         <div className='flex md:hidden'>

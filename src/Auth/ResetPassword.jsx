@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import Modal from "../Components/utils/Modal";
 import LazyLoad from "react-lazy-load";
-
+import axios from "axios";
+import LoadingButtonText from "../Components/utils/Loading";
+import { ImNotification } from "react-icons/im";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -14,6 +16,8 @@ const ResetPassword = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [message, setMessage] = useState(''); 
+  const { token } = useParams();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -34,28 +38,24 @@ const ResetPassword = () => {
   } = useForm();
 
   // Dummy forgot password function
-  const resetpass = async (data) => {
-    console.log("Submitting form data:", data);
-    // Simulate an API call
-    return new Promise((resolve) =>
-      setTimeout(() => resolve({ error: false }), 1000)
-    );
-  };
 
+  console.log(token);
+  
   const onSubmit = async (data) => {
     try {
       setLoading(true);
-      const response = await resetpass(data);
-      if (!response.error) {
-        openModal();
-        // Success handling
-        // toast.success("Password reset instructions sent");
+      const response = await axios.post(`/auth/reset-password/${token}`,data );
+      if (response?.data?.success === 'true') {
+        openModal()
       } else {
+        openModal()
         // Error handling
-        // toast.error("Failed to send reset instructions");
-      }
-    } catch (err) {
-      // toast.error(err.message);
+        setMessage(`${response.data.message}`);
+      }      
+    } catch (err) {   
+      console.log(err);
+      
+      setMessage(`An error occurred: ${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
@@ -91,7 +91,7 @@ const ResetPassword = () => {
               <div className="relative">
                 <input
                   type={showPassword ? "text" : "password"}
-                  {...register("password", {
+                  {...register("newPassword", {
                     required: "Password is required",
                   })}
                   placeholder="Enter your password"
@@ -125,7 +125,7 @@ const ResetPassword = () => {
                   {...register("confirmPassword", {
                     required: "Please confirm your password",
                     validate: (value) =>
-                      value === watch("password") || "Passwords do not match",
+                      value === watch("newPassword") || "Passwords do not match",
                   })}
                   placeholder="Confirm your password"
                   className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
@@ -149,12 +149,16 @@ const ResetPassword = () => {
                 className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
-                {loading ? "Loading..." : "Reset"}
-              </button>
+                {loading ? <LoadingButtonText color="text-white" text="Loading..." /> : 'Reset Password'}
+                </button>
             </div>
           </form>
           {/* Form end */}
-
+          {message && (
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
+            {message.includes('successfully') ? '' :<ImNotification/> } {message}
+            </div>
+          )}
           <button
                 className="w-full flex justify-center py-4 px-4 border mt-4 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium bg-white border-primary text-primary-dark"
                 >

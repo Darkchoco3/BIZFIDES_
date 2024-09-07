@@ -41,6 +41,7 @@ const ForgetPassword = () => {
       if (response?.data?.success === 'true') {
         openModal()
       } else {
+        openModal()
         // Error handling
         // toast.error("Failed to send reset instructions");
         setMessage(`${response.data.message}`);
