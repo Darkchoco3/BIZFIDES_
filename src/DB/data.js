@@ -290,70 +290,70 @@ export const ourWorks = [
         outcome:
           "4.5-star rating in the app store,20,000 downloads in the first month",
       },
-      {
-        id: 19,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 20,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 21,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 22,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 23,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 24,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
+      // {
+      //   id: 19,
+      //   image: bookstoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
+      // {
+      //   id: 20,
+      //   image: toystoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
+      // {
+      //   id: 21,
+      //   image: gadgetstoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
+      // {
+      //   id: 22,
+      //   image: bookstoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
+      // {
+      //   id: 23,
+      //   image: toystoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
+      // {
+      //   id: 24,
+      //   image: gadgetstoreimage,
+      //   altText: "Food delivery Mobile App",
+      //   title: "Mobile App",
+      //   type: "Food Store",
+      //   name: "Fortune Food",
+      //   features: "Restaurant listings, menu ordering",
+      //   outcome:
+      //     "4.5-star rating in the app store,20,000 downloads in the first month",
+      // },
     ]
