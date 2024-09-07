@@ -38,13 +38,15 @@ const ForgetPassword = () => {
     try {
       setLoading(true);
       const response = await axios.post('/auth/forgot-password',  data );
-      if (response.data.success === 'true') {
+      if (response?.data?.success === 'true') {
         openModal()
       } else {
         // Error handling
         // toast.error("Failed to send reset instructions");
-        setMessage(`An error occurred: ${response.data.message}`);
+        setMessage(`${response.data.message}`);
       }
+      console.log(res?.data);
+      
     } catch (err) {
       
       setMessage(`An error occurred: ${err.response.data.message}`);
@@ -87,8 +89,8 @@ const ForgetPassword = () => {
           </form>
           {/* Form end */}
           {message && (
-            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-              <ImNotification/>{message}
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
+            {message.includes('successfully') ? '' :<ImNotification/> } {message}
             </div>
           )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
