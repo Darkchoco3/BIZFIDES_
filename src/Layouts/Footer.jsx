@@ -7,6 +7,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
   const pagelink =[
     {
     title: "Home",

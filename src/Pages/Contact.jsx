@@ -1,14 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import contact from "../assets/contact big.svg";
 import phone from "../assets/call-calling.svg";
 import sms from "../assets/sms.svg";
 import website from "../assets/web.svg";
 import location from "../assets/location bblu.svg";
 import ExternalHero from '../Components/ExternalHero';
+// import Modal from '../Components/utils/Modal';
 import Footer from '../Layouts/Footer';
 
 const Contact = () => {
+    // const [isModalOpen, setIsModalOpen] = useState(false);
+
     const {
         register,
         handleSubmit,
@@ -19,6 +23,15 @@ const Contact = () => {
         console.log(data);
     
     };
+    // const openModal = () => {
+    //     setIsModalOpen(true);
+    //   };
+    
+    //   const closeModal = () => {
+    //     setIsModalOpen(false);
+    //     reset()
+    //   };
+
 
     return (
         <>
@@ -146,7 +159,15 @@ const Contact = () => {
                         Submit
                     </button>
                 </form>
-                
+                {/* <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
+          <div className='w-full text-center py-8 font-roboto '>
+            <h2 className='text-primary font-semibold text-[32px]'>Awesome!</h2>
+            <p className='text-xl text-neutral-grey-300'>Your message has been sent and received. our team will get back to you in due time</p>
+            <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
+          </div>
+      </Modal> */}
+
+
             </div>
             {/* <Footer/> */}
         </>
