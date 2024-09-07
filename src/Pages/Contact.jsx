@@ -51,7 +51,6 @@ const Contact = () => {
     }, 3000);
   };
 
-  console.log(auth);
   
   const onSubmit = (data) => {
     openModal()
@@ -66,7 +65,7 @@ const Contact = () => {
         image={contact}
         altText={"contact us image"}
       />
-      <div className="container w-11/12 flex flex-col-reverse lg:flex-row gap-10 px-1 sm:px-2  lg:p-8 bg-white rounded-lg mt-8">
+      <div className="container w-11/12 flex flex-col-reverse lg:flex-row justify-between gap-10 px-1 sm:px-2  lg:p-8 bg-white rounded-lg mt-8">
         
         {/* Left Side - Contact Details */}
         <div className="space-y-4 text-gray-700">
@@ -121,7 +120,7 @@ const Contact = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4"
+          className="space-y-4 xl:min-w-[633px]"
         >
           <div className="flex space-x-4">
             <div className="flex flex-col w-1/2">
