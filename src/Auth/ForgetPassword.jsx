@@ -16,10 +16,12 @@ const ForgetPassword = () => {
 
   const openModal = () => {
     setIsModalOpen(true);
+
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setMessage(''); 
     reset()
   };
 
@@ -31,10 +33,14 @@ const ForgetPassword = () => {
     reset
   } = useForm();
 
-  // Dummy forgot password function
-
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage(''); 
+    }, 3000);
+  };
 
   const onSubmit = async (data) => {
+    setMessage('')
     try {
       setLoading(true);
       const response = await axios.post('/auth/forgot-password',  data );
@@ -77,6 +83,7 @@ const ForgetPassword = () => {
                 {...register("email", { required: 'Email is required' })}
                 placeholder="Enter your Email"
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                onFocus={handleFocus}
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>

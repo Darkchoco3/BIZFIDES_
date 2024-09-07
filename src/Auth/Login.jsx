@@ -25,9 +25,16 @@ const Login = () => {
     reset
   } = useForm();
 
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage(''); 
+    }, 3000);
+  };
+
   const { login } = useAuth();
 
   const onSubmit = async (data) => {
+    setMessage('')
     try {
       setLoading(true);
       const response = await login(data);
@@ -71,6 +78,7 @@ const Login = () => {
                 {...register("email", { required: 'Email is required' })}
                 placeholder='Enter your Email'
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                onFocus={handleFocus}
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
@@ -90,6 +98,7 @@ const Login = () => {
                   })}
                   placeholder="Enter your password"
                   className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  onFocus={handleFocus}
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -111,6 +120,7 @@ const Login = () => {
                   type="checkbox"
                   {...register("RememberMe")}
                   className={`h-4 w-4`}
+                  onFocus={handleFocus}
                 />
                 <label htmlFor="RememberMe" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
                   Remember Me

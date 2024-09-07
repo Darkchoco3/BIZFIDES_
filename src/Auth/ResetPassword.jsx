@@ -16,7 +16,7 @@ const ResetPassword = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [message, setMessage] = useState(''); 
+  const [message, setMessage] = useState("");
   const { token } = useParams();
 
   const openModal = () => {
@@ -26,6 +26,7 @@ const ResetPassword = () => {
   const closeModal = () => {
     setIsModalOpen(false);
     reset();
+    setMessage("");
   };
 
   // Initialize useForm hook
@@ -37,24 +38,27 @@ const ResetPassword = () => {
     formState: { errors },
   } = useForm();
 
-  // Dummy forgot password function
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage("");
+    }, 3000);
+  };
 
-  console.log(token);
-  
   const onSubmit = async (data) => {
+    setMessage("");
     try {
       setLoading(true);
-      const response = await axios.post(`/auth/reset-password/${token}`,data );
-      if (response?.data?.success === 'true') {
-        openModal()
+      const response = await axios.post(`/auth/reset-password/${token}`, data);
+      if (response?.data?.success === "true") {
+        openModal();
       } else {
-        openModal()
+        openModal();
         // Error handling
         setMessage(`${response.data.message}`);
-      }      
-    } catch (err) {   
+      }
+    } catch (err) {
       console.log(err);
-      
+
       setMessage(`An error occurred: ${err.response.data.message}`);
     } finally {
       setLoading(false);
@@ -65,13 +69,13 @@ const ResetPassword = () => {
     <main className="">
       <div className="bg-white w-full h-screen flex">
         <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-start lg:justify-center container mx-auto">
-        <Link to='/'>   
-          <img
-            src={logo}
-            alt="logo"
-            className="w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden"
-          />
-        </Link>
+          <Link to="/">
+            <img
+              src={logo}
+              alt="logo"
+              className="w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden"
+            />
+          </Link>
           <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
             Reset Your Password?
           </h2>
@@ -96,6 +100,7 @@ const ResetPassword = () => {
                   })}
                   placeholder="Enter your password"
                   className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  onFocus={handleFocus}
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -125,10 +130,12 @@ const ResetPassword = () => {
                   {...register("confirmPassword", {
                     required: "Please confirm your password",
                     validate: (value) =>
-                      value === watch("newPassword") || "Passwords do not match",
+                      value === watch("newPassword") ||
+                      "Passwords do not match",
                   })}
                   placeholder="Confirm your password"
                   className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  onFocus={handleFocus}
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -149,23 +156,34 @@ const ResetPassword = () => {
                 className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
                 disabled={loading}
               >
-                {loading ? <LoadingButtonText color="text-white" text="Loading..." /> : 'Reset Password'}
-                </button>
+                {loading ? (
+                  <LoadingButtonText color="text-white" text="Loading..." />
+                ) : (
+                  "Reset Password"
+                )}
+              </button>
             </div>
           </form>
           {/* Form end */}
+
+          {/* sucess message or error message */}
           {message && (
-            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
-            {message.includes('successfully') ? '' :<ImNotification/> } {message}
+            <div
+              className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
+                message.includes("successfully")
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              {message.includes("successfully") ? "" : <ImNotification />}{" "}
+              {message}
             </div>
           )}
-          <button
-                className="w-full flex justify-center py-4 px-4 border mt-4 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium bg-white border-primary text-primary-dark"
-                >
-            <Link to="/">
+          <Link to="/">
+            <button className="w-full flex justify-center py-4 px-4 border mt-4 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium bg-white border-primary text-primary-dark">
               Cancel
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
         <div
           className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative"
@@ -173,7 +191,7 @@ const ResetPassword = () => {
         >
           <Link to="/" className="absolute right-[120px] top-[70px]">
             {/* <LazyLoad> */}
-              <img src={logo} alt="Bizfides logo" loading="lazy"/>
+            <img src={logo} alt="Bizfides logo" loading="lazy" />
             {/* </LazyLoad> */}
           </Link>
         </div>
