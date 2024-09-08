@@ -55,7 +55,7 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-
+ 
           {/* Company Links */}
           <div className="space-y-5">
             <h3 className="font-bold text-base  font-inter">Company</h3>
