@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import errorImage from "../assets/errorimage.svg";
 import logo from "../assets/Bizfides logo.svg"
 
 const Error = () => {
+  useEffect(() => {
+    document.title = "404 Page Not Found";
+  }, []);
   return (
     <>
       <div className="grid place-items-center text-center h-screen gap-2 lg:gap-[2.125rem] container">

@@ -73,7 +73,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = () => {
     Cookies.remove('auth');
-    setAuth({ user: null, token: '', success: false, message: '' });
+    setAuth('');
   };
 
   return (

@@ -1,3 +1,10 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+ 
+const colors = require("tailwindcss/colors");
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -36,6 +43,10 @@ export default {
         orbit: {
           '0%': { transform: 'rotate(0deg) translateX(125px) rotate(0deg)' },
           '100%': { transform: 'rotate(360deg) translateX(125px) rotate(-360deg)' },
+        },scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
         },
       },
       animation: {
@@ -43,6 +54,8 @@ export default {
         'orbit-2': 'orbit 10s linear infinite reverse',
         'orbit-3': 'orbit 10s linear infinite',
         'orbit-4': 'orbit 10s linear infinite reverse',
+        scroll:
+          "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       transitionProperty: {
         // Add custom properties if needed
@@ -51,5 +64,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [addVariablesForColors],
+}
+
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+ 
+  addBase({
+    ":root": newVars,
+  });
 }
