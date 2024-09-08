@@ -16,10 +16,12 @@ const ForgetPassword = () => {
 
   const openModal = () => {
     setIsModalOpen(true);
+
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setMessage(''); 
     reset()
   };
 
@@ -31,20 +33,27 @@ const ForgetPassword = () => {
     reset
   } = useForm();
 
-  // Dummy forgot password function
-
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage(''); 
+    }, 3000);
+  };
 
   const onSubmit = async (data) => {
+    setMessage('')
     try {
       setLoading(true);
       const response = await axios.post('/auth/forgot-password',  data );
-      if (response.data.success === 'true') {
+      if (response?.data?.success === 'true') {
         openModal()
       } else {
+        openModal()
         // Error handling
         // toast.error("Failed to send reset instructions");
-        setMessage(`An error occurred: ${response.data.message}`);
+        setMessage(`${response.data.message}`);
       }
+      console.log(res?.data);
+      
     } catch (err) {
       
       setMessage(`An error occurred: ${err.response.data.message}`);
@@ -74,6 +83,7 @@ const ForgetPassword = () => {
                 {...register("email", { required: 'Email is required' })}
                 placeholder="Enter your Email"
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                onFocus={handleFocus}
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
@@ -87,8 +97,8 @@ const ForgetPassword = () => {
           </form>
           {/* Form end */}
           {message && (
-            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-              <ImNotification/>{message}
+            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
+            {message.includes('successfully') ? '' :<ImNotification/> } {message}
             </div>
           )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
