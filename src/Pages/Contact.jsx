@@ -238,9 +238,9 @@ const Contact = () => {
        {/* Modal */}
         <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-center py-8 font-roboto '>
-            <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Welcome to Bizfides!</h2>
-            <p className='text-xl text-neutral-grey-300'>Your account has been successfully created!</p>
-            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
+            <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Awesome!</h2>
+            <p className='text-xl text-neutral-grey-300'>Your message has been sent and received.Our team</p>
+            <p className='text-xl text-neutral-grey-300'>will get back to you in due time.</p>
             <div className='flex justify-center gap-12'>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
             <button onClick={closeModal} className='p-2 px-6 rounded-[10px] text-primary mt-8'>Login</button>
