@@ -25,9 +25,16 @@ const Login = () => {
     reset
   } = useForm();
 
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage(''); 
+    }, 3000);
+  };
+
   const { login } = useAuth();
 
   const onSubmit = async (data) => {
+    setMessage('')
     try {
       setLoading(true);
       const response = await login(data);
@@ -63,7 +70,7 @@ const Login = () => {
           <p className='font-medium text-[12px] md:text-sm lg:text-[28px] py-2 lg:py-4 text-primary lg:text-secondary'>Sign in to continue.</p>
           
           {/* Form start */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-4 lg:mt-6 font-inter">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4 lg:mt-4 font-inter">
             <div>
               <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
               <input
@@ -71,6 +78,7 @@ const Login = () => {
                 {...register("email", { required: 'Email is required' })}
                 placeholder='Enter your Email'
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                onFocus={handleFocus}
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
@@ -90,6 +98,7 @@ const Login = () => {
                   })}
                   placeholder="Enter your password"
                   className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  onFocus={handleFocus}
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -111,12 +120,13 @@ const Login = () => {
                   type="checkbox"
                   {...register("RememberMe")}
                   className={`h-4 w-4`}
+                  onFocus={handleFocus}
                 />
                 <label htmlFor="RememberMe" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
                   Remember Me
                 </label>
               </div>
-              <Link to='/forgot-password' className="text-primary-red text-sm">Forgot password</Link>
+              <Link to='/forgot-password' className="text-[#EC5E5E] text-base font-medium">Forgot password</Link>
             </div>
 
             <div>
@@ -131,7 +141,7 @@ const Login = () => {
           {/* Success or Error message */}
           {message && (
             <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-              <ImNotification/>{message}
+            {message.includes('successful') ? '' :<ImNotification/> } {message}
             </div>
           )}
 
@@ -151,9 +161,7 @@ const Login = () => {
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
           <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
-           {/* <LazyLoad> */}
-           <img src={logo} alt="" loading="lazy"/>
-            {/* </LazyLoad> */}
+            <img src={logo} alt="Bizfides Logo" />
           </Link>
         </div>
       </div>

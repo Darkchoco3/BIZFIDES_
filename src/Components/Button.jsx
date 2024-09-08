@@ -28,6 +28,8 @@ const Button = ({
   };
 
   return (
+    <>
+    {/* <button className='text-green-500 text-xl md:text-2xl  lg:text-3xl xl:text-4xl  '>{btnText}</button> */}
     <button
       type={type}
       disabled={disabled}
@@ -38,7 +40,10 @@ const Button = ({
       {icon && <span className="mr-2">{icon}</span>}
       {children}
     </button>
-  );
-};
+    </>
+  )
+}
+    
+
 
 export default Button;

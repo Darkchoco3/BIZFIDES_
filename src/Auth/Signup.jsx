@@ -30,9 +30,15 @@ const SignUp = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    setMessage('');
     reset()
   };
 
+  const handleFocus = () => {
+    setTimeout(() => {
+      setMessage('');
+    }, 3000);
+  };
 
   // Initialize useForm hook
   const {
@@ -60,6 +66,7 @@ const SignUp = () => {
   };
 
   const onSubmit = async (data) => {
+    setMessage('');
     try {
       setLoading(true);
       const response = await signup(data);
@@ -87,7 +94,7 @@ const SignUp = () => {
 
   
 //   Your account has been successfully created!"
-// "Please check your email to verify your account."
+// "Please check your email to verify your account."
 
   return (
 <>
@@ -113,6 +120,7 @@ const SignUp = () => {
               {...register("firstName", { required: 'First name is required' })}
               className="mt-1 text-sm md:text-base lg:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               placeholder='Enter Name'
+              onFocus={handleFocus}
             />
             {errors.firstName && <p className="text-primary-red text-sm">{errors.firstName.message}</p>}
           </div>
@@ -123,6 +131,7 @@ const SignUp = () => {
               {...register("lastName", { required: 'Last name is required' })}
               className="mt-1 text-sm md:text-base lg:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               placeholder='Enter Name'
+              onFocus={handleFocus}
             />
             {errors.lastName && <p className="text-primary-red text-sm">{errors.lastName.message}</p>}
           </div>
@@ -142,6 +151,7 @@ const SignUp = () => {
           placeholder='Phone'
           onChange={handlePhoneChange}
           className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+          onFocus={handleFocus}
         />
         {errors.phoneNumber && <p className="text-primary-red text-sm">{errors.phoneNumber.message}</p>}
       </div>
@@ -159,6 +169,7 @@ const SignUp = () => {
             })}
             placeholder='Enter your Email'
             className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            onFocus={handleFocus}
           />
           {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
         </div>
@@ -177,6 +188,7 @@ const SignUp = () => {
                   })}
                   placeholder="Enter your password"
                   className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  onFocus={handleFocus}
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -210,6 +222,7 @@ const SignUp = () => {
                 })}
                 placeholder="Confirm your password"
                 className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                onFocus={handleFocus}
               />
               <div
                 className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -229,6 +242,7 @@ const SignUp = () => {
             type="checkbox"
             {...register("termsAccepted", { required: 'You must accept the terms and conditions' })}
             className={`h-4 w-4 ${errors.termsAccepted ? 'border-red' : 'border-neutral-grey-200'} text-green-400 rounded focus:ring-green-500`}
+            onFocus={handleFocus}
           />
           <label htmlFor="termsAccepted" className="ml-2 block text-[12px] md:text-base lg:text-lg font-medium font-inter text-neutral-grey-300 ">
             I agree to Bizfides <a href="#" className="text-secondary hover:text-primary-dark">Terms of Service</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy.</a> By signing up, you agree to the <a href="#" className="text-secondary hover:text-primary-dark">Bizfides Agreement</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy Policy</a>
@@ -247,8 +261,9 @@ const SignUp = () => {
       {/* Form end */}
       {message && (
             <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-              <ImNotification/>{message}
-            </div>
+          {message.includes("successfully") ? "" : <ImNotification />}{" "}
+          {message}            
+          </div>
           )}
       <div className="w-full flex justify-center flex-col mt-4">
         <img src={line} className='py-2' alt="divider" />
@@ -271,7 +286,7 @@ const SignUp = () => {
           <div className='w-full text-center py-8 font-roboto '>
             <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Welcome to Bizfides!</h2>
             <p className='text-xl text-neutral-grey-300'>Your account has been successfully created!</p>
-            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
+            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
             <div className='flex justify-center gap-12'>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
             <Link to='/login' onClick={closeModal} className='p-2 px-6 rounded-[10px] text-primary mt-8'>Login</Link>
