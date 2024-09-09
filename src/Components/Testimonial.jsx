@@ -97,25 +97,22 @@ const Quote = ({ text, name, title, company, image, isMiddle }) => {
 
         {/* Quote Text */}
         <p
-          className={`text-center text-sm leading-[1.3rem] ${
-            isMiddle ? "text-white max-w-[50ch] pt-8" : ""
+          className={`text-center 2xl:text-xl leading-[1.3rem] ${
+            isMiddle ? "text-white max-w-[50ch] pt-8 text-base 2xl:text-2xl" : "text-sm"
           } text-neutral-grey-300 font-inter`}
         >
           {text}
         </p>
       </div>
       <div className="mt-8">
-        {/* <LazyLoad > */}
           <img
             src={image}
             alt="Client"
             className="mx-auto w-12 sm:w-16 md:w-20"
-            loading="lazy"
           />
-        {/* </LazyLoad> */}
-        <p className="font-bold text-center text-sm sm:text-base">{name}</p>
-        <p className="text-center text-sm sm:text-base">{title}</p>
-        <p className="text-center text-sm sm:text-base">{company}</p>
+        <p className="font-bold text-center text-sm 2xl:text-xl font-inter">{name}</p>
+        <p className="text-center text-sm 2xl:text-xl font-inter">{title}</p>
+        <p className="text-center text-sm 2xl:text-xl font-inter">{company}</p>
       </div>
     </div>
   );
@@ -160,13 +157,13 @@ const Testimonials = () => {
     <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 ">
       <div className="container w-11/12">
         <div className="grid place-items-center">
-          <h5 className="text-center font-semibold text-xl font-inter lg:text-2xl">
+          <h5 className="text-center font-semibold text-[1rem] md:text-xl font-inter lg:text-2xl">
             OUR TESTIMONIALS
           </h5>
-          <h3 className="text-center text-2xl lg:text-[2.5rem] font-bold font-roboto pt-8">
+          <h3 className="text-center text-2xl lg:text-[2.5rem] font-bold font-roboto pt-0 md:pt-8">
             Hear From Our Satisfied Clients
           </h3>
-          <p className="text-center text-base lg:text-lg mb-6 sm:mb-12 lg:mb-16 max-w-[45ch] pt-3">
+          <p className="text-center text-xs md:text-base lg:text-lg 2xl:text-2xl font-inter mb-6 sm:mb-12 lg:mb-16 max-w-[40ch] pt-3">
             Authentic feedback, tangible impact. Discover why we're the trusted
             choice.
           </p>
@@ -189,7 +186,7 @@ const Testimonials = () => {
         </div>
 
         {/* Control Icons */}
-        <div className="flex justify-center items-center gap-4 lg:mt-8">
+        <div className="hidden lg:flex justify-center items-center gap-4 lg:mt-8">
           <div className="h-12 w-12 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
             <FaChevronLeft
               size={25}
@@ -200,7 +197,24 @@ const Testimonials = () => {
           <div className="h-12 w-12 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
             <FaChevronRight
               size={25}
-              className="text-primary   cursor-pointer transition "
+              className="text-primary cursor-pointer transition "
+              onClick={nextSlide}
+            />
+          </div>
+        </div>
+
+        <div className="flex lg:hidden justify-center items-center gap-4 lg:mt-8">
+          <div className="h-8 w-8 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
+            <FaChevronLeft
+              size={18}
+              className="text-primary cursor-pointer transition "
+              onClick={prevSlide}
+            />
+          </div>
+          <div className="h-8 w-8 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
+            <FaChevronRight
+              size={18}
+              className="text-primary cursor-pointer transition "
               onClick={nextSlide}
             />
           </div>

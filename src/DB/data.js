@@ -12,13 +12,17 @@ import what5 from '../assets/Rectangle4268 (2).svg'
 import what4 from '../assets/Rectangle4268 (3).svg'
 import what3 from '../assets/Rectangle4268 (4).svg'
 import what1 from '../assets/Rectangle4268 (5).svg'
-import toystoreimage from "../assets/toy store.svg";
+import toystoreimagedesktop from "../assets/toy store.svg";
 import webstoreimage from "../assets/fashion store.svg";
 import gadgetstoreimage from "../assets/gadget store.svg";
-import foodstoreimage from "../assets/food delivery.svg";
-import shoestoreimage from '../assets/ToyBox.svg'
-import fruitstoreimage from '../assets/FruitStore.svg'
+import foodstoreimagedesktop from "../assets/food delivery.svg";
+import shoestoreimagedesktop from '../assets/fashion store.svg'
+import fruitstoreimagedesktop from '../assets/FruitStore.svg'
 import bookstoreimage from '../assets/BookShop.svg'
+import shoestoreimagemobile from '../assets/cardmobile1.svg'
+import fruitstoreimagemobile from '../assets/cardmobile2.svg'
+import foodstoreimagemobile from '../assets/cardmobile3.svg'
+import toystoreimagemobile from '../assets/cardmobile4.svg'
 
 export const services = [
     {
@@ -96,7 +100,9 @@ export const whatwedo =[
 export const ourWorks = [
       {
         id: 1,
-        image: shoestoreimage,
+        image: {
+          mobile:shoestoreimagemobile,
+        desktop:shoestoreimagedesktop },
         altText: "FitZone Mobile App",
         title: "Mobile App",
         type: "Toy Store",
@@ -107,7 +113,9 @@ export const ourWorks = [
       },
       {
         id: 2,
-        image: webstoreimage,
+        image: {
+          mobile:foodstoreimagemobile,
+        desktop:foodstoreimagedesktop},
         altText: "StyleHub Web store",
         title: "Web Store",
         type: "Fashion Store",
@@ -117,7 +125,9 @@ export const ourWorks = [
       },
       {
         id: 3,
-        image: foodstoreimage,
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
         altText: "TechTove web store",
         title: "Web Design",
         type: "Gadget Store",
@@ -127,7 +137,9 @@ export const ourWorks = [
       },
       {
         id: 4,
-        image: fruitstoreimage,
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
         altText: "Food delivery Mobile App",
         title: "Mobile App",
         type: "Food Store",
@@ -138,158 +150,109 @@ export const ourWorks = [
       },
       {
         id: 5,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
+        altText: "Books Shop SEO Optimization",
+        title: "SEO Optimization",
+        type: "Books Shop",
+        name: "Bookcraft & Co.",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 6,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:toystoreimagemobile,
+        desktop:toystoreimagedesktop},
+        altText: "Toy Store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Toy Store",
+        name: "Toy Box",
+        features: "Regular Content Updates, High Quality Contents",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Outcome- Increased Website Traffic and Online sales",
       },
       {
         id: 7,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 8,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 9,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:toystoreimagemobile,
+        desktop:toystoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 10,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 11,
-        image: fruitstoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:shoestoreimagemobile,
+        desktop:shoestoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
       {
         id: 12,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
+        image: {
+          mobile:fruitstoreimagemobile,
+        desktop:fruitstoreimagedesktop},
+        altText: "Fruit store Mobile App",
         title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
+        type: "Fruit Store",
+        name: "Soft Greens",
+        features: "Keyword Optimization, Content Marketing",
         outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
+          "Higher Search Rankings, Steady Flow Of Visitors",
       },
-      {
-        id: 13,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 14,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 15,
-        image: bookstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 16,
-        image: toystoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 17,
-        image: gadgetstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
-      {
-        id: 18,
-        image: fruitstoreimage,
-        altText: "Food delivery Mobile App",
-        title: "Mobile App",
-        type: "Food Store",
-        name: "Fortune Food",
-        features: "Restaurant listings, menu ordering",
-        outcome:
-          "4.5-star rating in the app store,20,000 downloads in the first month",
-      },
+      
       // {
       //   id: 19,
       //   image: bookstoreimage,
