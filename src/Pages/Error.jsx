@@ -8,8 +8,8 @@ const Error = () => {
   }, []);
   return (
     <>
+     <img src={logo} alt="" className="translate-x-10" />
       <div className="grid place-items-center text-center h-screen gap-2 lg:gap-[2.125rem] container">
-        <img src={logo} alt="" className="" />
         <div className="grid gap-1 lg:gap-3">
         <h1 className="font-inter font-semibold text-base md:text-lg lg:text-[1.75rem] xl:text-[2.3rem] text-neutral-black">
           PAGE NOT FOUND !
