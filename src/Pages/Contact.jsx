@@ -6,7 +6,6 @@ import sms from "../assets/sms.svg";
 import website from "../assets/web.svg";
 import location from "../assets/location bblu.svg";
 import ExternalHero from '../Components/ExternalHero';
-import Footer from '../Layouts/Footer';
 
 const Contact = () => {
     const {
@@ -36,66 +35,85 @@ const Contact = () => {
         Get In <span className="text-secondary font-roboto font-bold">Touch</span>
     </h2>
     <p>Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa gravida felis amet.</p>
-    <div className="flex items-center  gap-[4.375rem]">
-        <div className="flex items-center space-x-2">
-            <img src={phone} alt="Phone" className="w-6 h-6" />
-            <span>123456789</span>
+
+    <div className="flex flex-col justify-between space-y-4">
+        <div className="flex items-center justify-between">
+            <div className="flex items-center ">
+                <img src={phone} alt="Phone" className=" h-6" />
+                <div className="flex flex-col">
+                    <span className="font-bold">Phone Number</span>
+                    <span>123456789</span>
+                </div>
+            </div>
+
+            <div className="flex items-center justify-between  space-y-4">
+                <img src={sms} alt="Email" className=" h-6" />
+                <div className="flex flex-col">
+                    <span className="font-bold">Email Address</span>
+                    <span>abcd@gmail.com</span>
+                </div>
+            </div>
         </div>
-        <div className="flex items-center space-x-2">
-            <img src={sms} alt="Email" className="w-6 h-6" />
-            <span>abcd@gmail.com</span>
-        </div>
-    </div>
-    <div className="flex items-center  gap-[4.375rem]">
-        <div className="flex items-center space-x-2">
-            <img src={website} alt="Website" className="w-6 h-6" />
-            <span>www.bizfides.com</span>
-        </div>
-        <div className="flex items-center space-x-2">
-            <img src={location} alt="Location" className="w-6 h-6" />
-            <span>17 Avenue, SJK street, Lagos.</span>
+
+        <div className="flex items-center justify-between gap-8">
+            <div className="flex items-center ">
+                <img src={website} alt="Website" className=" h-6" />
+                <div className="flex flex-col">
+                    <span className="font-bold">Websites</span>
+                    <span>www.bizfides.com</span>
+                </div>
+            </div>
+
+            <div className="flex  ">
+                <img src={location} alt="Location" className=" h-6" />
+                <div className="flex flex-col">
+                    <span className="font-bold">Address</span>
+                    <span>17 Avenue, SJK street, Lagos.</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-
-
                 <form onSubmit={handleSubmit(onSubmit)} className="md:w-1/2 mt-8 md:mt-0 space-y-4">
-                    <div className="flex flex-col">
-                        <label htmlFor="name" className="text-sm font-semibold text-gray-700">
-                            Name<span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            id="name"
-                            {...register('name', { required: 'Name is required' })}
-                            placeholder="Your Name"
-                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                        />
-                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
-                    </div>
+                <div className="flex space-x-4">
+    <div className="flex flex-col w-1/2">
+        <label htmlFor="name" className="text-sm font-semibold text-gray-700">
+            Name<span className="text-error-red">*</span>
+        </label>
+        <input
+            id="name"
+            {...register('name', { required: 'Name is required' })}
+            placeholder="Your Name"
+            className="mt-1 p-2 border-2 border-gray-300 rounded-[5px] bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        />
+        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+    </div>
 
-                    <div className="flex flex-col">
-                        <label htmlFor="email" className="text-sm font-semibold text-gray-700">
-                            Email<span className="text-red-500">*</span>
-                        </label>
-                        <input
-                            id="email"
-                            {...register('email', {
-                                required: 'Email is required',
-                                pattern: {
-                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                                    message: 'Invalid email address',
-                                },
-                            })}
-                            placeholder="Your Email"
-                            className="mt-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                        />
-                        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
-                    </div>
+    <div className="flex flex-col w-1/2">
+        <label htmlFor="email" className="text-sm font-semibold text-gray-700">
+            Email<span className="text-error-red">*</span>
+        </label>
+        <input
+            id="email"
+            {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: 'Invalid email address',
+                },
+            })}
+            placeholder="Your Email"
+            className="mt-1 p-2 border-2 border-gray-300 rounded-[5px] bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+        />
+        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+    </div>
+</div>
+
 
                     <div className="flex flex-col">
                         <label htmlFor="subject" className="text-sm font-semibold text-gray-700">
-                            Subject<span className="text-red-500">*</span>
+                            Subject<span className="text-error-red">*</span>
                         </label>
                         <input
                             id="subject"
@@ -108,7 +126,7 @@ const Contact = () => {
 
                     <div className="flex flex-col">
                         <label htmlFor="message" className="text-sm font-semibold text-gray-700">
-                            Message<span className="text-red-500">*</span>
+                            Message<span className="text-error-red">*</span>
                         </label>
                         <textarea
                             id="message"
@@ -129,7 +147,7 @@ const Contact = () => {
                 </form>
                 
             </div>
-            {/* <Footer/> */}
+        
         </>
     );
 };

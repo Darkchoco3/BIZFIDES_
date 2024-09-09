@@ -29,7 +29,7 @@ const BuildProcess = () => {
               </div>
               
 
-              <img src={arrow} alt="" className="hidden md:block"/>
+              <img src={arrow} alt="" className="hidden md:block -translate-y-10"/>
               <img src={arrowMobile} alt="" className="block md:hidden"/>
 
               <div className="flex flex-col items-center gap-4">
@@ -45,7 +45,7 @@ const BuildProcess = () => {
               </div>
               
 
-              <img src={arrow} alt="" className="hidden md:hidden xl:block"/>
+              <img src={arrow} alt="" className="hidden md:hidden xl:block -translate-y-10"/>
               <img src={arrowMobile} alt="" className="block md:hidden xl:hidden"/>
 
               <div className="flex flex-col items-center gap-4">
@@ -61,7 +61,7 @@ const BuildProcess = () => {
               </div>
               
 
-              <img src={arrow} alt="" className="hidden md:block"/>
+              <img src={arrow} alt="" className="hidden md:block -translate-y-10"/>
               <img src={arrowMobile} alt="" className="block md:hidden"/>
 
               <div className="flex flex-col items-center gap-4">
