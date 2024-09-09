@@ -10,6 +10,7 @@ import Modal from "../Components/utils/Modal";
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
 import { useAuth } from '../Contexts/Auth';
+import axios from 'axios';
 
 const Contact = () => {
     const [loading, setLoading] = useState(false);
@@ -23,6 +24,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -52,11 +54,33 @@ const Contact = () => {
   };
 
   
-  const onSubmit = (data) => {
-    openModal()
+  const onSubmit = async (data) => {
     setMessage('');
-    console.log(data);
+    try {
+      setLoading(true);
+      
+      // Post request using axios
+      const response = await axios.post('/contact', {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message
+      });
+  
+      // Handle response
+      if (response?.data?.success === 'true') {
+        openModal();
+      } else {
+        openModal();
+        setMessage(`${response.data.message}`);
+      }
+    } catch (error) {
+      setMessage('Error: Unable to submit the form');
+    } finally {
+      setLoading(false);
+    }
   };
+  
   return (
     <>
       <ExternalHero
