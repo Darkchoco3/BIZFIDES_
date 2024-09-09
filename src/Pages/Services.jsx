@@ -68,7 +68,7 @@ const Services = () => {
   ];
 
   return (
-    <div>
+    <div className="grid gap-10 lg:gap-20">
       <ExternalHero
         heading={"Our Services"}
         paragraph={
@@ -78,9 +78,9 @@ const Services = () => {
         altText={"Service Image"}
       />
 
-      <section className="py-12 container pt-[25px] lgpt-[50px] my-[80px] w-11/12">
+      <section className="container w-11/12">
         <div className="text-center mb-8">
-          <p className=" font-bold text-primary">GUARANTED SUCCESS</p>
+          <p className=" font-bold text-primary">GUARANTEED SUCCESS</p>
           <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold mt-[5px] mb-[10px]  text-primary">
             What We Offer
           </h2>
@@ -101,34 +101,62 @@ const Services = () => {
         </div>
       </section>
 
-      <div className="w-full bg-[#E8E9F1]">
-        <div className="container  border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[109px] px-6 md:px-12 lg:px-auto py-4 lg:py-[50px] font-inter">
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-center">
-            <div className="w-full max-h-[284px] max-w-[284px] lg:max-h-[628px] lg:max-w-[630px]">
-              {/* <lazyLoader> */}
-                <img src={myImage} alt="" loading="lazy"/>
-              {/* </lazyLoader> */}
+{/* Why Choose Us and Testimonials Section */}
+      <section>
+        <section className="bg-primary-light">
+          <div className=" container w-11/12 flex flex-col items-center md:flex-row md:gap-[3rem] lg:gap-[7rem] xl:gap-[7.094rem]">
+            <img
+              src={myImage}
+              alt="Why choose us image"
+              className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
+            />
+            <div className="flex-1 py-[5rem] md:py-[5.813rem] flex flex-col text-center md:text-start">
+              <h3 className="text-primary font-inter font-semibold text-base lg:text-xl 2xl:text-[1.8rem] leading-none pb-[1rem] lg:pb-[2rem]">
+                WHY CHOOSE US
+              </h3>
+              <div className="grid gap-[2rem]">
+                <p className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none">
+                  Trusted Results
+                </p>
+                <p className="text-primary-medium text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter lg:max-w-[40ch]">
+                  Our comprehensive services, from web design to SEO, are
+                  designed to drive measurable growth and elevate your online
+                  presence.
+                </p>
+                <a
+                  href="./register"
+                  className="grid place-items-center md:place-content-start"
+                >
+                  <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+                    <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
+                      Get Started
+                      <span className="flex items-center">
+                        <svg
+                          className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
-          <div className="about-content w-full lg:w-1/2 max-w-[497px] space-y-4 mt-8 lg:mt-0 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <h3 className="text-lg sm:text-xl font-semibold text-primary">
-              WHY CHOOSE US ?{" "}
-            </h3>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary">
-              Trusted Results{" "}
-            </h2>
-            <p className="text-xs sm:text-sm text-[#6B6B6B] w-[100%] lg:w-[100%]">
-              With years of proven experience, we deliver tailored digital
-              solutions that align perfectly with your unique business needs.
-              Our comprehensive services, from web design to SEO, are designed
-              to drive measurable growth and elevate your online presence.
-            </p>
-            <Button className="px-8 sm:px-14 ">Know More</Button>
-          </div>
-        </div>{" "}
-      </div>
+        </section>
 
-      <Testimonials />
+        <Testimonials />
+      </section>
+
       <Subscribe />
     </div>
   );
