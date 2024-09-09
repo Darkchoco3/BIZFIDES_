@@ -98,7 +98,7 @@ const Quote = ({ text, name, title, company, image, isMiddle }) => {
         {/* Quote Text */}
         <p
           className={`text-center 2xl:text-xl leading-[1.3rem] ${
-            isMiddle ? "text-white max-w-[50ch] pt-8 text-base 2xl:text-2xl" : "text-sm"
+            isMiddle ? "text-white max-w-[50ch] pt-4 text-base 2xl:text-2xl" : "text-sm"
           } text-neutral-grey-300 font-inter`}
         >
           {text}
