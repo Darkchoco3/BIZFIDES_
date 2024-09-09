@@ -10,6 +10,7 @@ import Modal from "../Components/utils/Modal";
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
 import { useAuth } from '../Contexts/Auth';
+import axios from 'axios';
 
 const Contact = () => {
     const [loading, setLoading] = useState(false);
@@ -23,6 +24,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -52,11 +54,33 @@ const Contact = () => {
   };
 
   
-  const onSubmit = (data) => {
-    openModal()
+  const onSubmit = async (data) => {
     setMessage('');
-    console.log(data);
+    try {
+      setLoading(true);
+      
+      // Post request using axios
+      const response = await axios.post('/contact', {
+        name: data.name,
+        email: data.email,
+        subject: data.subject,
+        message: data.message
+      });
+  
+      // Handle response
+      if (response?.data?.success === 'true') {
+        openModal();
+      } else {
+        openModal();
+        setMessage(`${response.data.message}`);
+      }
+    } catch (error) {
+      setMessage('Error: Unable to submit the form');
+    } finally {
+      setLoading(false);
+    }
   };
+  
   return (
     <>
       <ExternalHero
@@ -238,9 +262,9 @@ const Contact = () => {
        {/* Modal */}
         <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-center py-8 font-roboto '>
-            <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Welcome to Bizfides!</h2>
-            <p className='text-xl text-neutral-grey-300'>Your account has been successfully created!</p>
-            <p className='text-xl text-neutral-grey-300'>Please check your email to verify your account.</p>
+            <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Awesome!</h2>
+            <p className='text-xl text-neutral-grey-300'>Your message has been sent and received.Our team</p>
+            <p className='text-xl text-neutral-grey-300'>will get back to you in due time.</p>
             <div className='flex justify-center gap-12'>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
             <button onClick={closeModal} className='p-2 px-6 rounded-[10px] text-primary mt-8'>Login</button>

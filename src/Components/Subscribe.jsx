@@ -42,7 +42,6 @@ const Subscribe = () => {
         } else {
           openModal()
           // Error handling
-          // toast.error("Failed to send reset instructions");
           setMessage(`${response.data.message}`);
         }// Display success message
     } catch (error) {

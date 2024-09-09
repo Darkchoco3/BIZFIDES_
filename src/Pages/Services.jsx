@@ -17,12 +17,14 @@ import LazyLoad from "react-lazy-load";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
-    <div className="bg-white shadow-lg h-[530px] rounded-[303px] overflow-hidden p-6 text-center flex flex-col justify-center items-center">
+    <div className="bg-white shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 h-[530px] rounded-[303px] overflow-hidden p-6 text-center flex flex-col justify-center items-center gap-8">
       <img src={image} alt={titleImg} className="w-[204px]" />
-      <h3 className="text-xl font-semibold mb-2">{title}</h3>
-      <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
-        {description}
-      </p>
+      <div>
+        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
+          {description}
+        </p>
+      </div>
     </div>
   );
 };
@@ -101,7 +103,7 @@ const Services = () => {
         </div>
       </section>
 
-{/* Why Choose Us and Testimonials Section */}
+      {/* Why Choose Us and Testimonials Section */}
       <section>
         <section className="bg-primary-light">
           <div className=" container w-11/12 flex flex-col items-center md:flex-row md:gap-[3rem] lg:gap-[7rem] xl:gap-[7.094rem]">
