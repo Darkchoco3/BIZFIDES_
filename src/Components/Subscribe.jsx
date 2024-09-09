@@ -1,18 +1,54 @@
 import React, { useState } from "react";
 import mail from "../assets/emails.svg";
+import axios from 'axios';
+import Modal from "./utils/Modal";
 import LazyLoad from "react-lazy-load";
 
 const Subscribe = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(`Name: ${name}, Email: ${email}`);
-    setName("");
-    setEmail("");
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(`Name: ${name}, Email: ${email}`);
+  //   setName("");
+  //   setEmail("");
+  // };
+  const openModal = () => {
+    setIsModalOpen(true);
+
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setMessage(''); 
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        // Post request using axios
+        const response = await axios.post('/subscribe', {
+            name,
+            email
+        });
+
+        // Handle response
+        if (response?.data?.success === 'true') {
+          openModal()
+        } else {
+          openModal()
+          // Error handling
+          setMessage(`${response.data.message}`);
+        }// Display success message
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        setMessage('Error: Unable to submit the form');
+    }
+};
   return (
     <div className="container w-11/12">
       <div className="flex flex-col lg:flex-row  justify-center lg:items-center gap-0 lg:gap-[5.375rem] py-0 lg:py-10">
@@ -70,6 +106,14 @@ const Subscribe = () => {
           </button>
         </form>
       </div>
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
+          <div className='w-full text-center py-8 font-roboto '>
+            <h2 className='text-primary font-semibold text-[32px]'>Thank You!</h2>
+            <p className='text-xl text-neutral-grey-300'>You have successfully Subscribed to receive our news letter</p>
+            <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
+          </div>
+      </Modal>
     </div>
   );
 };

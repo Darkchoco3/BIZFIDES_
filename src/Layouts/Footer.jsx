@@ -31,11 +31,11 @@ const Footer = () => {
   return (
     <div className="bg-primary text-white pt-8 ">
       <div className="container w-11/12">
-        <div className="lg:grid flex flex-wrap lg:grid-cols-2  gap-8 lg:gap-0 ">
+        <div className="lg:grid flex flex-wrap lg:grid-cols-2 gap-8  ">
           {/* Logo and Description */}
-          <div className="flex flex-col items-start gap-4">
-            <img className="w-24 h-auto" src={Logo} alt="BizFides Logo" />
-            <p className="mt-4 md:mt-0 text-sm font-inter font-normal w-[356px]">
+          <div className="flex flex-col items-start gap-[1.938rem] ">
+            <img className="w-24 h-auto mt-[1.031rem]" src={Logo} alt="BizFides Logo" />
+            <p className="md:mt-0 text-sm font-inter font-normal w-[356px]">
               © 2024 BizFides. Passionate about helping small businesses shine
               online. We’re here to guide you every step of the way, from
               building your digital presence to engaging with your audience.
@@ -45,8 +45,8 @@ const Footer = () => {
 
           {/* Pages Links */}
           <div className="lg:grid  flex flex-wrap gap-[3.188rem]  md:gap-[5rem]  lg:gap-0 lg:grid-cols-3">
-          <div className="space-y-5">
-            <h3 className="font-bold text-base mb-2 font-inter">Pages</h3>
+          <div className="">
+            <h3 className="font-bold text-base font-inter">Pages</h3>
             {pagelink.map((page,i) => (
               <Link  to={`/${page.link}`}>
               <p key={i} className="hover:text-blue-200 cursor-pointer mb-1 text-sm font-inter font-normal">
@@ -55,9 +55,9 @@ const Footer = () => {
               </Link>
             ))}
           </div>
-
+ 
           {/* Company Links */}
-          <div className="space-y-5">
+          <div className="">
             <h3 className="font-bold text-base  font-inter">Company</h3>
             {["Pricing", "Security", "Privacy Policy", "Terms of Use"].map((company) => (
               <p key={company} className="hover:text-blue-200 cursor-pointer mb-1 text-sm font-inter font-normal">
@@ -67,15 +67,15 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-2 xl:min-w-[300px]">
+          <div className="">
             <h3 className="font-bold text-base font-inter ">Contact</h3>
-            <p className="flex items-center text-sm md:text-base font-inter font-normal">
-              <IoIosCall className="mr-1 w-5" /> (406) 555-0120
+            <p className="flex items-center text-sm md:text-base xl:text-sm font-inter font-normal">
+              <IoIosCall className="mr-1 w-8" /> (406) 555-0120
             </p>
-            <p className="flex items-center text-sm md:text-base font-inter font-normal">
+            <p className="flex items-center text-sm md:text-base xl:text-sm font-inter font-normal">
               <IoMdMail className="mr-1 w-5" /> BizFides@gmail.com
             </p>
-            <p className="flex items-center text-sm md:text-base font-inter font-normal ">
+            <p className="flex items-center text-sm md:text-base xl:text-sm font-inter font-normal ">
               <MdLocationOn className="mr-1 w-5" /> 1,Ogunlesi Street, Onipanu Lagos
             </p>
           </div>
