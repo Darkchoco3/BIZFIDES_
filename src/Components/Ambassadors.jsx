@@ -1,7 +1,7 @@
 import { sponsor } from '../DB/data';
 import dot from '../assets/Group 2008.png';
 import LazyLoad from 'react-lazy-load';
-import { InfiniteMovingCards } from './utils/infinite-moving-cards';
+import InfiniteMovingCards from '../Components/utils/Infinite-moving-cards'
 
 
 const Ambassadors = () => {
@@ -10,7 +10,7 @@ const Ambassadors = () => {
     <div className="pt-[0.8125rem]">
       <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
         <div className="md:flex hidden">
-           <InfiniteMovingCards
+            <InfiniteMovingCards
             items={sponsor}
             direction='right'
             speed='fast'
