@@ -3,9 +3,8 @@ import Polygon1 from '../assets/Group 3387.png';
 import Man from '../assets/image 29.svg';
 import Rectangle from '../assets/Group 2008.svg';
 import { Link} from 'react-router-dom';
-import CircularAnimae from './CircularAnimae'; 
 import CircularDiagram from './CircularAnimae';
-import LazyLoad from 'react-lazy-load';
+
 
 
 
@@ -51,7 +50,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Uncomment this if you want to use CircularDiagram */}
+    
       
     </div>
   );
