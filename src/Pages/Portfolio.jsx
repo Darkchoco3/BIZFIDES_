@@ -84,7 +84,6 @@ const Portfolio = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    // Media queries to determine items per page
     const smallScreen = window.matchMedia("(max-width: 767px)");
     const mediumScreen = window.matchMedia(
       "(min-width: 768px) and (max-width: 1199px)"
@@ -120,14 +119,14 @@ const Portfolio = () => {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = ourWorks.slice(indexOfFirstItem, indexOfLastItem);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
 
   const handlePageChange = (pageNumber) => {
-    setLoading(true); // Set loading to true when clicking pagination
+    setLoading(true);
     setTimeout(() => {
       setCurrentPage(pageNumber);
-      setLoading(false); // Reset loading after the page is set
-    }, 1000); // Simulate a loading delay, you can adjust this to fit your actual data fetching time
+      setLoading(false);
+    }, 1000);
   };
   // Portfolio Page rendering
   return (
