@@ -84,19 +84,12 @@ const Contact = () => {
   return (
     <>
       <ExternalHero
-  heading={
-    <h1 className="font-inter font-bold text-center md:text-[4.875rem] md:leading-[2.45rem]">
-      Contact Us
-    </h1>
-  }
-  paragraph={
-    <p className="font-inter font-medium text-center md:text-[1rem] md:leading-[1.21rem]">
-      We'd love to hear from you - contact us today!
-    </p>
-  }
-  image={contact}
-  altText={"contact us image"}
-/>
+        heading={"Contact Us"}
+        paragraph={"We'd love to hear from you - contact us today!"}
+        image={contact}
+        altText={"contact us image"}
+      
+      />       
 
       <div className="container w-11/12 flex flex-col-reverse lg:flex-row justify-between gap-10 px-1 sm:px-2  lg:p-8 bg-white rounded-lg mt-8">
         
