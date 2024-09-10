@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import {Link} from 'react-router-dom'
 import ExternalHero from "../Components/ExternalHero.jsx";
 import heroImage from "../assets/PortfolioHeroImage.svg";
 import servicesImage from "../assets/PortfolioLaptop.svg";
@@ -268,8 +269,8 @@ const Portfolio = () => {
                   your unique business needs and help you achieve your goals.
                 </p>
 
-                <a
-                  href="./services"
+                <Link
+                  to="./services"
                   className="grid place-items-center md:place-content-start"
                 >
                   <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
@@ -293,7 +294,7 @@ const Portfolio = () => {
                       </span>
                     </span>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </section>

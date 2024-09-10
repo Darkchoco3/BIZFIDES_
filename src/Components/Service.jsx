@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 const Service = () => {
   return (
-    <div className="container pt-[25px] lg:pt-[50px] w-11/12 ">
+    <div className="container pb-[2rem] lg:pb-0 lg:pt-[50px] w-11/12 ">
       <div className="w-full flex justify-center px-4 md:px-8 lg:px-0 ">
-        <div className="border-t border-[#F8F8F8] flex flex-col pb-[50px]">
+        <div className="border-t border-[#F8F8F8] flex flex-col pb-8 lg:pb-[50px]">
           <div className="text-center pb-6 lg:pb-0">
             <div className="grid gap-2 lg:gap-4">
               <h4 className="text-lg md:text-xl font-semibold text-primary">
@@ -36,15 +36,36 @@ const Service = () => {
           </div>
         </div>
       </div>
-      <div className="lg:flex justify-end hidden">
+      <div className="grid lg:flex place-content-center justify-center items-center">
+          <div className="group text-primary focus:ring transition ease-in-out duration-150 hover:scale-110">
+            <Link
+              to="./services"
+              className="font-inter text-sm md:text-xl lg:text-base xl:text-base 2xl:text-2xl text-center py-[.813rem] px-[4.063rem] rounded-[.625rem] flex items-center gap-[0.688rem] group-hover:text-secondary "
+            >
+              More Services
+              <span className="flex items-center">
+                <svg
+                  className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+              </span>
+            </Link>
+          </div>
+        </div>
+      <div className="justify-end hidden lg:flex translate-y-5">
         <img src={dot} alt="" />
       </div>
-      <Link
-        to="/services"
-        className="lg:mt-4 px-8 md:px-10 lg:py-3 md:py-4 font-medium text-primary rounded-lg block lg:hidden text-center w-full hover:text-secondary hover:scale-110"
-      >
-        More Services
-      </Link>
+      
     </div>
   );
 };
