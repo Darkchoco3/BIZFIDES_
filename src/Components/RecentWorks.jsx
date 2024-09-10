@@ -1,6 +1,8 @@
 import React from "react";
 import { ourWorks } from "../DB/data.js";
 import RecentsCard from "./Cards/RecentsCard.jsx";
+import  Jump  from "react-reveal/Jump";
+
 
 const RecentWorks = () => {
   const currentItems = ourWorks.slice(0,4);
@@ -19,7 +21,8 @@ const RecentWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Mapping through the array */}
           {currentItems.map((work) => (
-            <RecentsCard
+            // <Jump delay={500 + (work.id - 1) * 200}>
+                  <RecentsCard
               key={work?.id}
               image={work?.image}
               altText={work?.altText}
@@ -29,6 +32,8 @@ const RecentWorks = () => {
               features={work?.features}
               outcome={work?.outcome}
             />
+            {/* </Jump> */}
+        
           ))}
         </div>
 
