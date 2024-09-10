@@ -84,11 +84,20 @@ const Contact = () => {
   return (
     <>
       <ExternalHero
-        heading={"Contact Us"}
-        paragraph={"We'd love to hear from you - contact us today!"}
-        image={contact}
-        altText={"contact us image"}
-      />
+  heading={
+    <h1 className="font-inter font-bold text-center md:text-[4.875rem] md:leading-[2.45rem]">
+      Contact Us
+    </h1>
+  }
+  paragraph={
+    <p className="font-inter font-medium text-center md:text-[1rem] md:leading-[1.21rem]">
+      We'd love to hear from you - contact us today!
+    </p>
+  }
+  image={contact}
+  altText={"contact us image"}
+/>
+
       <div className="container w-11/12 flex flex-col-reverse lg:flex-row justify-between gap-10 px-1 sm:px-2  lg:p-8 bg-white rounded-lg mt-8">
         
         {/* Left Side - Contact Details */}
@@ -122,7 +131,7 @@ const Contact = () => {
             </div>
 
             {/* Website and Address */}
-            <div className="flex justify-start items-start space-x-8">
+            <div className="flex justify-start items-start space-x-10 lg:space-x-5">
               <div className="flex items-center space-x-2">
                 <img src={website} alt="Website" className="h-6" />
                 <div>
@@ -160,8 +169,8 @@ const Contact = () => {
                 placeholder="Your Name"
                 className="mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={name} // Controlled input
-                onChange={(e) => setName(e.target.value)} // Allow user to edit
+                value={name} 
+                onChange={(e) => setName(e.target.value)} 
 
               />
               {errors.name && (
