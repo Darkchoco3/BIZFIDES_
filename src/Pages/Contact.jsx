@@ -122,7 +122,7 @@ const Contact = () => {
             </div>
 
             {/* Website and Address */}
-            <div className="flex justify-start items-start space-x-5">
+            <div className="flex justify-start items-start space-x-10 lg:space-x-5">
               <div className="flex items-center space-x-2">
                 <img src={website} alt="Website" className="h-6" />
                 <div>
