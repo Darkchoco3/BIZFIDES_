@@ -8,7 +8,7 @@ const Ambassadors = () => {
 
   return (
     <div className="pt-[0.8125rem]">
-      <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
+      <div className="elative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
         <div className="md:flex hidden">
             <InfiniteMovingCards
             items={sponsor}
