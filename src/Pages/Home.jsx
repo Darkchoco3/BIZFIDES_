@@ -13,7 +13,7 @@ import BuildProcess from '../Components/BuildProcess.jsx'
 const Home = () => {
   return (
     
-      <div className="grid gap-[2rem] lg:gap-[3.125rem]">
+      <div className="grid gap-[2rem]">
       <div className="">
         <Hero />
       <Ambassadors/> 
