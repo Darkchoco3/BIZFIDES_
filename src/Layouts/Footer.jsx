@@ -60,8 +60,8 @@ const Footer = () => {
           <div className="space-y-5">
             <h3 className="font-bold text-base  font-inter">Company</h3>
             {["Pricing", "Security", "Privacy Policy", "Terms of Use"].map((company) => (
-              <p key={company} className="hover:text-blue-200 cursor-pointer mb-1 text-sm font-inter font-normal">
-                {company}
+              <p key={company} className="hover:text-blue-200 cursor-pointer mb-1 text-sm font-inter font-normal ">
+                {company} 
               </p>
             ))}
           </div>
