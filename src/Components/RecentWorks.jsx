@@ -21,7 +21,6 @@ const RecentWorks = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Mapping through the array */}
           {currentItems.map((work) => (
-            // <Jump delay={500 + (work.id - 1) * 200}>
                   <RecentsCard
               key={work?.id}
               image={work?.image}
@@ -31,9 +30,7 @@ const RecentWorks = () => {
               name={work?.name}
               features={work?.features}
               outcome={work?.outcome}
-            />
-            {/* </Jump> */}
-        
+            />        
           ))}
         </div>
 
