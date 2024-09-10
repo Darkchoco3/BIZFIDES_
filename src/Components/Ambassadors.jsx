@@ -8,8 +8,8 @@ const Ambassadors = () => {
 
   return (
     <div className="pt-[0.8125rem]">
-      <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px]">
-        <div className="md:flex hidden">
+      <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px] max-w-11/12">
+        <div className="md:flex hidden w-11/12">
             <InfiniteMovingCards
             items={sponsor}
             direction='right'
@@ -28,7 +28,7 @@ const Ambassadors = () => {
         ))}
         </div>
       </div>
-      <div className="lg:flex justify-end hidden animate-pulse">
+      <div className="lg:flex justify-end hidden">
         <img src={dot} alt="" />
       </div>
     </div>
