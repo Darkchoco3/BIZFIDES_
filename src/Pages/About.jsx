@@ -24,7 +24,7 @@ const About = () => {
         </div>
         <OurStory/>
         <OurTeam/>
-        {/* <Testimonials/> */}
+        <Testimonials/>
         </div>
         <Subscribe/>
         <div></div>
