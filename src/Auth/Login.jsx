@@ -9,7 +9,7 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useAuth } from '../Contexts/Auth';
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
-
+import LazyLoad from "react-lazy-load";
 
 const Login = () => {
   const navigate = useNavigate();

@@ -4,20 +4,37 @@ import Logo from '../assets/Bizfides logo.svg'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Notify from '../assets/notification-bing.svg';
 import Arrow from '../assets/arrow-up.svg'
+import Logout from '../assets/logout.svg'
+import Dashboard from '../assets/element-3.svg'
 import { useAuth } from '../Contexts/Auth';
+import Modal from '../Components/utils/Modal';
 
 
 const Navbar = () => {
   const navigate  = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
+  const dropdownRef = useRef(null);
   const { auth, logout} = useAuth()
 
   const onToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const openDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+  
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    reset()
+  };
   const handleLogout = () => {
     logout();
     console.log(auth); // This will help you check if auth is reset after logout
@@ -27,6 +44,9 @@ const Navbar = () => {
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setMenuOpen(false);
+    }
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false); // Close dropdown when clicking outside
     }
   };
 
@@ -43,7 +63,7 @@ const Navbar = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-
+    <>
     <header className="bg-white fixed top-0 left-0 right-0  z-50 font-inter">
     <nav className="flex justify-between items-center h-16 md:h-24 lg:h-[6.5rem] container w-11/12">
       <Link to='/'>
@@ -80,28 +100,68 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          <div className="lg:hidden flex gap-5 mb-8">
-          <Link className=" bg-primary text-white px-12 md:px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
+          {auth.user != null ? <div className='block lg:hidden'>
+        <div className="flex font-semibold items-center w-[199px] p-4 bg-neutral-grey-100 rounded-full gap-2" onClick={openDropdown}>
+          <span className='bg-primary text-white text-sm rounded-full py-2 px-2'>{auth?.user?.firstName?.charAt(0).toUpperCase()}{auth?.user?.lastName?.charAt(0).toUpperCase()}</span>
+          <p className='text-sm text-neutral-grey-300 text-center'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
+        </div> 
+        {isOpen && (
+              <div
+              ref={dropdownRef}
+                className="z-10 absolute bg-white mt-3 shadow w-56 h-28 p-5 " 
+              >
+                <ul className="flex flex-col gap-3" >
+                  
+                  <li>
+                    <button className="flex gap-3" disabled>
+                      <img src={Dashboard}/> <span className="text-base" >Dashboard</span>
+                    </button>
+                  </li>
+                  <li>
+                  <button onClick={ () => {openModal(); setIsOpen(false)}}  className="flex gap-3 cursor-pointer" >
+                  <img src={Logout}/> <span className="text-error-red font-medium text-base">Logout</span>
+                </button>
+                  </li>
+                </ul>
+              </div>
+            )}
+      </div> : 
+      <div className="flex items-center gap-6 h-9">
+        <Link className=" lg:hidden block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
         </Link>
-        <Link className="text-primary px-12 md:px-8 py-2.5 hover:text-secondary font-medium text-sm" to='/login'>
+        <Link className=" lg:hidden block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
-        </Link>
-          </div>
+        </Link> 
+      </div>
+      }
        
       </ul>
-      {
-        auth.user != null ? <div className="flex gap-6">
-        <div className="flex bg-neutral-grey-200 py-1 px-2.5 rounded-full gap-1">
-          <div className='py-1 px-3 font-inter font-semibold text-xl bg-primary text-white rounded-full'>
-            <p>{auth?.user?.firstName?.charAt(0).toUpperCase()}</p>
-          </div>
-          <img src={Arrow} alt="" />
-        </div>
-        <span className='bg-neutral-grey-200 flex items-center py-1 px-3 rounded-full'><img src={Notify} alt="" /></span>
-        <button onClick={handleLogout} className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm cursor-pointer" >
-          Log Out
-        </button>
+      {auth.user != null ? <div className='hidden lg:block'>
+        <div className="flex font-semibold items-center py-4 px-[18px] bg-neutral-grey-100 rounded-full gap-2" onClick={openDropdown}>
+          <span className='bg-primary text-white text-xl rounded-full py-2.5 px-2.5'>{auth?.user?.firstName?.charAt(0).toUpperCase()}{auth?.user?.lastName?.charAt(0).toUpperCase()}</span>
+          <p className='text-base text-neutral-grey-300 text-center'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
+        </div> 
+        {isOpen && (
+              <div
+              ref={dropdownRef}
+                className="z-10 absolute bg-white mt-3 shadow w-56 h-28 p-5 " 
+              >
+                <ul className="flex flex-col gap-3" >
+                  
+                  <li>
+                    <button className="flex gap-3" disabled>
+                      <img src={Dashboard}/> <span className="text-base" >Dashboard</span>
+                    </button>
+                  </li>
+                  <li>
+                  <button onClick={ () => {openModal(); setIsOpen(false)}}   className="flex gap-3 cursor-pointer" >
+                  <img src={Logout}/> <span className="text-error-red font-medium text-base">Logout</span>
+                </button>
+                  </li>
+                </ul>
+              </div>
+            )}
       </div> : 
       <div className="flex items-center gap-6 h-9">
         <Link className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
@@ -112,12 +172,26 @@ const Navbar = () => {
         </Link> 
       </div>
       }
+     
+      
       <div onClick={onToggleMenu} className="text-4xl cursor-pointer lg:hidden text-primary">
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
     </nav>
   </header>
-  
+  {/* Modal */}
+  <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
+          <div className='w-full text-start py-6 font-roboto space-y-4'>
+            <h2 className='text-primary font-semibold text-2xl'>Are you sure you want to log out of your account?
+            </h2>
+            <p className='text-xl text-neutral-grey-300'>You will be signed out and any unsaved changes will be lost.</p>
+            <div className="flex flex-col space-y-3 justify-center items-start">
+            <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-sm text-white hover:bg-primary-dark ' >Logout</button>
+            <button  onClick={closeModal} className='text-primary w-full h-9 text-sm' >Cancel</button>
+            </div>
+          </div>
+      </Modal>
+  </>
   );
 };
 
