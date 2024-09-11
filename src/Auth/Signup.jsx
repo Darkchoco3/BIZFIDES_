@@ -105,31 +105,31 @@ const SignUp = () => {
     <Link to='/'>
     <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
     </Link>
-    <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[474px] font-inter w-[90%] lg:w-[100%]">
+    <h2 className="text-[16px] md:text-xl xl:text-[28px] font-bold text-primary lg:max-w-[474px] font-inter w-[90%] lg:w-[100%] text-pretty">
     Grow Your Business’s Audience and Influence—<span className='text-primary lg:text-secondary'>Create Your Account Today!</span>
       </h2>
 
       {/* Form start */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter px-1">
-      <p className='font-medium text-[12px] md:text-sm lg:text-lg text-secondary'>Lets get started by filling out the information below</p>
+      <p className='font-medium text-[12px] md:text-sm xl:text-lg text-secondary'>Lets get started by filling out the information below</p>
         <div className="flex space-x-4">
           <div className="flex-1">
-            <label htmlFor="firstName" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">First Name</label>
+            <label htmlFor="firstName" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">First Name</label>
             <input
               type="text"
               {...register("firstName", { required: 'First name is required' })}
-              className="mt-1 text-sm md:text-base lg:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="mt-1 text-sm md:text-base 2xl:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               placeholder='Enter Name'
               onFocus={handleFocus}
             />
             {errors.firstName && <p className="text-primary-red text-sm">{errors.firstName.message}</p>}
           </div>
           <div className="flex-1">
-            <label htmlFor="lastName" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Last Name</label>
+            <label htmlFor="lastName" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">Last Name</label>
             <input
               type="text"
               {...register("lastName", { required: 'Last name is required' })}
-              className="mt-1 text-sm md:text-base lg:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="mt-1 text-sm md:text-base 2xl:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               placeholder='Enter Name'
               onFocus={handleFocus}
             />
@@ -138,7 +138,7 @@ const SignUp = () => {
         </div>
 
         <div>
-        <label htmlFor="phone" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">
+        <label htmlFor="phone" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">
           Phone
         </label>
         <input
@@ -150,14 +150,14 @@ const SignUp = () => {
           })}
           placeholder='Phone'
           onChange={handlePhoneChange}
-          className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+          className="mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
           onFocus={handleFocus}
         />
         {errors.phoneNumber && <p className="text-primary-red text-sm">{errors.phoneNumber.message}</p>}
       </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
+          <label htmlFor="email" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">Email</label>
           <input
             type="text"
             {...register("email", {
@@ -168,7 +168,7 @@ const SignUp = () => {
               }
             })}
             placeholder='Enter your Email'
-            className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+            className="mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             onFocus={handleFocus}
           />
           {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
@@ -176,7 +176,7 @@ const SignUp = () => {
         <div>
               <label
                 htmlFor="password"
-                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700 "
+                className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700 "
               >
                 Password
               </label>
@@ -187,7 +187,7 @@ const SignUp = () => {
                     required: "Password is required",
                   })}
                   placeholder="Enter your password"
-                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                  className="relative mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                   onFocus={handleFocus}
                 />
                 <div
@@ -207,7 +207,7 @@ const SignUp = () => {
         <div>
               <label
                 htmlFor="confirmPassword"
-                className="block text-sm md:text-base lg:text-lg font-medium "
+                className="block text-sm md:text-base 2xl:text-lg font-medium "
               >
                 Confirm Password
               </label>
@@ -221,7 +221,7 @@ const SignUp = () => {
                     value === watch("password") || "Passwords do not match",
                 })}
                 placeholder="Confirm your password"
-                className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                className="mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 onFocus={handleFocus}
               />
               <div
@@ -244,14 +244,14 @@ const SignUp = () => {
             className={`h-4 w-4 ${errors.termsAccepted ? 'border-red' : 'border-neutral-grey-200'} text-green-400 rounded focus:ring-green-500`}
             onFocus={handleFocus}
           />
-          <label htmlFor="termsAccepted" className="ml-2 block text-[12px] md:text-base lg:text-lg font-medium font-inter text-neutral-grey-300 ">
-            I agree to Bizfides <a href="#" className="text-secondary hover:text-primary-dark">Terms of Service</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy.</a> By signing up, you agree to the <a href="#" className="text-secondary hover:text-primary-dark">Bizfides Agreement</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy Policy</a>
+          <label htmlFor="termsAccepted" className="ml-2 block text-[12px] md:text-base font-medium font-inter text-neutral-grey-300 ">
+           I agree to Bizfides' <a href="#" className="text-secondary hover:text-primary-dark">Terms of Service</a> and <a href="#" className="text-secondary hover:text-primary-dark">Privacy Policy</a>
           </label>
         </div>
         {errors.termsAccepted && <p className="text-primary-red text-sm">{errors.termsAccepted.message}</p>}
 
         <div>
-          <button type="submit" className="w-full  flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark transition-colors duration-300"
+          <button type="submit" className="w-full  flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-secondary transition-colors duration-300"
             disabled={loading}
           >
              {loading ?   <LoadingButtonText color="text-white" text="Creating an account..." /> : 'Sign Up'}
@@ -295,7 +295,7 @@ const SignUp = () => {
       </Modal>
     {/* Right Side - Image Background */}
     <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative" style={{ backgroundImage: `url(${image})` }}>
-    <Link to='/' className="absolute right-[120px] top-[70px]">
+    <Link to='/' className="absolute right-[120px] top-[40px]">
        <img src={logo} alt="" />
        </Link>
     </div>

@@ -28,7 +28,7 @@ const Ambassadors = () => {
         ))}
         </div>
       </div>
-      <div className="lg:flex justify-end hidden animate-pulse">
+      <div className="lg:flex justify-end hidden -translate-x-28 animate-pulse">
         <img src={dot} alt="" />
       </div>
     </div>
