@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import contact from "../assets/contact big.svg";
 import phone from "../assets/call-calling.svg";
@@ -8,18 +8,17 @@ import location from "../assets/location bblu.svg";
 import ExternalHero from "../Components/ExternalHero";
 import Modal from "../Components/utils/Modal";
 import { ImNotification } from "react-icons/im";
-import LoadingButtonText from '../Components/utils/Loading';
-import { useAuth } from '../Contexts/Auth';
-import axios from 'axios';
+import LoadingButtonText from "../Components/utils/Loading";
+import { useAuth } from "../Contexts/Auth";
+import axios from "axios";
 
 const Contact = () => {
-    const [loading, setLoading] = useState(false);
-    const [message, setMessage] = useState(''); 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const {auth} = useAuth()
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { auth } = useAuth();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const {
     register,
@@ -27,7 +26,6 @@ const Contact = () => {
     reset,
     formState: { errors },
   } = useForm();
-
 
   // Populate form fields if auth data is available
   useEffect(() => {
@@ -43,44 +41,43 @@ const Contact = () => {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setMessage('');
-    reset()
+    setMessage("");
+    reset();
   };
 
   const handleFocus = () => {
     setTimeout(() => {
-      setMessage('');
+      setMessage("");
     }, 3000);
   };
 
-  
   const onSubmit = async (data) => {
-    setMessage('');
+    setMessage("");
     try {
       setLoading(true);
-      
+
       // Post request using axios
-      const response = await axios.post('/gcontact', {
+      const response = await axios.post("/gcontact", {
         name: data.name,
         email: data.email,
         subject: data.subject,
-        message: data.message
+        message: data.message,
       });
-  
+
       // Handle response
-      if (response?.data?.success === 'true') {
+      if (response?.data?.success === "true") {
         openModal();
       } else {
         openModal();
         setMessage(`${response.data.message}`);
       }
     } catch (error) {
-      setMessage('Error: Unable to submit the form');
+      setMessage("Error: Unable to submit the form");
     } finally {
       setLoading(false);
     }
   };
-  
+
   return (
     <>
       <ExternalHero
@@ -88,56 +85,53 @@ const Contact = () => {
         paragraph={"We'd love to hear from you - contact us today!"}
         image={contact}
         altText={"contact us image"}
-      
-      />       
+      />
 
-      <div className="container w-11/12 flex flex-col-reverse lg:flex-row justify-between gap-10 px-1 sm:px-2  lg:p-8 bg-white rounded-lg mt-8">
-        
+      <div className="container w-11/12 flex flex-col-reverse lg:flex-row lg:items-center gap-10 sm:px-2 lg:pt-[5rem] lg:pb-[1.875rem] bg-white rounded-lg mt-8 lg:mt-0">
         {/* Left Side - Contact Details */}
-        <div className="space-y-4 text-gray-700">
-          <h2 className="text-[2.5rem] font-roboto font-bold text-primary text-center md:text-left">
-            Get In{" "}
+        <div className="space-y-2 lg:space-y-8 text-gray-700 text-sm font-inter flex-1">
+          <h2 className="text-xl lg:text-[2.5rem] font-roboto font-bold text-primary text-center lg:text-left">
+            Get In
             <span className="text-secondary font-roboto font-bold">Touch</span>
           </h2>
-          <p className="lg:w-[396px] text-center md:text-left">
-            Lorem ipsum dolor sit amet consectetur. Amet velit eget ut massa
-            gravida felis amet.
+          <p className="text-center text-pretty text-xs md:text-sm lg:text-base 2xl:text-xl lg:text-left pb-2 lg:pb-0">
+            Get In Touch with us by contacting us Today through these platforms
           </p>
           <div className="space-y-6">
             {/* Phone and Email */}
-            <div className="flex justify-start items-start space-x-8">
-              <div className="flex items-center space-x-2">
-                <img src={phone} alt="Phone" className="h-6" />
+            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-8">
+              <div className="flex items-center space-x-2 flex-1">
+                <img src={phone} alt="Phone" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold">Phone Number</span>
-                  <p>123456789</p>
+                  <span className="font-bold lg:text-base">Phone Number</span>
+                  <p className="text-xs lg:text-sm xl:text-base">123456789</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <img src={sms} alt="Email" className="h-6" />
+              <div className="flex items-center space-x-2 flex-1">
+                <img src={sms} alt="Email" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold">Email Address</span>
-                  <p>abcd@gmail.com</p>
+                  <span className="font-bold lg:text-base">Email Address</span>
+                  <p className="text-xs lg:text-sm xl:text-base">abcd@gmail.com</p>
                 </div>
               </div>
             </div>
 
             {/* Website and Address */}
-            <div className="flex justify-start items-start space-x-10 lg:space-x-5">
-              <div className="flex items-center space-x-2">
-                <img src={website} alt="Website" className="h-6" />
+            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-7 lg:space-x-6">
+              <div className="flex items-center space-x-2 flex-1">
+                <img src={website} alt="Website" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold">Websites</span>
-                  <p>www.bizfides.com</p>
+                  <span className="font-bold lg:text-base">Websites</span>
+                  <p className="text-xs lg:text-sm xl:text-base">www.bizfides.com</p>
                 </div>
               </div>
 
-              <div className="flex items-center space-x-2">
-                <img src={location} alt="Location" className="h-6" />
+              <div className="flex items-center space-x-2 flex-1">
+                <img src={location} alt="Location" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold">Address</span>
-                  <p>17 Avenue, SJK street, Lagos.</p>
+                  <span className="font-bold lg:text-base">Address</span>
+                  <p className="text-xs lg:text-sm xl:text-base">17 Avenue street, Lagos.</p>
                 </div>
               </div>
             </div>
@@ -146,25 +140,24 @@ const Contact = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="space-y-4 xl:min-w-[633px]"
+          className="space-y-4 xl:min-w-[633px] font-inter flex-1"
         >
-          <div className="flex space-x-4">
-            <div className="flex flex-col w-1/2">
+          <div className="flex flex-col xl:flex-row xl:space-x-4">
+            <div className="flex flex-col xl:w-1/2">
               <label
                 htmlFor="name"
-                className="text-sm font-semibold text-gray-700"
+                className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
               >
-                Name<span className="text-error-red">*</span>
+                Name<span className="text-error-red -translate-y-px">*</span>
               </label>
               <input
                 id="name"
                 {...register("name", { required: "Name is required" })}
                 placeholder="Your Name"
-                className="mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={name} 
-                onChange={(e) => setName(e.target.value)} 
-
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">
@@ -173,12 +166,12 @@ const Contact = () => {
               )}
             </div>
 
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col xl:w-1/2 mt-[1rem] xl:mt-0 ">
               <label
                 htmlFor="email"
-                className="text-sm font-semibold text-gray-700"
+                className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
               >
-                Email<span className="text-error-red">*</span>
+                Email<span className="text-error-red -translate-y-px">*</span>
               </label>
               <input
                 id="email"
@@ -190,7 +183,7 @@ const Contact = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className="mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
                 value={email} // Controlled input
                 onChange={(e) => setEmail(e.target.value)} // Allow user to edit
@@ -206,17 +199,17 @@ const Contact = () => {
           <div className="flex flex-col">
             <label
               htmlFor="subject"
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
             >
-              Subject<span className="text-error-red">*</span>
+              Subject<span className="text-error-red -translate-y-px">*</span>
             </label>
             <input
               id="subject"
               {...register("subject", { required: "Subject is required" })}
               placeholder="Your Subject"
-              className="mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
               onFocus={handleFocus}
-              />
+            />
             {errors.subject && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.subject.message}
@@ -224,18 +217,18 @@ const Contact = () => {
             )}
           </div>
 
-          <div className="flex flex-col">
+          <div className="flex flex-col lg:pb-6">
             <label
               htmlFor="message"
-              className="text-sm font-semibold text-gray-700"
+              className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
             >
-              Message<span className="text-error-red">*</span>
+              Message<span className="text-error-red -translate-y-px">*</span>
             </label>
             <textarea
               id="message"
               {...register("message", { required: "Message is required" })}
               placeholder="Your Message"
-              className="mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
               onFocus={handleFocus}
               rows="4"
             />
@@ -248,30 +241,59 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-primary text-white font-inter rounded-lg font-medium hover:bg-primary-dark focus:outline-none focus:ring-2 "
+            className="w-full py-2 lg:py-3 px-4 bg-primary text-white text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter rounded-lg font-medium hover:bg-primary-dark focus:outline-none focus:ring-2 "
             disabled={loading}
           >
-             {loading ?   <LoadingButtonText color="text-white" text="Submitting..." /> : 'Submit'}
-             </button>
+            {loading ? (
+              <LoadingButtonText color="text-white" text="Submitting..." />
+            ) : (
+              "Submit"
+            )}
+          </button>
         </form>
-         {/* Form end */}
-            {message && (
-            <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-              <ImNotification/>{message}
-            </div>
-          )}
-      </div>
-       {/* Modal */}
-        <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
-          <div className='w-full text-center py-8 font-roboto '>
-            <h2 className='font-semibold text-xl font-roboto text-primary pb-4'>Awesome!</h2>
-            <p className='text-xl text-neutral-grey-300'>Your message has been sent and received.Our team</p>
-            <p className='text-xl text-neutral-grey-300'>will get back to you in due time.</p>
-            <div className='flex justify-center gap-12'>
-            <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
-            <button onClick={closeModal} className='p-2 px-6 rounded-[10px] text-primary mt-8'>Login</button>
-            </div>
+        {/* Form end */}
+        {message && (
+          <div
+            className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
+              message.includes("successful") ? "text-green-500" : "text-red-500"
+            }`}
+          >
+            <ImNotification />
+            {message}
           </div>
+        )}
+      </div>
+      {/* Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        closeOnClickOutside={false}
+      >
+        <div className="w-full text-center py-8 font-roboto ">
+          <h2 className="font-semibold text-xl font-roboto text-primary pb-4">
+            Awesome!
+          </h2>
+          <p className="text-xl text-neutral-grey-300">
+            Your message has been sent and received.Our team
+          </p>
+          <p className="text-xl text-neutral-grey-300">
+            will get back to you in due time.
+          </p>
+          <div className="flex justify-center gap-12">
+            <button
+              onClick={closeModal}
+              className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+            >
+              Okay
+            </button>
+            <button
+              onClick={closeModal}
+              className="p-2 px-6 rounded-[10px] text-primary mt-8"
+            >
+              Login
+            </button>
+          </div>
+        </div>
       </Modal>
     </>
   );
