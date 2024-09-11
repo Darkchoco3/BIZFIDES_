@@ -214,7 +214,7 @@ const Portfolio = () => {
         {/* Our Recent Works section*/}
         <section className="container w-11/12">
           <div className="grid gap-[1rem] lg:gap-[2rem] ">
-            <h3 className="text-center text-primary-dark font-roboto md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
+            <h3 className="text-center text-primary-dark font-roboto text-xl md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
               Our Recent Works
             </h3>
             <p className="text-center text-neutral-grey-300 font-inter text-xs md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[80ch] md:pb-[4.063rem]">
