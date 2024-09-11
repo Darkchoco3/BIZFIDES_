@@ -21,7 +21,7 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('+234');
-  const { signup } = useAuth()
+  const { signup, googleAuth } = useAuth()
 
 
   const openModal = () => {
@@ -88,14 +88,22 @@ const SignUp = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    // window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
+  const handleGoogleLogin = async () => {
+    try {
+      setLoading(true);
+      const response = await googleAuth();
+      if (response && !response.error) {
+        navigate('/');
+      } else {
+        setMessage('Google login failed.');
+      }
+    } catch (err) {
+      setMessage(`An error occurred: ${err.message}`);
+    } finally {
+      setLoading(false);
+    }
   };
-
-  
-//   Your account has been successfully created!"
-// "Please check your email to verify your account."
-
+ 
   return (
 <>
   <div className="bg-white h-screen w-full flex">
