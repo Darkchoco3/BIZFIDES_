@@ -7,10 +7,10 @@ const WhatWedo = () => {
         <h3 className="text-sm md:text-base xl:text-lg text-primary text-center font-medium">
           GUARANTED SUCCESS
         </h3>
-        <h2 className="font-roboto font-bold text-primary text-xl md:text-2xl lg:text-3xl text-center">
+        <h2 className="font-roboto font-bold text-primary text-xl md:text-2xl lg:text-3xl xl:text-[2.5rem] text-center">
           What We Do
         </h2>
-        <p className="text-base text-neutral-grey-300 text-center lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[80ch]">
+        <p className="text-base text-neutral-grey-300 text-center lg:text-lg xl:text-xl 2xl:text-3xl 2xl:leading-[1.4] max-w-[80ch] text-pretty">
           We specialize in elevating your business’s online presence to ensure
           you stand out in today’s digital landscape. Our comprehensive suite of
           services is designed to enhance every aspect of your online identity.
