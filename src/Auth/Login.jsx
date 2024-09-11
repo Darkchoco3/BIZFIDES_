@@ -9,7 +9,6 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import { useAuth } from '../Contexts/Auth';
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
-import LazyLoad from "react-lazy-load";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,25 +20,20 @@ const Login = () => {
   const {
     register, 
     handleSubmit,
-    formState: { errors }, 
+    formState: { errors, isValid }, // Destructure isValid to check form validity
     reset
-  } = useForm();
-
-  const handleFocus = () => {
-    setTimeout(() => {
-      setMessage(''); 
-    }, 3000);
-  };
+  } = useForm({
+    mode: 'onChange', // Enable form validation on change
+  });
 
   const { login } = useAuth();
 
   const onSubmit = async (data) => {
-    setMessage('')
     try {
       setLoading(true);
       const response = await login(data);
       if (!response.error) {
-        reset()
+        reset();
         setTimeout(() => {
           navigate("/");
         }, 3000);
@@ -60,25 +54,24 @@ const Login = () => {
   return (
     <main className='py-5 lg:py-0'>
       <div className="bg-white w-full h-screen flex">
-        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container mx-auto">
-        <Link to='/'>
-          <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[10px] mb-[25px] lg:hidden' />
-        </Link>
+        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container">
+          <Link to='/'>
+            <img src={logo} alt="logo" className='w-[74px] h-[42px] my-[6rem] mb-[25px] lg:hidden' />
+          </Link>
           <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
-            Welcome Back To <br className='lg:hidden'/>Bizfides
+            Welcome Back To <br className='lg:hidden' />Bizfides
           </h2>
           <p className='font-medium text-[12px] md:text-sm lg:text-[28px] py-2 lg:py-4 text-primary lg:text-secondary'>Sign in to continue.</p>
-          
+
           {/* Form start */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 mt-4 lg:mt-4 font-inter">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 mt-4 lg:mt-6 font-inter">
             <div>
-              <label htmlFor="email" className="block text-sm md:text-base lg:text-lg font-medium text-gray-700">Email</label>
+              <label htmlFor="email" className="block text-sm md:text-base l2xlg:text-lg font-medium text-gray-700">Email</label>
               <input
                 type="email"
                 {...register("email", { required: 'Email is required' })}
                 placeholder='Enter your Email'
-                className="mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                onFocus={handleFocus}
+                className="mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-[.625rem] shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               />
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
@@ -86,7 +79,7 @@ const Login = () => {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700"
+                className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700"
               >
                 Password
               </label>
@@ -97,8 +90,7 @@ const Login = () => {
                     required: "Password is required",
                   })}
                   placeholder="Enter your password"
-                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                  onFocus={handleFocus}
+                  className="relative mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-[.625rem] shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
@@ -114,26 +106,27 @@ const Login = () => {
               )}
             </div>
 
-            <div className='flex justify-between items-center'> 
+            <div className='flex justify-between items-center pb-[1rem]'>
               <div className="flex items-center">
                 <input
                   type="checkbox"
                   {...register("RememberMe")}
                   className={`h-4 w-4`}
-                  onFocus={handleFocus}
                 />
-                <label htmlFor="RememberMe" className="ml-2 block text-sm font-medium font-inter text-neutral-grey-300">
+                <label htmlFor="RememberMe" className="ml-2 block text-sm lg:text-base 2xl:text-lg font-medium font-inter text-neutral-grey-300">
                   Remember Me
                 </label>
               </div>
-              <Link to='/forgot-password' className="text-[#EC5E5E] text-base font-medium">Forgot password</Link>
+              <Link to='/forgot-password' className="text-primary-red text-sm lg:text-base 2xl:text-lg">Forgot password</Link>
             </div>
 
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
-                disabled={loading}
+              <button
+                type="submit"
+                className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white ${isValid && !loading ? 'bg-primary hover:bg-secondary' : 'bg-gray-400'}`}
+                disabled={!isValid || loading}
               >
-                {loading ?   <LoadingButtonText color="text-white" text="Signing In..." /> : 'Sign In'}
+                {loading ? <LoadingButtonText color="text-white" text="Signing In..." /> : 'Sign In'}
               </button>
             </div>
           </form>
@@ -141,7 +134,7 @@ const Login = () => {
           {/* Success or Error message */}
           {message && (
             <div className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${message.includes('successful') ? 'text-green-500' : 'text-red-500'}`}>
-            {message.includes('successful') ? '' :<ImNotification/> } {message}
+              <ImNotification />{message}
             </div>
           )}
 
@@ -160,13 +153,13 @@ const Login = () => {
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
-          <Link to='/' className="absolute right-[5.875rem] top-[2.8rem]">
+          <Link to='/' className="absolute right-[5.875rem] top-[4.7rem]">
             <img src={logo} alt="Bizfides Logo" />
           </Link>
         </div>
       </div>
     </main>
-  );  
+  );
 };
 
 export default Login;
