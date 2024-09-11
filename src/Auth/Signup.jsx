@@ -112,7 +112,7 @@ const SignUp = () => {
       {/* Form start */}
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 mt-6 font-inter px-1">
       <p className='font-medium text-[12px] md:text-sm xl:text-lg text-secondary'>Lets get started by filling out the information below</p>
-        <div className="flex flex-col xl:flex-row space-x-4">
+        <div className="flex flex-col xl:flex-row xl:space-x-4">
           <div className="flex-1">
             <label htmlFor="firstName" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">First Name</label>
             <input
@@ -124,7 +124,7 @@ const SignUp = () => {
             />
             {errors.firstName && <p className="text-primary-red text-sm">{errors.firstName.message}</p>}
           </div>
-          <div className="flex-1">
+          <div className="flex-1 mt-[1rem] xl:mt-0">
             <label htmlFor="lastName" className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700">Last Name</label>
             <input
               type="text"
