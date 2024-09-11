@@ -31,7 +31,7 @@ const Subscribe = () => {
 
     try {
         // Post request using axios
-        const response = await axios.post('/subscribe', {
+        const response = await axios.post('/gsubscribe', {
             name,
             email
         });

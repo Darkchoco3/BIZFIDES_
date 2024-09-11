@@ -127,10 +127,10 @@ const Navbar = () => {
             )}
       </div> : 
       <div className="flex items-center gap-6 h-9">
-        <Link className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
+        <Link className="block lg:hidden  bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
         </Link>
-        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
+        <Link className="block lg:hidden text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
         </Link> 
       </div>
@@ -178,8 +178,7 @@ const Navbar = () => {
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
     </nav>
-  </header>
-  {/* Modal */}
+    {/* Modal */}
   <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-start py-6 font-roboto space-y-4'>
             <h2 className='text-primary font-semibold text-2xl'>Are you sure you want to log out of your account?
@@ -191,6 +190,8 @@ const Navbar = () => {
             </div>
           </div>
       </Modal>
+  </header>
+  
   </>
   );
 };

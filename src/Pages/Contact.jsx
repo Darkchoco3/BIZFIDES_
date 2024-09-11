@@ -60,7 +60,7 @@ const Contact = () => {
       setLoading(true);
       
       // Post request using axios
-      const response = await axios.post('/contact', {
+      const response = await axios.post('/gcontact', {
         name: data.name,
         email: data.email,
         subject: data.subject,

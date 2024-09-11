@@ -10,6 +10,8 @@ import { useAuth } from '../Contexts/Auth';
 import LoadingButtonText from '../Components/utils/Loading';
 import { ImNotification } from "react-icons/im";
 import Modal from '../Components/utils/Modal';
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from '../firebase/firebaseConfig';
 
 
 
@@ -88,10 +90,13 @@ const SignUp = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    // window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
+ 
+  const handleGoogleLogin = async (e) => {
+    const provider = await new GoogleAuthProvider();
+    return signInWithPopup(auth, provider)
+   
   };
-
+ // window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
   
 //   Your account has been successfully created!"
 // "Please check your email to verify your account."
