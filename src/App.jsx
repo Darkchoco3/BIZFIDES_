@@ -43,7 +43,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route element={<PrivateRoute />}>
-            <Route path="/profile" element={<Dashboard />} />
+            {/* <Route path="/profile" element={<Dashboard />} /> */}
           </Route>
           </Route>
 

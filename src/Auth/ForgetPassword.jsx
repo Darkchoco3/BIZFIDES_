@@ -29,9 +29,11 @@ const ForgetPassword = () => {
   const {
     register, 
     handleSubmit,
-    formState: { errors },
+    formState: { errors,isValid },
     reset
-  } = useForm();
+  } = useForm({
+    mode:'onChange'
+  });
 
   const handleFocus = () => {
     setTimeout(() => {
@@ -88,11 +90,27 @@ const ForgetPassword = () => {
               {errors.email && <p className="text-primary-red text-sm">{errors.email.message}</p>}
             </div>
             <div>
-              <button type="submit" className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
-                disabled={loading}
-              >
-                {loading ? <LoadingButtonText color="text-white" text="Loading..." /> : 'Reset Password'}
-              </button>
+            <button
+                  type="submit"
+                  className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white 
+                  ${
+                    loading
+                      ? "bg-secondary hover:bg-secondary"
+                      : isValid
+                      ? "bg-primary hover:bg-secondary"
+                      : "bg-gray-400"
+                  }`}
+                  disabled={!isValid || loading}
+                >
+                  {loading ? (
+                    <LoadingButtonText
+                      color="text-white"
+                      text="Loading..."
+                    />
+                  ) : (
+                    "ResetPassword"
+                  )}
+                </button>
             </div>
           </form>
           {/* Form end */}
@@ -117,7 +135,7 @@ const ForgetPassword = () => {
           <div className='w-full text-center py-8 font-roboto '>
             <h2 className='text-primary font-semibold text-[32px]'>Message Sent!</h2>
             <p className='text-xl text-neutral-grey-300'>Continue with the link sent to you via your Email</p>
-            <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8' >Okay</button>
+            <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8' >Okay</button>
           </div>
       </Modal>
     </main>
