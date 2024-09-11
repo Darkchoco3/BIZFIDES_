@@ -30,7 +30,7 @@ export default {
         'primary-accent': 'hsla(236, 23%, 77%, 1)',
         'transparents': 'hsla(0, 0%, 0%, 0)',
         'neutral-grey-200': 'hsla(0, 0%, 90%, 1)',
-        'primary-red': 'hsla(352, 82%, 38%, 1)',
+        'primary-red': 'hsla(0, 79%, 65%, 1)',
          'error-red': 'hsla(0, 100%, 50%, 1)',
         'secondary-light': 'hsla(180, 47%, 93%, 1)'
       },

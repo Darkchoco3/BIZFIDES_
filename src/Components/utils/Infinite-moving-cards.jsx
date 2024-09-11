@@ -11,10 +11,12 @@ const InfiniteMovingCards = ({
   const containerRef = React.useRef(null);
   const scrollerRef = React.useRef(null);
 
+  const [start, setStart] = useState(false);
+
   useEffect(() => {
     addAnimation();
   }, []);
-  const [start, setStart] = useState(false);
+
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {
       const scrollerContent = Array.from(scrollerRef.current.children);
@@ -31,6 +33,7 @@ const InfiniteMovingCards = ({
       setStart(true);
     }
   }
+
   const getDirection = () => {
     if (containerRef.current) {
       if (direction === "left") {
@@ -40,6 +43,7 @@ const InfiniteMovingCards = ({
       }
     }
   };
+
   const getSpeed = () => {
     if (containerRef.current) {
       if (speed === "fast") {
@@ -51,31 +55,36 @@ const InfiniteMovingCards = ({
       }
     }
   };
+
   return (
-    (<div
+    <div
       ref={containerRef}
       className={cn(
-        "scroller relative z-20  max-w-7xl overflow-hidden  [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
+        "scroller relative z-20 max-w-[1440px] overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]",
         className
-      )}>
+      )}
+    >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap",
-          start && "animate-scroll ",
+          "flex shrink-0 gap-4 py-4 flex-nowrap",
+          start && "animate-scroll",
           pauseOnHover && "hover:[animation-play-state:paused]"
-        )}>
+        )}
+        style={{ width: "fit-content" }} // Ensures content fits within the container
+      >
         {items.map((a, i) => (
-              <img
-              src={a.img}
-              key={i}
-              className="w-[10rem] md:min-w-[4rem] lg:min-w-[9rem]"
-              alt={`Sponsor ${i + 1}`}
-              loading='lazy'
-            />
+          <img
+            src={a.img}
+            key={i}
+            className="w-auto h-full" // Ensures images are responsive
+            alt={`Sponsor ${i + 1}`}
+            loading="lazy"
+          />
         ))}
       </ul>
-    </div>)
+    </div>
   );
 };
-export default InfiniteMovingCards
+
+export default InfiniteMovingCards;
