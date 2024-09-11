@@ -7,7 +7,7 @@ const BuildProcess = () => {
   return (
     <>
       <div className="bg-primary">
-        <div className="container w-11/12">
+        <div className="container w-11/12 lg:mb-[6.25rem]">
           <div className="grid place-items-center gap-4 text-white py-[2.25rem]">
             <h5 className="font-inter font-medium text-base lg:text-xl">BUILD PROCESS</h5>
             <h3 className="font-roboto font-bold text-lg lg:text-[2.5rem]">How It Works</h3>
