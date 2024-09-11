@@ -1,5 +1,4 @@
 import { IoIosArrowForward } from "react-icons/io";
-import LazyLoad from 'react-lazy-load';
 
 const ServiceCard = ({service,i}) => {
   return (
@@ -9,14 +8,11 @@ const ServiceCard = ({service,i}) => {
     >
       
       <div className="min-h-[150px] min-w-[150px] sm:min-h-[200px] sm:min-w-[200px] rounded-full">
-      {/* <LazyLoad threshold={0.95}> */}
       <img
           src={service.Image}
           alt="services"
           className="h-full w-full object-cover rounded-full"
-          loading="lazy"
         />
-        {/* </LazyLoad> */}
         
       </div>
       <div className="text-center mt-4">

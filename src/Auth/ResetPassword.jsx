@@ -5,7 +5,6 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import Modal from "../Components/utils/Modal";
-import LazyLoad from "react-lazy-load";
 import axios from "axios";
 import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
@@ -190,9 +189,7 @@ const ResetPassword = () => {
           style={{ backgroundImage: `url(${image})` }}
         >
           <Link to="/" className="absolute right-[120px] top-[70px]">
-            {/* <LazyLoad> */}
-            <img src={logo} alt="Bizfides logo" loading="lazy" />
-            {/* </LazyLoad> */}
+            <img src={logo} alt="Bizfides logo"/>
           </Link>
         </div>
       </div>

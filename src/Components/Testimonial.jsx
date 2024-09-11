@@ -9,7 +9,6 @@ import quote from "../assets/Group 2008.svg";
 import bolajismage from "../assets/Frame 1171277920.svg";
 import lisasimage from "../assets/lisasimage.svg";
 import sarahimage from "../assets/sarah.svg";
-import LazyLoad from "react-lazy-load";
 
 const testimonialsData = [
   {
