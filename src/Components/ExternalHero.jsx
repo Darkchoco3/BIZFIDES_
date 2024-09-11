@@ -1,6 +1,5 @@
 import React from "react";
 import Rectangle from "../assets/Group 2008.svg";
-import LazyLoad from "react-lazy-load";
 
 const ExternalHero = ({ heading, paragraph, image, altText }) => {
   return (

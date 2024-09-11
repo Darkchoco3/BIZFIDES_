@@ -13,14 +13,13 @@ import Footer from "../Layouts/Footer.jsx";
 import About from "../Components/About.jsx";
 import Button from "../Components/Button.jsx";
 import myImage from "../assets/Group 1.svg";
-import LazyLoad from "react-lazy-load";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
-    <div className="bg-white shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 h-[530px] rounded-[303px] overflow-hidden p-6 text-center flex flex-col justify-center items-center gap-8">
-      <img src={image} alt={titleImg} className="w-[204px]" />
+    <div className="bg-white shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[303px] overflow-hidden p-14 text-center flex flex-col justify-center items-center gap-8">
+      <img src={image} alt={titleImg} className="min-w-[16rem]" />
       <div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold">{title}</h3>
         <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
           {description}
         </p>
@@ -91,7 +90,7 @@ const Services = () => {
             Unlocking potential with creative solutions
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceDetails
               key={index}
