@@ -14,9 +14,9 @@ const OurStory = () => {
         Take a look at our transformative process of turning an idea into a thriving business through innovation, persistence, team-work and strategic growth.
         </p>
       </div>
-      <div className="rounded-[8px]">
-        <img src={image} alt="image" className='rounded-lg w-full'/>
-      </div>
+      {/* <div className="rounded-[8px]"> */}
+        <img src={image} alt="image" className='rounded-sm w-full'/>
+      {/* </div> */}
     </div>
   )
 }
