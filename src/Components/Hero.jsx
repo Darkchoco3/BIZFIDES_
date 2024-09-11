@@ -5,7 +5,6 @@ import Rectangle from '../assets/Group 2008.svg';
 import { Link} from 'react-router-dom';
 import CircularAnimae from './CircularAnimae'; 
 import CircularDiagram from './CircularAnimae';
-import LazyLoad from 'react-lazy-load';
 
 
 

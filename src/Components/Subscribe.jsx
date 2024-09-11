@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import mail from "../assets/emails.svg";
 import axios from 'axios';
 import Modal from "./utils/Modal";
-import LazyLoad from "react-lazy-load";
 
 const Subscribe = () => {
   const [name, setName] = useState("");
@@ -53,9 +52,7 @@ const Subscribe = () => {
     <div className="container w-11/12">
       <div className="flex flex-col lg:flex-row  justify-center lg:items-center gap-0 lg:gap-[5.375rem] py-0 lg:py-10">
         <div className="w-full flex flex-1 justify-center">
-          {/* <LazyLoad threshold={0.95}> */}
-            <img src={mail} alt="Newsletter" className="h-auto hidden lg:block" loading="lazy" />
-          {/* </LazyLoad> */}
+            <img src={mail} alt="Newsletter" className="h-auto hidden lg:block"/>
         </div>
         <form
           onSubmit={handleSubmit}

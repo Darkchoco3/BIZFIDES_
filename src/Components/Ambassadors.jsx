@@ -1,6 +1,5 @@
 import { sponsor } from '../DB/data';
 import dot from '../assets/Group 2008.png';
-import LazyLoad from 'react-lazy-load';
 import InfiniteMovingCards from '../Components/utils/Infinite-moving-cards'
 
 
@@ -23,7 +22,6 @@ const Ambassadors = () => {
             key={i}
             className="w-[10rem] md:min-w-[4rem] lg:min-w-[9rem]"
             alt={`Sponsor ${i + 1}`}
-            loading='lazy'
           />
         ))}
         </div>
