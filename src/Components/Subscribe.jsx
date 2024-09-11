@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import mail from "../assets/emails.svg";
 import axios from 'axios';
 import Modal from "./utils/Modal";
-import LazyLoad from "react-lazy-load";
 
 const Subscribe = () => {
   const [name, setName] = useState("");
@@ -53,25 +52,23 @@ const Subscribe = () => {
     <div className="container w-11/12">
       <div className="flex flex-col lg:flex-row  justify-center lg:items-center gap-0 lg:gap-[5.375rem] py-0 lg:py-10">
         <div className="w-full flex flex-1 justify-center">
-          {/* <LazyLoad threshold={0.95}> */}
-            <img src={mail} alt="Newsletter" className="h-auto hidden lg:block" loading="lazy" />
-          {/* </LazyLoad> */}
+            <img src={mail} alt="Newsletter" className="h-auto hidden lg:block"/>
         </div>
         <form
           onSubmit={handleSubmit}
           className="lg:p-[3.125rem] rounded-3xl lg:border lg:border-neutral-grey-200  flex-1 "
         >
           <div className=" mb-[2rem]">
-            <h1 className="text-[1.414rem] lg:text-[1.6rem] xl:text-4xl  font-bold text-primary font-roboto">
+            <h1 className="text-[1.414rem] md:text-[1.5rem] lg:text-[1.6rem] xl:text-4xl 2xl:text-5xl  font-bold text-primary font-roboto">
               Subscribe To Our Newsletter
             </h1>
-            <p className="mb-4 font-inter font-normal text-xs lg:text-base leading-[1.21rem] text-neutral-grey-300 max-w-[40ch]">
+            <p className="mb-4 font-inter font-normal text-xs md:text-sm lg:text-base leading-[1.21rem] text-neutral-grey-300 lg:max-w-[40ch]">
               Get exclusive insights, expert tips, and industry news delivered
               straight to your inbox
             </p>
           </div>
           <div className="mb-4">
-            <label className="block mb-3 font-inter text-[0.706rem] lg:text-xl font-medium text-neutral-black">
+            <label className="block mb-3 font-inter text-[0.706rem] md:text-base lg:text-xl font-medium text-neutral-black">
               Name
             </label>
             <input
@@ -80,11 +77,11 @@ const Subscribe = () => {
               placeholder="Name"
               onChange={(e) => setName(e.target.value)}
               required
-              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] w-full rounded-[.625rem] text-[0.706rem] lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary "
+              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary "
             />
           </div>
           <div className="mb-4">
-            <label className="block mb-3 font-inter text-[0.706rem] lg:text-xl font-medium text-neutral-black">
+            <label className="block mb-3 font-inter text-[0.706rem] md:text-base lg:text-xl font-medium text-neutral-black">
               Email
             </label>
             <input
@@ -93,7 +90,7 @@ const Subscribe = () => {
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] mb-[1.5rem] lg:mb-[2.375rem] w-full rounded-[.625rem] text-[0.706rem] lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] mb-[1.5rem] lg:mb-[2.375rem] w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
           </div>
 

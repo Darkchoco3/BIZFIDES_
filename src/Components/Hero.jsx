@@ -8,6 +8,7 @@ import CircularDiagram from './CircularAnimae';
 
 
 
+
 const Hero = () => {
   return (
     <div className='bg-primary pt-[4rem] md:pt-24 lg:pt-[6.5rem] relative'>

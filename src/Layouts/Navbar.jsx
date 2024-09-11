@@ -127,10 +127,10 @@ const Navbar = () => {
             )}
       </div> : 
       <div className="flex items-center gap-6 h-9">
-        <Link className="block lg:hidden  bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
+        <Link className=" lg:hidden block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
         </Link>
-        <Link className="block lg:hidden text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
+        <Link className=" lg:hidden block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
         </Link> 
       </div>
@@ -185,7 +185,7 @@ const Navbar = () => {
             </h2>
             <p className='text-xl text-neutral-grey-300'>You will be signed out and any unsaved changes will be lost.</p>
             <div className="flex flex-col space-y-3 justify-center items-start">
-            <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-sm text-white hover:bg-primary-dark ' >Logout</button>
+            <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-sm text-white hover:bg-secondary ' >Logout</button>
             <button  onClick={closeModal} className='text-primary w-full h-9 text-sm' >Cancel</button>
             </div>
           </div>

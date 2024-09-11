@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import {Link} from 'react-router-dom'
 import ExternalHero from "../Components/ExternalHero.jsx";
 import heroImage from "../assets/PortfolioHeroImage.svg";
 import servicesImage from "../assets/PortfolioLaptop.svg";
@@ -8,7 +9,6 @@ import Subscribe from "../Components/Subscribe.jsx";
 import RecentsCard from "../Components/Cards/RecentsCard.jsx";
 import { ourWorks } from "../DB/data.js";
 import Pagination from "../Components/Pagination.jsx"; 
-import LazyLoad from "react-lazy-load";
 import LoadingButtonText from "../Components/utils/Loading.jsx";
 
 const Portfolio = () => {
@@ -214,7 +214,7 @@ const Portfolio = () => {
         {/* Our Recent Works section*/}
         <section className="container w-11/12">
           <div className="grid gap-[1rem] lg:gap-[2rem] ">
-            <h3 className="text-center text-primary-dark font-roboto md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
+            <h3 className="text-center text-primary-dark font-roboto text-xl md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
               Our Recent Works
             </h3>
             <p className="text-center text-neutral-grey-300 font-inter text-xs md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[80ch] md:pb-[4.063rem]">
@@ -268,8 +268,8 @@ const Portfolio = () => {
                   your unique business needs and help you achieve your goals.
                 </p>
 
-                <a
-                  href="./services"
+                <Link
+                  to="./services"
                   className="grid place-items-center md:place-content-start"
                 >
                   <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
@@ -293,7 +293,7 @@ const Portfolio = () => {
                       </span>
                     </span>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           </section>

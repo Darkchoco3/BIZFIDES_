@@ -5,7 +5,6 @@ import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import Modal from "../Components/utils/Modal";
-import LazyLoad from "react-lazy-load";
 import axios from "axios";
 import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
@@ -35,8 +34,10 @@ const ResetPassword = () => {
     handleSubmit,
     watch,
     reset,
-    formState: { errors },
-  } = useForm();
+    formState: { errors,isValid },
+  } = useForm({
+    mode:'onChange'
+  });
 
   const handleFocus = () => {
     setTimeout(() => {
@@ -151,17 +152,27 @@ const ResetPassword = () => {
               )}
             </div>
             <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
-                disabled={loading}
-              >
-                {loading ? (
-                  <LoadingButtonText color="text-white" text="Loading..." />
-                ) : (
-                  "Reset Password"
-                )}
-              </button>
+            <button
+                  type="submit"
+                  className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white 
+                  ${
+                    loading
+                      ? "bg-secondary hover:bg-secondary"
+                      : isValid
+                      ? "bg-primary hover:bg-secondary"
+                      : "bg-gray-400"
+                  }`}
+                  disabled={!isValid || loading}
+                >
+                  {loading ? (
+                    <LoadingButtonText
+                      color="text-white"
+                      text="Creating an account..."
+                    />
+                  ) : (
+                    "Sign Up"
+                  )}
+                </button>
             </div>
           </form>
           {/* Form end */}
@@ -190,9 +201,7 @@ const ResetPassword = () => {
           style={{ backgroundImage: `url(${image})` }}
         >
           <Link to="/" className="absolute right-[120px] top-[70px]">
-            {/* <LazyLoad> */}
-            <img src={logo} alt="Bizfides logo" loading="lazy" />
-            {/* </LazyLoad> */}
+            <img src={logo} alt="Bizfides logo"/>
           </Link>
         </div>
       </div>

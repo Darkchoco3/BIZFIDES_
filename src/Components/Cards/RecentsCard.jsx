@@ -1,5 +1,5 @@
 import React,{useEffect, useState} from "react";
-import LazyLoad from 'react-lazy-load';
+import {Link} from "react-router-dom"
 
 
 const RecentsCard = ({
@@ -54,8 +54,8 @@ const RecentsCard = ({
             </p>
           </div>
 
-          <a href="./portfolio" className="grid place-items-center lg:place-content-start">
-          <div className="group text-xs md:text-sm xl:text-base 2xl:text-2xl text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out py-[.844rem] px-[.625rem] pl-4 min-w-36 hover:scale-110">
+          <Link to="./portfolio" className="grid place-items-center lg:place-content-start">
+          <div className="group text-sm xl:text-base 2xl:text-2xl text-primary border border-primary rounded-xl hover:border-secondary focus:ring transition ease-in-out py-[.844rem] px-[.625rem] pl-4 min-w-36 hover:scale-110">
             <span
               className="font-inter text-center flex items-center gap-[.688rem] group-hover:text-secondary"
             >
@@ -78,7 +78,7 @@ const RecentsCard = ({
               </span>
             </span>
           </div>
-          </a>  
+          </Link>  
         </div>
        
       </div>
