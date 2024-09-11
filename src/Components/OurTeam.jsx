@@ -41,12 +41,12 @@ const OurTeam = () => {
   return (
     <>
       <section className="container w-11/12 py-0 xl:py-[3.125rem]">
-        <div className="pb-[4.875rem] ">
+        <div className="pb-[2.5rem] lg:pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4 place-content-center">
-            <h5 className="text-xl font-inter text-primary font-semibold text-center">
+            <h5 className="text-base lg:text-xl font-inter text-primary font-semibold text-center">
               OUR TEAM
             </h5>
-            <h3 className="text-2xl md:text-[2.5rem] font-roboto text-primary-dark font-bold text-center">
+            <h3 className="text-2xl md:text-3xl lg:text-[2.5rem] font-roboto text-primary-dark font-bold text-center">
               Meet Our Professional Team
             </h3>
             {/* <p className="text-base font-inter text-neutral-grey-300 text-center leading-snug md:text-xl lg:text-base lg:max-w-[45ch]">
