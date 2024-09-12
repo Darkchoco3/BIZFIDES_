@@ -108,7 +108,7 @@ const ForgetPassword = () => {
                       text="Loading..."
                     />
                   ) : (
-                    "ResetPassword"
+                    "Reset Password"
                   )}
                 </button>
             </div>
