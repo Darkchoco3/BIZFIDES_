@@ -50,20 +50,24 @@ const Login = () => {
   };
 
   // Handle Google login by redirecting to your backend Google OAuth route
-  const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      const response = await googleAuth();
-      if (response && !response.error) {
-        navigate('/');
-      } else {
-        setMessage('Google login failed.');
-      }
-    } catch (err) {
-      setMessage(`An error occurred: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await googleAuth();
+  //     if (response && !response.error) {
+  //       navigate('/');
+  //     } else {
+  //       setMessage('Google login failed.');
+  //     }
+  //   } catch (err) {
+  //     setMessage(`An error occurred: ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:8070/auth/google'; // This will call your backend
   };
 
   return (

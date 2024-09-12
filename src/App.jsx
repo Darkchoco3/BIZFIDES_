@@ -18,6 +18,7 @@ import PublicRoute from "./Contexts/PublicRoutes";
 import PrivateRoute from "./Contexts/PrivateRoutes";
 import Dashboard from "./Components/Dashboard";
 import VerifyEmail from "./Components/VerifyEmail";
+import LoginCallback from "./Contexts/OAuthCallback";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
@@ -47,6 +48,7 @@ function App() {
           </Route>
           </Route>
 
+          <Route path="/auth/google/callback" element={<LoginCallback />} />
           <Route element={<PublicRoute />}>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Signup />} />

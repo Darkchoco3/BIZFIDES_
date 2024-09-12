@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
 
   const login = async (formData) => {
     try {
-      const { data } = await axios.post('/api/v1/auth/login', formData);
+      const { data } = await axios.post('/auth/login', formData);
 
       if (!data?.error) {
         setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
@@ -53,26 +53,26 @@ const AuthProvider = ({ children }) => {
     }
   };
 // Google authentication function
-const googleAuth = async () => {
-  try {
-    const { data } = await axios.get('/auth/google');
+// const googleAuth = async () => {
+//   try {
+//     const { data } = await axios.get('/auth/google');
 
-    if (!data?.error) {
-      setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
-      Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
-      return data;
-    } else {
-      return false;
-    }
-  } catch (error) {
-    console.log('Google login error:', error?.response?.data?.message);
-    throw new Error(error?.response?.data?.message || 'An error occurred during Google login');
-  }
-};
+//     if (!data?.error) {
+//       setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
+//       Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
+//       return data;
+//     } else {
+//       return false;
+//     }
+//   } catch (error) {
+//     console.log('Google login error:', error?.response?.data?.message);
+//     throw new Error(error?.response?.data?.message || 'An error occurred during Google login');
+//   }
+// };
 
   const signup = async (formData) => {
     try {
-      const { data } = await axios.post('/api/v1/auth/signup', formData);
+      const { data } = await axios.post('/auth/signup', formData);
 
       if (!data.error) {
         // setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
