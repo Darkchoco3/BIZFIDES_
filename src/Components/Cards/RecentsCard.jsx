@@ -41,14 +41,14 @@ const RecentsCard = ({
             <p className=" text-lg md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl  text-neutral-black font-inter font-bold">
               {type}
             </p>
-            <p className="text-secondary text-sm md:text-base lg:text-sm xl:text-sm 2xl:text-2xl font-inter font-bold pt-1">
+            <p className="text-secondary text-sm lg:text-base 2xl:text-2xl font-inter font-bold pt-1">
               {name}
             </p>
-            <p className="text-secondary text-xs md:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch] ">
+            <p className="text-secondary text-sm lg:text-base 2xl:text-2xl font-inter max-w-[25ch] text-pretty">
               Features-
               <span className="text-neutral-grey-300">{features}</span>
             </p>
-            <p className="text-secondary text-xs md:text-sm xl:text-sm 2xl:text-2xl font-inter max-w-[25ch] mb-8 ">
+            <p className="text-secondary text-sm lg:text-base 2xl:text-2xl font-inter max-w-[25ch] mb-8 text-pretty">
               Outcome-
               <span className="text-neutral-grey-300">{outcome}</span>
             </p>

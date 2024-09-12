@@ -213,11 +213,11 @@ const Portfolio = () => {
 
         {/* Our Recent Works section*/}
         <section className="container w-11/12">
-          <div className="grid gap-[1rem] lg:gap-[2rem] ">
-            <h3 className="text-center text-primary-dark font-roboto md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
+          <div className="grid gap-[1rem] lg:gap-[2rem] place-items-center">
+            <h3 className="text-center text-primary-dark font-roboto text-2xl md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
               Our Recent Works
             </h3>
-            <p className="text-center text-neutral-grey-300 font-inter text-xs md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[80ch] md:pb-[4.063rem]">
+            <p className="text-center text-neutral-grey-300 font-inter text-sm md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[70ch] md:pb-[4.063rem]">
               Welcome to Bizfides, where innovation and customer satisfaction
               drive our success, serving thousands of customers worldwide with
               impressive results.
@@ -227,7 +227,7 @@ const Portfolio = () => {
           {loading ? (
             <LoadingButtonText />
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem] lg:gap-[5rem]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[2rem] lg:gap-[5rem] mt-8">
               {currentItems.map((work, index) => (
                 <RecentsCard
                   key={work?.id}
@@ -259,7 +259,7 @@ const Portfolio = () => {
                 alt="Our services image"
                 className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
               />
-              <div className="flex-1 py-[5rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start">
+              <div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start">
                 <h3 className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none">
                   Need the Right Expertise?
                 </h3>

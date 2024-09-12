@@ -107,7 +107,7 @@ const Quote = ({ text, name, title, company, image, isMiddle }) => {
           <img
             src={image}
             alt="Client"
-            className="mx-auto w-12 sm:w-16 md:w-20"
+            className="mx-auto w-12 sm:w-16 md:w-20 mb-2"
           />
         <p className="font-bold text-center text-sm 2xl:text-xl font-inter">{name}</p>
         <p className="text-center text-sm 2xl:text-xl font-inter">{title}</p>

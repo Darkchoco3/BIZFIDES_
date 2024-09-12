@@ -100,7 +100,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
           <button
             onClick={() => currentPage > 1 && paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`${disabled ? 'bg-primary-medium' :''}py-2 px-[.5rem] rounded-full font-semibold font-inter text-xs md:text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary`}>
+            className={`${disabled ? 'bg-neutral-grey-300' :''}py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary`}>
             <svg
                   className="w-4 h-4 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
                   xmlns="http://www.w3.org/2000/svg"
