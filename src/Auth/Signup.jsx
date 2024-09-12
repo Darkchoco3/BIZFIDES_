@@ -19,7 +19,7 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('+234');
-  const { signup, googleAuth } = useAuth()
+  const { signup } = useAuth()
 
 
   const openModal = () => {
@@ -89,19 +89,19 @@ const SignUp = () => {
   };
 
   const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      const response = await googleAuth();
-      if (response && !response.error) {
-        navigate('/');
-      } else {
-        setMessage('Google login failed.');
-      }
-    } catch (err) {
-      setMessage(`An error occurred: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+  //   try {
+  //     setLoading(true);
+  //     const response = await googleAuth();
+  //     if (response && !response.error) {
+  //       navigate('/');
+  //     } else {
+  //       setMessage('Google login failed.');
+  //     }
+  //   } catch (err) {
+  //     setMessage(`An error occurred: ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
   };
  
   return (

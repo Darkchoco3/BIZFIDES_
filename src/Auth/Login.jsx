@@ -12,7 +12,7 @@ import logo from "../assets/Bizfides logo.svg";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login,googleAuth } = useAuth(); // Use the login function from the auth context
+  const { login } = useAuth(); // Use the login function from the auth context
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState(""); // State to hold success or error message
