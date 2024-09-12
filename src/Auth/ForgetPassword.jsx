@@ -120,7 +120,7 @@ const ForgetPassword = () => {
             </div>
           )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
-            <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
+            <Link to="/login" className="text-primary"><span className='pr-4'>&lt;</span>Back to Login</Link>
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
