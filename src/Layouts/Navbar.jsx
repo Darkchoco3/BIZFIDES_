@@ -74,9 +74,9 @@ const Navbar = () => {
         />
       </Link>
     <ul 
-    ref={menuRef}
+    // ref={menuRef}
     className={`lg:static absolute bg-white top-0 left-0 w-full transition-all duration-500 ease-in ${
-    menuOpen ? 'opacity-100 top-full' : 'opacity-0 top-[90%]'
+    menuOpen ? 'block opacity-100 top-full' : 'hidden opacity-0 top-[90%]'
   } lg:opacity-100 lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit flex-col lg:flex-row flex lg:gap-[4vw] gap-8 xl:gap-16 font-bold text-neutral-grey-300 py-4 pl-4 md:pl-8 lg:pl-0 z-50`} 
  > 
 
