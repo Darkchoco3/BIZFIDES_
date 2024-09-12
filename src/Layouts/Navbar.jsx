@@ -186,7 +186,7 @@ const Navbar = () => {
             </h2>
             <p className='text-xl text-neutral-grey-300'>You will be signed out and any unsaved changes will be lost.</p>
             <div className="flex flex-col space-y-3 justify-center items-start">
-            <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-sm text-white hover:bg-primary-dark ' >Logout</button>
+            <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-sm text-white hover:bg-secondary ' >Logout</button>
             <button  onClick={closeModal} className='text-primary w-full h-9 text-sm' >Cancel</button>
             </div>
           </div>
