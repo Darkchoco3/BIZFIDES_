@@ -12,7 +12,7 @@ import logo from "../assets/Bizfides logo.svg";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login,googleAuth } = useAuth(); // Use the login function from the auth context
+  const { login } = useAuth(); // Use the login function from the auth context
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [message, setMessage] = useState(""); // State to hold success or error message
@@ -50,20 +50,24 @@ const Login = () => {
   };
 
   // Handle Google login by redirecting to your backend Google OAuth route
-  const handleGoogleLogin = async () => {
-    try {
-      setLoading(true);
-      const response = await googleAuth();
-      if (response && !response.error) {
-        navigate('/');
-      } else {
-        setMessage('Google login failed.');
-      }
-    } catch (err) {
-      setMessage(`An error occurred: ${err.message}`);
-    } finally {
-      setLoading(false);
-    }
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await googleAuth();
+  //     if (response && !response.error) {
+  //       navigate('/');
+  //     } else {
+  //       setMessage('Google login failed.');
+  //     }
+  //   } catch (err) {
+  //     setMessage(`An error occurred: ${err.message}`);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const handleGoogleLogin = () => {
+    window.location.href = 'http://localhost:8070/auth/google'; // This will call your backend
   };
 
   return (

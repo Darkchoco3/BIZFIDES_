@@ -167,10 +167,10 @@ const ResetPassword = () => {
                   {loading ? (
                     <LoadingButtonText
                       color="text-white"
-                      text="Creating an account..."
+                      text="Reseting..."
                     />
                   ) : (
-                    "Sign Up"
+                    "Reset"
                   )}
                 </button>
             </div>
