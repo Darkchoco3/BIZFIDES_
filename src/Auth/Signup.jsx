@@ -88,9 +88,23 @@ const SignUp = () => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    // window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
-  };
+  // const handleGoogleLogin = () => {
+  //   // window.location.href = 'https://betahouse-api.onrender.com/api/auth/google'; // Replace with your backend URL
+  // const handleGoogleLogin = async () => {
+  // //   try {
+  // //     setLoading(true);
+  // //     const response = await googleAuth();
+  // //     if (response && !response.error) {
+  // //       navigate('/');
+  // //     } else {
+  // //       setMessage('Google login failed.');
+  // //     }
+  // //   } catch (err) {
+  // //     setMessage(`An error occurred: ${err.message}`);
+  // //   } finally {
+  // //     setLoading(false);
+  // //   }
+  // };
 
   
 //   Your account has been successfully created!"
