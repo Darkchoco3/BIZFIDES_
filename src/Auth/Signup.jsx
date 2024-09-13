@@ -379,7 +379,7 @@ const SignUp = () => {
             <div className="w-full flex justify-center flex-col mt-4">
               <img src={line} className="py-2" alt="divider" />
               <button
-                className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
+                className="w-full flex justify-center items-center gap-2 py-4 px-4 border-2 border-gray-500 rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50 mt-4"
                 onClick={handleGoogleLogin}
               >
                 <FcGoogle />
