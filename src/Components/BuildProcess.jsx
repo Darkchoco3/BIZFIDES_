@@ -14,7 +14,7 @@ const BuildProcess = () => {
           </div>
 
           <div>
-            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-7 place-items-center pt-4 gap-8 xl:gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-7 place-items-center pt-4 gap-8 xl:gap-0 font-inter">
               <div className="flex flex-col items-center gap-4">
                 <div className=" border-[.8rem] lg:border-[1.2rem]  rounded-full flex items-center justify-center border-secondary">
                   <div className= "text-sm lg:text-xl text-primary-medium w-12 h-12 lg:w-16 lg:h-16 border-[0.4rem] lg:border-8 border-primary-medium bg-primary-light rounded-full flex items-center justify-center font-semibold">
