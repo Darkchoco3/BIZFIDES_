@@ -1,9 +1,11 @@
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useAuth } from '../Contexts/Auth'; 
 import Cookies from 'js-cookie';
 
-const LoginCallback = () => {
-    const navigate = useNavigate();
+const GoogleAuthCallback = () => {
+  const { setAuth } = useAuth();
+  const [loading, setLoading] = useState(true);
+  const [countdown, setCountdown] = useState(3);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -11,16 +13,40 @@ const LoginCallback = () => {
     const user = params.get('user');
 
     if (token && user) {
-      // Save the token and user info (e.g., in cookies or localStorage)
-      Cookies.set('token', token, { expires: 7 });
-      Cookies.set('user', user, { expires: 7 });
-      
-      // Redirect to home or dashboard
-      navigate('/');
+      // Save token and user to context and cookies
+      setAuth({
+        user: JSON.parse(user),
+        token,
+        success: true,
+        message: 'Google login successful',
+      });
+      Cookies.set('auth', JSON.stringify({ user: JSON.parse(user), token, success: true }), { expires: 7 });
     }
-  }, [navigate]);
 
-  return <div>Redirecting...</div>;
+    // Start the countdown timer
+    const interval = setInterval(() => {
+      setCountdown((prev) => prev - 1);
+    }, 1000);
+
+    if (countdown === 0) {
+      clearInterval(interval);
+      setLoading(false);
+      window.location.href = '/';
+    }
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
+  }, [setAuth, countdown]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen w-full">
+          <p className="text-lg">Redirecting in {countdown} seconds...</p>
+      </div>
+    );
+  }
+
+  return null;
 };
 
-export default LoginCallback;
+export default GoogleAuthCallback;

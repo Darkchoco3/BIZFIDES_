@@ -26,6 +26,7 @@ const ResetPassword = () => {
     setIsModalOpen(false);
     reset();
     setMessage("");
+    navigate('/login')
   };
 
   // Initialize useForm hook
@@ -86,10 +87,10 @@ const ResetPassword = () => {
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-5 mt-6 font-inter"
           >
-            <div>
+              <div>
               <label
-                htmlFor="password"
-                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700 "
+                htmlFor="newPassword"
+                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700"
               >
                 Password
               </label>
@@ -98,10 +99,27 @@ const ResetPassword = () => {
                   type={showPassword ? "text" : "password"}
                   {...register("newPassword", {
                     required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters long",
+                    },
+                    validate: {
+                      hasUppercase: (value) =>
+                        /[A-Z]/.test(value) ||
+                        "Password must contain at least one uppercase letter",
+                      hasLowercase: (value) =>
+                        /[a-z]/.test(value) ||
+                        "Password must contain at least one lowercase letter",
+                      hasNumber: (value) =>
+                        /[0-9]/.test(value) ||
+                        "Password must contain at least one number",
+                      hasSpecialChar: (value) =>
+                        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value) ||
+                        "Password must contain at least one special character",
+                    },
                   })}
                   placeholder="Enter your password"
-                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                  onFocus={handleFocus}
+                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-[.625rem] shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 />
                 <div
                   className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
