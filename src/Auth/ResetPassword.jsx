@@ -34,8 +34,10 @@ const ResetPassword = () => {
     handleSubmit,
     watch,
     reset,
-    formState: { errors },
-  } = useForm();
+    formState: { errors,isValid },
+  } = useForm({
+    mode:'onChange'
+  });
 
   const handleFocus = () => {
     setTimeout(() => {
@@ -150,17 +152,27 @@ const ResetPassword = () => {
               )}
             </div>
             <div>
-              <button
-                type="submit"
-                className="w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white bg-primary hover:bg-primary-dark"
-                disabled={loading}
-              >
-                {loading ? (
-                  <LoadingButtonText color="text-white" text="Loading..." />
-                ) : (
-                  "Reset Password"
-                )}
-              </button>
+            <button
+                  type="submit"
+                  className={`w-full flex justify-center py-4 px-4 border border-transparent rounded-[10px] shadow-sm text-sm md:text-base lg:text-lg font-medium text-white 
+                  ${
+                    loading
+                      ? "bg-secondary hover:bg-secondary"
+                      : isValid
+                      ? "bg-primary hover:bg-secondary"
+                      : "bg-gray-400"
+                  }`}
+                  disabled={!isValid || loading}
+                >
+                  {loading ? (
+                    <LoadingButtonText
+                      color="text-white"
+                      text="Reseting..."
+                    />
+                  ) : (
+                    "Reset"
+                  )}
+                </button>
             </div>
           </form>
           {/* Form end */}

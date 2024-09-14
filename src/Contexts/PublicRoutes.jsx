@@ -5,7 +5,7 @@ const PublicRoute = () => {
   const { auth } = useAuth();
 
   // If user is authenticated, redirect to dashboard/home, else render child components
-  return auth?.user ? <Navigate to="/profile" /> : <Outlet />;
+  return auth?.user ? <Navigate to="/" /> : <Outlet />;
 };
 
 export default PublicRoute;
