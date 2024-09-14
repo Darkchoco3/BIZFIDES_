@@ -10,12 +10,14 @@ import { useAuth } from "../Contexts/Auth";
 import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
 import Modal from "../Components/utils/Modal";
+import axios from "axios";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [modalEmail, setModalEmail] = useState('');
   const [message, setMessage] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('+234');
@@ -30,6 +32,7 @@ const SignUp = () => {
     setIsModalOpen(false);
     setMessage("");
     reset();
+    navigate("/login");
   };
 
   const handleFocus = () => {
@@ -67,16 +70,13 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
     setMessage("");
+    setModalEmail(data.email)
     try {
       setLoading(true);
       const response = await signup(data);
       if (!response.error) {
+        openModal()
         reset();
-        // Success handling
-        // toast.success("Registration successful");
-        setTimeout(() => {
-          navigate("/login");
-        }, 5000);
       } else {
         // Error handling
         setMessage("Registration failed. Please check your credentials.");
@@ -88,20 +88,8 @@ const SignUp = () => {
     }
   };
 
-  const handleGoogleLogin = async () => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await googleAuth();
-  //     if (response && !response.error) {
-  //       navigate('/');
-  //     } else {
-  //       setMessage('Google login failed.');
-  //     }
-  //   } catch (err) {
-  //     setMessage(`An error occurred: ${err.message}`);
-  //   } finally {
-  //     setLoading(false);
-  //   }
+  const handleGoogleLogin = () => {
+    window.location.href = `${axios.defaults.baseURL}/auth/google`;
   };
  
   return (
@@ -233,36 +221,52 @@ const SignUp = () => {
                 )}
               </div>
               <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm md:text-base 2xl:text-lg font-medium text-gray-700 "
+              <label
+                htmlFor="password"
+                className="block text-sm md:text-base lg:text-lg font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters long",
+                    },
+                    validate: {
+                      hasUppercase: (value) =>
+                        /[A-Z]/.test(value) ||
+                        "Password must contain at least one uppercase letter",
+                      hasLowercase: (value) =>
+                        /[a-z]/.test(value) ||
+                        "Password must contain at least one lowercase letter",
+                      hasNumber: (value) =>
+                        /[0-9]/.test(value) ||
+                        "Password must contain at least one number",
+                      hasSpecialChar: (value) =>
+                        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value) ||
+                        "Password must contain at least one special character",
+                    },
+                  })}
+                  placeholder="Enter your password"
+                  className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-[.625rem] shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+                />
+                <div
+                  className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
+                  onClick={() => setShowPassword(!showPassword)}
                 >
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    {...register("password", {
-                      required: "Password is required",
-                    })}
-                    placeholder="Enter your password"
-                    className="relative mt-1 block w-full text-sm md:text-base 2xl:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                    // onFocus={handleFocus}
-                  />
-                  <div
-                    className="absolute inset-y-0 right-4 flex items-center cursor-pointer text-xl"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
-                  </div>
+                  {showPassword ? <IoEyeOutline /> : <IoEyeOffOutline />}
                 </div>
-                {errors.password && (
-                  <p className="text-primary-red text-sm">
-                    {errors.password.message}
-                  </p>
-                )}
               </div>
-
+              {errors.password && (
+                <p className="text-primary-red text-sm">
+                  {errors.password.message}
+                </p>
+              )}
+            </div>
               <div>
                 <label
                   htmlFor="confirmPassword"
@@ -401,30 +405,19 @@ const SignUp = () => {
           onClose={closeModal}
           closeOnClickOutside={false}
         >
-          <div className="w-full text-center py-8 font-roboto ">
-            <h2 className="font-semibold text-xl font-roboto text-primary pb-4">
-              Welcome to Bizfides!
+          <div className="w-full text-center py-8 font-roboto">
+            <h2 className="font-semibold text-2xl sm:text-2xl lg:text-3xl font-roboto text-primary pb-4">
+              Email Confirmation Required
             </h2>
             <p className="text-xl text-neutral-grey-300">
-              Your account has been successfully created!
-            </p>
-            <p className="text-xl text-neutral-grey-300">
-              Please check your email to verify your account.
-            </p>
+              We've sent a verification email to {modalEmail} Please check your inbox  and if you cant see it, kindly check the spam to confirm your email address. Thank you.            </p>
             <div className="flex justify-center gap-12">
               <button
                 onClick={closeModal}
-                className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+                className="bg-primary w-full p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
               >
-                Okay
+                Resend Email
               </button>
-              <Link
-                to="/login"
-                onClick={closeModal}
-                className="p-2 px-6 rounded-[10px] text-primary mt-8"
-              >
-                Login
-              </Link>
             </div>
           </div>
         </Modal>
