@@ -72,7 +72,7 @@ const Login = () => {
             Sign in to continue.
           </p>
 
-          {/* Form start */}
+          {/* Form start  */}
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 mt-4 lg:mt-6 font-inter"
