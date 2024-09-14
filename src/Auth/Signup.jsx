@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
@@ -17,10 +17,12 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const [modalEmail, setModalEmail] = useState('');
   const [message, setMessage] = useState("");
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [phoneNumber, setPhoneNumber] = useState('+234');
+  const [countdown, setCountdown] = useState(0); // Countdown state
+  const [isDisabled, setIsDisabled] = useState(false); // Button disabled state
   const { signup } = useAuth()
 
 
@@ -76,6 +78,9 @@ const SignUp = () => {
       const response = await signup(data);
       if (!response.error) {
         openModal()
+        setCountdown(60); 
+        setLoading(false)
+        setIsDisabled(true); 
         reset();
       } else {
         // Error handling
@@ -91,6 +96,40 @@ const SignUp = () => {
   const handleGoogleLogin = () => {
     window.location.href = `${axios.defaults.baseURL}/auth/google`;
   };
+
+  const handleResendEmail = async () => {
+    setLoading(true)
+    try {
+      setMessage('');
+      const response = await axios.post(`/auth/resend-token`, {email: modalEmail});
+      console.log(response);
+      setMessage('Email sent successfully!');
+      setIsDisabled(true); // Disable the button
+      setCountdown(60); // Start the 60 seconds countdown
+    } catch (error) {
+      setMessage('Error sending email.');
+    }
+  };
+
+  useEffect(() => {
+    let timer;
+
+    // If countdown is active, decrement it every second
+    if (countdown > 0) {
+      timer = setInterval(() => {
+        setCountdown((prevCount) => prevCount - 1);
+      }, 1000);
+    }
+
+    // When countdown reaches 0, re-enable the button
+    if (countdown === 0 && isDisabled) {
+      setIsDisabled(false);
+    }
+
+    // Cleanup the interval when component is unmounted or countdown reaches 0
+    return () => clearInterval(timer);
+  }, [countdown, isDisabled]);
+
  
   return (
     <>
@@ -410,14 +449,15 @@ const SignUp = () => {
               Email Confirmation Required
             </h2>
             <p className="text-xl text-neutral-grey-300">
-              We've sent a verification email to {modalEmail} Please check your inbox  and if you cant see it, kindly check the spam to confirm your email address. Thank you.            </p>
+              We've sent a verification email to <span className="text-primary font-medium">{modalEmail}</span> Please check your inbox  and if you cant see it, kindly check the spam to confirm your email address. Thank you.            </p>
             <div className="flex justify-center gap-12">
-              <button
-                onClick={closeModal}
-                className="bg-primary w-full p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
-              >
-                Resend Email
-              </button>
+            <button
+              onClick={handleResendEmail}
+              disabled={isDisabled || loading}
+              className={`${isDisabled || loading ? 'bg-gray-400' : 'bg-primary'} w-full p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8`}
+            >
+              {loading ? 'Loading...' : isDisabled ? `Resend in ${countdown}s` : 'Resend Email'}
+            </button>
             </div>
           </div>
         </Modal>

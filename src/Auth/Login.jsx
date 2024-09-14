@@ -13,10 +13,10 @@ import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { login } = useAuth(); // Use the login function from the auth context
+  const { login } = useAuth(); 
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-  const [message, setMessage] = useState(""); // State to hold success or error message
+  const [message, setMessage] = useState("");
 
   // Initialize useForm hook
   const {
@@ -25,7 +25,7 @@ const Login = () => {
     formState: { errors, isValid }, // Destructure isValid to check form validity
     reset,
   } = useForm({
-    mode: "onChange", // Enable form validation on change
+    mode: "onChange", 
   });
 
   // Handle regular login
