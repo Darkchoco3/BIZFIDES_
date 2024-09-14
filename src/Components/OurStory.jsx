@@ -43,10 +43,8 @@ const OurStory = () => {
         <iframe
           ref={videoRef}
           className="w-full rounded-sm h-[496px]"
-          src="https://www.youtube.com/embed/IMxDeACOWCE?rel=0"
+          src="https://www.youtube.com/embed/pbNVCBOjvsM?rel=0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded youtube"
         />
       </div>
     </div>

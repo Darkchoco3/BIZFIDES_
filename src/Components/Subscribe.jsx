@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import mail from "../assets/emails.svg";
 import axios from 'axios';
 import Modal from "./utils/Modal";
+import {motion } from 'framer-motion'
 
 const Subscribe = () => {
   const [name, setName] = useState("");
@@ -48,13 +49,28 @@ const Subscribe = () => {
         setMessage('Error: Unable to submit the form');
     }
 };
+
+
   return (
     <div className="container w-11/12">
       <div className="flex flex-col lg:flex-row  justify-center lg:items-center gap-0 lg:gap-[5.375rem] py-0 lg:py-10">
-        <div className="w-full flex flex-1 justify-center">
+        <motion.div
+        initial={{ opacity: 0, x: -90 }}  
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="w-full flex flex-1 justify-center">
             <img src={mail} alt="Newsletter" className="h-auto hidden lg:block"/>
-        </div>
-        <form
+        </motion.div>
+        <motion.form
+        initial={{ opacity: 0, x: 90 }}  
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
           onSubmit={handleSubmit}
           className="lg:p-[3.125rem] rounded-3xl lg:border lg:border-neutral-grey-200  flex-1 "
         >
@@ -101,7 +117,7 @@ const Subscribe = () => {
           >
             Subscribe
           </button>
-        </form>
+        </motion.form>
       </div>
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
