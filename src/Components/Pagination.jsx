@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled }) => {
+const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage}) => {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -17,7 +17,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled 
           <li key={number}>
             <button
               onClick={() => paginate(number)}
-              className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
+              className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-xl
                 ${currentPage === number ? 'bg-gray-300 text-black' : 'text-black hover:bg-primary-light'}`}
               disabled={currentPage === number}
             >
@@ -104,7 +104,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled 
           <button
             onClick={() => currentPage > 1 && paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg 
+            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-xl 
               ${currentPage === 1 ? 'bg-gray-300 text-gray-500' : 'bg-primary text-white hover:scale-125 hover:bg-secondary'}`}
           >
             <svg
@@ -126,7 +126,7 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled 
           <button
             onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg 
+            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-xl 
               ${currentPage === totalPages ? 'bg-gray-300 text-gray-500' : 'bg-primary text-white hover:scale-125 hover:bg-secondary'}`}
           >
             <svg

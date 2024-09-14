@@ -16,14 +16,14 @@ const Home = () => {
       <div className="">
         <Hero />
         <Ambassadors />
-        <div className="grid gap-[2rem] lg:gap-[3.125rem]">
+        <div className="grid gap-[2rem] md:gap-[3.125rem]">
           <About />
           <Service />
         </div>
       </div>
 
       <BuildProcess/>
-      <div className="grid gap-[2rem] lg:gap-[3.125rem]">
+      <div className="grid gap-[2rem] md:gap-[3.125rem]">
         <RecentWorks />
         <OurTeam />
         <Testimonials />

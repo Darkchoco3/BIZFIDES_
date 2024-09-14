@@ -8,9 +8,9 @@ const BuildProcess = () => {
     <>
       <div className="bg-primary">
         <div className="container w-11/12 lg:mb-[6.25rem]">
-          <div className="grid place-items-center gap-4 text-white py-[2.25rem]">
-            <h5 className="font-inter font-medium text-base lg:text-xl">BUILD PROCESS</h5>
-            <h3 className="font-roboto font-bold text-lg lg:text-[2.5rem]">How It Works</h3>
+          <div className="grid place-items-center gap-2 lg:gap-4 text-white py-[2.25rem]">
+            <h5 className="font-inter font-medium text-xl">BUILD PROCESS</h5>
+            <h3 className="font-roboto font-bold text-[1.8rem] md:text-[2.5rem] lg:text-[2.5rem]">How It Works</h3>
           </div>
 
           <div>
@@ -23,8 +23,8 @@ const BuildProcess = () => {
                 </div>
 
                 <div className="font-inter text-white text-center lg:min-w-[12.5rem]">
-                <p className="text-[1rem] lg:text-base font-bold">SELECT SERVICE</p>
-                <p className="text-sm max-w-[20ch] lg:max-w-[30ch] text-pretty">Choose the specific service(s) you need.</p>
+                <p className="text-[1rem] lg:text-base 2xl:text-xl font-bold">SELECT SERVICE</p>
+                <p className="text-sm xl:text-base 2xl:text-xl max-w-[20ch] lg:max-w-[30ch] text-pretty">Choose the specific service(s) you need.</p>
               </div>
               </div>
               
@@ -39,8 +39,8 @@ const BuildProcess = () => {
                   </div>
                 </div>
                 <div className="font-inter text-white text-center lg:min-w-[12.5rem]">
-                <p className="text-[1rem] lg:text-base font-bold">CONSULT & PLAN</p>
-                <p className="text-sm  max-w-[20ch] lg:max-w-[30ch] text-pretty">Discuss needs, set goals, and outline project scope.</p>
+                <p className="text-[1rem] lg:text-base 2xl:text-xl font-bold">CONSULT & PLAN</p>
+                <p className="text-sm xl:text-base 2xl:text-xl max-w-[20ch] lg:max-w-[30ch] text-pretty">Discuss needs, set goals, and outline project scope.</p>
               </div>
               </div>
               
@@ -55,8 +55,8 @@ const BuildProcess = () => {
                   </div>
                 </div>
                 <div className="font-inter text-white text-center lg:min-w-[12.5rem]">
-                <p className="text-[1rem] lg:text-base font-bold">ONBOARD & EXECUTE</p>
-                <p className="text-sm  max-w-[20ch] lg:max-w-[30ch] text-pretty">Discuss needs, set goals, and outline project scope.</p>
+                <p className="text-[1rem] lg:text-base 2xl:text-xl font-bold">ONBOARD & EXECUTE</p>
+                <p className="text-sm xl:text-base 2xl:text-xl max-w-[20ch] lg:max-w-[30ch] text-pretty">Discuss needs, set goals, and outline project scope.</p>
               </div>
               </div>
               
@@ -71,8 +71,8 @@ const BuildProcess = () => {
                   </div>
                 </div>
                 <div className="font-inter text-white text-center lg:min-w-[12.5rem]">
-                <p className="text-[1rem] lg:text-base font-bold">DELIVER & SUPPORT</p>
-                <p className="text-sm max-w-[20ch] lg:max-w-[30ch] xl:text-pretty ">Final delivery, and continuous support.</p>
+                <p className="text-[1rem] lg:text-base 2xl:text-xl  font-bold">DELIVER & SUPPORT</p>
+                <p className="text-sm xl:text-base 2xl:text-xl max-w-[20ch] lg:max-w-[30ch] xl:text-pretty ">Final delivery, and continuous support.</p>
               </div>
               </div>
               
