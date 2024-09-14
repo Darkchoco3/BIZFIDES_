@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}) => {
+const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled }) => {
   const pageNumbers = [];
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -18,7 +18,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
             <button
               onClick={() => paginate(number)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === number ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === number ? 'bg-gray-300 text-black' : 'text-black hover:bg-primary-light'}`}
+              disabled={currentPage === number}
             >
               {number}
             </button>
@@ -32,7 +33,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
           <button
             onClick={() => paginate(1)}
             className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-              ${currentPage === 1 ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
+              ${currentPage === 1 ? 'bg-gray-300 text-black' : 'text-black hover:bg-primary-light'}`}
+            disabled={currentPage === 1}
           >
             1
           </button>
@@ -58,7 +60,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
             <button
               onClick={() => paginate(i)}
               className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-semibold font-inter text-sm lg:text-base 2xl:text-lg
-                ${currentPage === i ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
+                ${currentPage === i ? 'bg-gray-300 text-black' : 'text-black hover:bg-primary-light'}`}
+              disabled={currentPage === i}
             >
               {i}
             </button>
@@ -81,7 +84,8 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
           <button
             onClick={() => paginate(totalPages)}
             className={`py-2.5 px-[1.2rem] rounded-[.625rem] font-medium font-inter text-sm lg:text-base 2xl:text-lg
-              ${currentPage === totalPages ? 'bg-primary-accent text-black text-base lg:text-lg 2xl:text-xl' : 'text-black hover:bg-primary-light'}`}
+              ${currentPage === totalPages ? 'bg-gray-300 text-black' : 'text-black hover:bg-primary-light'}`}
+            disabled={currentPage === totalPages}
           >
             {totalPages}
           </button>
@@ -100,21 +104,18 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
           <button
             onClick={() => currentPage > 1 && paginate(currentPage - 1)}
             disabled={currentPage === 1}
-            className={`${disabled ? 'bg-neutral-grey-300' :''}py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary`}>
+            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg 
+              ${currentPage === 1 ? 'bg-gray-300 text-gray-500' : 'bg-primary text-white hover:scale-125 hover:bg-secondary'}`}
+          >
             <svg
-                  className="w-4 h-4 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 19l-7-7 7-7"
-                  />
-                </svg>
+              className="w-4 h-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+            </svg>
           </button>
         </li>
 
@@ -124,23 +125,19 @@ const Pagination = ({ itemsPerPage, totalItems, paginate, currentPage, disabled}
         <li>
           <button
             onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
-            className="py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg bg-primary text-white hover:scale-125 hover:bg-secondary"
             disabled={currentPage === totalPages}
+            className={`py-2 px-[.5rem] rounded-full font-semibold font-inter text-sm lg:text-base 2xl:text-lg 
+              ${currentPage === totalPages ? 'bg-gray-300 text-gray-500' : 'bg-primary text-white hover:scale-125 hover:bg-secondary'}`}
           >
             <svg
-                  className="w-4 h-4 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+              className="w-4 h-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
           </button>
         </li>
       </ul>

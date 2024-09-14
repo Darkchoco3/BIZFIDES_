@@ -12,6 +12,7 @@ import what5 from '../assets/Rectangle4268 (2).svg'
 import what4 from '../assets/Rectangle4268 (3).svg'
 import what3 from '../assets/Rectangle4268 (4).svg'
 import what1 from '../assets/Rectangle4268 (5).svg'
+
 import toystoreimagedesktop from "../assets/toy store.svg";
 import webstoreimage from "../assets/fashion store.svg";
 import gadgetstoreimage from "../assets/gadget store.svg";
@@ -94,7 +95,7 @@ export const whatwedo =[
 ]
 
 
-// Recent Works
+// Portfolio Recent Works
 export const ourWorks = [
       {
         id: 1,

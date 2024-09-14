@@ -40,7 +40,7 @@ const OurTeam = () => {
 
   return (
     <>
-      <section className="container w-11/12 py-0 xl:py-[3.125rem]">
+      <section className="container w-11/12 py-0 xl:pt-[3.125rem]">
         <div className="pb-[2.5rem] lg:pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4 place-content-center">
             <h5 className="text-base lg:text-xl font-inter text-primary font-semibold text-center">
