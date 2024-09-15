@@ -7,7 +7,7 @@ const Ambassadors = () => {
 
   return (
     <div className="pt-[0.8125rem]">
-      <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px] max-w-11/12">
+      <div className="overflow-hidden relative flex justify-center gap-[25px] max-h-[51px] md:max-h-[197px] max-w-11/12 container mx-auto">
         <div className="md:flex hidden w-11/12">
             <InfiniteMovingCards
             items={sponsor}
@@ -15,7 +15,7 @@ const Ambassadors = () => {
             speed='fast'
            />
         </div>
-        <div className='flex md:hidden'>
+        {/* <div className='flex md:hidden'>
           {sponsor.map((a, i) => ( 
             <img
             src={a.img}
@@ -24,10 +24,7 @@ const Ambassadors = () => {
             alt={`Sponsor ${i + 1}`}
           />
         ))}
-        </div>
-      </div>
-      <div className="lg:flex justify-end hidden -translate-x-28 animate-pulse">
-        <img src={dot} alt="" />
+        </div> */}
       </div>
     </div>
   );
