@@ -56,13 +56,18 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
             {paragraph}
           </motion.p>
 
-          <motion.a
-            href="/register"
+          {/* Button */}
+          <motion.div
             variants={textVariants}
-            className="font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+            className="w-full flex justify-center lg:justify-start"
           >
-            Get Started
-          </motion.a>
+            <Link
+              to="/register"
+              className="font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+            >
+              Get Started
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Image Section */}
