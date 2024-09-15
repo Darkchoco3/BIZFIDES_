@@ -11,6 +11,7 @@ import { ImNotification } from "react-icons/im";
 import LoadingButtonText from "../Components/utils/Loading";
 import { useAuth } from "../Contexts/Auth";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -54,7 +55,6 @@ const Contact = () => {
   };
 
   const onSubmit = async (data) => {
-    setMessage("");
     try {
       setLoading(true);
 
@@ -68,10 +68,14 @@ const Contact = () => {
       console.log(response.data.success);
       
       // Handle response
+      if (response.data?.success === "true") {
         openModal();
-        setMessage(`${response.data.message}`);
+        toast.success(`${response.data.message}`);
+      } else {
+        openModal();
+      }
     } catch (error) {
-      setMessage("Error: Unable to submit the form");
+      toast.error("Unable to submit the form");
     } finally {
       setLoading(false);
     }

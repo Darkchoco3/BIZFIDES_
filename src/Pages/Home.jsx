@@ -16,7 +16,7 @@ const Home = () => {
       <div className="">
         <Hero />
         <Ambassadors />
-        <div className="grid gap-[2rem] lg:gap-[3.125rem]">
+        <div className="grid gap-[1rem] lg:gap-[1.6rem]">
           <About />
           <Service />
         </div>
