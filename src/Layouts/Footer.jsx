@@ -56,9 +56,10 @@ const Footer = () => {
                   </h3>
                   <div className="grid gap-[.579rem] xl:gap-[1rem]">
                     {pagelink.map((page, i) => (
-                      <Link to={`/${page.link}`}>
+                      <Link to={`/${page.link}`}
+                      key={i}
+                      >
                         <p
-                          key={i}
                           className="hover:text-blue-200 cursor-pointer text-xs lg:text-sm 2xl:text-lg  font-inter grid gap-[.579rem]"
                         >
                           {page.title}
@@ -79,9 +80,9 @@ const Footer = () => {
                       "Security",
                       "Privacy Policy",
                       "Terms of Use",
-                    ].map((company) => (
+                    ].map((company, i) => (
                       <p
-                        key={company}
+                        key={i}
                         className="hover:text-blue-200 cursor-pointer text-xs lg:text-sm 2xl:text-lg  font-inter"
                       >
                         {company}
