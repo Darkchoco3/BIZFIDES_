@@ -1,6 +1,7 @@
 import React from "react";
 import Rectangle from "../assets/Group 2008.svg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -15,11 +16,11 @@ const containerVariants = {
 const textVariants = {
   hidden: {
     opacity: 0,
-    y: 100,  // Starts off-screen (below)
+    y: 100, // Starts off-screen (below)
   },
   visible: {
     opacity: 1,
-    y: 0,    // Moves to its normal position
+    y: 0, // Moves to its normal position
     transition: {
       duration: 0.8,
       ease: "easeOut",
@@ -49,11 +50,19 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
 
           {/* Paragraph */}
           <motion.p
-            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight"
+            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight pb-20"
             variants={textVariants}
           >
             {paragraph}
           </motion.p>
+
+          <motion.a
+            href="/register"
+            variants={textVariants}
+            className="font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+          >
+            Get Started
+          </motion.a>
         </motion.div>
 
         {/* Image Section */}
