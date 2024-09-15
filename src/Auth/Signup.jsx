@@ -11,6 +11,7 @@ import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
 import Modal from "../Components/utils/Modal";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -87,7 +88,7 @@ const SignUp = () => {
         setMessage("Registration failed. Please check your credentials.");
       }
     } catch (err) {
-      setMessage(`An error occurred: ${err.message}`);
+      toast.error(`An error occurred: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -103,11 +104,11 @@ const SignUp = () => {
       setMessage('');
       const response = await axios.post(`/auth/resend-token`, {email: modalEmail});
       console.log(response);
-      setMessage('Email sent successfully!');
+      toast.success('Email sent successfully!');
       setIsDisabled(true); // Disable the button
       setCountdown(60); // Start the 60 seconds countdown
     } catch (error) {
-      setMessage('Error sending email.');
+      toast.error('Error sending email.');
     }
   };
 

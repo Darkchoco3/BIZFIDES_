@@ -10,6 +10,7 @@ import line from "../assets/Frame 115.svg";
 import image from "../assets/auth.jpeg";
 import logo from "../assets/Bizfides logo.svg";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -33,18 +34,14 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await login(data); 
-
-      if (!response.error) {
         reset();
-        setMessage("Login successful! Redirecting...");
+          toast.success('Logged in successfully');
         setTimeout(() => {
           navigate("/"); 
         }, 3000);
-      } else {
-        setMessage("Login failed. Please check your credentials.");
-      }
     } catch (err) {
-      setMessage(`An error occurred: ${err.message}`);
+      console.log(`'Error'${err}`);
+      toast.error(err.message);
     } finally {
       setLoading(false);
     }
@@ -113,20 +110,6 @@ const Login = () => {
                       value: 6,
                       message: "Password must be at least 6 characters long",
                     },
-                    validate: {
-                      hasUppercase: (value) =>
-                        /[A-Z]/.test(value) ||
-                        "Password must contain at least one uppercase letter",
-                      hasLowercase: (value) =>
-                        /[a-z]/.test(value) ||
-                        "Password must contain at least one lowercase letter",
-                      hasNumber: (value) =>
-                        /[0-9]/.test(value) ||
-                        "Password must contain at least one number",
-                      hasSpecialChar: (value) =>
-                        /[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(value) ||
-                        "Password must contain at least one special character",
-                    },
                   })}
                   placeholder="Enter your password"
                   className="relative mt-1 block w-full text-sm md:text-base lg:text-lg px-3 py-3 border-[2px] border-neutral-grey-200 rounded-[.625rem] shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
@@ -189,21 +172,6 @@ const Login = () => {
             </div>
           </form>
           {/* Form end */}
-
-          {/* Display message */}
-          {message && (
-            <div
-              className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
-                message.includes("successful")
-                  ? "text-green-500"
-                  : "text-red-500"
-              }`}
-            >
-              <ImNotification />
-              {message}
-            </div>
-          )}
-
           <div className="w-full flex justify-center flex-col mt-4">
             <img src={line} className="py-2" alt="divider" />
             <button
