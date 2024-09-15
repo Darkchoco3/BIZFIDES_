@@ -85,7 +85,7 @@ const Subscribe = () => {
               type="text"
               placeholder="Name"
               {...register("name", { required: "Name is required" })}
-              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             {/* Error message for Name */}
             {errors.name && (
@@ -108,7 +108,7 @@ const Subscribe = () => {
                   message: "Invalid email address",
                 },
               })}
-              className="border border-neutral-grey-200 pt-[0.563rem] pb-[1.25rem] pl-[1rem] lg:pl-[1.625rem] w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             {/* Error message for Email */}
             {errors.email && (
