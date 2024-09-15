@@ -408,18 +408,6 @@ const SignUp = () => {
               </div>
             </form>
             {/* Form end */}
-            {message && (
-              <div
-                className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
-                  message.includes("successful")
-                    ? "text-green-500"
-                    : "text-red-500"
-                }`}
-              >
-                {message.includes("successfully") ? "" : <ImNotification />}{" "}
-                {message}
-              </div>
-            )}
             <div className="w-full flex justify-center flex-col mt-4">
               <img src={line} className="py-2" alt="divider" />
               <button
