@@ -52,21 +52,21 @@ const CircularDiagram = () => {
 
   return (
     <div className="flex items-center justify-center ">
-      <div className="relative lg:w-[28.5rem] lg:h-[22.625rem] xl:w-[29.875rem] xl:h-[25rem] rotate">
+      <div className="relative lg:w-[27.5rem] lg:h-[22.625rem] xl:w-[29.875rem] xl:h-[25rem] rotate">
         {/* Central Circle */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="lg:w-[6.563rem] lg:h-[6.563rem] xl:w-[8.313rem] xl:h-[8.313rem] bg-transparent rounded-full"></div>
+          <div className="lg:w-[5.563rem] lg:h-[5.563rem] xl:w-[8.313rem] xl:h-[8.313rem] bg-transparent rounded-full"></div>
         </div>
 
         {/* Concentric Circles */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="lg:w-[24.125rem] lg:h-[23.25rem] xl:w-[25.875rem] xl:h-[25rem] border-[3px] border-secondary-light rounded-full"></div>
+          <div className="lg:w-[23.125rem] lg:h-[22.25rem] xl:w-[25.875rem] xl:h-[25rem] border-[3px] border-secondary-light rounded-full"></div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="lg:w-[15.75rem] lg:h-[15.75rem] xl:w-[17.5rem] xl:h-[17.5rem] border-[3px] border-secondary-light rounded-full"></div>
+          <div className="lg:w-[14.75rem] lg:h-[14.75rem] xl:w-[17.5rem] xl:h-[17.5rem] border-[3px] border-secondary-light rounded-full"></div>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="lg:w-[9.688rem] lg:h-[9.688rem] xl:w-[11.4375rem] xl:h-[11.4375rem]  rounded-full border-[1.6rem] border-secondary-light"></div>
+          <div className="lg:w-[8.688rem] lg:h-[8.688rem] xl:w-[11.4375rem] xl:h-[11.4375rem]  rounded-full border-[1.6rem] border-secondary-light"></div>
         </div>
 
         {/* Labels */}
@@ -75,11 +75,12 @@ const CircularDiagram = () => {
         <motion.div
           key={index}
           className="absolute bg-white text-black w-[6.5rem] h-[2.5625rem] rounded-[10px] flex justify-center items-center"
-          animate={positions[index]}
+          initial={labelPositions[index]}  // Set the initial position
+          animate={positions[index]} // Animate to the new position
           transition={{ ...spring, delay: index * 0.001 }} // 1ms delay for each
           style={{ transform: 'translate(-50%, -50%)' }}
         >
-          <div className='flex font-inter items-center'><img src={label.image}/> <p className='text-sm font-semibold'>{label.text}</p></div>
+          <div className='flex font-inter items-center'><img src={label.image} className=''/> <p className='text-sm font-semibold'>{label.text}</p></div>
         </motion.div>
       ))}
     </div>
