@@ -17,14 +17,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const menuRef = useRef(null);
-  const dropdownRef = useRef(null);
+  // const dropdownRef = useRef(null);
   const { auth, logout} = useAuth()
 
   const onToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  const openDropdown = () => {
-    setIsOpen(!isOpen);
+  const toggleDropdown = () => {
+     setIsOpen((prev) => !prev);
   };
   
   const openModal = () => {
@@ -44,8 +44,6 @@ const Navbar = () => {
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setMenuOpen(false);
-    }
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsOpen(false); // Close dropdown when clicking outside
     }
   };
@@ -65,21 +63,20 @@ const Navbar = () => {
   return (
     <>
     <header className="bg-white fixed top-0 left-0 right-0  z-50 font-inter">
-    <nav className="flex justify-between items-center h-16 md:h-24 lg:h-[6.5rem] container w-11/12">
+    <nav className="flex justify-between items-center h-16 md:h-24 lg:h-[7rem] container w-11/12">
       <Link to='/'>
         <img
-          className="lg:w-[84px] cursor-pointer"
+          className="lg:w-24 2xl:w-28 cursor-pointer"
           src={Logo}
           alt="Logo"
         />
       </Link>
-    <ul 
-    // ref={menuRef}
-    className={`lg:static absolute bg-white top-0 left-0 w-full transition-all duration-500 ease-in ${
-    menuOpen ? 'block opacity-100 top-full' : 'hidden opacity-0 top-[90%]'
-  } lg:opacity-100 lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit flex-col lg:flex-row flex lg:gap-[4vw] gap-8 xl:gap-16 font-bold text-neutral-grey-300 py-4 pl-4 md:pl-8 lg:pl-0 z-50`} 
- > 
-
+    <div 
+    ref={menuRef}
+    className={`lg:static absolute bg-white top-0 left-0 w-full transform transition-transform duration-500 ease-in-out ${
+      menuOpen ? 'block opacity-100  top-full h-[395px] lg:h-0 pt-0 lg:pt-4 px-4 md:px-8 ' : 'hidden opacity-0 top-[90%] '
+    } lg:opacity-100  lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit font-bold text-neutral-grey-300 z-50 text-sm lg:text-base 2xl:text-[20px] lg:gap-24 xl:gap-44 2xl:gap-64`} >
+    <ul className='flex-col lg:flex-row flex lg:space-x-12 xl:space-x-16 space-y-8 lg:space-y-0  py-5'> 
           <li className=''>
             <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/about') ? 'active-link' : ''}`} to='/about' onClick={closeMenu}>
               About Us
@@ -100,25 +97,25 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
-          {auth.user != null ? <div className='block lg:hidden'>
-        <div className="flex font-semibold items-center w-[199px] p-4 bg-neutral-grey-100 rounded-full gap-2" onClick={openDropdown}>
+          {/* {auth.user != null ? <div className=''>
+        <div className="flex font-semibold items-center w-[199px] p-4 bg-neutral-grey-100 rounded-full gap-2 cursor-pointer" onClick={toggleDropdown}>
           <span className='bg-primary text-white text-sm rounded-full py-2 px-2'>{auth?.user?.firstName?.charAt(0).toUpperCase()}{auth?.user?.lastName?.charAt(0).toUpperCase()}</span>
-          <p className='text-sm text-neutral-grey-300 text-center'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
+          <p className='text-sm text-neutral-grey-300 text-center hover:text-primary'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
         </div> 
         {isOpen && (
               <div
-              ref={dropdownRef}
+              ref={menuRef}
                 className="z-10 absolute bg-white mt-3 shadow w-56 h-28 p-5 " 
               >
                 <ul className="flex flex-col gap-3" >
                   
                   <li>
-                    <button className="flex gap-3" disabled>
+                    <button className="flex gap-3 cursor-not-allowed" disabled>
                       <img src={Dashboard}/> <span className="text-base" >Dashboard</span>
                     </button>
                   </li>
                   <li>
-                  <button onClick={ () => {openModal(); setIsOpen(false)}}  className="flex gap-3 cursor-pointer" >
+                  <button onClick={ () => {openModal(); setIsOpen(false);}}  className="flex gap-3 cursor-pointer" >
                   <img src={Logout}/> <span className="text-error-red font-medium text-base">Logout</span>
                 </button>
                   </li>
@@ -134,23 +131,23 @@ const Navbar = () => {
           Log In
         </Link> 
       </div>
-      }
+      } */}
        
       </ul>
-      {auth.user != null ? <div className='hidden lg:block'>
-        <div className="flex font-semibold items-center py-4 px-[18px] bg-neutral-grey-100 rounded-full gap-2" onClick={openDropdown}>
+      {auth.user != null ? <div className='mt-4 lg:mt-0'>
+        <div className="flex font-semibold items-center w-[240px] lg:w-auto py-4 px-[18px] bg-neutral-grey-100 rounded-full gap-2 cursor-pointer" onClick={toggleDropdown}>
           <span className='bg-primary text-white text-xl rounded-full py-2.5 px-2.5'>{auth?.user?.firstName?.charAt(0).toUpperCase()}{auth?.user?.lastName?.charAt(0).toUpperCase()}</span>
-          <p className='text-base text-neutral-grey-300 text-center'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
+          <p className='text-base text-neutral-grey-300 text-center hover:text-primary'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
         </div> 
         {isOpen && (
               <div
-              ref={dropdownRef}
+              
                 className="z-10 absolute bg-white mt-3 shadow w-56 h-28 p-5 " 
               >
                 <ul className="flex flex-col gap-3" >
                   
                   <li>
-                    <button className="flex gap-3" disabled>
+                    <button className="flex gap-3 cursor-not-allowed" disabled>
                       <img src={Dashboard}/> <span className="text-base" >Dashboard</span>
                     </button>
                   </li>
@@ -172,12 +169,22 @@ const Navbar = () => {
         </Link> 
       </div>
       }
-     
+    </div>
+    
       
       <div onClick={onToggleMenu} className="text-4xl cursor-pointer lg:hidden text-primary">
           {menuOpen ? <IoClose /> : <IoMenu />}
         </div>
+        
     </nav>
+    {/* Overlay when the menu is open */}
+    {menuOpen && (
+        <div
+          onClick={closeMenu}
+          className="fixed inset-0 bg-black opacity-50 -z-10 lg:hidden"
+        ></div>
+      )}
+    
     {/* Modal */}
   <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-start py-6 font-roboto space-y-4'>

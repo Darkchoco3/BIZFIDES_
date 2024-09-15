@@ -36,10 +36,10 @@ const Hero = () => {
           </div>
 
           <div className="relative lg:w-1/2 flex justify-end">
-            <div className="relative z-10  hidden lg:block lg:-top-10 xl:-top-10">
+            <div className="relative z-10  hidden lg:block lg:-top-8 xl:-top-10">
             <CircularDiagram />
-              <div className='hidden absolute lg:block z-10 lg:top-[11.1rem] xl:top-[12.2rem] lg:-left-56 xl:-left-64 '>
-                <img src={Man} className="w-[90%] xl:w-full h-full" alt="People" />
+              <div className='hidden absolute lg:block z-10 lg:top-[11.55rem] xl:top-[12.2rem] lg:-left-56 xl:-left-[17rem] 2xl:-left-72'>
+                <img src={Man} className="w-[85%] xl:w-full h-full" alt="People" />
               </div>
             </div>
           </div>
