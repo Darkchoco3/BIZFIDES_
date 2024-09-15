@@ -4,7 +4,7 @@ import about from "../assets/AboutGroup.png";
 
 const About = () => {
   return (
-    <div className="container border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-[109px]  py-4 lg:py-[50px] font-inter">
+    <div className="container border-t w-11/12 border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-[109px]  py-4 lg:py-[30px] font-inter">
       <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
         <div className="hidden md:block md:w-[80%]  lg:w-full">
           <img src={about} className="max-h-full w-auto" />

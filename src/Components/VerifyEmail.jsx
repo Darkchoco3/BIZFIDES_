@@ -6,7 +6,7 @@ import logo from '../assets/Bizfides logo.svg';
 const VerifyEmail = () => {
   const { token } = useParams(); // Get the token from the URL
   const [status, setStatus] = useState('Verifying your email...');
-  const [countdown, setCountdown] = useState(30);
+  const [countdown, setCountdown] = useState(5);
   const navigate = useNavigate();
 
   useEffect(() => {
