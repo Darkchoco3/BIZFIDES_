@@ -175,6 +175,7 @@ const Contact = () => {
               </label>
               <input
                 id="email"
+                
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
