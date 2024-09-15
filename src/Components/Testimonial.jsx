@@ -6,9 +6,9 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import quote from "../assets/Group 2008.svg";
-import bolajismage from "../assets/Frame 1171277920.svg";
+import bolajisimage from "../assets/Frame 1171277920.svg";
 import lisasimage from "../assets/lisasimage.svg";
-import sarahimage from "../assets/sarah.svg";
+import sarahsimage from "../assets/sarah.svg";
 
 const testimonialsData = [
   {
@@ -25,7 +25,7 @@ const testimonialsData = [
     name: "David. K.",
     title: "CEO",
     company: "DK Construction",
-    image: bolajismage,
+    image: bolajisimage,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const testimonialsData = [
     name: "Sarah Tail",
     title: "DIRECTOR",
     company: "Tailing's Designs",
-    image: sarahimage,
+    image: sarahsimage,
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ const testimonialsData = [
     name: "Michael. B.",
     title: "OPERATIONS MANAGER",
     company: "QuickLogistics",
-    image: bolajismage,
+    image: bolajisimage,
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const testimonialsData = [
     name: "Linda. C.",
     title: "CEO",
     company: "Linda’s Bakery",
-    image: sarahimage,
+    image: sarahsimage,
   },
 ];
 
@@ -107,7 +107,7 @@ const Quote = ({ text, name, title, company, image, isMiddle }) => {
           <img
             src={image}
             alt="Client"
-            className="mx-auto w-12 sm:w-16 md:w-20"
+            className="mx-auto w-12 sm:w-16 md:w-20 mb-2"
           />
         <p className="font-bold text-center text-sm 2xl:text-xl font-inter">{name}</p>
         <p className="text-center text-sm 2xl:text-xl font-inter">{title}</p>
@@ -153,7 +153,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16 ">
+    <div className="relative bg-primary text-white py-8 sm:py-12 lg:pt-16 lg:pb-8">
       <div className="container w-11/12">
         <div className="grid place-items-center">
           <h5 className="text-center font-semibold text-[1rem] md:text-xl font-inter lg:text-2xl">

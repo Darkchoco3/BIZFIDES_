@@ -40,13 +40,13 @@ const OurTeam = () => {
 
   return (
     <>
-      <section className="container w-11/12 py-0 xl:py-[3.125rem] mb-[2rem] lg:mb-[3.125rem]">
+      <section className="container w-11/12 py-0 xl:pt-[3.125rem]">
         <div className="pb-[2.5rem] lg:pb-[4.875rem] ">
           <div className="grid gap-1 md:gap-3 lg:gap-4 place-content-center">
-            <h5 className="tetx-sm md:text-base lg:text-xl font-inter text-primary font-semibold text-center">
+            <h5 className="text-xl 2xl:text-3xl font-inter text-primary font-semibold text-center">
               OUR TEAM
             </h5>
-            <h3 className="text-xl md:text-2xl xl:text-[2.5rem] font-roboto text-primary-dark font-bold text-center">
+            <h3 className="text-[1.6rem] md:text-[2rem] xl:text-[2.5rem] 2xl:text-[3rem] font-roboto text-primary-dark font-bold text-center">
               Meet Our Professional Team
             </h3>
           </div>

@@ -7,6 +7,7 @@ import Modal from '../Components/utils/Modal';
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const ForgetPassword = () => {
   const navigate = useNavigate();
@@ -50,15 +51,9 @@ const ForgetPassword = () => {
         openModal()
       } else {
         openModal()
-        // Error handling
-        // toast.error("Failed to send reset instructions");
-        setMessage(`${response.data.message}`);
-      }
-      console.log(res?.data);
-      
+      }      
     } catch (err) {
-      
-      setMessage(`An error occurred: ${err.response.data.message}`);
+      toast.error(`${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
