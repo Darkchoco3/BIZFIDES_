@@ -6,6 +6,7 @@ import { MdLocationOn } from "react-icons/md";
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+
 const Footer = () => {
   const pagelink = [
     {
@@ -33,16 +34,16 @@ const Footer = () => {
           <div className="grid gap-[1.625rem] xl:flex xl:gap-[16.6rem]">
             {/* Logo and Description */}
             <div className="grid gap-[.75rem] xl:gap-[1.938rem]">
-              <img
-                className="w-[4.058rem] xl:w-[5.25rem]"
-                src={Logo}
-                alt="BizFides Logo"
-              />
+      <Link to="/">
+        <img
+         className="w-[4.058rem] md:w-[4.5rem] lg:w-[4.75rem] xl:w-[5.25rem]"
+          src={Logo}
+          alt="BizFides Logo"
+           />
+          </Link>
               <p className="text-xs md:text-sm 2xl:text-xl font-inter max-w-[43ch] md:max-w-[100ch] xl:max-w-[41ch] 2xl:max-w-[55ch]">
                 © 2024 BizFides. Passionate about helping small businesses shine
-                online. We’re here to guide you every step of the way, from
-                building your digital presence to engaging with your audience.
-                Let’s work together to turn your business goals into reality.
+                online.
               </p>
             </div>
 
@@ -132,11 +133,12 @@ const Footer = () => {
       {/* Social Media Links */}
       <div className="flex justify-center items-center bg-primary">
         <div className="bg-primary-dark flex-grow h-4 lg:h-[3.25rem] rounded-se-full "></div>
-        <div className="bg-primary-normal text-white flex justify-center items-center space-x-1 lg:space-x-6 lg:px-[3.875rem]">
-          <FaFacebook className="h-3 lg:h-6" />
-          <FaTwitter className="h-3 lg:h-6" />
-          <FaLinkedin className="h-3 lg:h-6" />
-          <FaInstagram className="h-3 lg:h-6" />
+        <div className="bg-primary-normal text-white flex justify-center items-center space-x-3 px-4 lg:space-x-6 lg:px-[3.875rem]">
+
+        <FaFacebook className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
+  <FaTwitter className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
+  <FaLinkedin className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
+  <FaInstagram className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
         </div>
         <div className="bg-primary-dark flex-grow h-4 lg:h-[3.25rem] rounded-ss-full "></div>
       </div>
