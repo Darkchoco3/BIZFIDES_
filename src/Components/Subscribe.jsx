@@ -67,10 +67,10 @@ const Subscribe = () => {
           className="lg:p-[3.125rem] rounded-3xl lg:border lg:border-neutral-grey-200 flex-1"
         >
           <div className=" mb-[2rem]">
-            <h1 className="text-[1.414rem] md:text-[1.5rem] lg:text-[1.6rem] xl:text-4xl 2xl:text-5xl font-bold text-primary font-roboto">
+            <h1 className="text-[1.5rem] md:text-[1.6rem] xl:text-4xl 2xl:text-5xl font-bold text-primary font-roboto">
               Subscribe To Our Newsletter
             </h1>
-            <p className="mb-4 font-inter font-normal text-xs md:text-sm lg:text-base leading-[1.21rem] text-neutral-grey-300 lg:max-w-[40ch]">
+            <p className="mb-4 font-inter font-normal text-sm md:text-base 2xl:text-xl leading-[1.21rem] text-neutral-grey-300 lg:max-w-[40ch]">
               Get exclusive insights, expert tips, and industry news delivered
               straight to your inbox
             </p>
@@ -78,24 +78,24 @@ const Subscribe = () => {
 
           {/* Name Input */}
           <div className="mb-4">
-            <label className="block mb-3 font-inter text-[0.706rem] md:text-base lg:text-xl font-medium text-neutral-black">
+            <label className="block mb-3 font-inter text-sm md:text-base lg:text-xl 2xl:text-2xl font-medium text-neutral-black">
               Name
             </label>
             <input
               type="text"
               placeholder="Name"
               {...register("name", { required: "Name is required" })}
-              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-sm md:text-base lg:text-xl 2xl:text-2xl  focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             {/* Error message for Name */}
             {errors.name && (
-              <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>
+              <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
             )}
           </div>
 
           {/* Email Input */}
           <div className="mb-4">
-            <label className="block mb-3 font-inter text-[0.706rem] md:text-base lg:text-xl font-medium text-neutral-black">
+            <label className="block mb-3 font-inter text-sm md:text-base lg:text-xl 2xl:text-2xl font-medium text-neutral-black">
               Email
             </label>
             <input
@@ -108,11 +108,11 @@ const Subscribe = () => {
                   message: "Invalid email address",
                 },
               })}
-              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-[0.706rem] md:text-base lg:text-xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
+              className="border border-neutral-grey-200 p-3 lg:p-4 w-full rounded-[.625rem] text-sm md:text-base lg:text-xl 2xl:text-2xl focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
             />
             {/* Error message for Email */}
             {errors.email && (
-              <p className="text-red-500 text-xs mt-1">
+              <p className="text-red-500 text-sm mt-1">
                 {errors.email.message}
               </p>
             )}
@@ -121,7 +121,7 @@ const Subscribe = () => {
           {/* Subscribe Button */}
           <button
             type="submit"
-            className="w-full bg-primary text-white font-medium py-[0.813rem] px-4 rounded-[.625rem] font-inter text-sm md:text-base bg-blue-700 hover:bg-secondary transition-colors duration-300"
+            className="w-full bg-primary text-white font-medium py-[0.813rem] px-4 rounded-[.625rem] font-inter text-sm md:text-base 2xl:text-2xl bg-blue-700 hover:bg-secondary transition-colors duration-300"
             disabled={loading}
           >
             {loading ? (
