@@ -8,6 +8,7 @@ import Modal from "../Components/utils/Modal";
 import axios from "axios";
 import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
+import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -56,12 +57,12 @@ const ResetPassword = () => {
       } else {
         openModal();
         // Error handling
-        setMessage(`${response.data.message}`);
+        toast.success(`${response.data.message}`);
       }
     } catch (err) {
       console.log(err);
 
-      setMessage(`An error occurred: ${err.response.data.message}`);
+      toast.error(`An error occurred: ${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
