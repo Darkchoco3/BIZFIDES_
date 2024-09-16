@@ -15,7 +15,7 @@ const Hero = () => {
     <div className='bg-primary pt-[4rem] md:pt-24 lg:pt-[6.5rem] relative'>
       <div className="relative flex justify-between items-center min-h-[21.5rem] md:min-h-[28.625rem] lg:min-h-[30rem] xl:min-h-[33.75rem] ">
         {/* Polygon Div */}
-        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-[55%] xl:w-auto">
+        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-auto">
           <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" />
         </div>
         
@@ -31,8 +31,8 @@ const Hero = () => {
             </h1>
             {auth.user != null ?
             <button className='font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out'>
-            <Link to='/register'>
-            Get Started
+            <Link to='/contact'>
+            Contact Us
             </Link>
           </button> :
           <button className='font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out'>
