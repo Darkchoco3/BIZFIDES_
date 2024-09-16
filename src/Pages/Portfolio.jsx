@@ -217,7 +217,7 @@ const Portfolio = () => {
             <h3 className="text-center text-primary-dark font-roboto text-2xl md:text-3xl lg:text-[2.5rem] 2xl:text-[3.5rem] font-bold">
               Our Recent Works
             </h3>
-            <p className="text-center text-neutral-grey-300 font-inter text-sm md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[70ch] md:pb-[4.063rem]">
+            <p className="text-center text-pretty text-neutral-grey-300 font-inter text-sm md:text-xl lg:text-2xl 2xl:text-4xl 2xl:leading-[1.4] max-w-[70ch] md:pb-[4.063rem]">
               Welcome to Bizfides, where innovation and customer satisfaction
               drive our success, serving thousands of customers worldwide with
               impressive results.

@@ -9,6 +9,7 @@ import Footer from "../Layouts/Footer";
 import RecentWorks from "../Components/RecentWorks.jsx";
 import Subscribe from "../Components/Subscribe";
 import BuildProcess from "../Components/BuildProcess.jsx";
+import ExpertSolutions from "../Components/ExpertSolutions.jsx";
 
 const Home = () => {
   return (
@@ -25,6 +26,7 @@ const Home = () => {
       <BuildProcess/>
       <div className="grid gap-[2rem] md:gap-[3.125rem]">
         <RecentWorks />
+        <ExpertSolutions/>
         <OurTeam />
         <Testimonials />
         <Subscribe />
