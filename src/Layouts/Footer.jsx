@@ -41,7 +41,7 @@ const Footer = () => {
           alt="BizFides Logo"
            />
           </Link>
-              <p className="text-xs md:text-sm 2xl:text-xl font-inter max-w-[43ch] md:max-w-[100ch] xl:max-w-[41ch] 2xl:max-w-[55ch]">
+              <p className="text-sm md:text-sm 2xl:text-xl font-inter max-w-[43ch] md:max-w-[100ch] xl:max-w-[41ch] 2xl:max-w-[55ch]">
                 © 2024 BizFides. Passionate about helping small businesses shine
                 online.
               </p>
