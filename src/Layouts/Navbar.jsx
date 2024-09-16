@@ -74,9 +74,9 @@ const Navbar = () => {
     <div 
     ref={menuRef}
     className={`lg:static absolute bg-white top-0 left-0 w-full transform transition-transform duration-500 ease-in-out ${
-      menuOpen ? 'block opacity-100  top-full h-[395px] md:h-[445px] lg:h-0 pt-0 lg:pt-4 px-4 md:px-8 ' : 'hidden opacity-0 top-[90%] '
-    } lg:opacity-100  lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit font-bold text-neutral-grey-300 z-50 text-sm md:text-base 2xl:text-[20px] lg:gap-24 xl:gap-44 2xl:gap-64`} >
-    <ul className='flex-col lg:flex-row flex lg:space-x-12 xl:space-x-16 space-y-8  lg:space-y-0  py-5'> 
+      menuOpen ? 'block opacity-100  top-full max-h-[445px] lg:h-0 pt-0 lg:pt-4 px-4 md:px-8 ' : 'hidden opacity-0 top-[90%] '
+    } lg:opacity-100  lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit font-bold text-neutral-grey-300 z-50 text-base 2xl:text-[20px] lg:gap-24 xl:gap-44 2xl:gap-64`} >
+    <ul className='flex-col lg:flex-row flex lg:space-x-12 xl:space-x-16 space-y-10  lg:space-y-0  py-5'> 
           <li className=''>
             <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/about') ? 'active-link' : ''}`} to='/about' onClick={closeMenu}>
               About Us
@@ -99,7 +99,7 @@ const Navbar = () => {
           </li>
          
       </ul>
-      {auth.user != null ? <div className='mt-4 lg:mt-0'>
+      {auth.user != null ? <div className='mt-4 mb-10 lg:mb-0 lg:mt-0'>
         <div className="flex font-semibold items-center w-[240px] lg:w-auto py-4 px-[18px] bg-neutral-grey-100 rounded-full gap-2 cursor-pointer" onClick={toggleDropdown}>
           <span className='bg-primary text-white text-xl rounded-full py-2.5 px-2.5'>{auth?.user?.firstName?.charAt(0).toUpperCase()}{auth?.user?.lastName?.charAt(0).toUpperCase()}</span>
           <p className='text-base text-neutral-grey-300 text-center hover:text-primary'>{auth?.user?.firstName?.toUpperCase()} {auth?.user?.lastName?.toUpperCase()}</p>
@@ -125,11 +125,11 @@ const Navbar = () => {
               </div>
             )}
       </div> : 
-      <div className="flex items-center gap-6 h-9">
-        <Link className="hidden lg:block bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
+      <div className="flex items-center gap-6 h-9 mt-4 mb-10 lg:mb-0 lg:mt-0">
+        <Link className="bg-primary text-white px-8 py-2.5 rounded-lg hover:bg-secondary font-medium text-sm" to='/register'>
           Sign Up
         </Link>
-        <Link className="hidden lg:block text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
+        <Link className="text-primary px-8 py-2.5 rounded-lg  hover:text-secondary font-medium text-sm" to='/login'>
           Log In
         </Link> 
       </div>
