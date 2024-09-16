@@ -73,7 +73,7 @@ const Services = () => {
       <ExternalHero
         heading={"Our Services"}
         paragraph={
-          "Discover how our digital services can help your buisness Shine online.Explore Our services."
+          "Discover how our digital services can help your buisness Shine online. Explore Our services."
         }
         image={HeroImage}
         altText={"Service Image"}
@@ -111,7 +111,7 @@ const Services = () => {
               alt="Why choose us image"
               className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
             />
-            <div className="flex-1 py-[5rem] md:py-[5.813rem] flex flex-col text-center md:text-start">
+            <div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col text-center md:text-start">
               <h3 className="text-primary font-inter font-semibold text-base lg:text-xl 2xl:text-[1.8rem] leading-none pb-[1rem] lg:pb-[2rem]">
                 WHY CHOOSE US
               </h3>
