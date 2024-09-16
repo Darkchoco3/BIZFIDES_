@@ -93,10 +93,10 @@ const Footer = () => {
                 </h3>
                 <div className="grid gap-[.579rem] lg:gap-[1rem]">
                   <p className="flex items-center text-sm md:text-base 2xl:text-xl  font-inter gap-3">
-                    <IoIosCall className="w-5 lg:h-5" /> (406) 555-0120
+                    <IoIosCall className="w-5 lg:h-5" /> (+234) 855-012-009
                   </p>
                   <p className="flex items-center text-sm md:text-base 2xl:text-xl  font-inter gap-3">
-                    <IoMdMail className="w-5 lg:h-5" /> BizFides@gmail.com
+                    <IoMdMail className="w-5 lg:h-5" /> bizfides7@gmail.com
                   </p>
                   <p className="flex items-center text-sm md:text-base 2xl:text-xl font-inter gap-3">
                     <MdLocationOn className="w-5 lg:h-5" /> 1, Ogunlesi Street,
@@ -115,7 +115,7 @@ const Footer = () => {
                   <IoIosCall className="w-5" /> (406) 555-0120
                 </p>
                 <p className="flex items-center text-sm font-inter">
-                  <IoMdMail className="w-5" /> BizFides@gmail.com
+                  <IoMdMail className="w-5" /> bizfides7@gmail.com
                 </p>
                 <p className="flex items-center text-sm font-inter">
                   <MdLocationOn className="w-5" /> 1, Ogunlesi Street, Onipanu
