@@ -39,7 +39,7 @@ const Subscribe = () => {
       });
 
       // Handle response
-      if (response.data?.success === 'true') {
+      if (response.data?.success === true) {
         toast.success("You have successfully subscribed!");
         openModal(); 
         reset();     
