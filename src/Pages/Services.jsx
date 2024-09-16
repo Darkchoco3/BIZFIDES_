@@ -16,11 +16,11 @@ import myImage from "../assets/Group 1.svg";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
-    <div className="bg-white shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[303px] overflow-hidden p-14 text-center flex flex-col justify-center items-center gap-8">
+    <div className="shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[18.938rem] min-h-[34.089rem] overflow-hidden py-[2.75rem] px-[2.063rem] 2xl:py-[3.5rem] 2xl:px-[3rem] text-center flex flex-col justify-center items-center gap-8">
       <img src={image} alt={titleImg} className="min-w-[16rem]" />
-      <div>
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
+      <div className="font-inter">
+        <h3 className="text-[1.75rem] 2xl:text-xl font-semibold text-neutral-black">{title}</h3>
+        <p className="text-sm md:text-base text-neutral-grey-300 mt-2 text-pretty">
           {description}
         </p>
       </div>

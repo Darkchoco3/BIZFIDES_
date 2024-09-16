@@ -42,7 +42,9 @@ const AuthProvider = ({ children }) => {
 
       if (!data?.error) {
         setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
-        Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
+        // Determine cookie expiration based on rememberMe
+        const expires = formData.RememberMe ? undefined : 1;
+        Cookies.set('auth', JSON.stringify(data), { expires}); 
         return data;
       } else {
         return false;
@@ -52,23 +54,6 @@ const AuthProvider = ({ children }) => {
       throw new Error(error?.response?.data?.message || 'An error occurred while logging in');
     }
   };
-// Google authentication function
-// const googleAuth = async () => {
-//   try {
-//     const { data } = await axios.get('/auth/google');
-
-//     if (!data?.error) {
-//       setAuth({ user: data.user, token: data.token, success: data.success, message: data.message });
-//       Cookies.set('auth', JSON.stringify(data), { expires: 7 }); // Cookie expires in 7 days
-//       return data;
-//     } else {
-//       return false;
-//     }
-//   } catch (error) {
-//     console.log('Google login error:', error?.response?.data?.message);
-//     throw new Error(error?.response?.data?.message || 'An error occurred during Google login');
-//   }
-// };
 
   const signup = async (formData) => {
     try {
