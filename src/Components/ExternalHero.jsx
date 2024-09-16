@@ -50,7 +50,7 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
 
           {/* Paragraph */}
           <motion.p
-            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight"
+            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight pb-10"
             variants={textVariants}
           >
             {paragraph}
