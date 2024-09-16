@@ -93,42 +93,42 @@ const Contact = () => {
       <div className="container w-11/12 flex flex-col-reverse lg:flex-row lg:items-center gap-10 sm:px-2 lg:pt-[5rem] lg:pb-[1.875rem] bg-white rounded-lg mt-8 lg:mt-0">
         {/* Left Side - Contact Details */}
         <div className="space-y-2 lg:space-y-8 text-gray-700 text-sm font-inter flex-1">
-          <h2 className="text-xl lg:text-[2.5rem] font-roboto font-bold text-primary text-center lg:text-left">
+          <h2 className="text-xl md:text-3xl lg:text-[2.5rem] 2xl:text-[2.8rem] font-roboto font-bold text-primary text-center lg:text-left">
             Get In
-            <span className="text-secondary font-roboto font-bold">Touch</span>
+            <span className="text-secondary font-roboto font-bold"> Touch</span>
           </h2>
-          <p className="text-center text-pretty text-xs md:text-sm lg:text-base 2xl:text-xl lg:text-left pb-2 lg:pb-0">
+          <p className="text-center text-pretty text-sm md:text-lg 2xl:text-xl lg:text-left pb-2 lg:pb-0">
             Get In Touch with us by contacting us Today through these platforms
           </p>
           <div className="space-y-6">
             {/* Phone and Email */}
-            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-8">
+            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-1 md:space-x-7">
               <div className="flex items-center space-x-2 flex-1">
                 <img src={phone} alt="Phone" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold lg:text-base">Phone Number</span>
-                  <p className="text-xs lg:text-sm xl:text-base">123456789</p>
+                  <span className="font-bold md:text-base 2xl:text-xl">Phone Number</span>
+                  <p className="text-sm md:text-base 2xl:text-xl">123456789</p>
                 </div>
               </div>
 
               <div className="flex items-center space-x-2 flex-1">
                 <img src={sms} alt="Email" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold lg:text-base">Email Address</span>
-                  <p className="text-xs lg:text-sm xl:text-base">
-                    abcd@gmail.com
+                  <span className="font-bold md:text-base 2xl:text-xl">Email Address</span>
+                  <p className="text-sm md:text-base 2xl:text-xl">
+                    bizfides7@gmail.com
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Website and Address */}
-            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-7 lg:space-x-6">
+            <div className="flex md:justify-center lg:justify-start lg:items-start space-x-1 md:space-x-6">
               <div className="flex items-center space-x-2 flex-1">
                 <img src={website} alt="Website" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold lg:text-base">Websites</span>
-                  <p className="text-xs lg:text-sm xl:text-base">
+                  <span className="font-bold md:text-base 2xl:text-xl">Websites</span>
+                  <p className="text-sm md:text-base 2xl:text-xl">
                     www.bizfides.com
                   </p>
                 </div>
@@ -137,9 +137,10 @@ const Contact = () => {
               <div className="flex items-center space-x-2 flex-1">
                 <img src={location} alt="Location" className="h-5 lg:h-6" />
                 <div>
-                  <span className="font-bold lg:text-base">Address</span>
-                  <p className="text-xs lg:text-sm xl:text-base">
-                    17 Avenue street, Lagos.
+                  <span className="font-bold md:text-base 2xl:text-xl">Address</span>
+                  <p className="text-sm md:text-base 2xl:text-xl">
+                  1, Ogunlesi Street, Onipanu
+                  Lagos.
                   </p>
                 </div>
               </div>
@@ -155,7 +156,7 @@ const Contact = () => {
             <div className="flex flex-col xl:w-1/2">
               <label
                 htmlFor="name"
-                className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
+                className="text-sm md:text-base 2xl:text-xl font-semibold text-gray-700 flex gap-[.15rem]"
               >
                 Name<span className="text-error-red -translate-y-px">*</span>
               </label>
@@ -163,13 +164,13 @@ const Contact = () => {
                 id="name"
                 {...register("name", { required: "Name is required" })}
                 placeholder="Your Name"
-                className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
                   {errors.name.message}
                 </p>
               )}
@@ -178,7 +179,7 @@ const Contact = () => {
             <div className="flex flex-col xl:w-1/2 mt-[1rem] xl:mt-0 ">
               <label
                 htmlFor="email"
-                className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
+                className="text-sm md:text-base 2xl:text-xl font-semibold text-gray-700 flex gap-[.15rem]"
               >
                 Email<span className="text-error-red -translate-y-px">*</span>
               </label>
@@ -193,13 +194,13 @@ const Contact = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
                 value={email} // Controlled input
                 onChange={(e) => setEmail(e.target.value)} // Allow user to edit
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
                   {errors.email.message}
                 </p>
               )}
@@ -209,7 +210,7 @@ const Contact = () => {
           <div className="flex flex-col">
             <label
               htmlFor="subject"
-              className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
+              className="text-sm md:text-base 2xl:text-xl font-semibold text-gray-700 flex gap-[.15rem]"
             >
               Subject<span className="text-error-red -translate-y-px">*</span>
             </label>
@@ -217,11 +218,11 @@ const Contact = () => {
               id="subject"
               {...register("subject", { required: "Subject is required" })}
               placeholder="Your Subject"
-              className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
               onFocus={handleFocus}
             />
             {errors.subject && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
                 {errors.subject.message}
               </p>
             )}
@@ -230,7 +231,7 @@ const Contact = () => {
           <div className="flex flex-col lg:pb-6">
             <label
               htmlFor="message"
-              className="text-sm lg:text-base font-semibold text-gray-700 flex gap-[.15rem]"
+              className="text-sm md:text-base 2xl:text-xl font-semibold text-gray-700 flex gap-[.15rem]"
             >
               Message<span className="text-error-red -translate-y-px">*</span>
             </label>
@@ -238,12 +239,12 @@ const Contact = () => {
               id="message"
               {...register("message", { required: "Message is required" })}
               placeholder="Your Message"
-              className="text-sm lg:text-base mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
               onFocus={handleFocus}
               rows="4"
             />
             {errors.message && (
-              <p className="text-red-500 text-sm mt-1">
+              <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
                 {errors.message.message}
               </p>
             )}
@@ -251,7 +252,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full py-2 lg:py-3 px-4 bg-primary text-white text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter rounded-lg font-medium hover:bg-primary-dark focus:outline-none focus:ring-2 "
+            className="w-full py-4 lg:py-3 px-4 bg-primary text-white text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter rounded-lg font-medium hover:bg-primary-dark focus:outline-none focus:ring-2 "
             disabled={loading}
           >
             {loading ? (
