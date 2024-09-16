@@ -33,15 +33,15 @@ const ExpertSolutions = () => {
   return (
     <>
       <section
-        className="flex bg-cover xl:mt-[10rem] min-h-[400px]"
+        className="flex bg-cover lg:mt-[6.5rem] xl:mt-[8rem] lg:h-[20.063rem] 2xl:h-[23rem]"
         style={{ backgroundImage: `url(${officeimage})` }}
       >
         <div className="container w-11/12 grid lg:grid-cols-2">
           <div>
-            <img src={smilingmanimage} alt="smiling man" className="hidden lg:block h-full"/>
+            <img src={smilingmanimage} alt="smiling man" className="hidden lg:block h-full 2xl:h-[480px] -translate-y-[114px]"/>
           </div>
           <motion.div
-          className="text-white py-14 md:py-16"
+          className="text-white py-8 md:pt-[2.625rem] xl:h-[237px]"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -49,14 +49,14 @@ const ExpertSolutions = () => {
         >
           {/* Heading */}
           <motion.h3
-            className="font-inter text-[1.5rem] md:text-[2rem] lg:text-[1.25rem] 2xl:text-[2rem] font-semibold text-center lg:text-start pb-4 text-primary-light"
+            className="font-inter pb-4 lg:pb-0 text-sm md:text-xl lg:text-[1.25rem] 2xl:text-xl font-semibold text-center lg:text-start text-primary-light"
             variants={textVariants}
           >
             EXPERT SOLUTIONS FOR ENTREPRENEURS
           </motion.h3>
 
           <motion.h5
-            className="font-roboto text-[1rem] md:text-[1.2rem] lg:text-[1.5rem] xl:text-[2.5rem] 2xl:text-[3rem] text-center lg:text-start lg:max-w-[30ch] font-bold lg:leading-tight pb-5 xl:pb-7"
+            className="font-roboto text-xl md:text-[2rem] lg:text-[1.5rem] xl:text-[2.5rem] 2xl:text-[3rem] text-center lg:text-start lg:max-w-[30ch] font-bold lg:leading-tight pb-1 md:pb-2 lg:pb-[.7rem] xl:pb-[.5rem]"
             variants={textVariants}
           >
             Empowering Your Business Growth
@@ -64,10 +64,10 @@ const ExpertSolutions = () => {
 
         {/* Paragraph */}
           <motion.p
-            className="font-inter text-[1rem] md:text-[1rem] lg:text-[1.5rem] xl:text-xl 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[40ch] lg:leading-tight 2xl:leading-normal pb-20"
+            className="font-inter text-sm md:text-xl lg:text-xl 2xl:text-2xl text-center lg:text-start lg:max-w-[40ch] lg:leading-tight 2xl:leading-normal pb-[3.125rem]"
             variants={textVariants}
           >
-            Become part of a worldwide network of successful businesses that trust Bizfides!
+            Become part of a nationwide network of <br className="block lg:hidden"/> successful businesses that trust Bizfides!
           </motion.p>
 
           {/* Button */}
@@ -77,7 +77,7 @@ const ExpertSolutions = () => {
           >
             <Link
               to="/register"
-              className="font-inter w-60 py-3.5 px-16 xl:px-[4.063rem] 2xl:px-[5rem] bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-sm lg:text-base 2xl:text-2xl transition ease-in-out"
+              className="font-inter text-sm md:text-base 2xl:text-2xl py-3.5 px-16 xl:px-[4.063rem] 2xl:px-[5rem] bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white transition ease-in-out"
             >
               Get Started
             </Link>

@@ -185,7 +185,7 @@ const Testimonials = () => {
         </div>
 
         {/* Control Icons */}
-        <div className="hidden lg:flex justify-center items-center gap-4 lg:mt-8">
+        <div className="flex justify-center items-center gap-4 lg:mt-8">
           <div className="h-12 w-12 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
             <FaChevronLeft
               size={25}
@@ -202,22 +202,6 @@ const Testimonials = () => {
           </div>
         </div>
 
-        <div className="flex lg:hidden justify-center items-center gap-4 lg:mt-8">
-          <div className="h-8 w-8 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
-            <FaChevronLeft
-              size={18}
-              className="text-primary cursor-pointer transition "
-              onClick={prevSlide}
-            />
-          </div>
-          <div className="h-8 w-8 bg-white hover:bg-secondary rounded-full flex justify-center items-center">
-            <FaChevronRight
-              size={18}
-              className="text-primary cursor-pointer transition "
-              onClick={nextSlide}
-            />
-          </div>
-        </div>
 
         {/* <div className="flex justify-center mt-8 absolute bottom-0 sm:left-0 sm:ml-8">
         <img src={quote} alt="Decorative Quote" className="w-10 sm:w-16 md:w-20 lg:w-24" />
