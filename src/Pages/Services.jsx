@@ -16,7 +16,7 @@ import myImage from "../assets/Group 1.svg";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
-    <div className="shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[18.938rem] min-h-[35rem] overflow-hidden py-[2.75rem] px-[2.063rem] xl:px-[3rem] 2xl:py-[3.5rem] 2xl:px-[3rem] text-center flex flex-col justify-center items-center gap-6">
+    <div className="shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[18.938rem] min-h-[35rem] overflow-hidden py-[2.75rem] px-[2.063rem] xl:px-[3rem] 2xl:py-[3.5rem] 2xl:px-[3rem] text-center flex flex-col justify-center items-center gap-6 2xl:gap-12">
       <img src={image} alt={titleImg} className="min-w-[16rem]" />
       <div className="font-inter">
         <h3 className="text-base md:text-xl lg:text-[1.75rem] 2xl:text-2xl font-semibold text-neutral-black">{title}</h3>
