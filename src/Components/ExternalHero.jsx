@@ -34,7 +34,7 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
       <div className="container w-11/12 flex flex-col lg:flex-row items-center gap-[4.438rem]">
         {/* Text Section */}
         <motion.div
-          className="font-montserrat text-white flex-1 py-14 md:py-16 lg:p-0"
+          className="font-montserrat text-white flex-1 md:py-16 lg:p-0"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible" // Triggers the animation when in view
@@ -50,7 +50,7 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
 
           {/* Paragraph */}
           <motion.p
-            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight pb-20"
+            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight pb-14"
             variants={textVariants}
           >
             {paragraph}
