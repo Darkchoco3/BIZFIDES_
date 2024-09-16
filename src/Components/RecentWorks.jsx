@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import { ourWorks } from "../DB/data.js";
 import RecentsCard from "./Cards/RecentsCard.jsx";
-import  Jump  from "react-reveal/Jump";
 
 
 const RecentWorks = () => {
