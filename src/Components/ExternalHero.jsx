@@ -50,13 +50,13 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
 
           {/* Paragraph */}
           <motion.p
-            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight pb-14"
+            className="text-sm md:text-[1rem] lg:text-[1.5rem] xl:text-[1.75rem] 2xl:text-[2.5rem] text-center lg:text-start lg:max-w-[30ch] font-medium lg:leading-tight"
             variants={textVariants}
           >
             {paragraph}
           </motion.p>
 
-          {/* Button */}
+          {/* Button
           <motion.div
             variants={textVariants}
             className="w-full flex justify-center lg:justify-start"
@@ -67,7 +67,7 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
             >
               Get Started
             </Link>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Image Section */}
