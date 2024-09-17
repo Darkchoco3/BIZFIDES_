@@ -269,12 +269,12 @@ const Portfolio = () => {
                 </p>
 
                 <Link
-                  to="/register"
+                  to="/services"
                   className="grid place-items-center md:place-content-start"
                 >
                   <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
                     <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
-                      Get Started
+                      Our Services
                       <span className="flex items-center">
                         <svg
                           className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
