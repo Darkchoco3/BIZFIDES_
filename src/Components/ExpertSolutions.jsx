@@ -3,6 +3,7 @@ import officeimage from "../assets/linear gradient Office.svg";
 import smilingmanimage from "../assets/smiling man.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useAuth } from '../Contexts/Auth';
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -30,6 +31,7 @@ const containerVariants = {
   };
 
 const ExpertSolutions = () => {
+  const { auth} = useAuth()
   return (
     <>
       <section
@@ -71,17 +73,31 @@ const ExpertSolutions = () => {
           </motion.p>
 
           {/* Button */}
+          {auth.user != null ? 
           <motion.div
-            variants={textVariants}
-            className="w-full flex justify-center lg:justify-start"
+          variants={textVariants}
+          className="w-full flex justify-center lg:justify-start"
+        >
+          <Link
+            to="/contact"
+            className="font-inter text-sm md:text-base 2xl:text-2xl py-3.5 px-16 xl:px-[4.063rem] 2xl:px-[5rem] bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white transition ease-in-out"
           >
-            <Link
-              to="/register"
-              className="font-inter text-sm md:text-base 2xl:text-2xl py-3.5 px-16 xl:px-[4.063rem] 2xl:px-[5rem] bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white transition ease-in-out"
-            >
-              Get Started
-            </Link>
-          </motion.div>
+            Contact Us
+          </Link>
+        </motion.div> :
+        <motion.div
+        variants={textVariants}
+        className="w-full flex justify-center lg:justify-start"
+      >
+        <Link
+          to="/register"
+          className="font-inter text-sm md:text-base 2xl:text-2xl py-3.5 px-16 xl:px-[4.063rem] 2xl:px-[5rem] bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white transition ease-in-out"
+        >
+          Get Started
+        </Link>
+      </motion.div>
+      }
+          
         </motion.div>
         </div>
       </section>
