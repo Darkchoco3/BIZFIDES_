@@ -140,8 +140,8 @@ const Subscribe = () => {
         closeOnClickOutside={false}
       >
         <div className="w-full text-center py-8 font-roboto ">
-          <h2 className="text-primary font-semibold text-[32px]">Thank You!</h2>
-          <p className="text-xl text-neutral-grey-300">
+          <h2 className="text-primary font-semibold text-[2rem]">Thank You!</h2>
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
             You have successfully Subscribed to receive our newsletter
           </p>
           <button
