@@ -133,8 +133,8 @@ const ForgetPassword = () => {
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-center py-8 font-roboto '>
-            <h2 className='text-primary font-semibold text-[32px]'>Message Sent!</h2>
-            <p className='text-xl text-neutral-grey-300'>Continue with the link sent to you via your Email</p>
+            <h2 className='text-primary font-semibold text-[2rem]'>Message Sent!</h2>
+            <p className='text-base 2xl:text-xl text-neutral-grey-300'>Continue with the link sent to you via your Email</p>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8' >Okay</button>
           </div>
       </Modal>

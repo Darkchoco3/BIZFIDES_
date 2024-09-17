@@ -448,13 +448,13 @@ const SignUp = () => {
             <h2 className="font-semibold text-2xl sm:text-2xl lg:text-3xl font-roboto text-primary pb-4">
               Email Confirmation Required
             </h2>
-            <p className="text-xl text-neutral-grey-300">
+            <p className="text-base 2xl:text-xl text-neutral-grey-300">
               We've sent a verification email to <span className="text-primary font-medium">{modalEmail}</span> Please check your inbox  and if you cant see it, kindly check the spam to confirm your email address. Thank you.            </p>
             <div className="flex justify-center gap-12">
             <button
               onClick={handleResendEmail}
               disabled={isDisabled || loading}
-              className={`${isDisabled || loading ? 'bg-gray-400' : 'bg-primary'} w-full p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8`}
+              className={`${isDisabled || loading ? 'bg-gray-400' : 'bg-primary'} w-full p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8`}
             >
               {loading ? 'Loading...' : isDisabled ? `Resend in ${countdown}s` : 'Resend Email'}
             </button>
