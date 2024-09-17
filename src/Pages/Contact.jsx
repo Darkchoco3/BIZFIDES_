@@ -286,7 +286,7 @@ const Contact = () => {
           <h2 className="font-semibold text-xl font-roboto text-primary pb-4">
             Awesome!
           </h2>
-          <p className="text-base text-neutral-grey-300">
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
             Your message has been sent and received. Our team will get back to you in due time.
           </p>
   
