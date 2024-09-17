@@ -73,7 +73,7 @@ const Services = () => {
       <ExternalHero
         heading={"Our Services"}
         paragraph={
-          "Discover how our digital services can help your buisness Shine online. Explore Our services."
+          "Discover how our digital services can help your business Shine online. Explore Our services."
         }
         image={HeroImage}
         altText={"Service Image"}
