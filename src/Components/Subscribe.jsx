@@ -146,7 +146,7 @@ const Subscribe = () => {
           </p>
           <button
             onClick={closeModal}
-            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary transition-colors duration-300 mt-8"
           >
             Okay
           </button>
