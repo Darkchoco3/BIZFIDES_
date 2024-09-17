@@ -19,7 +19,7 @@ const ServiceCard = ({service,i}) => {
         <h3 className="text-lg md:text-xl font-semibold font-inter">
           {service.title}
         </h3>
-        <p className="text-sm text-neutral-grey-300 mt-2">{service.content}</p>
+        <p className="text-sm text-neutral-grey-300 mt-2 text-pretty">{service.content}</p>
       </div>
       <button className="font-extrabold rounded-full p-3 text-white bg-primary mt-4 hover:bg-primary-dark opacity-0">
         <IoIosArrowForward />
