@@ -38,7 +38,7 @@ const Hero = () => {
     <div className="bg-primary pt-[4rem] md:pt-24 lg:pt-[6.5rem] relative">
       <div className="relative flex justify-between items-center min-h-[21.5rem] md:min-h-[28.625rem] lg:min-h-[30rem] xl:min-h-[33.75rem] ">
         {/* Polygon Div */}
-        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-auto">
+        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-[57%] xl:w-auto">
           <img
             src={Polygon1}
             className="h-full w-full"
@@ -68,14 +68,14 @@ const Hero = () => {
             </motion.h1>
             {auth.user != null ? (
               <motion.button
-                className="font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+                className="font-inter  py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
                 variants={textVariants}
               >
                 <Link to="/contact">Contact Us</Link>
               </motion.button>
             ) : (
               <motion.button
-                className="font-inter w-60 py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+                className="font-inter py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
                 variants={textVariants}
               >
                 <Link to="/register">Get Started</Link>
@@ -86,7 +86,7 @@ const Hero = () => {
           <div className="relative lg:w-1/2 flex justify-end">
             <div className="relative z-10  hidden lg:block lg:-top-8 xl:-top-10">
               <CircularDiagram />
-              <div className="hidden absolute lg:block z-10 lg:top-[11.53rem] xl:top-[12.2rem] lg:-left-52 xl:-left-[17rem] 2xl:-left-72">
+              <div className="hidden absolute lg:block z-10 lg:top-[11.53rem] xl:top-[12.2rem] lg:-left-52 xl:-left-[17.5rem] 2xl:-left-72">
                 <img
                   src={Man}
                   className="w-[85%] xl:w-full h-full"
@@ -95,16 +95,17 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Rectangle Decoration */}
-        <div className="absolute bottom-0 left-4 md:left-4 lg:left-[3rem] xl:left-[53px] ">
+          {/* Rectangle Decoration */}
+        <div className="absolute top-[20.3rem] md:top-[22.2rem] lg:top-[21.7rem] xl:top-[24.7rem] left-0">
           <img
             src={Rectangle}
             className="h-full w-full animate-pulse"
             alt="Rectangle Decoration"
           />
         </div>
+        </div>
+
+        
       </div>
     </div>
   );
