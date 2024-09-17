@@ -33,7 +33,7 @@ const ExpertSolutions = () => {
   return (
     <>
       <section
-        className="flex bg-cover lg:mt-[6.5rem] xl:mt-[10rem] lg:h-[20.063rem] 2xl:h-[23rem]"
+        className="flex bg-cover lg:mt-[6.5rem] xl:mt-[8rem] lg:h-[20.063rem] 2xl:h-[23rem]"
         style={{ backgroundImage: `url(${officeimage})` }}
       >
         <div className="container w-11/12 grid lg:grid-cols-2">
