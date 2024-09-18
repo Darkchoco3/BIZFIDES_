@@ -56,7 +56,7 @@ const ExpertSolutions = () => {
           </motion.h3>
 
           <motion.h5
-            className="font-roboto text-xl md:text-[2rem] lg:text-[1.5rem] xl:text-[2.5rem] 2xl:text-[3rem] text-center lg:text-start lg:max-w-[30ch] font-bold lg:leading-tight pb-1 md:pb-2 lg:pb-[.7rem] xl:pb-[.5rem]"
+            className="font-roboto text-xl md:text-[2rem] lg:text-[1.5rem] xl:text-[2.2rem] 2xl:text-[2.8rem] text-center lg:text-start lg:max-w-[30ch] font-bold lg:leading-tight pb-1 md:pb-2 lg:pb-[.7rem] xl:pb-[.5rem]"
             variants={textVariants}
           >
             Empowering Your Business Growth
