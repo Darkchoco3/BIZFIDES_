@@ -232,16 +232,16 @@ const ResetPassword = () => {
         closeOnClickOutside={false}
       >
         <div className="w-full text-center py-8 font-roboto">
-          <h2 className="text-primary font-semibold text-[32px]">Awesome !</h2>
-          <p className="text-xl text-neutral-grey-300">
+          <h2 className="text-primary font-semibold text-[2rem]">Awesome !</h2>
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
             You have successfully reset your Password
           </p>
-          <button
-            onClick={closeModal}
-            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+          <Link to="/login" onClick={closeModal}>
+          <button className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8"
           >
-            Okay
+            Back to Login
           </button>
+          </Link>
         </div>
       </Modal>
     </main>
