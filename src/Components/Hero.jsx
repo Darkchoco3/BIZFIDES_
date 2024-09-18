@@ -49,7 +49,8 @@ const Hero = () => {
         {/* Content Div */}
         <div
           className="relative w-11/12 container flex flex-col lg:flex-row justify-center lg:justify-between items-center z-20">
-          <motion.div className="space-y-8 lg:w-[40%] xl:w-1/2 flex flex-col justify-center items-center lg:items-start h-[25rem] lg:h-auto"
+          {/* Mobile left section with animation */}
+          <motion.div className="lg:hidden space-y-8 lg:w-[40%] xl:w-1/2 flex flex-col justify-center items-center lg:items-start h-[25rem] lg:h-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -82,6 +83,38 @@ const Hero = () => {
               </motion.button>
             )}
           </motion.div>
+
+          {/* Desktop Left section with no aniamtion */}
+          <div className="hidden space-y-8 lg:w-[40%] xl:w-1/2 lg:flex flex-col justify-center items-center lg:items-start h-[25rem] lg:h-auto"
+         >
+            <h3
+              className="font-medium font-roboto text-xl md:text-2xl lg:text-[1.5rem] xl:text-[1.75rem] text-white"
+              
+            >
+              Small Business. Big Impact.
+            </h3>
+            <h1
+              className="font-bold font-roboto text-4xl md:text-4xl  xl:text-6xl text-center lg:text-start text-primary-light"
+              
+            >
+              Build Your Online Presence Today.
+            </h1>
+            {auth.user != null ? (
+              <button
+                className="font-inter  py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+                
+              >
+                <Link to="/contact">Contact Us</Link>
+              </button>
+            ) : (
+              <button
+                className="font-inter py-3.5 px-16 bg-white text-primary rounded-[10px] font-medium text-center hover:bg-primary hover:text-white border-2 border-white text-xl transition ease-in-out"
+                
+              >
+                <Link to="/register">Get Started</Link>
+              </button>
+            )}
+          </div>
 
           <div className="relative lg:w-1/2 flex justify-end">
             <div className="relative z-10  hidden lg:block lg:-top-8 xl:-top-10">
