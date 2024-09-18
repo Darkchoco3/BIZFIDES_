@@ -24,7 +24,7 @@ const About = () => {
         </div>
         <OurStory/>
         </div>
-        <div className="pb-[54px]">
+        <div className="py-[54px] lg:pb-[54px] lg:py-0">
         <OurTeam/>
         </div>
         
