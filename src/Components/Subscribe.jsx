@@ -47,7 +47,7 @@ const Subscribe = () => {
         toast.error(response?.data?.message || "Subscription failed.");
       }
     } catch (error) {
-      toast.error("Error: Unable to submit the form.");
+      toast.error(error?.response?.data?.message);
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
