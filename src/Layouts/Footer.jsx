@@ -21,8 +21,8 @@ const Footer = () => {
       link: "services",
     },
     {
-      title: "Support",
-      link: "support",
+      title: "Contact",
+      link: "contact",
     },
   ];
 
