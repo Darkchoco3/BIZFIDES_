@@ -82,7 +82,7 @@ const ExternalHero = ({ heading, paragraph, image, altText }) => {
       <div className="container w-11/12">
         <img
           src={Rectangle}
-          className="object-cover animate-pulse"
+          className="object-cover animate-pulse w-20 md:w-auto"
           alt="Rectangle Decoration"
         />
       </div>

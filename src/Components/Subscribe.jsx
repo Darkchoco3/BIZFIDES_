@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import LoadingButtonText from "../Components/utils/Loading";
 import toast from "react-hot-toast";
 
+
 const Subscribe = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,7 +48,7 @@ const Subscribe = () => {
         toast.error(response?.data?.message || "Subscription failed.");
       }
     } catch (error) {
-      toast.error("Error: Unable to submit the form.");
+      toast.error(error?.response?.data?.message);
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);

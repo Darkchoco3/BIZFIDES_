@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 import ExternalHero from "../Components/ExternalHero.jsx";
 import heroImage from "../assets/PortfolioHeroImage.svg";
 import servicesImage from "../assets/PortfolioLaptop.svg";
@@ -8,9 +8,34 @@ import Testimonials from "../Components/Testimonial";
 import Subscribe from "../Components/Subscribe.jsx";
 import RecentsCard from "../Components/Cards/RecentsCard.jsx";
 import { ourWorks } from "../DB/data.js";
-import Pagination from "../Components/Pagination.jsx"; 
+import Pagination from "../Components/Pagination.jsx";
 import LoadingButtonText from "../Components/utils/Loading.jsx";
+import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const textVariants = {
+  hidden: {
+    opacity: 0,
+    y: 100, // Starts off-screen (below)
+  },
+  visible: {
+    opacity: 1,
+    y: 0, // Moves to its normal position
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 const Portfolio = () => {
   const [stats, setStats] = useState({
     users: 0,
@@ -259,42 +284,50 @@ const Portfolio = () => {
                 alt="Our services image"
                 className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
               />
-              <div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start">
-                <h3 className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none">
+              <motion.div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}>
+                <motion.h3 className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none"
+                variants={textVariants}>
                   Need the Right Expertise?
-                </h3>
-                <p className="text-primary-medium text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter lg:max-w-[40ch]">
+                </motion.h3>
+                <motion.p className="text-primary-medium text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter lg:max-w-[40ch]"
+                variants={textVariants}>
                   Discover how our tailored solutions and services can address
                   your unique business needs and help you achieve your goals.
-                </p>
+                </motion.p>
 
-                <Link
-                  to="/services"
-                  className="grid place-items-center md:place-content-start"
-                >
-                  <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
-                    <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
-                      Our Services
-                      <span className="flex items-center">
-                        <svg
-                          className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                <motion.div variants={textVariants}>
+                  <Link
+                    to="/services"
+                    className="grid place-items-center md:place-content-start"
+                  >
+                    <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+                      <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
+                        Our Services
+                        <span className="flex items-center">
+                          <svg
+                            className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                </Link>
-              </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              </motion.div>
             </div>
           </section>
 
