@@ -6,24 +6,24 @@ import { Link } from "react-router-dom";
 
 const Service = () => {
   return (
-    <div className="container pb-[2rem] lg:pb-0 lg:pt-[50px] w-11/12 ">
-      <div className="w-full flex justify-center px-4 md:px-8 lg:px-0 ">
+    <div className="container pb-[2rem] lg:pb-0 w-11/12 ">
+      <div className="w-full px-4 md:px-8 lg:px-0 ">
         <div className="border-t border-[#F8F8F8] flex flex-col">
           <div className="text-center pb-6 lg:pb-0">
             <div className="grid gap-2 lg:gap-4">
-              <h4 className="text-lg md:text-xl font-semibold text-primary">
+              <h4 className="text-lg md:text-xl 2xl:text-3xl font-semibold text-primary">
                 OUR SERVICES
               </h4>
-              <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-primary">
+              <h2 className="text-2xl md:text-3xl 2xl:text-4xl lg:text-[40px] font-bold text-primary">
                 Our Key Services
               </h2>
             </div>
 
-            <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
+            <p className="text-sm md:text-base 2xl:text-2xl text-neutral-grey-300 mt-2">
               Unlocking business potential with our key services:
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-[3.125rem] justify-center py-3 md:py-[3rem]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-[3.125rem] lg:place-items-center py-3 md:py-[3rem]">
             {services.map((service, i) => (
               <ServiceCard service={service} key={i} />
             ))}

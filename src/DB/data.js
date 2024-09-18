@@ -43,13 +43,13 @@ export const services = [
     Image: mobile,
     title: "Mobile Application",
     content:
-      "Designing and developing intuitive and engaging mobile apps that connect you with your audience and enhance your brand experience.",
+      "Designing and developing mobile apps that connect you with your audience and enhance your brand experience.",
   },
   {
     Image: social,
     title: "Social Media Management",
     content:
-      "Expertly managing your social media presence to build brand awareness, engage your audience, and drive website traffic and sales.",
+      "Expertly managing your social media presence to build brand awareness,and increase engagement.",
   },
   {
     Image: seo,

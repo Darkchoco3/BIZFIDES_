@@ -10,6 +10,7 @@ import image from '../assets/AboutImg.svg'
 
 const About = () => {
   return (
+    <>
     <div className="grid gap-[54px] " >
         <ExternalHero
         heading='About Us'
@@ -18,17 +19,23 @@ const About = () => {
         altText='image'
         />
         <WhatWedo/>
-        <div>
         <div className="bg-neutral-grey-100">
         <MissionVisson/>
         </div>
         <OurStory/>
-        <OurTeam/>
-        <Testimonials/>
         </div>
+        <div className="pb-[54px]">
+        <OurTeam/>
+        </div>
+        
+        <div className="grid gap-[54px] ">
+        <Testimonials/>  
         <Subscribe/>
-        <div></div>
-    </div>
+        </div>
+        
+        </>
+   
+    
   )
 }
 
