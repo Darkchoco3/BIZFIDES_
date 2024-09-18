@@ -232,8 +232,8 @@ const ResetPassword = () => {
         closeOnClickOutside={false}
       >
         <div className="w-full text-center py-8 font-roboto">
-          <h2 className="text-primary font-semibold text-[32px]">Awesome !</h2>
-          <p className="text-xl text-neutral-grey-300">
+          <h2 className="text-primary font-semibold text-[2rem]">Awesome !</h2>
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
             You have successfully reset your Password
           </p>
           <Link to="/login" onClick={closeModal}>

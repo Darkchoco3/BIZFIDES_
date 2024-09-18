@@ -27,7 +27,7 @@ const OurStory = () => {
   }, []);
 
   return (
-    <div className="container w-11/12 flex flex-col justify-center py-12 gap-8 md:gap-10 lg:gap-[54px]">
+    <div className="container w-11/12 flex flex-col justify-center gap-8 md:gap-10 lg:gap-[54px]">
       <div className="flex flex-col gap-[10px] font-inter justify-center items-center">
         <h3 className="text-sm md:text-base lg:text-xl xl:text-lg text-primary text-center font-medium">
           OUR STORY
