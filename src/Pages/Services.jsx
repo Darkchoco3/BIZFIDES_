@@ -16,11 +16,11 @@ import myImage from "../assets/Group 1.svg";
 
 const ServiceDetails = ({ image, title, description, titleImg }) => {
   return (
-    <div className="bg-white shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[303px] overflow-hidden p-14 text-center flex flex-col justify-center items-center gap-8">
+    <div className="shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[18.938rem] min-h-[35rem] overflow-hidden py-[2.75rem] px-[2.063rem] xl:px-[3rem] 2xl:py-[3.5rem] 2xl:px-[3rem] text-center flex flex-col justify-center items-center gap-6 2xl:gap-12">
       <img src={image} alt={titleImg} className="min-w-[16rem]" />
-      <div>
-        <h3 className="text-xl font-semibold">{title}</h3>
-        <p className="text-sm md:text-base text-neutral-grey-300 mt-2">
+      <div className="font-inter">
+        <h3 className="text-base md:text-xl lg:text-[1.75rem] 2xl:text-2xl font-semibold text-neutral-black">{title}</h3>
+        <p className="text-sm md:text-base 2xl:text-xl text-neutral-grey-300 mt-2 text-pretty">
           {description}
         </p>
       </div>
@@ -73,24 +73,24 @@ const Services = () => {
       <ExternalHero
         heading={"Our Services"}
         paragraph={
-          "Discover how our digital services can help your buisness Shine online.Explore Our services."
+          "Discover how our digital services can help your business Shine online. Explore Our services."
         }
         image={HeroImage}
         altText={"Service Image"}
       />
 
       <section className="container w-11/12">
-        <div className="text-center mb-8">
-          <p className=" font-bold text-primary">GUARANTEED SUCCESS</p>
-          <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold mt-[5px] mb-[10px]  text-primary">
+        <div className="text-center mb-[3.375rem]">
+          <p className=" font-bold text-primary font-inter text-sm md:text-base 2xl:text-2xl">GUARANTEED SUCCESS</p>
+          <h2 className="font-roboto text-2xl md:text-3xl lg:text-[2.5rem] 2xl:text-5xl font-bold mt-[5px] mb-[10px]  text-primary">
             What We Offer
           </h2>
 
-          <p className="text-neutral-grey-300">
+          <p className="text-neutral-grey-300 font-inter text-sm md:text-base 2xl:text-2xl">
             Unlocking potential with creative solutions
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 lg:gap-16 sm:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (
             <ServiceDetails
               key={index}
@@ -111,7 +111,7 @@ const Services = () => {
               alt="Why choose us image"
               className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
             />
-            <div className="flex-1 py-[5rem] md:py-[5.813rem] flex flex-col text-center md:text-start">
+            <div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col text-center md:text-start">
               <h3 className="text-primary font-inter font-semibold text-base lg:text-xl 2xl:text-[1.8rem] leading-none pb-[1rem] lg:pb-[2rem]">
                 WHY CHOOSE US
               </h3>
