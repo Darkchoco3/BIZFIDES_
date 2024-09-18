@@ -166,7 +166,7 @@ const Contact = () => {
                 placeholder="Your Name"
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={name}
+                // value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
@@ -196,7 +196,7 @@ const Contact = () => {
                 placeholder="Your Email"
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={email} // Controlled input
+                // value={email} // Controlled input
                 onChange={(e) => setEmail(e.target.value)} // Allow user to edit
               />
               {errors.email && (
@@ -297,12 +297,12 @@ const Contact = () => {
             >
               Okay
             </button>
-            <button
+            {/* <button
               onClick={closeModal}
               className="p-2 px-6 rounded-[10px] text-primary mt-8"
             >
               Login
-            </button>
+            </button> */}
           </div>
         </div>
       </Modal>
