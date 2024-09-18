@@ -11,7 +11,7 @@ const slideInVariants = {
     opacity: 1,
     x: 0, // End at its original position
     transition: {
-      duration: 1.5,
+      duration: 1.2,
       ease: "easeIn",
     },
   },
