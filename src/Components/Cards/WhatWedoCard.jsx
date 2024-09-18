@@ -9,14 +9,14 @@ const slideInVariants = {
     opacity: 1,
     x: 0, // End at its original position
     transition: {
-      duration: 1.5,
+      duration: 1.2,
       ease: "easeIn",
     },
   },
 };
 const WhatWedoCard = ({what, i}) => {
   return (
-    <motion.div className='min-h-[474px] rounded-[55px] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] p-4 font-inter flex flex-col gap-[24px] border border-neutral-grey-100' key={i}
+    <motion.div className='min-h-[474px] rounded-[55px] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.03)] p-4 font-inter flex flex-col gap-[24px] border border-neutral-grey-100' key={i}
     initial="hidden"
     whileInView="visible"
         viewport={{ once: true }}
