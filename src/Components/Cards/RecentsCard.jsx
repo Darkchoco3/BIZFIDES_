@@ -1,21 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-
-const slideInVariants = {
-  hidden: {
-    opacity: 0,
-    x: -100, // Start 100px off-screen to the left
-  },
-  visible: {
-    opacity: 1,
-    x: 0, // End at its original position
-    transition: {
-      duration: 1.2,
-      ease: "easeIn",
-    },
-  },
-};
 
 const RecentsCard = ({
   image,
@@ -40,12 +24,8 @@ const RecentsCard = ({
   }, []);
 
   return (
-    <motion.div
+    <div
       className="w-full min-h-[22rem] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.03)] border border-neutral-grey-100 rounded-[3.5rem] xl:rounded-[6.25rem] p-8 lg:p-0 lg:px-5 flex flex-col lg:flex lg:flex-row-reverse lg:gap-4 xl:grid xl:grid-cols-2 gap-[1.813rem] items-center"
-      initial="hidden"
-      whileInView="visible"
-          viewport={{ once: true }}
-      variants={slideInVariants}
     >
       {/* Image Section */}
       <img
@@ -101,7 +81,7 @@ const RecentsCard = ({
           </div>
         </Link>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
