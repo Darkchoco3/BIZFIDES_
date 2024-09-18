@@ -41,7 +41,7 @@ const RecentsCard = ({
 
   return (
     <motion.div
-      className="w-full min-h-[22rem] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.02)] border border-neutral-grey-100 rounded-[3.5rem] xl:rounded-[6.25rem] p-8 lg:p-0 lg:px-5 flex flex-col lg:flex lg:flex-row-reverse lg:gap-4 xl:grid xl:grid-cols-2 gap-[1.813rem] items-center"
+      className="w-full min-h-[22rem] shadow-[0px_0px_12px_8px_rgba(0,0,0,0.03)] border border-neutral-grey-100 rounded-[3.5rem] xl:rounded-[6.25rem] p-8 lg:p-0 lg:px-5 flex flex-col lg:flex lg:flex-row-reverse lg:gap-4 xl:grid xl:grid-cols-2 gap-[1.813rem] items-center"
       initial="hidden"
       whileInView="visible"
           viewport={{ once: true }}
