@@ -8,6 +8,7 @@ import Modal from "../Components/utils/Modal";
 import axios from "axios";
 import LoadingButtonText from "../Components/utils/Loading";
 import { ImNotification } from "react-icons/im";
+import toast from "react-hot-toast";
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -56,12 +57,12 @@ const ResetPassword = () => {
       } else {
         openModal();
         // Error handling
-        setMessage(`${response.data.message}`);
+        toast.success(`${response.data.message}`);
       }
     } catch (err) {
       console.log(err);
 
-      setMessage(`An error occurred: ${err.response.data.message}`);
+      toast.error(`An error occurred: ${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
@@ -235,12 +236,12 @@ const ResetPassword = () => {
           <p className="text-xl text-neutral-grey-300">
             You have successfully reset your Password
           </p>
-          <button
-            onClick={closeModal}
-            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+          <Link to="/login" onClick={closeModal}>
+          <button className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8"
           >
-            Okay
+            Back to Login
           </button>
+          </Link>
         </div>
       </Modal>
     </main>

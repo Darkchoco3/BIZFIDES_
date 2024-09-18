@@ -8,8 +8,9 @@ import Home from "./Pages/Home";
 import Error from "./Pages/Error";
 import Footer from "./Layouts/Footer";
 import Services from "./Pages/Services";
-import { BrowserRouter, Routes, Route,Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import NotFoundPage from "./Components/NotFoundPage";
+import toast, { Toaster } from "react-hot-toast";
 import ForgetPassword from "./Auth/ForgetPassword";
 import ResetPassword from "./Auth/ResetPassword";
 import About from "./Pages/About";
@@ -22,30 +23,29 @@ import GoogleAuthCallback from "./Contexts/OAuthCallback";
 
 const LayoutWithNavandFooter = () => (
   <div className="">
-          <Navbar />
-          <Outlet />
-          <Footer />  
-
+    <Navbar />
+    <Outlet />
+    <Footer />
   </div>
-)
+);
 function App() {
   return (
     <div className="">
-      
-      
+      <Toaster position="top-center" reverseOrder={false} />
+
       {/* <Navbar /> */}
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         <Routes>
-          <Route element={<LayoutWithNavandFooter/>}>
-          <Route path="/" element={<Home />} />
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route element={<PrivateRoute />}>
-            {/* <Route path="/profile" element={<Dashboard />} /> */}
-          </Route>
+          <Route element={<LayoutWithNavandFooter />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route element={<PrivateRoute />}>
+              {/* <Route path="/profile" element={<Dashboard />} /> */}
+            </Route>
           </Route>
 
           <Route path="/google/callback" element={<GoogleAuthCallback />} />
@@ -56,7 +56,6 @@ function App() {
             <Route path="/reset-password/:token" element={<ResetPassword />} />
             <Route path="/verify-email/:token" element={<VerifyEmail />} />
           </Route>
-
 
           <Route path="/*" element={<Error />} />
         </Routes>

@@ -7,6 +7,7 @@ import Modal from '../Components/utils/Modal';
 import { ImNotification } from "react-icons/im";
 import LoadingButtonText from '../Components/utils/Loading';
 import axios from 'axios';
+import toast from 'react-hot-toast';
 
 const ForgetPassword = () => {
   const navigate = useNavigate();
@@ -50,15 +51,9 @@ const ForgetPassword = () => {
         openModal()
       } else {
         openModal()
-        // Error handling
-        // toast.error("Failed to send reset instructions");
-        setMessage(`${response.data.message}`);
-      }
-      console.log(res?.data);
-      
+      }      
     } catch (err) {
-      
-      setMessage(`An error occurred: ${err.response.data.message}`);
+      toast.error(`${err.response.data.message}`);
     } finally {
       setLoading(false);
     }
@@ -120,7 +115,7 @@ const ForgetPassword = () => {
             </div>
           )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
-            <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
+            <Link to="/login" className="text-primary"><span className='pr-4'>&lt;</span>Back to Login</Link>
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>

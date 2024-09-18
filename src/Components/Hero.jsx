@@ -14,7 +14,7 @@ const Hero = () => {
     <div className='bg-primary pt-[4rem] md:pt-24 lg:pt-[6.5rem] relative'>
       <div className="relative flex justify-between items-center min-h-[21.5rem] md:min-h-[28.625rem] lg:min-h-[30rem] xl:min-h-[33.75rem] ">
         {/* Polygon Div */}
-        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-auto">
+        <div className="absolute top-0 right-0 h-[25rem] md:h-[28.6rem] lg:h-[30rem] xl:h-[33.7rem] w-[60%] lg:w-[55%] xl:w-auto">
           <img src={Polygon1} className="h-full w-full" alt="Polygon Decoration" />
         </div>
         
@@ -36,10 +36,10 @@ const Hero = () => {
           </div>
 
           <div className="relative lg:w-1/2 flex justify-end">
-            <div className="relative z-10  hidden lg:block lg:-top-10 xl:-top-10">
+            <div className="relative z-10  hidden lg:block lg:-top-8 xl:-top-10">
             <CircularDiagram />
-              <div className='hidden absolute lg:block z-10 lg:top-[11.1rem] xl:top-[12.2rem] lg:-left-56 xl:-left-64 '>
-                <img src={Man} className="w-[90%] xl:w-full h-full" alt="People" />
+              <div className='hidden absolute lg:block z-10 lg:top-[11.53rem] xl:top-[12.2rem] lg:-left-52 xl:-left-[17rem] 2xl:-left-72'>
+                <img src={Man} className="w-[85%] xl:w-full h-full" alt="People" />
               </div>
             </div>
           </div>

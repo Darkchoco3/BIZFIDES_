@@ -11,6 +11,7 @@ import { ImNotification } from "react-icons/im";
 import LoadingButtonText from "../Components/utils/Loading";
 import { useAuth } from "../Contexts/Auth";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -29,7 +30,7 @@ const Contact = () => {
 
   // Populate form fields if auth data is available
   useEffect(() => {
-    if (auth) {
+    if (auth.user) {
       setName(`${auth.user?.firstName} ${auth.user?.lastName}`);
       setEmail(auth.user?.email);
     }
@@ -43,6 +44,8 @@ const Contact = () => {
     setIsModalOpen(false);
     setMessage("");
     reset();
+    setEmail('')
+    setName('')
   };
 
   const handleFocus = () => {
@@ -52,7 +55,6 @@ const Contact = () => {
   };
 
   const onSubmit = async (data) => {
-    setMessage("");
     try {
       setLoading(true);
 
@@ -63,16 +65,17 @@ const Contact = () => {
         subject: data.subject,
         message: data.message,
       });
-
+      console.log(response.data.success);
+      
       // Handle response
-      if (response?.data?.success === "true") {
+      if (response.data?.success === "true") {
         openModal();
+        toast.success(`${response.data.message}`);
       } else {
         openModal();
-        setMessage(`${response.data.message}`);
       }
     } catch (error) {
-      setMessage("Error: Unable to submit the form");
+      toast.error("Unable to submit the form");
     } finally {
       setLoading(false);
     }
@@ -112,7 +115,9 @@ const Contact = () => {
                 <img src={sms} alt="Email" className="h-5 lg:h-6" />
                 <div>
                   <span className="font-bold lg:text-base">Email Address</span>
-                  <p className="text-xs lg:text-sm xl:text-base">abcd@gmail.com</p>
+                  <p className="text-xs lg:text-sm xl:text-base">
+                    abcd@gmail.com
+                  </p>
                 </div>
               </div>
             </div>
@@ -123,7 +128,9 @@ const Contact = () => {
                 <img src={website} alt="Website" className="h-5 lg:h-6" />
                 <div>
                   <span className="font-bold lg:text-base">Websites</span>
-                  <p className="text-xs lg:text-sm xl:text-base">www.bizfides.com</p>
+                  <p className="text-xs lg:text-sm xl:text-base">
+                    www.bizfides.com
+                  </p>
                 </div>
               </div>
 
@@ -131,7 +138,9 @@ const Contact = () => {
                 <img src={location} alt="Location" className="h-5 lg:h-6" />
                 <div>
                   <span className="font-bold lg:text-base">Address</span>
-                  <p className="text-xs lg:text-sm xl:text-base">17 Avenue street, Lagos.</p>
+                  <p className="text-xs lg:text-sm xl:text-base">
+                    17 Avenue street, Lagos.
+                  </p>
                 </div>
               </div>
             </div>
@@ -175,7 +184,7 @@ const Contact = () => {
               </label>
               <input
                 id="email"
-                
+                type="email"
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -251,18 +260,20 @@ const Contact = () => {
               "Submit"
             )}
           </button>
+          {message && (
+            <div
+              className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
+                message.includes("successful")
+                  ? "text-green-500"
+                  : "text-red-500"
+              }`}
+            >
+              <ImNotification />
+              {message}
+            </div>
+          )}
         </form>
         {/* Form end */}
-        {message && (
-          <div
-            className={`mt-4 text-left text-sm md:text-base lg:text-lg flex items-center gap-1 ${
-              message.includes("successful") ? "text-green-500" : "text-red-500"
-            }`}
-          >
-            <ImNotification />
-            {message}
-          </div>
-        )}
       </div>
       {/* Modal */}
       <Modal
