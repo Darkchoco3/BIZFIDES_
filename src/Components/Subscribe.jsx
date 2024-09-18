@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import LoadingButtonText from "../Components/utils/Loading";
 import toast from "react-hot-toast";
 
+
 const Subscribe = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
