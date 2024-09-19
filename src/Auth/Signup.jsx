@@ -455,8 +455,8 @@ const SignUp = () => {
           className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative"
           style={{ backgroundImage: `url(${image})` }}
         >
-          <Link to="/" className="absolute right-[120px] top-[40px]">
-            <img src={logo} alt="" />
+          <Link to="/" className="absolute lg:right-[3rem] lg:top-[0.95rem] xl:right-[5.875rem] xl:top-[2.8rem]">
+            <img src={logo} alt="" className="2xl:w-[7rem]"/>
           </Link>
         </div>
       </div>
