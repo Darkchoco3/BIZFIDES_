@@ -29,12 +29,12 @@ const Contact = () => {
   } = useForm();
 
   // Populate form fields if auth data is available
-  useEffect(() => {
-    if (auth.user) {
-      setName(`${auth.user?.firstName} ${auth.user?.lastName}`);
-      setEmail(auth.user?.email);
-    }
-  }, [auth]);
+  // useEffect(() => {
+  //   if (auth.user) {
+  //     setName(`${auth.user?.firstName} ${auth.user?.lastName}`);
+  //     setEmail(auth.user?.email);
+  //   }
+  // }, [auth]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -167,7 +167,7 @@ const Contact = () => {
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 onFocus={handleFocus}
                 // value={name}
-                onChange={(e) => setName(e.target.value)}
+                // onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
@@ -197,7 +197,7 @@ const Contact = () => {
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 onFocus={handleFocus}
                 // value={email} // Controlled input
-                onChange={(e) => setEmail(e.target.value)} // Allow user to edit
+                // onChange={(e) => setEmail(e.target.value)} // Allow user to edit
               />
               {errors.email && (
                 <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
