@@ -52,7 +52,7 @@ const OurTeam = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-14 lg:gap-16 md:w-11/12 lg:w-full xl:w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-14 lg:gap-16">
 
           {/* Mapping through the array */}
           {teamMembers.map((member) => (
