@@ -153,7 +153,7 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="relative bg-primary text-white py-8 sm:py-12 lg:pt-16 lg:pb-8">
+    <div className="relative bg-primary text-white py-8 sm:py-12 lg:py-16">
       <div className="container w-11/12">
         <div className="grid place-items-center">
           <h5 className="text-center font-semibold text-[1rem] md:text-xl font-inter lg:text-2xl">
