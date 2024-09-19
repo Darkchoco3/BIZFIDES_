@@ -29,12 +29,12 @@ const Contact = () => {
   } = useForm();
 
   // Populate form fields if auth data is available
-  useEffect(() => {
-    if (auth.user) {
-      setName(`${auth.user?.firstName} ${auth.user?.lastName}`);
-      setEmail(auth.user?.email);
-    }
-  }, [auth]);
+  // useEffect(() => {
+  //   if (auth.user) {
+  //     setName(`${auth.user?.firstName} ${auth.user?.lastName}`);
+  //     setEmail(auth.user?.email);
+  //   }
+  // }, [auth]);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -90,7 +90,7 @@ const Contact = () => {
         altText={"contact us image"}
       />
 
-      <div className="container w-11/12 flex flex-col-reverse lg:flex-row lg:items-center gap-10 sm:px-2 lg:pt-[5rem] lg:pb-[1.875rem] bg-white rounded-lg mt-8 lg:mt-0">
+      <div className="container w-11/12 flex flex-col-reverse lg:flex-row lg:items-center gap-10 lg:pt-[5rem] lg:pb-[1.875rem] bg-white rounded-lg mt-8 lg:mt-0">
         {/* Left Side - Contact Details */}
         <div className="space-y-2 lg:space-y-8 text-gray-700 text-sm font-inter flex-1">
           <h2 className="text-xl md:text-3xl lg:text-[2.5rem] 2xl:text-[2.8rem] font-roboto font-bold text-primary text-center lg:text-left">
@@ -107,7 +107,7 @@ const Contact = () => {
                 <img src={phone} alt="Phone" className="h-5 lg:h-6" />
                 <div>
                   <span className="font-bold md:text-base 2xl:text-xl">Phone Number</span>
-                  <p className="text-sm md:text-base 2xl:text-xl">123456789</p>
+                  <p className="text-sm md:text-base 2xl:text-xl">(+234) 855-012-009</p>
                 </div>
               </div>
 
@@ -164,10 +164,10 @@ const Contact = () => {
                 id="name"
                 {...register("name", { required: "Name is required" })}
                 placeholder="Your Name"
-                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 onFocus={handleFocus}
                 // value={name}
-                onChange={(e) => setName(e.target.value)}
+                // onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
                 <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
@@ -194,10 +194,10 @@ const Contact = () => {
                   },
                 })}
                 placeholder="Your Email"
-                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
                 onFocus={handleFocus}
                 // value={email} // Controlled input
-                onChange={(e) => setEmail(e.target.value)} // Allow user to edit
+                // onChange={(e) => setEmail(e.target.value)} // Allow user to edit
               />
               {errors.email && (
                 <p className="text-red-500 text-sm md:text-base 2xl:text-xl mt-1">
@@ -218,7 +218,7 @@ const Contact = () => {
               id="subject"
               {...register("subject", { required: "Subject is required" })}
               placeholder="Your Subject"
-              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               onFocus={handleFocus}
             />
             {errors.subject && (
@@ -239,7 +239,7 @@ const Contact = () => {
               id="message"
               {...register("message", { required: "Message is required" })}
               placeholder="Your Message"
-              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
+              className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-7border-[2px]shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
               onFocus={handleFocus}
               rows="4"
             />
