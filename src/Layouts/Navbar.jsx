@@ -148,6 +148,7 @@ const Navbar = () => {
           <div className='w-full text-center py-10 font-roboto space-y-8 lg:space-y-[44px]'>
             <h2 className='text-primary font-semibold text-xl lg:text-2xl'>Are you sure you want to log out?
             </h2>
+            <p className='text-xl text-neutral-grey-300'>You will be signed out and any unsaved changes will be lost.</p>
             <div className="flex flex-col space-y-3 justify-center items-start">
             <button onClick={handleLogout} className='bg-primary w-full h-9 rounded-[10px] text-base text-white hover:bg-secondary ' >Logout</button>
             <button  onClick={closeModal} className='text-primary w-full h-9 text-base' >Cancel</button>
