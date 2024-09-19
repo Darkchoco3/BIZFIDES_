@@ -1,6 +1,6 @@
 import React from "react";
 import Polygon1 from "../assets/Group 3387.png";
-import Man from "../assets/image 29.svg";
+import Man from "../assets/Man.png";
 import Rectangle from "../assets/Group 2008.svg";
 import { Link } from "react-router-dom";
 import CircularDiagram from "./CircularAnimae";

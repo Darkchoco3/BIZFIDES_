@@ -78,22 +78,22 @@ const Navbar = () => {
     } lg:opacity-100  lg:transition-none lg:flex lg:items-center lg:w-auto min-h-fit font-bold text-neutral-grey-300 z-50 text-base 2xl:text-[20px] lg:gap-24 xl:gap-44 2xl:gap-64`} >
     <ul className='flex-col lg:flex-row flex lg:space-x-12 xl:space-x-16 space-y-10  lg:space-y-0  py-5'> 
           <li className=''>
-            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/about') ? 'active-link' : ''}`} to='/about' onClick={closeMenu}>
+            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary lg:py-2  ${isActive('/about') ? 'active-link' : ''}`} to='/about' onClick={closeMenu}>
               About Us
             </Link>
           </li>
           <li>
-            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary py-2  ${isActive('/services') ? 'active-link' : ''}`} to='/services' onClick={closeMenu}>
+            <Link className={`lg:hover:border-b hover:text-primary lg:hover:border-b-primary lg:py-2  ${isActive('/services') ? 'active-link' : ''}`} to='/services' onClick={closeMenu}>
               Services
             </Link>
           </li>
           <li>
-            <Link to='/portfolio' className={`lg:hover:border-b lg:hover:text-primary lg:hover:border-b-primary py-2 ${isActive('/portfolio') ? 'active-link' : ''}`} onClick={closeMenu}>
+            <Link to='/portfolio' className={`lg:hover:border-b lg:hover:text-primary lg:hover:border-b-primary lg:py-2 ${isActive('/portfolio') ? 'active-link' : ''}`} onClick={closeMenu}>
               Portfolio
             </Link>
           </li>
           <li>
-            <Link className={`lg:hover:border-b lg:hover:text-primary lg:hover:border-b-primary py-2 ${isActive('/contact') ? 'active-link' : ''}`} to='/contact' onClick={closeMenu}>
+            <Link className={`lg:hover:border-b lg:hover:text-primary lg:hover:border-b-primary lg:py-2 ${isActive('/contact') ? 'active-link' : ''}`} to='/contact' onClick={closeMenu}>
               Contact Us
             </Link>
           </li>
