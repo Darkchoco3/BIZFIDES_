@@ -10,25 +10,32 @@ import image from '../assets/AboutImg.svg'
 
 const About = () => {
   return (
+    <>
     <div className="grid gap-[54px] " >
         <ExternalHero
         heading='About Us'
-        paragraph='Building Bridges to Your Online Success Empowering Small Businesses to Stand Out'
+        paragraph='Building Bridges to Your Online Success. Empowering Small Businesses to Stand Out'
         image={image}
         altText='image'
         />
         <WhatWedo/>
-        <div>
         <div className="bg-neutral-grey-100">
         <MissionVisson/>
         </div>
         <OurStory/>
-        <OurTeam/>
-        <Testimonials/>
         </div>
+        <div className="py-[54px] lg:pb-[54px] lg:py-0">
+        <OurTeam/>
+        </div>
+        
+        <div className="grid gap-[54px] ">
+        <Testimonials/>  
         <Subscribe/>
-        <div></div>
-    </div>
+        </div>
+        
+        </>
+   
+    
   )
 }
 

@@ -166,7 +166,7 @@ const Contact = () => {
                 placeholder="Your Name"
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={name}
+                // value={name}
                 onChange={(e) => setName(e.target.value)}
               />
               {errors.name && (
@@ -196,7 +196,7 @@ const Contact = () => {
                 placeholder="Your Email"
                 className="text-sm md:text-base 2xl:text-xl mt-1 p-2 border-2 border-neutral-grey-200 rounded-[5px] text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary"
                 onFocus={handleFocus}
-                value={email} // Controlled input
+                // value={email} // Controlled input
                 onChange={(e) => setEmail(e.target.value)} // Allow user to edit
               />
               {errors.email && (
@@ -252,7 +252,7 @@ const Contact = () => {
 
           <button
             type="submit"
-            className="w-full py-4 lg:py-3 px-4 bg-primary text-white text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter rounded-lg font-medium hover:bg-primary-dark focus:outline-none focus:ring-2 "
+            className="w-full py-4 lg:py-3 px-4 bg-primary text-white text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter rounded-lg font-medium hover:bg-secondary transition-colors duration-300 focus:outline-none focus:ring-2 "
             disabled={loading}
           >
             {loading ? (
@@ -286,25 +286,23 @@ const Contact = () => {
           <h2 className="font-semibold text-xl font-roboto text-primary pb-4">
             Awesome!
           </h2>
-          <p className="text-xl text-neutral-grey-300">
-            Your message has been sent and received.Our team
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
+            Your message has been sent and received. Our team will get back to you in due time.
           </p>
-          <p className="text-xl text-neutral-grey-300">
-            will get back to you in due time.
-          </p>
+  
           <div className="flex justify-center gap-12">
             <button
               onClick={closeModal}
-              className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+              className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary transition-colors duration-300 mt-8"
             >
               Okay
             </button>
-            <button
+            {/* <button
               onClick={closeModal}
               className="p-2 px-6 rounded-[10px] text-primary mt-8"
             >
               Login
-            </button>
+            </button> */}
           </div>
         </div>
       </Modal>
