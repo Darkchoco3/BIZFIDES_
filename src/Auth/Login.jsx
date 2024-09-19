@@ -52,14 +52,14 @@ const Login = () => {
   };
 
   return (
-    <main className="py-5 lg:py-0">
+    <main className="">
       <div className="bg-white w-full h-screen flex">
-        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col justify-center container">
+        <div className="lg:w-1/2 p-4 py-8 lg:p-12 lg:px-20 flex flex-col md:justify-center xl:justify-normal container custom-scrollbar overflow-y-auto">
           <Link to="/">
             <img
               src={logo}
               alt="logo"
-              className="w-[74px] h-[42px] my-[6rem] md:my-[12rem] mb-[25px] lg:hidden"
+              className="w-[74px] h-[42px] mb-[25px] lg:hidden"
             />
           </Link>
           <h2 className="text-[16px] md:text-xl lg:text-[28px] font-bold text-primary lg:max-w-[390px] font-inter">
@@ -198,8 +198,8 @@ const Login = () => {
           className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative"
           style={{ backgroundImage: `url(${image})` }}
         >
-          <Link to="/" className="absolute right-[5.875rem] top-[4.7rem]">
-            <img src={logo} alt="Bizfides Logo" />
+          <Link to="/" className="absolute lg:right-[3rem] lg:top-[0.95rem] xl:right-[5.875rem] xl:top-[2.8rem]">
+            <img src={logo} alt="Bizfides Logo" className="2xl:w-[7rem]"/>
           </Link>
         </div>
       </div>

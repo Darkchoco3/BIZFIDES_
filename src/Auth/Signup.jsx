@@ -196,7 +196,7 @@ const SignUp = () => {
                       required: "Last name is required",
                     })}
                     className="mt-1 text-sm md:text-base 2xl:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                    placeholder="Enter last Name"
+                    placeholder="Enter Last Name"
                     // onFocus={handleFocus}
                   />
                   {errors.lastName && (
@@ -455,8 +455,8 @@ const SignUp = () => {
           className="hidden lg:flex lg:w-1/2 h-screen bg-cover  relative"
           style={{ backgroundImage: `url(${image})` }}
         >
-          <Link to="/" className="absolute right-[120px] top-[40px]">
-            <img src={logo} alt="" />
+          <Link to="/" className="absolute lg:right-[3rem] lg:top-[0.95rem] xl:right-[5.875rem] xl:top-[2.8rem]">
+            <img src={logo} alt="" className="2xl:w-[7rem]"/>
           </Link>
         </div>
       </div>
