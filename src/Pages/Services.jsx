@@ -161,7 +161,7 @@ const Services = () => {
                 </motion.p>
                 <motion.div  variants={textVariants}>
                 <Link
-                  to="./register"
+                  to="/register"
                   className="grid place-items-center md:place-content-start"
                 >
                   <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
