@@ -196,7 +196,7 @@ const SignUp = () => {
                       required: "Last name is required",
                     })}
                     className="mt-1 text-sm md:text-base 2xl:text-lg block w-full px-3 py-3 border-[2px] border-neutral-grey-200 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                    placeholder="Enter last Name"
+                    placeholder="Enter Last Name"
                     // onFocus={handleFocus}
                   />
                   {errors.lastName && (
