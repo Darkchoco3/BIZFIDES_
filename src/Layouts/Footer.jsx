@@ -21,6 +21,10 @@ const Footer = () => {
       link: "services",
     },
     {
+      title: "Portfolio",
+      link: "Portfolio",
+    },
+    {
       title: "Contact Us",
       link: "contact",
     },
@@ -112,7 +116,7 @@ const Footer = () => {
               </h3>
               <div className="grid gap-[.579rem]">
                 <p className="flex items-center text-sm font-inter">
-                  <IoIosCall className="w-5" /> (406) 555-0120
+                  <IoIosCall className="w-5" /> (+234) 855-012-009
                 </p>
                 <p className="flex items-center text-sm font-inter">
                   <IoMdMail className="w-5" /> bizfides7@gmail.com
