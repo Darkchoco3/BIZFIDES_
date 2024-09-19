@@ -15,6 +15,7 @@ import Button from "../Components/Button.jsx";
 import myImage from "../assets/Group 1.svg";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useAuth } from '../Contexts/Auth.jsx';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -58,6 +59,7 @@ const ServiceDetails = ({ image, title, description, titleImg }) => {
 };
 
 const Services = () => {
+  const { auth} = useAuth()
   const services = [
     {
       title: "Web Development",
@@ -171,34 +173,64 @@ const Services = () => {
                     designed to drive measurable growth and elevate your online
                     presence.
                   </motion.p>
-                  <motion.div variants={textVariants}>
-                    <Link
-                      to="/register"
-                      className="grid place-items-center md:place-content-start"
-                    >
-                      <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
-                        <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
-                          Get Started
-                          <span className="flex items-center">
-                            <svg
-                              className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </span>
-                        </span>
-                      </div>
-                    </Link>
-                  </motion.div>
+                  {auth.user != null ? 
+                <motion.div  variants={textVariants}>
+                <Link
+                  to='/contact'
+                  className="grid place-items-center md:place-content-start"
+                >
+                  <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+                    <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
+                      Contact Us
+                      <span className="flex items-center">
+                        <svg
+                          className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+                </motion.div>
+                : 
+                <motion.div  variants={textVariants}>
+                <Link
+                  to='/register'
+                  className="grid place-items-center md:place-content-start"
+                >
+                  <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+                    <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
+                      Get Started
+                      <span className="flex items-center">
+                        <svg
+                          className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </span>
+                    </span>
+                  </div>
+                </Link>
+                </motion.div>}
                 </motion.div>
               </div>
             </div>

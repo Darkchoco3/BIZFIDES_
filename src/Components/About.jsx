@@ -30,7 +30,7 @@ const textVariants = {
 
 const About = () => {
   return (
-    <div className="container border-t w-11/12 lg:pt-[50px] border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[109px]  py-4 lg:py-[30px] font-inter">
+    <div className="container border-t w-11/12 lg:pt-[50px] border-[#F8F8F8] h-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-[109px]  pb-4 lg:pb-0 font-inter">
       <div className="w-full lg:w-1/2 flex">
         <div className="hidden md:block md:w-full">
           <img src={about} className="max-h-full w-auto" />
