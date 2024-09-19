@@ -275,66 +275,72 @@ const Portfolio = () => {
           />
         </section>
 
-        <section>
-          {/* Our Services section*/}
-          <section className="bg-primary-light">
-            <div className=" container w-11/12 flex flex-col items-center md:flex-row md:gap-[3rem] lg:gap-[7rem] xl:gap-[7.094rem]">
-              <img
-                src={servicesImage}
-                alt="Our services image"
-                className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
-              />
-              <motion.div className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start"
+        {/* Our Services section*/}
+        <section className="bg-primary-light">
+          <div className=" container w-11/12 flex flex-col items-center md:flex-row md:gap-[3rem] lg:gap-[7rem] xl:gap-[7.094rem]">
+            <img
+              src={servicesImage}
+              alt="Our services image"
+              className="md:w-1/2 lg:w-1/3 flex-1 h-auto hidden md:block py-8"
+            />
+            <motion.div
+              className="flex-1 py-[3rem] md:py-[5.813rem] flex flex-col gap-[2rem] text-center md:text-start"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}>
-                <motion.h3 className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none"
-                variants={textVariants}>
-                  Need the Right Expertise?
-                </motion.h3>
-                <motion.p className="text-primary-medium text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter lg:max-w-[40ch]"
-                variants={textVariants}>
-                  Discover how our tailored solutions and services can address
-                  your unique business needs and help you achieve your goals.
-                </motion.p>
+              viewport={{ once: true }}
+            >
+              <motion.h3
+                className="text-primary-dark font-roboto font-bold text-[1.4rem] md:text-2xl lg:text-3xl xl:text-[2.5rem] 2xl:text-[3rem] leading-none"
+                variants={textVariants}
+              >
+                Need the Right Expertise?
+              </motion.h3>
+              <motion.p
+                className="text-primary-medium text-sm lg:text-base xl:text-xl 2xl:text-2xl font-inter lg:max-w-[40ch]"
+                variants={textVariants}
+              >
+                Discover how our tailored solutions and services can address
+                your unique business needs and help you achieve your goals.
+              </motion.p>
 
-                <motion.div variants={textVariants}>
-                  <Link
-                    to="/services"
-                    className="grid place-items-center md:place-content-start"
-                  >
-                    <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
-                      <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
-                        Our Services
-                        <span className="flex items-center">
-                          <svg
-                            className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
-                        </span>
+              <motion.div variants={textVariants}>
+                <Link
+                  to="/services"
+                  className="grid place-items-center md:place-content-start"
+                >
+                  <div className="w-full lg:w-auto grid place-items-center group text-white border bg-primary rounded-xl hover:bg-secondary hover:text-white focus:ring transition ease-in-out duration-150 py-[.844rem] px-[.625rem] pl-4 min-w-36">
+                    <span className="font-inter text-sm lg:text-base xl:text-lg 2xl:text-2xl text-center flex items-center gap-[.688rem] group-hover:text-white">
+                      Our Services
+                      <span className="flex items-center">
+                        <svg
+                          className="w-6 h-6 transition ease-in-out duration-150 group-hover:color-[hsla(180,100%,32%,1)]"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
                       </span>
-                    </div>
-                  </Link>
-                </motion.div>
+                    </span>
+                  </div>
+                </Link>
               </motion.div>
-            </div>
-          </section>
+            </motion.div>
+          </div>
+        </section>
+      </div>
 
-          {/* Testimonials section */}
-          <section>
-            <Testimonials />
-          </section>
+      <div className="grid gap-10 lg:gap-[1.875rem]">
+        {/* Testimonials section */}
+        <section>
+          <Testimonials />
         </section>
 
         {/* Subscribe to our Newsletter section*/}

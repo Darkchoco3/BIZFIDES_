@@ -1,6 +1,6 @@
 import React from "react";
 import Polygon1 from "../assets/Group 3387.png";
-import Man from "../assets/image 29.svg";
+import Man from "../assets/Man.png";
 import Rectangle from "../assets/Group 2008.svg";
 import { Link } from "react-router-dom";
 import CircularDiagram from "./CircularAnimae";
@@ -129,10 +129,10 @@ const Hero = () => {
             </div>
           </div>
           {/* Rectangle Decoration */}
-        <div className="absolute top-[20.3rem] md:top-[22.2rem] lg:top-[21.7rem] xl:top-[24.7rem] left-0">
+        <div className="absolute top-[21.7rem] md:top-[22.2rem] lg:top-[21.7rem] xl:top-[24.7rem] left-0">
           <img
             src={Rectangle}
-            className="h-full w-full animate-pulse"
+            className="h-full w-20 md:w-auto animate-pulse"
             alt="Rectangle Decoration"
           />
         </div>
