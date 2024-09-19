@@ -115,7 +115,7 @@ const ForgetPassword = () => {
             </div>
           )}
           <p className="mt-6 text-center font-medium text-sm md:text-base lg:text-lg">
-            <Link to="/" className="text-primary"><span className='pr-4'>&lt;</span>Back to home</Link>
+            <Link to="/login" className="text-primary"><span className='pr-4'>&lt;</span>Back to Login</Link>
           </p>
         </div>
         <div className="hidden lg:flex lg:w-1/2 h-screen bg-cover relative" style={{ backgroundImage: `url(${image})` }}>
@@ -128,8 +128,8 @@ const ForgetPassword = () => {
       {/* Modal */}
       <Modal isOpen={isModalOpen} onClose={closeModal} closeOnClickOutside={false}>
           <div className='w-full text-center py-8 font-roboto '>
-            <h2 className='text-primary font-semibold text-[32px]'>Message Sent!</h2>
-            <p className='text-xl text-neutral-grey-300'>Continue with the link sent to you via your Email</p>
+            <h2 className='text-primary font-semibold text-[2rem]'>Message Sent!</h2>
+            <p className='text-base 2xl:text-xl text-neutral-grey-300'>Continue with the link sent to you via your Email</p>
             <button onClick={closeModal} className='bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8' >Okay</button>
           </div>
       </Modal>

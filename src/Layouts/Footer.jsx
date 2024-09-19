@@ -21,8 +21,8 @@ const Footer = () => {
       link: "services",
     },
     {
-      title: "Support",
-      link: "support",
+      title: "Contact Us",
+      link: "contact",
     },
   ];
 
@@ -40,7 +40,7 @@ const Footer = () => {
                   alt="BizFides Logo"
                 />
               </Link>
-              <p className="text-sm md:text-base 2xl:text-2xl font-inter max-w-[43ch] md:max-w-[100ch] xl:max-w-[41ch] 2xl:max-w-[50ch]">
+              <p className="text-sm md:text-base 2xl:text-xl font-inter max-w-[43ch] md:max-w-[100ch] xl:max-w-[41ch] 2xl:max-w-[50ch]">
                 © 2024 BizFides. Passionate about helping small businesses shine
                 online.
               </p>
@@ -78,7 +78,7 @@ const Footer = () => {
                     ].map((company, i) => (
                       <p
                         key={i}
-                        className="hover:text-blue-200 cursor-pointer text-sm lg:text-base 2xl:text-xl font-inter"
+                        className=" cursor-not-allowed text-sm lg:text-base 2xl:text-xl font-inter"
                       >
                         {company}
                       </p>
@@ -127,9 +127,9 @@ const Footer = () => {
         </div>
       </div>
       {/* Social Media Links */}
-      <div className="flex justify-center items-center bg-primary">
+      <div className="flex justify-center items-center bg-primary c">
         <div className="bg-primary-dark flex-grow h-4 lg:h-[3.25rem] rounded-se-full "></div>
-        <div className="bg-primary-normal text-white flex justify-center items-center space-x-3 px-4 lg:space-x-6 lg:px-[3.875rem]">
+        <div className="bg-primary-normal text-white flex justify-center items-center space-x-3 px-4 lg:space-x-6 lg:px-[3.875rem] cursor-not-allowed">
           <FaFacebook className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
           <FaTwitter className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
           <FaLinkedin className="h-5 w-5 xs:h-8 xs:w-8 lg:h-6 lg:w-6" />
