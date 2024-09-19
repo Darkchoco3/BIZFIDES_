@@ -236,12 +236,12 @@ const ResetPassword = () => {
           <p className="text-base 2xl:text-xl text-neutral-grey-300">
             You have successfully reset your Password
           </p>
-          <button
-            onClick={closeModal}
-            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8"
+          <Link to="/login" onClick={closeModal}>
+          <button className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary mt-8"
           >
-            Okay
+            Back to Login
           </button>
+          </Link>
         </div>
       </Modal>
     </main>

@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import LoadingButtonText from "../Components/utils/Loading";
 import toast from "react-hot-toast";
 
+
 const Subscribe = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -47,7 +48,7 @@ const Subscribe = () => {
         toast.error(response?.data?.message || "Subscription failed.");
       }
     } catch (error) {
-      toast.error("Error: Unable to submit the form.");
+      toast.error(error?.response?.data?.message);
       console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
@@ -140,13 +141,13 @@ const Subscribe = () => {
         closeOnClickOutside={false}
       >
         <div className="w-full text-center py-8 font-roboto ">
-          <h2 className="text-primary font-semibold text-[32px]">Thank You!</h2>
-          <p className="text-xl text-neutral-grey-300">
+          <h2 className="text-primary font-semibold text-[2rem]">Thank You!</h2>
+          <p className="text-base 2xl:text-xl text-neutral-grey-300">
             You have successfully Subscribed to receive our newsletter
           </p>
           <button
             onClick={closeModal}
-            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-primary-dark mt-8"
+            className="bg-primary p-2 px-6 rounded-[10px] text-white hover:bg-secondary transition-colors duration-300 mt-8"
           >
             Okay
           </button>
